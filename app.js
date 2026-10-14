@@ -24,7 +24,7 @@ function showSession(s){current=null;navigation();const main=$('lesson'),number=
  const next=el('a',number<10?'Следующее занятие →':'Повторить маршрут →');next.href='#'+BalanceSessions[number%10].id;main.append(next);$('sidebar').classList.remove('open');$('menu').setAttribute('aria-expanded','false');window.scrollTo(0,0);
 }
 function render(){
- const id=location.hash.slice(1)||BalanceSessions[0].id;
+ const id=location.hash.slice(1)||'method';
  const session=BalanceSessions.find(s=>s.id===id);if(session){showSession(session);return;}
  if(id==='sources'){showSources();return;}
  if(id==='method'){showMethod();return;}
@@ -80,12 +80,18 @@ function addReading(main,id){
  card.append(el('p','Попробуй: '+b.exercise));const solution=el('details');solution.append(el('summary','Объяснение'),el('p',b.answer));card.append(solution);
  const link=el('a','Открыть книгу');link.href=b.url;link.target='_blank';link.rel='noopener noreferrer';card.append(el('p',b.note),el('p',b.section+' · '+b.format,'help'),link,el('p','Упражнение Balance составлено отдельно; это не цитата из книги.','help'));main.append(card);});
 }
-function showMethod(){current=null;navigation();const main=$('lesson');main.replaceChildren(el('h1','Как изучать математику'),el('p','От предмета и рисунка — к словам, символам и самостоятельному рассуждению.'));
+function showMethod(){
+ current=null;navigation();const main=$('lesson');
+ main.replaceChildren(el('span','Введение','badge'),el('h1','Как учиться'),el('p','Задача курса — научиться составлять формулы по условию, преобразовывать их и применять к расчёту физических процессов. Для занятий нужны бумага, карандаш и четыре арифметических действия.'));
  BalanceReading.method.forEach(([title,text],i)=>main.append(el('h2',(i+1)+'. '+title),el('p',text)));
- main.append(el('h2','Как разбирать уравнение'),el('p','Отменяй последнее внешнее действие, а не любой знак + или −. В 3(x + 2) = 21 снаружи стоит умножение: сначала делим обе части на 3, затем вычитаем 2. Получаем x = 5. Скобки задают группировку. Деление на ноль недопустимо.'));
- main.append(el('h2','Почему именно так'),el('p','Наглядность, постепенность и прояснение слов полезны как рабочие приёмы. У Хаббарда «масса» означает предмет или его наглядное представление; это не объём выученного. Его описание само по себе не доказывает эффективность всей системы.'));
- const evidence=el('a','Исследовательское руководство IES: примеры, практика и повторение');evidence.href='https://ies.ed.gov/ncee/wwc/PracticeGuide/1';main.append(evidence);
- const video=el('a','Дмитрий Михайлов: «Как правильно изучать математику»');video.href='https://www.youtube.com/watch?v=UM4SRQsIqok';main.append(el('p','Дополнительное объяснение: понимание терминов, регулярная самостоятельная практика и возвращение к пройденному.'),video);
+ main.append(el('h2','Пример: от наблюдения к формуле'),el('p','Игрушечная машинка проходит 2 метра за каждую секунду. Нарисуй её положения через 1, 2 и 3 секунды: 2, 4 и 6 метров от старта. Здесь считаем, что скорость постоянна и машинка движется прямо в одном направлении.'),el('p','Путь s — пройденное расстояние; время t — длительность движения; скорость v — путь за единицу времени при равномерном движении. Поэтому s = v · t. При v = 2 м/с и t = 3 с получаем s = 6 м.'));
+ main.append(el('h2','Проверь понимание'),el('p','При той же скорости машинка двигалась 5 секунд. Какой путь она прошла?'));
+ const choices=el('div',undefined,'choices'),feedback=el('p',undefined,'feedback');feedback.setAttribute('role','status');
+ E.shuffle([{text:'10 метров',ok:true,why:'За каждую из пяти секунд — 2 метра: 2 · 5 = 10 м.'},{text:'7 метров',ok:false,why:'Скорость и время нельзя складывать. Посчитай пять отрезков по 2 метра.'},{text:'2,5 метра',ok:false,why:'Деление здесь не даёт путь. За каждую секунду добавляется ещё 2 метра.'}]).forEach(o=>{const button=el('button',o.text);button.onclick=()=>{feedback.textContent=o.why;feedback.className='feedback '+(o.ok?'good':'bad');};choices.append(button);});main.append(choices,feedback);
+ main.append(el('p','Затем объясни, почему эта формула не подходит без изменений, если машинка разгоняется. Непонятное слово или действие — повод вернуться к определению и примеру.'));
+ const sources=el('details');sources.append(el('summary','О методе и источниках'),el('p','В описании технологии обучения Л. Рона Хаббарда выделены три препятствия: отсутствие предмета или его модели («массы»), пропущенные ступени обучения и непонятые слова. Здесь эти идеи адаптированы к математике. «Масса» в этом смысле — не объём знаний.'),el('p','Утверждения об универсальности системы и физиологических причинах трудностей не принимаются за установленные факты. Самостоятельная практика, повторение с интервалами и сочетание примеров с задачами отдельно описаны в исследовательском руководстве IES.'));
+ [['Описание технологии обучения Хаббарда','https://www.lronhubbard.ru/ron-series/profile/humanitarian/education/study-technology.html'],['IES: организация обучения и самостоятельной работы','https://ies.ed.gov/ncee/wwc/PracticeGuide/1'],['Дмитрий Михайлов: «Как правильно изучать математику»','https://www.youtube.com/watch?v=UM4SRQsIqok']].forEach(([title,url])=>{const a=el('a',title);a.href=url;a.target='_blank';a.rel='noopener noreferrer';const line=el('p');line.append(a);sources.append(line);});main.append(sources);
+ const start=el('a','Занятие 1: числа и выражения →');start.href='#session-1';main.append(start);
  $('sidebar').classList.remove('open');$('menu').setAttribute('aria-expanded','false');window.scrollTo(0,0);
 }
 function showSources(){current=null;navigation();const main=$('lesson');main.replaceChildren(el('h1','Маршрут Balance'),el('p','10 занятий для ученика, который умеет складывать, вычитать, умножать и делить. Начинать можно примерно с 4-го класса, со взрослым и в собственном темпе. Занятие удобно делить на два подхода по 15–20 минут.'));
