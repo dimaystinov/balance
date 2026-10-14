@@ -1,12 +1,12 @@
 (function(){
 'use strict';
-const {lessons,sources,jokes}=BalanceCourse,E=BalanceEngine,$=id=>document.getElementById(id),KEY='balance-progress-v1';
+const {lessons,sources,jokes}=BalanceCourse,R=BalanceRecall,E=BalanceEngine,$=id=>document.getElementById(id),KEY='balance-progress-v1';
 let state={},storageOK=true,current=null,task=null,attempted=false,answered=false,helped=false;
 try{state=JSON.parse(localStorage.getItem(KEY)||'{}');if(!validState(state))state={};}catch(e){state={};storageOK=false;}
-function validState(s){return s&&typeof s==='object'&&!Array.isArray(s)&&Object.entries(s).every(([id,r])=>lessons.some(l=>l.id===id)&&r&&typeof r==='object'&&typeof r.concept==='boolean'&&Array.isArray(r.solved)&&r.solved.length<=100&&r.solved.every(x=>typeof x==='string'&&x.length<500));}
+function validState(s){return s&&typeof s==='object'&&!Array.isArray(s)&&Object.entries(s).every(([id,r])=>lessons.some(l=>l.id===id)&&r&&typeof r==='object'&&typeof r.concept==='boolean'&&Array.isArray(r.solved)&&r.solved.length<=100&&r.solved.every(x=>typeof x==='string'&&x.length<500)&&R.valid(r.recall));}
 function save(){try{localStorage.setItem(KEY,JSON.stringify(state));}catch(e){storageOK=false;$('storage-message').textContent='Браузер не сохраняет данные. Скачайте копию прогресса перед закрытием.';}}
 function record(id){return state[id]||(state[id]={concept:false,solved:[]});}
-function done(id){const r=state[id];return !!r?.concept&&r.solved.length>=3;}
+function done(id){const r=state[id];return !!r?.concept&&r.solved.length>=3&&r.recall?.stage>0;}
 function el(tag,text,cls){const n=document.createElement(tag);if(text!==undefined)n.textContent=text;if(cls)n.className=cls;return n;}
 function sessionDone(s){return s.topics.every(done);}
 function navigation(){const nav=$('navigation');nav.replaceChildren();BalanceSessions.forEach((s,i)=>{const a=el('a',`${i+1}. ${s.title}`);a.href='#'+s.id;if(s.topics.includes(current?.id)||location.hash==='#'+s.id){a.classList.add('current');a.setAttribute('aria-current','page');}if(sessionDone(s))a.classList.add('complete');nav.append(a);});$('overall').textContent=`Пройдено ${BalanceSessions.filter(sessionDone).length} из 10 занятий`;}
@@ -26,6 +26,8 @@ function showSession(s){current=null;navigation();const main=$('lesson'),number=
 function render(){
  const id=location.hash.slice(1)||'method';
  const session=BalanceSessions.find(s=>s.id===id);if(session){showSession(session);return;}
+ if(id==='review'){showReview();return;}
+ if(id.startsWith('recall-')&&R.cards[id.slice(7)]){showRecall(id.slice(7));return;}
  if(id==='sources'){showSources();return;}
  if(id==='method'){showMethod();return;}
  current=lessons.find(l=>l.id===id)||lessons[0];const l=current,i=lessons.indexOf(l),main=$('lesson');main.replaceChildren();navigation();
@@ -35,7 +37,7 @@ function render(){
  if(l.referenceTheory){const d=el('details');d.append(el('summary','Виды чисел — справочник'));l.referenceTheory.forEach(t=>d.append(el('p',t)));main.append(d);}
  if(l.source){const a=el('a',l.source.title);a.href=l.source.url;a.target='_blank';a.rel='noopener noreferrer';main.append(a);}
  main.append(el('h2','Разберём на примерах'));
- const examples=el('ol',undefined,'examples');l.examples.forEach(t=>examples.append(el('li',t)));main.append(examples,el('p',l.memory,'memory'));
+ const examples=el('ol',undefined,'examples');l.examples.forEach(t=>examples.append(el('li',t)));main.append(examples);const recallLink=el('a','Вспомнить термины без образца →');recallLink.href='#recall-'+l.id;main.append(recallLink);
  if(l.id==='balance'||l.id==='outer'||l.id==='both')makeBalance(main);
  const practice=el('section',undefined,'practice');practice.append(el('h2','Теперь твоя очередь'));
  practice.append(el('p','Сначала объясни правило, затем реши три разных задания с первой попытки без подсказки. Можно тренироваться дальше.','help'));
@@ -55,12 +57,12 @@ function render(){
  else{attempted=true;feedback.textContent='Пока не сходится. '+task.hint+' Проверь вычисление и попробуй снова.';}};
  main.append(practice);
  addReading(main,l.id);
- const joke=el('details'),sum=el('summary','Минутка улыбки');joke.append(sum,el('p',jokes[i%jokes.length]));main.append(joke);
+
  if(['fractions','reals','measurement'].includes(l.id)){const link=el('a','Дополнительное видео и материалы');link.href='#sources';main.append(link);}
  const nextNav=el('div',undefined,'next'),route=BalanceSessions.flatMap(s=>s.topics),position=route.indexOf(l.id);if(position){const a=el('a','← Предыдущий шаг');a.href='#'+route[position-1];nextNav.append(a);}if(position<route.length-1){const nextId=route[position+1],nextParent=BalanceSessions.find(s=>s.topics.includes(nextId)),same=nextParent.id===parent.id,a=el('a',same?'Следующий шаг →':'Следующее занятие →');a.href='#'+(same?nextId:nextParent.id);nextNav.append(a);}else{const a=el('a','К итоговому заданию →');a.href='#session-10';nextNav.append(a);}main.append(nextNav);
  updateMastery();newTask();$('sidebar').classList.remove('open');$('menu').setAttribute('aria-expanded','false');window.scrollTo(0,0);
 }
-function updateMastery(){const r=record(current.id);$('mastery').textContent=done(current.id)?'✓ Шаг пройден. Можно повторять задания.':`Объяснение: ${r.concept?'верно':'пока не выбрано'} · Самостоятельно решено ${Math.min(3,r.solved.length)} из 3`;}
+function updateMastery(){const r=record(current.id);$('mastery').textContent=done(current.id)?'✓ Шаг пройден. Можно повторять задания.':`Объяснение: ${r.concept?'верно':'пока не выбрано'} · Самостоятельно решено ${Math.min(3,r.solved.length)} из 3 · Термины: ${r.recall?.stage>0?'самопроверка выполнена':'нужно повторить'}`;}
 function newTask(){const old=task?.key;for(let i=0;i<20;i++){task=E.generate(current.id);if(task.key!==old)break;}attempted=false;answered=false;helped=false;$('question').textContent=task.text;$('answer').value='';$('answer-feedback').textContent='';}
 function makeBalance(main){
  const section=el('section',undefined,'balance-board');section.append(el('h2','Лаборатория равновесия'),el('p','Модель уравнения: выполни одно действие над обеими сторонами. Цель — оставить x слева.'));
@@ -80,10 +82,34 @@ function addReading(main,id){
  card.append(el('p','Попробуй: '+b.exercise));const solution=el('details');solution.append(el('summary','Объяснение'),el('p',b.answer));card.append(solution);
  const link=el('a','Открыть книгу');link.href=b.url;link.target='_blank';link.rel='noopener noreferrer';card.append(el('p',b.note),el('p',b.section+' · '+b.format,'help'),link,el('p','Упражнение Balance составлено отдельно; это не цитата из книги.','help'));main.append(card);});
 }
+function showReview(){
+ current=null;navigation();const main=$('lesson');main.replaceChildren(el('h1','Повторение терминов'),el('p','Вспомни определение без образца, приведи свой пример и объясни применение. Самопроверка не заменяет обсуждения с преподавателем.'));
+ const due=lessons.filter(l=>state[l.id]?.recall&&state[l.id].recall.due<=Date.now()),other=lessons.filter(l=>!due.includes(l));
+ [["Пора повторить",due],["Все темы",other]].forEach(([title,items])=>{main.append(el('h2',title));if(!items.length)main.append(el('p','Пока нет.'));const list=el('ul');items.forEach(l=>{const li=el('li'),a=el('a',R.cards[l.id].term);a.href='#recall-'+l.id;li.append(a);const r=state[l.id]?.recall;li.append(el('span',r?.stage>0?' · повторить '+new Date(r.due).toLocaleDateString('ru-RU'):' · ещё не закреплено'));list.append(li);});main.append(list);});window.scrollTo(0,0);
+}
+function showRecall(id){
+ current=null;navigation();const c=R.cards[id],main=$('lesson');main.replaceChildren(el('span','Воспроизведение по памяти','badge'),el('h1',c.term),el('p','Не открывая учебник: запиши определение своими словами, приведи собственный пример и ответь на вопрос. Можно писать на бумаге или в полях ниже.'),el('p',c.question));
+ const inputs=[];['Определение своими словами','Свой пример и почему он подходит','Ответ на вопрос'].forEach(title=>{const label=el('label',title),input=el('textarea');input.rows=3;input.maxLength=3000;label.append(input);main.append(label);inputs.push(input);});
+ const paperLabel=el('label','Я записал все три ответа на бумаге '),paper=el('input');paper.type='checkbox';paperLabel.append(paper);main.append(paperLabel);
+ const compare=el('button','Сравнить с объяснением','primary'),feedback=el('p');feedback.setAttribute('role','status');main.append(compare,feedback);
+ compare.onclick=()=>{if(!paper.checked&&inputs.some(i=>!i.value.trim())){feedback.textContent='Сначала попробуй ответить на все три пункта. Если не помнишь — открой объяснение ниже.';return;}reveal();};
+ const forgotten=el('button','Не помню — разобрать');main.append(forgotten);let exposed=false;
+ forgotten.onclick=()=>{record(id).recall=R.assess(record(id).recall,false);save();navigation();reveal(true);};
+ function reveal(failed=false){if(exposed)return;exposed=true;compare.disabled=true;forgotten.disabled=true;inputs.forEach(i=>i.disabled=true);paper.disabled=true;feedback.textContent='Сравни смысл, а не дословное совпадение. Проверка твоего объяснения здесь самостоятельная.';
+ main.append(el('h2','Определение'),el('p',c.definition),el('h2','Ответ на вопрос'),el('p',c.answer),el('h2','Как запомнить'),el('p',c.mnemonic));
+ const checklist=el('div'),boxes=[];['В определении сохранены все существенные признаки и ограничения','Мой пример подходит под определение; я могу объяснить почему','Ответ на вопрос верен и объяснён'].forEach(text=>{const label=el('label',text+' '),box=el('input');box.type='checkbox';label.append(box);checklist.append(label);boxes.push(box);});main.append(checklist);
+ const good=el('button','Все три ответа верны'),again=el('button','Есть пробел — повторить тему'),status=el('p');status.setAttribute('role','status');good.disabled=failed;main.append(good,again,status);
+ good.onclick=()=>{if(boxes.some(b=>!b.checked)){status.textContent='Проверь каждый пункт. Если есть неточность, вернись к теме.';return;}record(id).recall=R.assess(record(id).recall,true);save();navigation();good.disabled=true;again.disabled=true;status.textContent='Самопроверка сохранена. Следующее повторение: '+new Date(record(id).recall.due).toLocaleDateString('ru-RU')+'.';};
+ again.onclick=()=>{record(id).recall=R.assess(record(id).recall,false);save();location.hash=id;};
+ if(failed)status.textContent='Прочитай объяснение, вернись к теме и позже воспроизведи без образца.';
+ }
+ const back=el('a','Вернуться к теме');back.href='#'+id;main.append(back);$('sidebar').classList.remove('open');$('menu').setAttribute('aria-expanded','false');window.scrollTo(0,0);
+}
 function showMethod(){
  current=null;navigation();const main=$('lesson');
  main.replaceChildren(el('span','Введение','badge'),el('h1','Как учиться'),el('p','Задача курса — научиться составлять формулы по условию, преобразовывать их и применять к расчёту физических процессов. Для занятий нужны бумага, карандаш и четыре арифметических действия.'));
  BalanceReading.method.forEach(([title,text],i)=>main.append(el('h2',(i+1)+'. '+title),el('p',text)));
+ main.append(el('h2','Письмо и запоминание'),el('p','Записывай по памяти короткое определение, собственный пример и объяснение шага. Рисуй схемы и подписывай величины. Затем сверяй и исправляй. Переписывание готового текста само по себе не показывает понимания; если писать рукой неудобно, используй клавиатуру или объясни вслух.'),el('p','Каждая тема требует верного объяснения, трёх разных самостоятельных решений и самопроверки терминов. Неясный термин разбери до перехода к задаче, где он нужен. Возвращайся к нему через время: отметка за сегодня не означает, что материал уже нельзя забыть.'));
  main.append(el('h2','Пример: от наблюдения к формуле'),el('p','Игрушечная машинка проходит 2 метра за каждую секунду. Нарисуй её положения через 1, 2 и 3 секунды: 2, 4 и 6 метров от старта. Здесь считаем, что скорость постоянна и машинка движется прямо в одном направлении.'),el('p','Путь s — пройденное расстояние; время t — длительность движения; скорость v — путь за единицу времени при равномерном движении. Поэтому s = v · t. При v = 2 м/с и t = 3 с получаем s = 6 м.'));
  main.append(el('h2','Проверь понимание'),el('p','При той же скорости машинка двигалась 5 секунд. Какой путь она прошла?'));
  const choices=el('div',undefined,'choices'),feedback=el('p',undefined,'feedback');feedback.setAttribute('role','status');
@@ -91,6 +117,8 @@ function showMethod(){
  main.append(el('p','Затем объясни, почему эта формула не подходит без изменений, если машинка разгоняется. Непонятное слово или действие — повод вернуться к определению и примеру.'));
  const sources=el('details');sources.append(el('summary','О методе и источниках'),el('p','В описании технологии обучения Л. Рона Хаббарда выделены три препятствия: отсутствие предмета или его модели («массы»), пропущенные ступени обучения и непонятые слова. Здесь эти идеи адаптированы к математике. «Масса» в этом смысле — не объём знаний.'),el('p','Утверждения об универсальности системы и физиологических причинах трудностей не принимаются за установленные факты. Самостоятельная практика, повторение с интервалами и сочетание примеров с задачами отдельно описаны в исследовательском руководстве IES.'));
  [['Описание технологии обучения Хаббарда','https://www.lronhubbard.ru/ron-series/profile/humanitarian/education/study-technology.html'],['IES: организация обучения и самостоятельной работы','https://ies.ed.gov/ncee/wwc/PracticeGuide/1'],['Дмитрий Михайлов: «Как правильно изучать математику»','https://www.youtube.com/watch?v=UM4SRQsIqok']].forEach(([title,url])=>{const a=el('a',title);a.href=url;a.target='_blank';a.rel='noopener noreferrer';const line=el('p');line.append(a);sources.append(line);});main.append(sources);
+ const research=el('details');research.append(el('summary','Исследования письма и памяти'),el('p','Письмо и рисунок могут помогать организовать материал. Но различия ЭЭГ не доказывают улучшение памяти в пять раз. Безошибочный ответ сегодня не гарантирует сохранения через год. Поэтому здесь есть самостоятельное воспроизведение и повторение через время.'));
+ [['Письмо и связность ЭЭГ (2024)','https://doi.org/10.3389/fpsyg.2023.1219945'],['Ограничения исследования письма (2025)','https://doi.org/10.3389/fpsyg.2024.1517235'],['Повторное воспроизведение (2008)','https://doi.org/10.1126/science.1152408'],['Распределённая практика математических задач (2006)','https://doi.org/10.1002/acp.1266'],['Рисунки и запоминание (2016)','https://uwspace.uwaterloo.ca/items/a8b52734-18f3-4527-8be2-008a105c85f2']].forEach(([title,url])=>{const a=el('a',title);a.href=url;a.target='_blank';a.rel='noopener noreferrer';const line=el('p');line.append(a);research.append(line);});main.append(research);
  const start=el('a','Занятие 1: числа и выражения →');start.href='#session-1';main.append(start);
  $('sidebar').classList.remove('open');$('menu').setAttribute('aria-expanded','false');window.scrollTo(0,0);
 }
@@ -99,7 +127,7 @@ function showSources(){current=null;navigation();const main=$('lesson');main.rep
  main.append(el('h2','Как учиться'),el('p','Прочитай правило, объясни три примера своими словами, потренируйся. После нескольких занятий вернись к старой теме без подсказок. Отметка прохождения означает выполнение тренировки, а не гарантию владения всей темой.'));
  addReading(main);
  main.append(el('h2','Материалы для любопытных'));const ul=el('ul',undefined,'sources');sources.forEach(s=>{const li=el('li'),a=el('a',s.title);a.href=s.url;a.target='_blank';a.rel='noopener noreferrer';li.append(a,el('p',s.text));ul.append(li);});main.append(ul,el('p','Уроки, примеры и упражнения Balance написаны отдельно. Видеоуроки не скопированы. Курс Савватеева — дополнительное углубление, а не последовательность обязательных заданий для начинающего.'));
- main.append(el('h2','Шутки и память'),el('p','Миниатюры в уроках — авторские стилизации под школьный анекдот, а не документально установленные советские цитаты. Мнемоники помогают вспомнить правило, но не заменяют объяснение.'));
+ main.append(el('h2','Память и понимание'),el('p','В каждой теме есть определение, вопрос на применение и смысловая опора для запоминания. Сначала ответь по памяти, затем сравни и повтори через время.'));
  main.append(el('h2','Следующая ступень'),el('p','Неравенства, системы, степени и квадратные уравнения. «Любые уравнения» не решаются одним универсальным школьным алгоритмом. Главный результат первого курса — понимание смысла и ограничений каждого шага.'));window.scrollTo(0,0);
 }
 document.querySelector('.skip').onclick=e=>{e.preventDefault();$('lesson').focus();};
