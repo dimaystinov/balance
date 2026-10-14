@@ -8,13 +8,28 @@ function save(){try{localStorage.setItem(KEY,JSON.stringify(state));}catch(e){st
 function record(id){return state[id]||(state[id]={concept:false,solved:[]});}
 function done(id){const r=state[id];return !!r?.concept&&r.solved.length>=3;}
 function el(tag,text,cls){const n=document.createElement(tag);if(text!==undefined)n.textContent=text;if(cls)n.className=cls;return n;}
-function navigation(){const nav=$('navigation');nav.replaceChildren();let prev='';lessons.forEach((l,i)=>{if(l.group!==prev){nav.append(el('h3',l.group));prev=l.group;}const a=el('a',`${i+1}. ${l.title}`);a.href='#'+l.id;if(l.id===current?.id){a.classList.add('current');a.setAttribute('aria-current','page');}if(done(l.id))a.classList.add('complete');nav.append(a);});$('overall').textContent=`Пройдено ${lessons.filter(l=>done(l.id)).length} из ${lessons.length} занятий`;}
+function sessionDone(s){return s.topics.every(done);}
+function navigation(){const nav=$('navigation');nav.replaceChildren();BalanceSessions.forEach((s,i)=>{const a=el('a',`${i+1}. ${s.title}`);a.href='#'+s.id;if(s.topics.includes(current?.id)||location.hash==='#'+s.id){a.classList.add('current');a.setAttribute('aria-current','page');}if(sessionDone(s))a.classList.add('complete');nav.append(a);});$('overall').textContent=`Пройдено ${BalanceSessions.filter(sessionDone).length} из 10 занятий`;}
+function showSession(s){current=null;navigation();const main=$('lesson'),number=BalanceSessions.indexOf(s)+1;
+ main.replaceChildren(el('span',`Занятие ${number} из 10`,'badge'),el('h1',s.title),el('p',s.goal,'goal'));
+ if(number===1){main.append(el('h2','Я могу разобраться, посчитать и проверить сам'),el('p','За 10 занятий ты научишься составлять простые математические модели, решать линейные уравнения и проверять ответ. Это пригодится для покупок, поездок, собственных проектов и знакомства с физикой. Математика помогает проверить рассуждение, а физика — сопоставить модель с измерением: почему расчёт времени дороги отличается от опыта, как связаны масса и объём. Можно начинать без знания алгебры; если арифметика пока трудна, двигайся со взрослым и делай паузы.'));}
+ main.append(el('h2',s.hook),el('p',s.question),el('p','Сначала попробуй сам. Ошибка — повод проверить догадку; можно рассуждать на бумаге или открыть подсказку.','help'));
+ const form=el('form',undefined,'answer-form'),label=el('label','Моя версия ответа'),input=el('input');input.autocomplete='off';label.append(input);const check=el('button','Проверить догадку','primary');check.type='submit';form.append(label,check);const feedback=el('p',undefined,'feedback');feedback.setAttribute('role','status');main.append(form,feedback);
+ let hintIndex=0;const hint=el('button','Нужен небольшой шаг');hint.type='button';hint.onclick=()=>{feedback.textContent=s.hints[Math.min(hintIndex++,s.hints.length-1)];feedback.className='feedback';};main.append(hint);
+ const solution=el('details');solution.append(el('summary','Разобраться вместе'),el('p',s.solution));main.append(solution);
+ form.onsubmit=e=>{e.preventDefault();if(E.parseNumber(input.value)===null){feedback.textContent='Введи число или дробь, например 20/3.';return;}const ok=E.check(input.value,s.answer);feedback.className='feedback '+(ok?'good':'bad');feedback.textContent=ok?'Получилось! '+s.solution+' Теперь объясни, почему этот способ работает.':'Пока не сходится. Проверь, какую величину нужно найти. Можно открыть один шаг подсказки и попробовать снова.';};
+ main.append(el('h2','А что, если…'),el('p',s.wonder),el('h2','Открой правило и потренируйся'));
+ const list=el('ol');s.topics.forEach(id=>{const l=lessons.find(x=>x.id===id),li=el('li'),link=el('a',l.title+(done(id)?' ✓':''));link.href='#'+id;li.append(link);list.append(li);});main.append(list,el('p',`Освоено шагов: ${s.topics.filter(done).length} из ${s.topics.length}. В каждом шаге — объяснение и задания с новыми числами.`));
+ main.append(el('h2','Могу ли я объяснить?'),el('p','Закрой разбор. Расскажи, что было известно, что ты искал и почему выбрал эти действия. Измени одно число и реши задачу заново. В следующий раз начни с короткого повторения.'));
+ const next=el('a',number<10?'Посмотреть следующий вызов →':'Повторить маршрут →');next.href='#'+BalanceSessions[number%10].id;main.append(next);$('sidebar').classList.remove('open');$('menu').setAttribute('aria-expanded','false');window.scrollTo(0,0);
+}
 function render(){
- const id=location.hash.slice(1)||lessons[0].id;
+ const id=location.hash.slice(1)||BalanceSessions[0].id;
+ const session=BalanceSessions.find(s=>s.id===id);if(session){showSession(session);return;}
  if(id==='sources'){showSources();return;}
  if(id==='method'){showMethod();return;}
  current=lessons.find(l=>l.id===id)||lessons[0];const l=current,i=lessons.indexOf(l),main=$('lesson');main.replaceChildren();navigation();
- main.append(el('span',`Занятие ${i+1} / ${lessons.length} · ${l.group}`,'badge'),el('h1',l.title),el('p',l.goal,'goal'));
+ const parent=BalanceSessions.find(s=>s.topics.includes(l.id));const back=el('a','← К вызову занятия');back.href='#'+parent.id;main.append(back,el('p',`Занятие ${BalanceSessions.indexOf(parent)+1} из 10 · Шаг ${parent.topics.indexOf(l.id)+1} из ${parent.topics.length}`,'badge'),el('h1',l.title),el('p',l.goal,'goal'));
  if(!storageOK)main.append(el('p','Прогресс не сохраняется автоматически. Используйте копию в настройках.'));
  l.theory.forEach(t=>main.append(el('p',t)));main.append(el('h2','Разберём на примерах'));
  const examples=el('ol',undefined,'examples');l.examples.forEach(t=>examples.append(el('li',t)));main.append(examples,el('p',l.memory,'memory'));
@@ -39,10 +54,10 @@ function render(){
  addReading(main,l.id);
  const joke=el('details'),sum=el('summary','Минутка улыбки');joke.append(sum,el('p',jokes[i%jokes.length]));main.append(joke);
  if(['fractions','reals','measurement'].includes(l.id)){const link=el('a','Дополнительное видео и материалы');link.href='#sources';main.append(link);}
- const nextNav=el('div',undefined,'next');if(i){const a=el('a','← Предыдущее занятие');a.href='#'+lessons[i-1].id;nextNav.append(a);}if(i<lessons.length-1){const a=el('a','Следующее занятие →');a.href='#'+lessons[i+1].id;nextNav.append(a);}else{const a=el('a','Что изучать дальше →');a.href='#sources';nextNav.append(a);}main.append(nextNav);
+ const nextNav=el('div',undefined,'next'),route=BalanceSessions.flatMap(s=>s.topics),position=route.indexOf(l.id);if(position){const a=el('a','← Предыдущий шаг');a.href='#'+route[position-1];nextNav.append(a);}if(position<route.length-1){const nextId=route[position+1],nextParent=BalanceSessions.find(s=>s.topics.includes(nextId)),same=nextParent.id===parent.id,a=el('a',same?'Следующий шаг →':'Следующее занятие →');a.href='#'+(same?nextId:nextParent.id);nextNav.append(a);}else{const a=el('a','К итоговому вызову →');a.href='#session-10';nextNav.append(a);}main.append(nextNav);
  updateMastery();newTask();$('sidebar').classList.remove('open');$('menu').setAttribute('aria-expanded','false');window.scrollTo(0,0);
 }
-function updateMastery(){const r=record(current.id);$('mastery').textContent=done(current.id)?'✓ Занятие пройдено. Можно повторять задания.':`Объяснение: ${r.concept?'верно':'пока не выбрано'} · Самостоятельно решено ${Math.min(3,r.solved.length)} из 3`;}
+function updateMastery(){const r=record(current.id);$('mastery').textContent=done(current.id)?'✓ Шаг пройден. Можно повторять задания.':`Объяснение: ${r.concept?'верно':'пока не выбрано'} · Самостоятельно решено ${Math.min(3,r.solved.length)} из 3`;}
 function newTask(){const old=task?.key;for(let i=0;i<20;i++){task=E.generate(current.id);if(task.key!==old)break;}attempted=false;answered=false;helped=false;$('question').textContent=task.text;$('answer').value='';$('answer-feedback').textContent='';}
 function makeBalance(main){
  const section=el('section',undefined,'balance-board');section.append(el('h2','Лаборатория равновесия'),el('p','Модель уравнения: выполни одно действие над обеими сторонами. Цель — оставить x слева.'));
@@ -70,7 +85,7 @@ function showMethod(){current=null;navigation();const main=$('lesson');main.repl
  const video=el('a','Дмитрий Михайлов: «Как правильно изучать математику»');video.href='https://www.youtube.com/watch?v=UM4SRQsIqok';main.append(el('p','Дополнительное объяснение: понимание терминов, регулярная самостоятельная практика и возвращение к пройденному.'),video);
  $('sidebar').classList.remove('open');$('menu').setAttribute('aria-expanded','false');window.scrollTo(0,0);
 }
-function showSources(){current=null;navigation();const main=$('lesson');main.replaceChildren(el('h1','Маршрут Balance'),el('p','24 занятия для ученика, который умеет складывать, вычитать, умножать и делить. Начинать можно примерно с 4-го класса, со взрослым и в собственном темпе. Занятие удобно делить на два подхода по 15–20 минут.'));
+function showSources(){current=null;navigation();const main=$('lesson');main.replaceChildren(el('h1','Маршрут Balance'),el('p','10 занятий для ученика, который умеет складывать, вычитать, умножать и делить. Начинать можно примерно с 4-го класса, со взрослым и в собственном темпе. Занятие удобно делить на два подхода по 15–20 минут.'));
  main.append(el('h2','Что будет получаться'),el('p','Называть переменную, выражение, равенство, уравнение и корень; различать семейства чисел; объяснять обратимые преобразования; решать изученные линейные уравнения; выражать буквы из формул; составлять простые модели и проверять единицы.'));
  main.append(el('h2','Как учиться'),el('p','Прочитай правило, объясни три примера своими словами, потренируйся. После нескольких занятий вернись к старой теме без подсказок. Отметка прохождения означает выполнение тренировки, а не гарантию владения всей темой.'));
  addReading(main);
