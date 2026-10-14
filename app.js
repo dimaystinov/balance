@@ -11,16 +11,22 @@ function el(tag,text,cls){const n=document.createElement(tag);if(text!==undefine
 function sessionDone(s){return s.topics.every(done);}
 function navigation(){const nav=$('navigation');nav.replaceChildren();BalanceSessions.forEach((s,i)=>{const a=el('a',`${i+1}. ${s.title}`);a.href='#'+s.id;if(s.topics.includes(current?.id)||location.hash==='#'+s.id){a.classList.add('current');a.setAttribute('aria-current','page');}if(sessionDone(s))a.classList.add('complete');nav.append(a);});$('overall').textContent=`Пройдено ${BalanceSessions.filter(sessionDone).length} из 10 занятий`;}
 function showSession(s){current=null;navigation();const main=$('lesson'),number=BalanceSessions.indexOf(s)+1;
- main.replaceChildren(el('span',`Занятие ${number} из 10`,'badge'),el('h1',s.title),el('p',s.goal,'goal'));
- if(number===1){main.append(el('p','Цель: составлять уравнения по условию, решать их и проверять ответ. Применение: покупки, поездки, расчёты для своих проектов. В физике проверяем расчёт измерением. Нужны четыре арифметических действия.'));}
- main.append(el('h2',s.hook),el('p',s.question),el('p','Реши сам или открой подсказку.','help'));
+ main.replaceChildren(el('span',`Занятие ${number} из 10`,'badge'),el('h1',s.title));
+ const route=BalanceSessions.flatMap(session=>session.topics);
+ s.topics.forEach(id=>{
+  const l=lessons.find(topic=>topic.id===id),section=el('section',undefined,'textbook-section');
+  section.append(el('h2','§ '+(route.indexOf(id)+1)+'. '+l.title));
+  l.theory.forEach((text,index)=>{const paragraph=el('p',undefined,index===0?'definition':undefined);paragraph.append(document.createTextNode(text));section.append(paragraph);});
+  if(l.referenceTheory){const reference=el('details');reference.append(el('summary','Дополнение: виды чисел'));l.referenceTheory.forEach(text=>reference.append(el('p',text)));section.append(reference);}
+  section.append(el('h3','Примеры'));const examples=el('ol',undefined,'examples');l.examples.forEach(text=>examples.append(el('li',text)));section.append(examples);
+  const practice=el('a','Упражнения к § '+(route.indexOf(id)+1));practice.href='#'+id;section.append(practice);main.append(section);
+ });
+ main.append(el('h2','Упражнение к занятию'),el('p',s.question));
  const form=el('form',undefined,'answer-form'),label=el('label','Ответ'),input=el('input');input.autocomplete='off';label.append(input);const check=el('button','Проверить','primary');check.type='submit';form.append(label,check);const feedback=el('p',undefined,'feedback');feedback.setAttribute('role','status');main.append(form,feedback);
  let hintIndex=0;const hint=el('button','Подсказка');hint.type='button';hint.onclick=()=>{feedback.textContent=s.hints[Math.min(hintIndex++,s.hints.length-1)];feedback.className='feedback';};main.append(hint);
  const solution=el('details');solution.append(el('summary','Решение'),el('p',s.solution));main.append(solution);
  form.onsubmit=e=>{e.preventDefault();if(E.parseNumber(input.value)===null){feedback.textContent='Введи число или дробь, например 20/3.';return;}const ok=E.check(input.value,s.answer);feedback.className='feedback '+(ok?'good':'bad');feedback.textContent=ok?'Верно. '+s.solution+'':'Ответ не сходится. Проверь вычисления или открой подсказку.';};
- main.append(el('h2','А что, если…'),el('p',s.wonder),el('h2','Правила и практика'));
- const list=el('ol');s.topics.forEach(id=>{const l=lessons.find(x=>x.id===id),li=el('li'),link=el('a',l.title+(done(id)?' ✓':''));link.href='#'+id;li.append(link);list.append(li);});main.append(list,el('p',`Освоено шагов: ${s.topics.filter(done).length} из ${s.topics.length}. `));
- main.append(el('h2','Проверка понимания'),el('p','Объясни действия. Измени одно число и реши заново.'));
+ main.append(el('h2','Вопросы для повторения'),el('p',s.wonder));
  const next=el('a',number<10?'Следующее занятие →':'Повторить маршрут →');next.href='#'+BalanceSessions[number%10].id;main.append(next);$('sidebar').classList.remove('open');$('menu').setAttribute('aria-expanded','false');window.scrollTo(0,0);
 }
 function render(){
@@ -36,10 +42,10 @@ function render(){
  l.theory.forEach(t=>main.append(el('p',t)));
  if(l.referenceTheory){const d=el('details');d.append(el('summary','Виды чисел — справочник'));l.referenceTheory.forEach(t=>d.append(el('p',t)));main.append(d);}
  if(l.source){const a=el('a',l.source.title);a.href=l.source.url;a.target='_blank';a.rel='noopener noreferrer';main.append(a);}
- main.append(el('h2','Разберём на примерах'));
+ main.append(el('h2','Примеры'));
  const examples=el('ol',undefined,'examples');l.examples.forEach(t=>examples.append(el('li',t)));main.append(examples);const recallLink=el('a','Вспомнить термины без образца →');recallLink.href='#recall-'+l.id;main.append(recallLink);
  if(l.id==='balance'||l.id==='outer'||l.id==='both')makeBalance(main);
- const practice=el('section',undefined,'practice');practice.append(el('h2','Теперь твоя очередь'));
+ const practice=el('section',undefined,'practice');practice.append(el('h2','Упражнения'));
  practice.append(el('p','Сначала объясни правило, затем реши три разных задания с первой попытки без подсказки. Можно тренироваться дальше.','help'));
  const mastery=el('p');mastery.id='mastery';practice.append(mastery);
  practice.append(el('h3','1. Выбери объяснение'),el('p',l.question));const choices=el('div',undefined,'choices'),conceptFeedback=el('p',undefined,'feedback');conceptFeedback.setAttribute('role','status');
