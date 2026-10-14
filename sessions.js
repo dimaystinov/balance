@@ -1,7 +1,7 @@
 (function(root){const sessions=[
   {
     "id": "session-1",
-    "title": "Читаю язык математики",
+    "title": "Язык математики",
     "topics": [
       "variable",
       "expression",
