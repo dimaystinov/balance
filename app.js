@@ -12,6 +12,7 @@ function navigation(){const nav=$('navigation');nav.replaceChildren();let prev='
 function render(){
  const id=location.hash.slice(1)||lessons[0].id;
  if(id==='sources'){showSources();return;}
+ if(id==='method'){showMethod();return;}
  current=lessons.find(l=>l.id===id)||lessons[0];const l=current,i=lessons.indexOf(l),main=$('lesson');main.replaceChildren();navigation();
  main.append(el('span',`Занятие ${i+1} / ${lessons.length} · ${l.group}`,'badge'),el('h1',l.title),el('p',l.goal,'goal'));
  if(!storageOK)main.append(el('p','Прогресс не сохраняется автоматически. Используйте копию в настройках.'));
@@ -35,6 +36,7 @@ function render(){
  feedback.textContent='Верно. '+task.solution+(independent?'':' Теперь попробуй другое задание без подсказки.');updateMastery();navigation();}
  else{attempted=true;feedback.textContent='Пока не сходится. '+task.hint+' Проверь вычисление и попробуй снова.';}};
  main.append(practice);
+ addReading(main,l.id);
  const joke=el('details'),sum=el('summary','Минутка улыбки');joke.append(sum,el('p',jokes[i%jokes.length]));main.append(joke);
  if(['fractions','reals','measurement'].includes(l.id)){const link=el('a','Дополнительное видео и материалы');link.href='#sources';main.append(link);}
  const nextNav=el('div',undefined,'next');if(i){const a=el('a','← Предыдущее занятие');a.href='#'+lessons[i-1].id;nextNav.append(a);}if(i<lessons.length-1){const a=el('a','Следующее занятие →');a.href='#'+lessons[i+1].id;nextNav.append(a);}else{const a=el('a','Что изучать дальше →');a.href='#sources';nextNav.append(a);}main.append(nextNav);
@@ -52,9 +54,26 @@ function makeBalance(main){
  form.onsubmit=e=>{e.preventDefault();const value=E.parseNumber(input.value);if(value===null){status.textContent='Введите число, например 3 или 1/2.';return;}try{eq=E.transform(eq,select.value,value);draw();log.append(el('li',select.options[select.selectedIndex].text+' '+input.value+' — слева и справа.'));status.textContent=Math.abs(eq.a-1)<1e-9&&Math.abs(eq.b)<1e-9?'Получилось x = '+fmt(eq.right)+'. Проверь: 3 · 5 + 6 = 21.':'Равновесие сохранено.';}catch(error){status.textContent=error.message;}};
  draw();main.append(section);
 }
+function addReading(main,id){
+ const books=BalanceReading.books.filter(b=>!id||b.lessons.includes(id));
+ if(!books.length)return;
+ main.append(el('h2',id?'Исследуй ещё':'Книги курса'));
+ books.forEach(b=>{const card=el('details'),title=el('summary',b.title);card.append(title,el('p',b.idea));
+ card.append(el('p','Попробуй: '+b.exercise));const solution=el('details');solution.append(el('summary','Объяснение'),el('p',b.answer));card.append(solution);
+ const link=el('a','Открыть книгу');link.href=b.url;link.target='_blank';link.rel='noopener noreferrer';card.append(el('p',b.note),el('p',b.section+' · '+b.format,'help'),link,el('p','Упражнение Balance составлено отдельно; это не цитата из книги.','help'));main.append(card);});
+}
+function showMethod(){current=null;navigation();const main=$('lesson');main.replaceChildren(el('h1','Как изучать математику'),el('p','От предмета и рисунка — к словам, символам и самостоятельному рассуждению.'));
+ BalanceReading.method.forEach(([title,text],i)=>main.append(el('h2',(i+1)+'. '+title),el('p',text)));
+ main.append(el('h2','Как разбирать уравнение'),el('p','Отменяй последнее внешнее действие, а не любой знак + или −. В 3(x + 2) = 21 снаружи стоит умножение: сначала делим обе части на 3, затем вычитаем 2. Получаем x = 5. Скобки задают группировку. Деление на ноль недопустимо.'));
+ main.append(el('h2','Почему именно так'),el('p','Наглядность, постепенность и прояснение слов полезны как рабочие приёмы. У Хаббарда «масса» означает предмет или его наглядное представление; это не объём выученного. Его описание само по себе не доказывает эффективность всей системы.'));
+ const evidence=el('a','Исследовательское руководство IES: примеры, практика и повторение');evidence.href='https://ies.ed.gov/ncee/wwc/PracticeGuide/1';main.append(evidence);
+ const video=el('a','Дмитрий Михайлов: «Как правильно изучать математику»');video.href='https://www.youtube.com/watch?v=UM4SRQsIqok';main.append(el('p','Дополнительное объяснение: понимание терминов, регулярная самостоятельная практика и возвращение к пройденному.'),video);
+ $('sidebar').classList.remove('open');$('menu').setAttribute('aria-expanded','false');window.scrollTo(0,0);
+}
 function showSources(){current=null;navigation();const main=$('lesson');main.replaceChildren(el('h1','Маршрут Balance'),el('p','24 занятия для ученика, который умеет складывать, вычитать, умножать и делить. Начинать можно примерно с 4-го класса, со взрослым и в собственном темпе. Занятие удобно делить на два подхода по 15–20 минут.'));
  main.append(el('h2','Что будет получаться'),el('p','Называть переменную, выражение, равенство, уравнение и корень; различать семейства чисел; объяснять обратимые преобразования; решать изученные линейные уравнения; выражать буквы из формул; составлять простые модели и проверять единицы.'));
  main.append(el('h2','Как учиться'),el('p','Прочитай правило, объясни три примера своими словами, потренируйся. После нескольких занятий вернись к старой теме без подсказок. Отметка прохождения означает выполнение тренировки, а не гарантию владения всей темой.'));
+ addReading(main);
  main.append(el('h2','Материалы для любопытных'));const ul=el('ul',undefined,'sources');sources.forEach(s=>{const li=el('li'),a=el('a',s.title);a.href=s.url;a.target='_blank';a.rel='noopener noreferrer';li.append(a,el('p',s.text));ul.append(li);});main.append(ul,el('p','Уроки, примеры и упражнения Balance написаны отдельно. Видеоуроки не скопированы. Курс Савватеева — дополнительное углубление, а не последовательность обязательных заданий для начинающего.'));
  main.append(el('h2','Шутки и память'),el('p','Миниатюры в уроках — авторские стилизации под школьный анекдот, а не документально установленные советские цитаты. Мнемоники помогают вспомнить правило, но не заменяют объяснение.'));
  main.append(el('h2','Следующая ступень'),el('p','Неравенства, системы, степени и квадратные уравнения. «Любые уравнения» не решаются одним универсальным школьным алгоритмом. Главный результат первого курса — понимание смысла и ограничений каждого шага.'));window.scrollTo(0,0);
