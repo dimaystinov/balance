@@ -29,7 +29,7 @@ function render(){
  if(id==='sources'){showSources();return;}
  if(id==='method'){showMethod();return;}
  current=lessons.find(l=>l.id===id)||lessons[0];const l=current,i=lessons.indexOf(l),main=$('lesson');main.replaceChildren();navigation();
- const parent=BalanceSessions.find(s=>s.topics.includes(l.id));const back=el('a','← К вызову занятия');back.href='#'+parent.id;main.append(back,el('p',`Занятие ${BalanceSessions.indexOf(parent)+1} из 10 · Шаг ${parent.topics.indexOf(l.id)+1} из ${parent.topics.length}`,'badge'),el('h1',l.title),el('p',l.goal,'goal'));
+ const parent=BalanceSessions.find(s=>s.topics.includes(l.id));const back=el('a','← К занятию');back.href='#'+parent.id;main.append(back,el('p',`Занятие ${BalanceSessions.indexOf(parent)+1} из 10 · Шаг ${parent.topics.indexOf(l.id)+1} из ${parent.topics.length}`,'badge'),el('h1',l.title),el('p',l.goal,'goal'));
  if(!storageOK)main.append(el('p','Прогресс не сохраняется автоматически. Используйте копию в настройках.'));
  l.theory.forEach(t=>main.append(el('p',t)));main.append(el('h2','Разберём на примерах'));
  const examples=el('ol',undefined,'examples');l.examples.forEach(t=>examples.append(el('li',t)));main.append(examples,el('p',l.memory,'memory'));
@@ -54,7 +54,7 @@ function render(){
  addReading(main,l.id);
  const joke=el('details'),sum=el('summary','Минутка улыбки');joke.append(sum,el('p',jokes[i%jokes.length]));main.append(joke);
  if(['fractions','reals','measurement'].includes(l.id)){const link=el('a','Дополнительное видео и материалы');link.href='#sources';main.append(link);}
- const nextNav=el('div',undefined,'next'),route=BalanceSessions.flatMap(s=>s.topics),position=route.indexOf(l.id);if(position){const a=el('a','← Предыдущий шаг');a.href='#'+route[position-1];nextNav.append(a);}if(position<route.length-1){const nextId=route[position+1],nextParent=BalanceSessions.find(s=>s.topics.includes(nextId)),same=nextParent.id===parent.id,a=el('a',same?'Следующий шаг →':'Следующее занятие →');a.href='#'+(same?nextId:nextParent.id);nextNav.append(a);}else{const a=el('a','К итоговому вызову →');a.href='#session-10';nextNav.append(a);}main.append(nextNav);
+ const nextNav=el('div',undefined,'next'),route=BalanceSessions.flatMap(s=>s.topics),position=route.indexOf(l.id);if(position){const a=el('a','← Предыдущий шаг');a.href='#'+route[position-1];nextNav.append(a);}if(position<route.length-1){const nextId=route[position+1],nextParent=BalanceSessions.find(s=>s.topics.includes(nextId)),same=nextParent.id===parent.id,a=el('a',same?'Следующий шаг →':'Следующее занятие →');a.href='#'+(same?nextId:nextParent.id);nextNav.append(a);}else{const a=el('a','К итоговому заданию →');a.href='#session-10';nextNav.append(a);}main.append(nextNav);
  updateMastery();newTask();$('sidebar').classList.remove('open');$('menu').setAttribute('aria-expanded','false');window.scrollTo(0,0);
 }
 function updateMastery(){const r=record(current.id);$('mastery').textContent=done(current.id)?'✓ Шаг пройден. Можно повторять задания.':`Объяснение: ${r.concept?'верно':'пока не выбрано'} · Самостоятельно решено ${Math.min(3,r.solved.length)} из 3`;}
