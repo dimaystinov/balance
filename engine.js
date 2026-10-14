@@ -5,6 +5,7 @@ function generate(id,rng=Math.random){
  let text,answer,hint,solution,eq=null;
  const Q=(t,v,h,s)=>{text=t;answer=v;hint=h;solution=s;};
  switch(id){
+ case 'numbers':{const value=n(10,9999);Q(`Сколько цифр в десятичной записи числа ${value}?`,String(value).length,'Считай знаки в записи. Они вместе обозначают одно число.',`Запись ${value} содержит ${String(value).length} цифр. Число при этом одно.`);break;}
  case 'variable':Q(`При x = ${x} найди x + ${b}.`,x+b,'Подставь число вместо буквы.',`${x} + ${b} = ${x+b}.`);break;
  case 'expression':Q(`В ${a} коробках по ${x} карандашей. Ещё ${b} лежат отдельно. Сколько всего?`,a*x+b,'Сначала запиши число карандашей в коробках.',`${a} · ${x} + ${b} = ${a*x+b}.`);break;
  case 'order':Q(`Вычисли ${b} + ${a} · ${c}.`,b+a*c,'Умножение выполняется до сложения.',`${b} + ${a*c} = ${b+a*c}.`);break;

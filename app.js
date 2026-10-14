@@ -31,7 +31,10 @@ function render(){
  current=lessons.find(l=>l.id===id)||lessons[0];const l=current,i=lessons.indexOf(l),main=$('lesson');main.replaceChildren();navigation();
  const parent=BalanceSessions.find(s=>s.topics.includes(l.id));const back=el('a','← К занятию');back.href='#'+parent.id;main.append(back,el('p',`Занятие ${BalanceSessions.indexOf(parent)+1} из 10 · Шаг ${parent.topics.indexOf(l.id)+1} из ${parent.topics.length}`,'badge'),el('h1',l.title),el('p',l.goal,'goal'));
  if(!storageOK)main.append(el('p','Прогресс не сохраняется автоматически. Используйте копию в настройках.'));
- l.theory.forEach(t=>main.append(el('p',t)));main.append(el('h2','Разберём на примерах'));
+ l.theory.forEach(t=>main.append(el('p',t)));
+ if(l.referenceTheory){const d=el('details');d.append(el('summary','Виды чисел — справочник'));l.referenceTheory.forEach(t=>d.append(el('p',t)));main.append(d);}
+ if(l.source){const a=el('a',l.source.title);a.href=l.source.url;a.target='_blank';a.rel='noopener noreferrer';main.append(a);}
+ main.append(el('h2','Разберём на примерах'));
  const examples=el('ol',undefined,'examples');l.examples.forEach(t=>examples.append(el('li',t)));main.append(examples,el('p',l.memory,'memory'));
  if(l.id==='balance'||l.id==='outer'||l.id==='both')makeBalance(main);
  const practice=el('section',undefined,'practice');practice.append(el('h2','Теперь твоя очередь'));
