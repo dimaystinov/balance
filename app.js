@@ -1,7 +1,7 @@
 (function(){
 'use strict';
 const {lessons,sources,jokes}=BalanceCourse,R=BalanceRecall,E=BalanceEngine,$=id=>document.getElementById(id),KEY='balance-progress-v1';
-let state={},storageOK=true,current=null,task=null,attempted=false,answered=false,helped=false;
+let state={},storageOK=true,current=null;
 try{state=JSON.parse(localStorage.getItem(KEY)||'{}');if(!validState(state))state={};}catch(e){state={};storageOK=false;}
 function validState(s){return s&&typeof s==='object'&&!Array.isArray(s)&&Object.entries(s).every(([id,r])=>lessons.some(l=>l.id===id)&&r&&typeof r==='object'&&typeof r.concept==='boolean'&&Array.isArray(r.solved)&&r.solved.length<=100&&r.solved.every(x=>typeof x==='string'&&x.length<500)&&R.valid(r.recall));}
 function save(){try{localStorage.setItem(KEY,JSON.stringify(state));}catch(e){storageOK=false;$('storage-message').textContent='Браузер не сохраняет данные. Скачайте копию прогресса перед закрытием.';}}
@@ -19,7 +19,7 @@ function showSession(s){current=null;navigation();const main=$('lesson'),number=
   l.theory.forEach((text,index)=>{const paragraph=el('p',undefined,index===0?'definition':undefined);paragraph.append(document.createTextNode(text));section.append(paragraph);});
   if(l.referenceTheory){const reference=el('details');reference.append(el('summary','Дополнение: виды чисел'));l.referenceTheory.forEach(text=>reference.append(el('p',text)));section.append(reference);}
   section.append(el('h3','Примеры'));const examples=el('ol',undefined,'examples');l.examples.forEach(text=>examples.append(el('li',text)));section.append(examples);
-  const practice=el('a','Упражнения к § '+(route.indexOf(id)+1));practice.href='#'+id;section.append(practice);main.append(section);
+  if(id==='balance')makeBalance(section);addPractice(section,l);main.append(section);
  });
  main.append(el('h2','Упражнение к занятию'),el('p',s.question));
  const form=el('form',undefined,'answer-form'),label=el('label','Ответ'),input=el('input');input.autocomplete='off';label.append(input);const check=el('button','Проверить','primary');check.type='submit';form.append(label,check);const feedback=el('p',undefined,'feedback');feedback.setAttribute('role','status');main.append(form,feedback);
@@ -36,40 +36,25 @@ function render(){
  if(id.startsWith('recall-')&&R.cards[id.slice(7)]){showRecall(id.slice(7));return;}
  if(id==='sources'){showSources();return;}
  if(id==='method'){showMethod();return;}
- current=lessons.find(l=>l.id===id)||lessons[0];const l=current,i=lessons.indexOf(l),main=$('lesson');main.replaceChildren();navigation();
- const parent=BalanceSessions.find(s=>s.topics.includes(l.id));const back=el('a','← К занятию');back.href='#'+parent.id;main.append(back,el('p',`Занятие ${BalanceSessions.indexOf(parent)+1} из 10 · Шаг ${parent.topics.indexOf(l.id)+1} из ${parent.topics.length}`,'badge'),el('h1',l.title),el('p',l.goal,'goal'));
- if(!storageOK)main.append(el('p','Прогресс не сохраняется автоматически. Используйте копию в настройках.'));
- l.theory.forEach(t=>main.append(el('p',t)));
- if(l.referenceTheory){const d=el('details');d.append(el('summary','Виды чисел — справочник'));l.referenceTheory.forEach(t=>d.append(el('p',t)));main.append(d);}
- if(l.source){const a=el('a',l.source.title);a.href=l.source.url;a.target='_blank';a.rel='noopener noreferrer';main.append(a);}
- main.append(el('h2','Примеры'));
- const examples=el('ol',undefined,'examples');l.examples.forEach(t=>examples.append(el('li',t)));main.append(examples);const recallLink=el('a','Вспомнить термины без образца →');recallLink.href='#recall-'+l.id;main.append(recallLink);
- if(l.id==='balance'||l.id==='outer'||l.id==='both')makeBalance(main);
- const practice=el('section',undefined,'practice');practice.append(el('h2','Упражнения'));
- practice.append(el('p','Сначала объясни правило, затем реши три разных задания с первой попытки без подсказки. Можно тренироваться дальше.','help'));
- const mastery=el('p');mastery.id='mastery';practice.append(mastery);
- practice.append(el('h3','1. Выбери объяснение'),el('p',l.question));const choices=el('div',undefined,'choices'),conceptFeedback=el('p',undefined,'feedback');conceptFeedback.setAttribute('role','status');
- E.shuffle(l.options.map((text,index)=>({text,index}))).forEach(o=>{const b=el('button',o.text);b.onclick=()=>{const ok=o.index===l.correct;conceptFeedback.textContent=(ok?'Верно. ':'Попробуй ещё. ')+l.why;conceptFeedback.className='feedback '+(ok?'good':'bad');if(ok){record(l.id).concept=true;save();updateMastery();navigation();}};choices.append(b);});practice.append(choices,conceptFeedback,el('h3','2. Реши задачу'));
- const question=el('p');question.id='question';practice.append(question);
- const form=el('form',undefined,'answer-form'),label=el('label','Твой ответ'),input=el('input');input.id='answer';input.type='text';input.autocomplete='off';input.spellcheck=false;input.setAttribute('aria-describedby','answer-help');label.append(input);const check=el('button','Проверить','primary');check.type='submit';form.append(label,check);practice.append(form);
- const help=el('p','Введите число, десятичную дробь или дробь вида 1/3. Единицы указаны в условии.','help');help.id='answer-help';practice.append(help);
- const feedback=el('p',undefined,'feedback');feedback.id='answer-feedback';feedback.setAttribute('role','status');practice.append(feedback);
- const actions=el('div',undefined,'actions'),hint=el('button','Подсказка'),solution=el('button','Разбор решения'),next=el('button','Другое задание');actions.append(hint,solution,next);practice.append(actions);
- hint.onclick=()=>{helped=true;feedback.textContent=task.hint;feedback.className='feedback';};solution.onclick=()=>{helped=true;feedback.textContent=task.solution;feedback.className='feedback';};next.onclick=()=>newTask();
- form.onsubmit=e=>{e.preventDefault();if(answered)return;if(E.parseNumber(input.value)===null){feedback.textContent='Нужно число или дробь, например 7, −2, 0,5 или 1/3. Делить на ноль нельзя.';feedback.className='feedback bad';return;}
- const ok=E.check(input.value,task.answer);feedback.className='feedback '+(ok?'good':'bad');
- if(ok){answered=true;const r=record(l.id);const independent=!attempted&&!helped;if(independent&&!r.solved.includes(task.key)){r.solved.push(task.key);r.solved=r.solved.slice(-100);save();}
- feedback.textContent='Верно. '+task.solution+(independent?'':' Теперь попробуй другое задание без подсказки.');updateMastery();navigation();}
- else{attempted=true;feedback.textContent='Пока не сходится. '+task.hint+' Проверь вычисление и попробуй снова.';}};
- main.append(practice);
- addReading(main,l.id);
-
- if(['fractions','reals','measurement'].includes(l.id)){const link=el('a','Дополнительное видео и материалы');link.href='#sources';main.append(link);}
- const nextNav=el('div',undefined,'next'),route=BalanceSessions.flatMap(s=>s.topics),position=route.indexOf(l.id);if(position){const a=el('a','← Предыдущий шаг');a.href='#'+route[position-1];nextNav.append(a);}if(position<route.length-1){const nextId=route[position+1],nextParent=BalanceSessions.find(s=>s.topics.includes(nextId)),same=nextParent.id===parent.id,a=el('a',same?'Следующий шаг →':'Следующее занятие →');a.href='#'+(same?nextId:nextParent.id);nextNav.append(a);}else{const a=el('a','К итоговому заданию →');a.href='#session-10';nextNav.append(a);}main.append(nextNav);
- updateMastery();newTask();$('sidebar').classList.remove('open');$('menu').setAttribute('aria-expanded','false');window.scrollTo(0,0);
+ const parent=BalanceSessions.find(s=>s.topics.includes(id));
+ if(parent){history.replaceState(null,'','#'+parent.id);showSession(parent);return;}
+ showMethod();
 }
-function updateMastery(){const r=record(current.id);$('mastery').textContent=done(current.id)?'✓ Шаг пройден. Можно повторять задания.':`Объяснение: ${r.concept?'верно':'пока не выбрано'} · Самостоятельно решено ${Math.min(3,r.solved.length)} из 3 · Термины: ${r.recall?.stage>0?'самопроверка выполнена':'нужно повторить'}`;}
-function newTask(){const old=task?.key;for(let i=0;i<20;i++){task=E.generate(current.id);if(task.key!==old)break;}attempted=false;answered=false;helped=false;$('question').textContent=task.text;$('answer').value='';$('answer-feedback').textContent='';}
+function addPractice(main,l){
+ const practice=el('section',undefined,'practice');practice.dataset.topic=l.id;practice.append(el('h3','Упражнения'));
+ const mastery=el('p',undefined,'help');practice.append(mastery);
+ function progress(){const r=record(l.id);mastery.textContent=`Объяснение: ${r.concept?'верно':'не проверено'} · Задачи: ${Math.min(3,r.solved.length)} из 3 · Термины: ${r.recall?.stage>0?'проверены самостоятельно':'не проверены'}`;navigation();}
+ practice.append(el('p',l.question));const choices=el('div',undefined,'choices'),concept=el('p',undefined,'feedback');concept.setAttribute('role','status');
+ E.shuffle(l.options.map((text,index)=>({text,index}))).forEach(o=>{const button=el('button',o.text);button.onclick=()=>{const ok=o.index===l.correct;concept.textContent=(ok?'Верно. ':'Неверно. ')+l.why;concept.className='feedback '+(ok?'good':'bad');record(l.id).concept=ok;save();progress();};choices.append(button);});practice.append(choices,concept);
+ const question=el('p'),form=el('form',undefined,'answer-form'),label=el('label','Ответ'),input=el('input'),check=el('button','Проверить','primary');input.autocomplete='off';input.setAttribute('aria-label','Ответ: '+l.title);label.append(input);check.type='submit';form.append(label,check);
+ const feedback=el('p',undefined,'feedback');feedback.setAttribute('role','status');practice.append(question,form,feedback);
+ let task,attempted=false,helped=false,answered=false;
+ function newTask(){const old=task?.key;for(let i=0;i<20;i++){task=E.generate(l.id);if(task.key!==old)break;}attempted=helped=answered=false;question.textContent=task.text;input.value='';feedback.textContent='';}
+ const actions=el('div',undefined,'actions'),hint=el('button','Подсказка'),solution=el('button','Решение'),next=el('button','Другое задание');actions.append(hint,solution,next);practice.append(actions);
+ hint.onclick=()=>{helped=true;feedback.className='feedback';feedback.textContent=task.hint;};solution.onclick=()=>{helped=true;feedback.className='feedback';feedback.textContent=task.solution;};next.onclick=newTask;
+ form.onsubmit=e=>{e.preventDefault();if(answered)return;if(E.parseNumber(input.value)===null){feedback.textContent='Введите число или дробь, например 1/3.';return;}const ok=E.check(input.value,task.answer);feedback.className='feedback '+(ok?'good':'bad');if(ok){answered=true;const r=record(l.id),independent=!attempted&&!helped;if(independent&&!r.solved.includes(task.key)){r.solved.push(task.key);r.solved=r.solved.slice(-100);save();}feedback.textContent='Верно. '+task.solution+(independent?'':' Решите ещё одно задание самостоятельно.');progress();}else{attempted=true;feedback.textContent='Неверно. '+task.hint;}};
+ const recall=el('details'),body=el('div');recall.append(el('summary','Проверка терминов'),body);let loaded=false;recall.ontoggle=()=>{if(recall.open&&!loaded){loaded=true;showRecall(l.id,body,progress);}};practice.append(recall);main.append(practice);newTask();progress();
+}
 function makeBalance(main){
  const section=el('section',undefined,'balance-board');section.append(el('h2','Лаборатория равновесия'),el('p','Модель уравнения: выполни одно действие над обеими сторонами. Цель — оставить x слева.'));
  let start={a:3,b:6,right:21},eq={...start};
@@ -93,23 +78,23 @@ function showReview(){
  const due=lessons.filter(l=>state[l.id]?.recall&&state[l.id].recall.due<=Date.now()),other=lessons.filter(l=>!due.includes(l));
  [["Пора повторить",due],["Все темы",other]].forEach(([title,items])=>{main.append(el('h2',title));if(!items.length)main.append(el('p','Пока нет.'));const list=el('ul');items.forEach(l=>{const li=el('li'),a=el('a',R.cards[l.id].term);a.href='#recall-'+l.id;li.append(a);const r=state[l.id]?.recall;li.append(el('span',r?.stage>0?' · повторить '+new Date(r.due).toLocaleDateString('ru-RU'):' · ещё не закреплено'));list.append(li);});main.append(list);});window.scrollTo(0,0);
 }
-function showRecall(id){
- current=null;navigation();const c=R.cards[id],main=$('lesson');main.replaceChildren(el('span','Воспроизведение по памяти','badge'),el('h1',c.term),el('p','Не открывая учебник: запиши определение своими словами, приведи собственный пример и ответь на вопрос. Можно писать на бумаге или в полях ниже.'),el('p',c.question));
+function showRecall(id,host=null,onchange=()=>{}){
+ if(!host){current=null;navigation();}const c=R.cards[id],main=host||$('lesson');main.replaceChildren(el('span','Воспроизведение по памяти','badge'),el(host?'h4':'h1',c.term),el('p','Не открывая учебник: запиши определение своими словами, приведи собственный пример и ответь на вопрос. Можно писать на бумаге или в полях ниже.'),el('p',c.question));
  const inputs=[];['Определение своими словами','Свой пример и почему он подходит','Ответ на вопрос'].forEach(title=>{const label=el('label',title),input=el('textarea');input.rows=3;input.maxLength=3000;label.append(input);main.append(label);inputs.push(input);});
  const paperLabel=el('label','Я записал все три ответа на бумаге '),paper=el('input');paper.type='checkbox';paperLabel.append(paper);main.append(paperLabel);
  const compare=el('button','Сравнить с объяснением','primary'),feedback=el('p');feedback.setAttribute('role','status');main.append(compare,feedback);
  compare.onclick=()=>{if(!paper.checked&&inputs.some(i=>!i.value.trim())){feedback.textContent='Сначала попробуй ответить на все три пункта. Если не помнишь — открой объяснение ниже.';return;}reveal();};
  const forgotten=el('button','Не помню — разобрать');main.append(forgotten);let exposed=false;
- forgotten.onclick=()=>{record(id).recall=R.assess(record(id).recall,false);save();navigation();reveal(true);};
+ forgotten.onclick=()=>{record(id).recall=R.assess(record(id).recall,false);save();navigation();onchange();reveal(true);};
  function reveal(failed=false){if(exposed)return;exposed=true;compare.disabled=true;forgotten.disabled=true;inputs.forEach(i=>i.disabled=true);paper.disabled=true;feedback.textContent='Сравни смысл, а не дословное совпадение. Проверка твоего объяснения здесь самостоятельная.';
  main.append(el('h2','Определение'),el('p',c.definition),el('h2','Ответ на вопрос'),el('p',c.answer),el('h2','Как запомнить'),el('p',c.mnemonic));
  const checklist=el('div'),boxes=[];['В определении сохранены все существенные признаки и ограничения','Мой пример подходит под определение; я могу объяснить почему','Ответ на вопрос верен и объяснён'].forEach(text=>{const label=el('label',text+' '),box=el('input');box.type='checkbox';label.append(box);checklist.append(label);boxes.push(box);});main.append(checklist);
  const good=el('button','Все три ответа верны'),again=el('button','Есть пробел — повторить тему'),status=el('p');status.setAttribute('role','status');good.disabled=failed;main.append(good,again,status);
- good.onclick=()=>{if(boxes.some(b=>!b.checked)){status.textContent='Проверь каждый пункт. Если есть неточность, вернись к теме.';return;}record(id).recall=R.assess(record(id).recall,true);save();navigation();good.disabled=true;again.disabled=true;status.textContent='Самопроверка сохранена. Следующее повторение: '+new Date(record(id).recall.due).toLocaleDateString('ru-RU')+'.';};
- again.onclick=()=>{record(id).recall=R.assess(record(id).recall,false);save();location.hash=id;};
+ good.onclick=()=>{if(boxes.some(b=>!b.checked)){status.textContent='Проверь каждый пункт. Если есть неточность, вернись к теме.';return;}record(id).recall=R.assess(record(id).recall,true);save();navigation();onchange();good.disabled=true;again.disabled=true;status.textContent='Самопроверка сохранена. Следующее повторение: '+new Date(record(id).recall.due).toLocaleDateString('ru-RU')+'.';};
+ again.onclick=()=>{record(id).recall=R.assess(record(id).recall,false);save();onchange();if(host){showRecall(id,host,onchange);}else{location.hash=id;}};
  if(failed)status.textContent='Прочитай объяснение, вернись к теме и позже воспроизведи без образца.';
  }
- const back=el('a','Вернуться к теме');back.href='#'+id;main.append(back);$('sidebar').classList.remove('open');$('menu').setAttribute('aria-expanded','false');window.scrollTo(0,0);
+ if(!host){const back=el('a','Вернуться к занятию');back.href='#'+BalanceSessions.find(s=>s.topics.includes(id)).id;main.append(back);$('sidebar').classList.remove('open');$('menu').setAttribute('aria-expanded','false');window.scrollTo(0,0);}
 }
 function showMethod(){
  current=null;navigation();const main=$('lesson');
