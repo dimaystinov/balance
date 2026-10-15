@@ -3,7 +3,7 @@
 const {lessons,sources,jokes}=BalanceCourse,R=BalanceRecall,E=BalanceEngine,$=id=>document.getElementById(id),KEY='balance-progress-v1';
 let state={},storageOK=true,current=null;
 try{state=JSON.parse(localStorage.getItem(KEY)||'{}');if(!validState(state))state={};}catch(e){state={};storageOK=false;}
-function validState(s){return s&&typeof s==='object'&&!Array.isArray(s)&&Object.entries(s).every(([id,r])=>lessons.some(l=>l.id===id)&&r&&typeof r==='object'&&typeof r.concept==='boolean'&&Array.isArray(r.solved)&&r.solved.length<=100&&r.solved.every(x=>typeof x==='string'&&x.length<500)&&R.valid(r.recall));}
+function validState(s){return s&&typeof s==='object'&&!Array.isArray(s)&&Object.entries(s).every(([id,r])=>(lessons.some(l=>l.id===id)||BalancePathway.steps.some(l=>'path-'+l.id===id))&&r&&typeof r==='object'&&typeof r.concept==='boolean'&&Array.isArray(r.solved)&&r.solved.length<=100&&r.solved.every(x=>typeof x==='string'&&x.length<500)&&R.valid(r.recall));}
 function save(){try{localStorage.setItem(KEY,JSON.stringify(state));}catch(e){storageOK=false;$('storage-message').textContent='Браузер не сохраняет данные. Скачайте копию прогресса перед закрытием.';}}
 function record(id){return state[id]||(state[id]={concept:false,solved:[]});}
 function done(id){const r=state[id];return !!r?.concept&&r.solved.length>=3&&r.recall?.stage>0;}
@@ -30,7 +30,13 @@ function nextCourse(main,full=false){
 }
 
 function sessionDone(s){return s.topics.every(done);}
-function navigation(){const nav=$('navigation');nav.replaceChildren();BalanceSessions.forEach((s,i)=>{const a=el('a',`${i+1}. ${s.title}`);a.href='#'+s.id;if(s.topics.includes(current?.id)||location.hash==='#'+s.id){a.classList.add('current');a.setAttribute('aria-current','page');}if(sessionDone(s))a.classList.add('complete');nav.append(a);});$('overall').textContent=`Пройдено ${BalanceSessions.filter(sessionDone).length} из 10 занятий`;}
+function navigation(){
+ const nav=$('navigation');nav.replaceChildren();const legacy=location.hash.startsWith('#session-');
+ const items=legacy?BalanceSessions:BalancePathway.steps;
+ items.forEach((item,i)=>{const a=el('a',`${i+1}. ${item.title}`);a.href=legacy?'#'+item.id:'#step-'+(i+1);if(location.hash===a.getAttribute('href')){a.classList.add('current');a.setAttribute('aria-current','page');}if(legacy?sessionDone(item):pathDone(item))a.classList.add('complete');nav.append(a);});
+ const selected=nav.querySelector('[aria-current="page"]');if(selected)nav.scrollTop=Math.max(0,selected.offsetTop-nav.offsetTop-nav.clientHeight/2);
+ $('overall').textContent=legacy?`Пройдено ${BalanceSessions.filter(sessionDone).length} из 10 прежних занятий`:`Шагов с выполненной практикой: ${BalancePathway.steps.filter(pathDone).length} из ${BalancePathway.steps.length}`;
+}
 function termDiagram(v,title){
  const figure=el('figure',undefined,'term-diagram');figure.setAttribute('aria-label','Схема: '+title);
  if(v.kind==='pizza-pair'){
@@ -59,6 +65,8 @@ function termDiagram(v,title){
   if(v.kind==='line'||v.kind==='ruler'){line(40,60,380,60);v.items.forEach((t,i)=>{const x=40+i*340/(v.items.length-1);line(x,50,x,70);text(x,96,t);});if(v.kind==='ruler'){line(40,25,380,25);text(210,124,'Длина отрезка: 3 см');}else shape('path',{d:'M370 53 L382 60 L370 67',fill:'none',stroke:'#326c9c','stroke-width':2});}
   if(v.kind==='balance'){line(60,55,360,55);shape('path',{d:'M210 57 L190 112 L230 112 Z',fill:'#77a8c4'});[110,310].forEach(x=>{line(x,55,x,85);line(x-50,85,x+50,85);});text(110,39,v.items[0]);text(310,39,v.items[1]);text(210,132,'Одинаковые значения');}
   if(v.kind==='graph'){line(75,110,340,110);line(75,110,75,10);text(350,115,'x');text(60,17,'y');for(let i=0;i<=2;i++)text(75+i*100,130,String(i));for(let i=1;i<=4;i++)text(55,114-i*22,String(i));line(75,66,275,22);[[75,66],[175,44]].forEach(([x,y])=>shape('circle',{cx:x,cy:y,r:5,fill:'#326c9c'}));text(290,65,'y = x + 2');}
+  if(v.kind==='triangle'){line(110,100,290,100);line(110,100,110,10);line(110,10,290,100);line(110,87,123,87);line(123,87,123,100);text(95,60,'3');text(200,125,'4');text(220,45,'5');}
+  if(v.kind==='vector'){line(80,100,330,100);line(80,100,80,10);line(80,100,260,30);shape('path',{d:'M245 30 L260 30 L251 43',fill:'none',stroke:'#326c9c','stroke-width':3});shape('path',{d:'M80 30 L260 30 L260 100',fill:'none',stroke:'#77a8c4','stroke-dasharray':'5 5'});text(170,124,'x = 3');text(45,60,'y = 4');text(250,20,'(3, 4)');}
   if(v.kind==='split-grid'){for(let y=0;y<3;y++)for(let x=0;x<5;x++)shape('rect',{x:135+x*30,y:5+y*30,width:30,height:30,fill:x<2?'#9ecae4':'#f4ce71',stroke:'#fff','stroke-width':2});text(165,121,'3 · 2 = 6');text(245,121,'3 · 3 = 9');}
   if(v.kind==='grid'){const [w,h]=v.items.map(Number),size=25,x0=210-w*size/2;for(let y=0;y<h;y++)for(let x=0;x<w;x++)shape('rect',{x:x0+x*size,y:10+y*size,width:size,height:size,fill:'#dcebf5',stroke:'#326c9c'});text(210,122,`${w} × ${h} = ${w*h} клеток`);}
   figure.append(svg);
@@ -119,9 +127,42 @@ function addSessionReasoning(main,s){
  E.shuffle(data.check.options.map((text,index)=>({text,index}))).forEach(o=>{const button=el('button',o.text);button.onclick=()=>{const ok=o.index===data.check.correct;feedback.textContent=(ok?'Верно. ':'Нет. ')+data.check.why;feedback.className='feedback '+(ok?'good':'bad');};choices.append(button);});section.append(choices,feedback);
  section.append(el('h3','Если изменить условие'),el('p',data.transfer.question));const compare=el('details');compare.append(el('summary','Сравнить с объяснением'),el('p',data.transfer.answer));section.append(compare,el('p','Выбор ответа проверяется автоматически. Свой ход рассуждений сравни с разбором или обсуди с преподавателем.','help'));main.append(section);
 }
+function pathRecord(id){return record('path-'+id);}
+function pathDone(s){return (state['path-'+s.id]?.solved.length||0)>=3;}
+function showStep(index){
+ const s=BalancePathway.steps[index];current=null;navigation();const main=$('lesson');
+ main.replaceChildren(el('span',`Шаг ${index+1} из ${BalancePathway.steps.length}`,'badge'),el('h1',s.title));
+ const theory=el('section',undefined,'step-theory');theory.append(el('h2','Определение и свойство'));s.theory.forEach(t=>theory.append(studyText(t)));main.append(theory);
+ const visuals={angles:{kind:'triangle',items:['катеты 3 и 4','гипотенуза 5']},trig:{kind:'triangle',items:['катеты 3 и 4','гипотенуза 5']},vectors:{kind:'vector',items:['3 вправо','4 вверх']},coordinates:{kind:'vector',items:['точка (3, 4)','начало (0, 0)']},count:{kind:'count',items:['3 кружка','3 квадрата']},digits:{kind:'flow',items:['204','2 сотни + 0 десятков + 4 единицы','200 + 4']},sum:{kind:'flow',items:['4 + 3 = 7','7 − 3 = 4']},product:{kind:'grid',items:['4','3']},laws:{kind:'split-grid',items:['3 ряда','2 синие + 3 жёлтые']},measure:{kind:'ruler',items:['0','1','2','3']},pizza:{kind:'pizza-pair',items:['1/2','3/4']},'equal-fractions':{kind:'pizza-pair',items:['1/2','2/4']},'fraction-sum':{kind:'pizza-pair',items:['1/4','3/4']},negative:{kind:'line',items:['−3','−2','−1','0','1','2','3']},equations:{kind:'balance',items:['x + 3','8']},expand:{kind:'split-grid',items:['3 ряда','2 + 3']},geometry:{kind:'grid',items:['4','3']},functions:{kind:'graph',items:['x','y = x + 2']},graphs:{kind:'graph',items:['x','y = x + 2']},velocity:{kind:'flow',items:['1 с → 2 м','2 с → 4 м','3 с → 6 м']},euler:{kind:'flow',items:['Старые x, v, a','Прибавить изменения за Δt','Новые x, v']}};
+ if(visuals[s.id]){if(s.id==='functions'||s.id==='graphs')main.append(el('p','Ещё один пример: график y = x + 2.'));main.append(termDiagram(visuals[s.id],s.title));}
+ main.append(el('h2','Примеры'));const examples=el('ol',undefined,'examples');s.examples.forEach(t=>{const li=el('li');li.append(studyText(t));examples.append(li);});main.append(examples);
+ addPathPractice(main,s);
+ if(s.id==='equations')makeBalance(main);
+ if(s.id==='ready'){
+  main.append(el('h2','Проверка основных тем'),el('p','Реши по одной задаче из каждой темы. Числовые ответы проверяются автоматически. Ход решения объясни своими словами и сравни с разбором.'));
+  ['fraction-sum','letters','undo','formulas','graphs','trig','vectors','acceleration','euler','data','python'].forEach(id=>{const topic=BalancePathway.steps.find(t=>t.id===id);const box=el('details');box.append(el('summary',topic.title));addPathPractice(box,topic);main.append(box);});
+  nextCourse(main,true);
+ }
+ const links=el('div',undefined,'step-links');if(index>0){const prev=el('a','← Предыдущий шаг');prev.href='#step-'+index;links.append(prev);}if(index+1<BalancePathway.steps.length){const next=el('a','Следующий шаг →');next.href='#step-'+(index+2);links.append(next);}main.append(links);
+ $('sidebar').classList.remove('open');$('menu').setAttribute('aria-expanded','false');window.scrollTo(0,0);
+}
+function addPathPractice(host,s){
+ const box=el('section',undefined,'practice');box.dataset.path=s.id;box.append(el('h2',host.id==='lesson'?'Попробуй сам':s.title));
+ const status=el('p',undefined,'help'),question=el('p'),form=el('form',undefined,'answer-form'),label=el('label','Ответ'),input=el('input'),button=el('button','Проверить','primary'),feedback=el('p',undefined,'feedback');
+ input.autocomplete='off';input.setAttribute('aria-label','Ответ: '+s.title);button.type='submit';label.append(input);form.append(label,button);feedback.setAttribute('role','status');
+ const explain=el('details');explain.append(el('summary','Разбор'));const solution=el('p');explain.append(solution);
+ const next=el('button','Другая задача');let task,variant=0,helped=false,answered=false;
+ function progress(){status.textContent=`Самостоятельно решено: ${Math.min(3,pathRecord(s.id).solved.length)} из 3 разных вариантов`;navigation();}
+ function renew(){const choices=Array.from({length:8},(_,i)=>i+2).filter(n=>n!==variant&&!pathRecord(s.id).solved.includes(s.id+':'+n));variant=choices.length?choices[Math.floor(Math.random()*choices.length)]:(variant===9?2:variant+1||2);task=BalancePathway.generate(s.id,variant);helped=false;answered=false;explain.open=false;question.textContent=task.text;input.value='';feedback.textContent='';solution.textContent=task.solution;progress();}
+ explain.addEventListener('toggle',()=>{if(explain.open)helped=true;});next.onclick=renew;
+ form.onsubmit=e=>{e.preventDefault();if(E.parseNumber(input.value)===null){feedback.textContent='Введи число или дробь, например 3/4.';return;}const ok=E.check(input.value,task.answer);feedback.className='feedback '+(ok?'good':'bad');if(ok){if(!helped&&!answered&&!pathRecord(s.id).solved.includes(task.key)){pathRecord(s.id).solved.push(task.key);pathRecord(s.id).concept=true;save();}answered=true;feedback.textContent=(helped?'Верно. Для самостоятельной проверки возьми другую задачу. ':'Верно. ')+task.solution;}else feedback.textContent='Ответ не совпал. Проверь выбранное действие и вычисления. Можно открыть разбор.';progress();};
+ box.append(status,question,form,feedback,explain,next);host.append(box);renew();
+}
+
 function render(){
  shownTerms.clear();
  const id=location.hash.slice(1)||'method';
+ if(/^step-\d+$/.test(id)){const i=Number(id.slice(5))-1;if(BalancePathway.steps[i]){showStep(i);return;}}
  const session=BalanceSessions.find(s=>s.id===id);if(session){showSession(session);return;}
  if(id==='review'){showReview();return;}
  if(id.startsWith('recall-')&&R.cards[id.slice(7)]){showRecall(id.slice(7));return;}
@@ -189,8 +230,9 @@ function showRecall(id,host=null,onchange=()=>{}){
 }
 function showMethod(){
  current=null;navigation();const main=$('lesson');
- main.replaceChildren(el('span','Введение','badge'),el('h1','Как учиться'),el('p','Курс: уравнения, формулы и расчёт физических процессов. Подготовка: четыре арифметических действия. Принадлежности: бумага и карандаш.'));
+ main.replaceChildren(el('span','Введение','badge'),el('h1','Как учиться'),el('p','51 шаг: от числа и четырёх действий — к формулам, графикам и расчёту движения. Бумага и карандаш нужны для схем и вычислений.'));
  const approach=el('div',undefined,'definition');approach.append(el('span','Математика и обучение','study-label'),el('p','Математика не сводится к готовым алгоритмам. Это поиск связей, способов решения и доказательств.'));
+ const startTop=el('a','Начать с первого шага →','start-step');startTop.href='#step-1';main.append(startTop);
  main.append(approach,el('p','Понимание заменяет зубрёжку. Решения задач курса выводятся из нескольких простых правил.'),el('p','Перед решением: что известно? Что требуется найти? Как связаны величины?'));
  main.append(el('h2','Для чего нужна математика'));
  const uses=el('ul');[
@@ -212,12 +254,14 @@ function showMethod(){
  [['Описание технологии обучения Хаббарда','https://www.lronhubbard.ru/ron-series/profile/humanitarian/education/study-technology.html'],['IES: организация обучения и самостоятельной работы','https://ies.ed.gov/ncee/wwc/PracticeGuide/1'],['Дмитрий Михайлов: понимание перед действиями (0:53–4:49)','https://www.youtube.com/watch?v=UM4SRQsIqok&t=53s'],['Борис Трушин: для чего нужна математика (0:37–13:10)','https://www.youtube.com/watch?v=uNEIpsPKA6k&t=37s'],['Понятия и рассуждение по условию (0:00–2:22; 27:29–29:58)','https://www.youtube.com/watch?v=mUT-BSx_gHA']].forEach(([title,url])=>{const a=el('a',title);a.href=url;a.target='_blank';a.rel='noopener noreferrer';const line=el('p');line.append(a);sources.append(line);});main.append(sources);
  const research=el('details');research.append(el('summary','Исследования письма и памяти'),el('p','Письмо и рисунок могут помогать организовать материал. Но различия ЭЭГ не доказывают улучшение памяти в пять раз. Безошибочный ответ сегодня не гарантирует сохранения через год. Поэтому здесь есть самостоятельное воспроизведение и повторение через время.'));
  [['Письмо и связность ЭЭГ (2024)','https://doi.org/10.3389/fpsyg.2023.1219945'],['Ограничения исследования письма (2025)','https://doi.org/10.3389/fpsyg.2024.1517235'],['Повторное воспроизведение (2008)','https://doi.org/10.1126/science.1152408'],['Распределённая практика математических задач (2006)','https://doi.org/10.1002/acp.1266'],['Рисунки и запоминание (2016)','https://uwspace.uwaterloo.ca/items/a8b52734-18f3-4527-8be2-008a105c85f2']].forEach(([title,url])=>{const a=el('a',title);a.href=url;a.target='_blank';a.rel='noopener noreferrer';const line=el('p');line.append(a);research.append(line);});main.append(research);
- const start=el('a','Занятие 1: числа и выражения →');start.href='#session-1';main.append(start);
+ const start=el('a','Шаг 1. Число и единица →');start.href='#step-1';main.append(start);
  $('sidebar').classList.remove('open');$('menu').setAttribute('aria-expanded','false');window.scrollTo(0,0);
 }
-function showSources(){current=null;navigation();const main=$('lesson');main.replaceChildren(el('h1','Маршрут Balance'),el('p','10 занятий для ученика, который умеет складывать, вычитать, умножать и делить. Начинать можно примерно с 4-го класса, со взрослым и в собственном темпе. Занятие удобно делить на два подхода по 15–20 минут.'));
+function showSources(){current=null;navigation();const main=$('lesson');main.replaceChildren(el('h1','Маршрут Balance'),el('p','51 последовательный шаг для подготовки к началу курса «Программирование физических процессов на Python». Число шагов определено темами: арифметика, алгебра, функции, геометрия, векторы и основы численного расчёта. Это не замена полного школьного курса физики или обучения Python.'));
  main.append(el('h2','Что будет получаться'),el('p','Называть переменную, выражение, равенство, уравнение и корень; различать семейства чисел; объяснять обратимые преобразования; решать изученные линейные уравнения; выражать буквы из формул; составлять простые модели и проверять единицы.'));
  main.append(el('h2','Как учиться'),el('p','Прочитай правило, объясни три примера своими словами, потренируйся. После нескольких занятий вернись к старой теме без подсказок. Отметка прохождения означает выполнение тренировки, а не гарантию владения всей темой.'));
+ const structure=el('p','Постепенная подача — по образцу '),space=el('a','Spacemath');space.href='https://spacemath.xyz/';structure.append(space,document.createTextNode('. Определения и свойства — с опорой на арифметику и алгебру Киселёва. Текст, примеры и упражнения написаны для Balance.'));main.append(structure);
+ const archive=el('details');archive.append(el('summary','Прежний курс: 10 занятий'));BalanceSessions.forEach((x,i)=>{const p=el('p'),a=el('a',`${i+1}. ${x.title}`);a.href='#'+x.id;p.append(a);archive.append(p);});main.append(archive);
  addReading(main);
  main.append(el('h2','Материалы для любопытных'));const ul=el('ul',undefined,'sources');sources.forEach(s=>{const li=el('li'),a=el('a',s.title);a.href=s.url;a.target='_blank';a.rel='noopener noreferrer';li.append(a,el('p',s.text));ul.append(li);});main.append(ul,el('p','Уроки, примеры и упражнения Balance написаны отдельно. Видеоуроки не скопированы. Курс Савватеева — дополнительное углубление, а не последовательность обязательных заданий для начинающего.'));
  main.append(el('h2','Память и понимание'),el('p','В каждой теме есть определение, вопрос на применение и смысловая опора для запоминания. Сначала ответь по памяти, затем сравни и повтори через время.'));
