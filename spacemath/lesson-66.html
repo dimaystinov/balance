@@ -1,0 +1,659 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#326c9c"><title>Шаг 66. Квадратное уравнение — Математика с нуля</title><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="icon.svg"><link rel="stylesheet" href="style.css"><link rel="stylesheet" href="vendor/katex/katex.min.css"><script defer src="vendor/katex/katex.min.js"></script><script defer src="vendor/katex/contrib/auto-render.min.js"></script><script defer src="engine.js"></script><script defer src="quiz-bank.js"></script><script defer src="app.js"></script></head><body data-lesson="66"><header><a href="index.html">Математика с нуля</a><button id="menu" aria-controls="sidebar" aria-expanded="false">Шаги</button><button id="settings-open">Настройки</button></header><div class="layout"><aside id="sidebar"><p id="overall"></p><nav aria-label="Шаги курса"><ol><li><a href="lesson-01.html">Шаг 1. Числа</a></li><li><a href="lesson-02.html">Шаг 2. Основные операции</a></li><li><a href="lesson-03.html">Шаг 3. Выражения</a></li><li><a href="lesson-04.html">Шаг 4. Замены в выражениях</a></li><li><a href="lesson-05.html">Шаг 5. Разряды для начинающих</a></li><li><a href="lesson-06.html">Шаг 6. Умножение</a></li><li><a href="lesson-07.html">Шаг 7. Деление</a></li><li><a href="lesson-08.html">Шаг 8. Порядок действий</a></li><li><a href="lesson-09.html">Шаг 9. Законы математики</a></li><li><a href="lesson-10.html">Шаг 10. Делители и кратные</a></li><li><a href="lesson-11.html">Шаг 11. НОД и НОК</a></li><li><a href="lesson-12.html">Шаг 12. Дроби</a></li><li><a href="lesson-13.html">Шаг 13. Действия с дробями</a></li><li><a href="lesson-14.html">Шаг 14. Смешанные числа</a></li><li><a href="lesson-15.html">Шаг 15. Сравнение дробей</a></li><li><a href="lesson-16.html">Шаг 16. Единицы измерения</a></li><li><a href="lesson-17.html">Шаг 17. Практика по дробям</a></li><li><a href="lesson-18.html">Шаг 18. Десятичные дроби</a></li><li><a href="lesson-19.html">Шаг 19. Действия с десятичными дробями</a></li><li><a href="lesson-20.html">Шаг 20. Практика по десятичным дробям</a></li><li><a href="lesson-21.html">Шаг 21. Округление чисел</a></li><li><a href="lesson-22.html">Шаг 22. Периодические дроби</a></li><li><a href="lesson-23.html">Шаг 23. Перевод единиц</a></li><li><a href="lesson-24.html">Шаг 24. Соотношения</a></li><li><a href="lesson-25.html">Шаг 25. Пропорция</a></li><li><a href="lesson-26.html">Шаг 26. Расстояние, скорость, время</a></li><li><a href="lesson-27.html">Шаг 27. Прямая и обратная пропорциональность</a></li><li><a href="lesson-28.html">Шаг 28. Проценты</a></li><li><a href="lesson-29.html">Шаг 29. Отрицательные числа</a></li><li><a href="lesson-30.html">Шаг 30. Модуль числа</a></li><li><a href="lesson-31.html">Шаг 31. Что такое множество?</a></li><li><a href="lesson-32.html">Шаг 32. Сложение и вычитание целых чисел</a></li><li><a href="lesson-33.html">Шаг 33. Умножение и деление целых чисел</a></li><li><a href="lesson-34.html">Шаг 34. Рациональные числа</a></li><li><a href="lesson-35.html">Шаг 35. Сравнение рациональных чисел</a></li><li><a href="lesson-36.html">Шаг 36. Сложение и вычитание рациональных чисел</a></li><li><a href="lesson-37.html">Шаг 37. Умножение и деление рациональных чисел</a></li><li><a href="lesson-38.html">Шаг 38. Дополнительные сведения о дробях</a></li><li><a href="lesson-39.html">Шаг 39. Буквенные выражения</a></li><li><a href="lesson-40.html">Шаг 40. Вынесение общего множителя за скобки</a></li><li><a href="lesson-41.html">Шаг 41. Раскрытие скобок</a></li><li><a href="lesson-42.html">Шаг 42. Простейшие задачи по математике</a></li><li><a href="lesson-43.html">Шаг 43. Задачи на дроби</a></li><li><a href="lesson-44.html">Шаг 44. Задачи на проценты</a></li><li><a href="lesson-45.html">Шаг 45. Задачи на движение</a></li><li><a href="lesson-46.html">Шаг 46. Производительность</a></li><li><a href="lesson-47.html">Шаг 47. Элементы статистики</a></li><li><a href="lesson-48.html">Шаг 48. Общие сведения об уравнениях</a></li><li><a href="lesson-49.html">Шаг 49. Решение задач с помощью уравнений</a></li><li><a href="lesson-50.html">Шаг 50. Решение задач с помощью пропорции</a></li><li><a href="lesson-51.html">Шаг 51. Системы линейных уравнений</a></li><li><a href="lesson-52.html">Шаг 52. Общие сведения о неравенствах</a></li><li><a href="lesson-53.html">Шаг 53. Системы линейных неравенств с одной переменной</a></li><li><a href="lesson-54.html">Шаг 54. Операции над множествами</a></li><li><a href="lesson-55.html">Шаг 55. Степень с натуральным показателем</a></li><li><a href="lesson-56.html">Шаг 56. Степень с целым показателем</a></li><li><a href="lesson-57.html">Шаг 57. Периметр, площадь и объём</a></li><li><a href="lesson-58.html">Шаг 58. Одночлены</a></li><li><a href="lesson-59.html">Шаг 59. Многочлены</a></li><li><a href="lesson-60.html">Шаг 60. Формулы сокращённого умножения</a></li><li><a href="lesson-61.html">Шаг 61. Разложение многочлена на множители</a></li><li><a href="lesson-62.html">Шаг 62. Деление многочленов</a></li><li><a href="lesson-63.html">Шаг 63. Тождественные преобразования многочленов</a></li><li><a href="lesson-64.html">Шаг 64. Квадратный корень</a></li><li><a href="lesson-65.html">Шаг 65. Алгоритм извлечения квадратного корня</a></li><li><a href="lesson-66.html">Шаг 66. Квадратное уравнение</a></li><li><a href="lesson-67.html">Шаг 67. Квадратное уравнение с чётным вторым коэффициентом</a></li><li><a href="lesson-68.html">Шаг 68. Теорема Виета</a></li><li><a href="lesson-69.html">Шаг 69. Разложение квадратного трёхчлена на множители</a></li><li><a href="lesson-70.html">Шаг 70. Обобщённое понятие модуля числа</a></li><li><a href="lesson-71.html">Шаг 71. Уравнение с модулем</a></li><li><a href="lesson-72.html">Шаг 72. Решение уравнений с модулем методом интервалов</a></li><li><a href="lesson-73.html">Шаг 73. Неравенства с модулем</a></li><li><a href="lesson-74.html">Шаг 74. Решение неравенств с модулем методом интервалов</a></li><li><a href="lesson-75.html">Шаг 75. Извлечение квадратного корня из обеих частей уравнения</a></li></ol></nav></aside><main id="main"><h1>Шаг 66. Квадратное уравнение</h1><p class="origin"><a href="https://spacemath.xyz/kvadratnoe-uravnenie/">Оригинал урока</a> · <a href="#quiz">К тесту</a></p><article class="lesson-text">
+<b>Предварительные навыки</b><p></p>
+<ul>
+<li><a href="lesson-39.html">Буквенные выражения</a></li>
+<li><a href="lesson-48.html">Общие сведения об уравнениях</a></li>
+<li><a href="lesson-49.html">Решение задач с помощью уравнений</a></li>
+<li><a href="lesson-64.html">Квадратный корень<br/>
+</a></li>
+</ul>
+
+<b>Содержание урока</b><p></p>
+<ul>
+<li><a href="lesson-66.html#chto_takoe_kvadratnoe_uravnenie">Что такое квадратное уравнение и как его решать?</a></li>
+<li><a href="lesson-66.html#formuly_kornej_kvadratnogo_uravneniya">Формулы корней квадратного уравнения</a></li>
+<li><a href="lesson-66.html#yak3">Примеры решения квадратных уравнений</a></li>
+<li><a href="lesson-66.html#yak4">Примеры решения задач</a></li>
+<li><a href="lesson-66.html#yak5">Задания для самостоятельного решения</a></li>
+</ul>
+
+<h2 id="chto_takoe_kvadratnoe_uravnenie">Что такое квадратное уравнение и как его решать?</h2>
+<p>Мы помним, что уравнение это равенство, содержащее в себе переменную, значение которой нужно найти.</p>
+<p>Если переменная, входящая в уравнение, возведенá во вторую степень (в квадрат), то такое уравнение называют <strong>уравнением второй степени</strong> или <strong>квадратным уравнением</strong>.</p>
+<p>Например, следующие уравнения являются квадратными:</p>
+<p><img alt="примеры квадратных уравнений" decoding="async" height="122" loading="lazy" src="assets/37bb50902b540ce62e28f93c.png" width="126"/></p>
+<p>Решим первое из этих уравнений, а именно <span><em>x</em><sup>2 </sup>− 4 = 0</span>.</p>
+<p>Все тождественные преобразования, которые мы применяли при решении обычных линейных уравнений, можно применять и при решении квадратных.</p>
+<p>Итак,  в уравнении <span><em>x</em><sup>2 </sup>− 4 = 0</span> перенесем член <span>−4</span> из левой части в правую часть, изменив знак:</p>
+<p><img alt="квадратное уравнение рисунок 120" decoding="async" height="55" loading="lazy" src="assets/c1fa4264cbfbd68dc19dd2b6.png" width="85"/></p>
+<p>Получили уравнение <span><em>x</em><sup>2 </sup>= 4</span>. Ранее мы говорили, что уравнение считается решённым, если в одной части переменная записана в первой степени и её коэффициент равен единице, а другая часть равна какому-нибудь числу. То есть чтобы решить уравнение, его следует привести к виду <span><em>x = a</em></span>, где <span><em>a</em></span> — корень уравнения.</p>
+<p>У нас переменная <span><em>x</em></span> всё ещё во второй степени, поэтому решение необходимо продолжить.</p>
+<p>Чтобы решить уравнение <span><em>x</em><sup>2 </sup>= 4</span>, нужно ответить на вопрос при каком значении <span><em>x</em></span> левая часть станет равна <span>4</span>. Очевидно, что при значениях <span>2</span> и <span>−2</span>. Чтобы вывести эти значения воспользуемся определением квадратного корня.</p>
+<p>Число <span><em>b</em></span> называется квадратным корнем из числа <span><em>a</em></span>, если <span><em>b</em><sup>2 </sup><em>= a</em></span> и обозначается как <img alt="b равно корень из a" decoding="async" height="41" loading="lazy" src="assets/b6fbcfb5ff1b8f184a0362c3.png" width="77"/></p>
+<p>У нас сейчас похожая ситуация. Ведь, что такое <span><em>x</em><sup>2 </sup>= 4</span>? Переменная <span><em>x</em></span> в данном случае это квадратный корень из числа 4, поскольку вторая степень <span><em>x </em></span>прирáвнена к 4.</p>
+<p>Тогда можно записать, что <img alt="x равно корень из 4" decoding="async" height="41" loading="lazy" src="assets/56cbb34adcc8bfad91d4b6d3.png" width="75"/>. Вычисление правой части позвóлит узнать чему равно <span><em>x</em></span>. Квадратный корень имеет два значения: положительное и отрицательное. Тогда получаем <span><em>x </em>= 2</span> и <span><em>x </em>= −2</span>.</p>
+<p>Обычно записывают так: перед квадратным корнем ставят знак «плюс-минус», затем находят <a href="lesson-64.html#arifmeticheskij_kvadratnyj_koren" title="Перейти к уроку, где рассказывается об этом">арифметическое значение квадратного корня</a>. В нашем случае на этапе когда записано выражение <img alt="x равно корень из 4" decoding="async" loading="lazy" src="assets/56cbb34adcc8bfad91d4b6d3.png"/>, перед <img alt="корень кв из 4" decoding="async" height="41" loading="lazy" src="assets/8833c824f9164544a39c37eb.png" width="35"/> следует поставить знак <span>±</span></p>
+<p><img alt="квадратное уравнение рисунок 35" decoding="async" height="26" loading="lazy" src="assets/a7b4dd42cdd90fffa9b8b8d3.png" width="91"/></p>
+<p>Затем найти арифметическое значение квадратного корня <img alt="корень кв из 4" decoding="async" height="41" loading="lazy" src="assets/8833c824f9164544a39c37eb.png" width="35"/></p>
+<p><img alt="квадратное уравнение рисунок 36" decoding="async" height="55" loading="lazy" src="assets/0b301e9f9529551776a324e9.png" width="91"/></p>
+<p>Выражение <span><em>x </em>= ± 2</span> означает, что <span><em>x </em>= 2</span> и <span><em>x </em>= −2</span>. То есть корнями уравнения <span><em>x</em><sup>2 </sup>− 4 = 0</span> являются числа <span>2</span> и <span>−2</span>. Запишем полностью решение данного уравнения:</p>
+<p><img alt="квадратное уравнение рисунок 9" decoding="async" height="175" loading="lazy" src="assets/12c15601588f535652806aa6.png" width="205"/></p>
+<p>Выполним проверку. Подставим корни <span>2</span> и <span>−2</span> в исходное уравнение и выполним соответствующие вычисления. Если при значениях <span>2</span> и <span>−2</span> левая часть равна нулю, то это будет означать, что уравнение решено верно:</p>
+<p><img alt="квадратное уравнение рисунок 10" decoding="async" height="162" loading="lazy" src="assets/8ca49961c38c1f2d56efc27f.png" width="296"/></p>
+<p>В обоих случаях левая часть равна нулю. Значит уравнение решено верно.</p>
+<p>Решим ещё одно уравнение. Пусть требуется решить квадратное уравнение <span>(<em>x </em>+ 2)<sup>2 </sup>= 25</span></p>
+<p>Для начала проанализируем данное уравнение. Левая часть возведенá в квадрат и она равна <span>25</span>. Какое число в квадрате равно <span>25</span>? Очевидно, что числа <span>5</span> и <span>−5</span></p>
+<p><img alt="квадратное уравнение рисунок 24" decoding="async" height="90" loading="lazy" src="assets/bb9efebc965fe9dd81219f8b.png" width="385"/></p>
+<p>То есть наша задача найти <span><em>x,</em></span> при которых выражение <span><em>x </em>+ 2</span> будет равно числам <span>5</span> и <span>−5</span>. Запишем эти два уравнения:</p>
+<p><img alt="квадратное уравнение рисунок 12" decoding="async" height="16" loading="lazy" src="assets/a53c2d2d45ddcf0763b03353.png" width="243"/></p>
+<p>Решим оба уравнения. Это обычные линейные уравнения, которые решаются легко:</p>
+<p><img alt="квадратное уравнение рисунок 11" decoding="async" height="78" loading="lazy" src="assets/6fcdfa95c9eb718b58ea73eb.png" width="243"/></p>
+<p>Значит корнями уравнения <span>(<em>x </em>+ 2)<sup>2 </sup>= 25</span> являются числа <span>3</span> и <span>−7</span>.</p>
+<p>В данном примере как и в прошлом можно использовать определение квадратного корня. Так, в уравнения <span>(<em>x </em>+ 2)<sup>2 </sup>= 25</span> выражение <span>(<em>x </em>+ 2)</span> представляет собой квадратный корень из числа <span>25</span>. Поэтому можно cначала записать, что <img alt="квадратное уравнение рисунок 37" decoding="async" height="41" loading="lazy" src="assets/8f69035651d01cfff2df2bc8.png" width="126"/>.</p>
+<p>Тогда правая часть станет равна <span>±5</span>. Полýчится два уравнения: <span><em>x </em>+ 2 = 5</span> и <span><em>x </em>+ 2 = −5.</span> Решив по отдельности каждое из этих уравнений мы придём к корням <span>3</span> и <span>−7</span>.</p>
+<p>Запишем полностью решение уравнения <span>(<em>x </em>+ 2)<sup>2 </sup>= 25</span></p>
+<p><img alt="квадратное уравнение рисунок 38" decoding="async" height="176" loading="lazy" src="assets/75cc17d95c36e027d67cd895.png" width="302"/></p>
+<p>Из рассмотренных примеров видно, что квадратное уравнение имеет два корня. Чтобы не забыть о найденных корнях, переменную <span><em>x</em></span> можно подписывать нижними индексами. Так, корень <span>3</span> можно обозначить через <span><em>x</em><sub>1</sub></span>, а корень <span>−7</span> через <span><em>x</em><sub>2</sub></span></p>
+<p><img alt="квадратное уравнение рисунок 13" decoding="async" height="24" loading="lazy" src="assets/84047745afbad2184762bce6.png" width="215"/></p>
+<p>В предыдущем примере тоже можно было сделать так. Уравнение <span><em>x</em><sup>2 </sup>− 4 = 0</span> имело корни <span>2</span> и <span>−2</span>. Эти корни можно было обозначить как <span><em>x</em><sub>1 </sub>= 2</span> и <span><em>x</em><sub>2 </sub>= −2. </span></p>
+<p>Бывает и так, что квадратное уравнение имеет только один корень или вовсе не имеет корней. Такие уравнения мы рассмотрим позже.</p>
+<p>Сделаем проверку для уравнения <span>(<em>x </em>+ 2)<sup>2 </sup>= 25</span>. Подставим в него корни <span>3</span> и <span>−7</span>. Если при значениях <span>3</span> и <span>−7</span> левая часть равна <span>25</span>, то это будет означать, что уравнение решено верно:</p>
+<p><img alt="квадратное уравнение рисунок 14" decoding="async" height="156" loading="lazy" src="assets/7f9357962623e1c68b26a1f8.png" width="358"/></p>
+<p>В обоих случаях левая часть равна <span>25</span>. Значит уравнение решено верно.</p>
+<p>Квадратное уравнение бывает дано в разном виде. Наиболее его распространенная форма выглядит так:</p>
+<p><span><em>ax</em><sup>2</sup> <em>+ bx + c </em>= 0</span>,<br/>
+где <span><em>a, b, c</em></span> — некоторые числа, <span><em>x</em></span> — неизвестное.</p>
+<p>Это так называемый <strong>общий вид квадратного уравнения</strong>. В таком уравнении все члены собраны в общем месте (в одной части), а другая часть равна нулю. По другому такой вид уравнения называют <strong>нормальным видом квадратного уравнения.</strong></p>
+<p>Пусть дано уравнение <span>3<em>x</em><sup>2 </sup>+ 2<em>x </em>= 16</span>. В нём переменная <span><em>x</em></span> возведенá во вторую степень, значит уравнение является квадратным. Приведём данное уравнение к общему виду.</p>
+<p>Итак, нам нужно получить уравнение, которое будет похоже на уравнение <span><em>ax</em><sup>2 </sup>+ <em>bx </em>+ <em>c </em>= 0</span>. Для этого в уравнении <span>3<em>x</em><sup>2 </sup>+ 2<em>x </em>= 16</span> перенесем <span>16</span> из правой части в левую часть, изменив знак:</p>
+<p><span>3<em>x</em><sup>2</sup> + 2<em>x</em> − 16 = 0</span></p>
+<p>Получили уравнение <span>3<em>x</em><sup>2 </sup>+ 2<em>x </em>− 16 = 0</span>. В этом уравнении <span><em>a </em>= 3</span>, <span><em>b </em>= 2</span>, <span><em>c </em>= −16</span>.</p>
+<p>В квадратном уравнении вида <span><em>ax</em><sup>2 </sup>+ <em>bx </em>+ <em>c </em>= 0</span> числа <span><em>a</em></span>, <span><em>b</em></span> и <span><em>c</em></span> имеют собственные названия. Так, число <span><em>a</em></span> называют первым или старшим коэффициентом; число <span><em>b</em></span> называют вторым коэффициентом; число <span><em>c</em></span> называют свободным членом.</p>
+<p>В нашем случае для уравнения <span>3<em>x</em><sup>2 </sup>+ 2<em>x </em>− 16 = 0</span> первым или старшим коэффициентом является <span>3</span>; вторым коэффициентом является число <span>2</span>;  свободным членом является число <span>−16</span>. Есть ещё другое общее название для чисел <span><em>a</em>, <em>b </em></span>и<em><span> c</span></em> — <strong>параметры</strong>.</p>
+<p>Так, в уравнении <span>3<em>x</em><sup>2 </sup>+ 2<em>x </em>− 16 = 0</span> параметрами являются числа <span>3</span>, <span>2</span> и <span>−16</span>.</p>
+<p>В квадратном уравнении желательно упорядочивать члены так, чтобы они располагались в таком же порядке как у нормального вида квадратного уравнения.</p>
+<p>Например, если дано уравнение <span>−5 + 4<em>x</em><sup>2 </sup>+ <em>x </em>= 0</span>, то его желательно записать в нормальном виде, то есть в виде <span><em>ax</em><sup>2</sup><em>+ bx + c </em>= 0. </span></p>
+<p>В уравнении <span>−5 + 4<em>x</em><sup>2 </sup>+ <em>x</em> = 0</span> видно, что свободным членом является <span>−5</span>, он должен располагаться в конце левой части. Член <span>4<em>x</em><sup>2</sup></span> содержит старший коэффициент, он должен располагаться первым. Член <span><em>x</em></span> соответственно будет располагаться вторым:</p>
+<p><img alt="квадратное уравнение рисунок 39" decoding="async" height="55" loading="lazy" src="assets/d61d33ebcc43df50f1bea458.png" width="140"/></p>
+<p>Квадратное уравнение в зависимости от случая может принимать различный вид. Всё зависит от того, чему равны значения <span><em>a</em></span>, <span><em>b</em></span> и <span><em>с</em></span>.</p>
+<p>Если коэффициенты <span><em>a</em></span>, <span><em>b</em></span> и <span><em>c</em></span> не равны нулю, то квадратное уравнение называют <strong>полным</strong>. Например, полным является квадратное уравнение <span>2<em>x</em><sup>2 </sup>+ 6<em>x − </em>8 = 0</span>.</p>
+<p>Если какой-то из коэффициентов равен нулю (то есть отсутствует), то уравнение значительно уменьшается и принимает более простой вид. Такое квадратное уравнение называют <strong>неполным</strong>. Например, неполным является квадратное уравнение <span>2<em>x</em><sup>2 </sup>+ 6<em>x </em>= 0,</span> в нём имеются коэффициенты <span><em>a</em></span> и <span><em>b</em></span> (числа <span>2</span> и <span>6</span>), но отсутствует свободный член <span><em>c.</em></span></p>
+<p>Рассмотрим каждый из этих видов уравнений, и для каждого из этих видов определим свой способ решения.</p>
+<p>Пусть дано квадратное уравнение <span>2<em>x</em><sup>2 </sup>+ 6<em>x − </em>8 = 0</span>. В этом уравнении <span><em>a </em>= 2</span>, <span><em>b </em>= 6</span>, <span><em>c </em>= −8</span>. Если <span><em>b</em></span> сделать равным нулю, то уравнение примет вид:</p>
+<p><img alt="квадратное уравнение рисунок 3" decoding="async" height="55" loading="lazy" src="assets/ac5a449bd7ef561333cd582f.png" width="136"/></p>
+<p>Получилось уравнение <span>2<em>x</em><sup>2 </sup>− 8 = 0</span>. Чтобы его решить перенесем <span>−8</span> в правую часть, изменив знак:</p>
+<p><span>2<em>x</em><sup>2 </sup>= 8</span></p>
+<p>Для дальнейшего упрощения уравнения воспользуемся ранее изученными тождественными преобразованиями. В данном случае можно разделить обе части на 2</p>
+<p><img alt="квадратное уравнение рисунок 2" decoding="async" height="112" loading="lazy" src="assets/8093371c9ab6dcf3a0ffa485.png" width="74"/></p>
+<p>У нас получилось уравнение, которое мы решали в начале данного урока. Чтобы решить уравнение <span><em>x</em><sup>2 </sup>= 4</span>, следует воспользоваться определением квадратного корня. Если <span><em>x</em><sup>2 </sup>= 4</span>, то <img alt="квадратное уравнение рисунок 40" decoding="async" height="41" loading="lazy" src="assets/2bc756fc5c8ebac14b517f9c.png" width="90"/>. Отсюда <span><em>x </em>= 2</span> и <span><em>x </em>= −2</span>.</p>
+<p>Значит корнями уравнения <span>2<em>x</em><sup>2 </sup>− 8 = 0</span> являются числа <span>2</span> и <span>−2</span>. Запишем полностью решение данного уравнения:</p>
+<p><img alt="квадратное уравнение рисунок 1" decoding="async" height="239" loading="lazy" src="assets/e7ae9087c76271c3e1365b5a.png" width="212"/></p>
+<p>Выполним проверку. Подставим корни <span>2</span> и <span>−2</span> в исходное уравнение и выполним соответствующие вычисления. Если при значениях <span>2</span> и <span>−2</span> левая часть равна нулю, то это будет означать, что уравнение решено верно:</p>
+<p><img alt="квадратное уравнение рисунок 4" decoding="async" height="186" loading="lazy" src="assets/45282289936fad4dee6442d5.png" width="385"/></p>
+<p>В обоих случаях левая часть равна нулю, значит уравнение решено верно.</p>
+<p>Уравнение, которое мы сейчас решили, является <strong>неполным квадратным уравнением</strong>. Название говорит само за себя. Если полное квадратное уравнение выглядит как <span><em>ax</em><sup>2 </sup>+ <em>bx </em>+ <em>c </em>= 0</span>, то сделав коэффициент <span><em>b</em></span> нулём получится неполное квадратное уравнение <span><em>ax</em><sup>2 </sup>+ <em>c </em>= 0</span>.</p>
+<p>У нас тоже сначала было полное квадратное уравнение <span>2<em>x</em><sup>2 </sup>+ 6<em>x </em>− 4 = 0</span>. Но мы сделали коэффициент <span><em>b</em></span> нулем, то есть вместо числа <span>6</span> поставили <span>0</span>. В результате уравнение обратилось в неполное квадратное уравнение <span>2<em>x</em><sup>2 </sup>− 4 = 0</span>.</p>
+<p>В начале данного урока мы решили квадратное уравнение <span><em>x</em><sup>2 </sup>− 4 = 0</span>. Оно тоже является уравнением вида <span><em>ax</em><sup>2 </sup>+ <em>c </em>= 0</span>, то есть неполным. В нем <span><em>a </em>= 1</span>, <span><em>b </em>= 0</span>, <span><em>с </em>= −4</span>.</p>
+<p>Также, неполным будет квадратное уравнение, если коэффициент <span><em>c</em></span> равен нулю.</p>
+<p>Рассмотрим полное квадратное уравнение <span>2<em>x</em><sup>2 </sup>+ 6<em>x − </em>4 = 0</span>. Сделаем коэффициент <span><em>c</em></span> нулём. То есть вместо числа <span>4</span> поставим <span>0</span></p>
+<p><img alt="квадратное уравнение рисунок 25" decoding="async" height="55" loading="lazy" src="assets/e490eb8db57d094d64d40895.png" width="135"/></p>
+<p>Получили квадратное уравнение <span>2<em>x</em><sup>2 </sup>+ 6<em>x</em>=0</span>, которое является неполным. Чтобы решить такое уравнение, переменную <span><em>x</em></span> выносят за скобки:</p>
+<p><img alt="квадратное уравнение рисунок 26" decoding="async" height="56" loading="lazy" src="assets/6c90a97d93c7bfd07a361ae9.png" width="111"/></p>
+<p>Получилось уравнение <span><em>x</em>(2<em>x </em>+ 6) = 0</span> в котором нужно найти <em>x</em>, при котором левая часть станет равна нулю. Заметим, что в этом уравнении выражения <span><em>x</em></span> и <span>(2<em>x </em>+ 6)</span> являются сомножителями. Одно из свойств умножения говорит, что произведение равно нулю, если хотя бы один из сомножителей равен нулю (или первый сомножитель или второй).</p>
+<p>В нашем случае равенство будет достигаться, если <span><em>x</em></span> будет равно нулю или <span>(2<em>x </em>+ 6)</span> будет равно нулю. Так и запишем для начала:</p>
+<p><img alt="квадратное уравнение рисунок 6" decoding="async" height="16" loading="lazy" src="assets/419c130467912bec2ece3ef5.png" width="239"/></p>
+<p>Получилось два уравнения: <span><em>x </em>= 0</span> и <span>2<em>x </em>+ 6 = 0</span>. Первое уравнение решать не нужно — оно уже решено. То есть первый корень равен нулю.</p>
+<p>Чтобы найти второй корень, решим уравнение <span>2<em>x </em>+ 6 = 0</span>. Это обычное линейное уравнение, которое решается легко:</p>
+<p><img alt="квадратное уравнение рисунок 5" decoding="async" height="79" loading="lazy" src="assets/ebceadbed1ec391d1521e598.png" width="239"/></p>
+<p>Видим, что второй корень равен <span>−3.</span></p>
+<p>Значит корнями уравнения <span>2<em>x</em><sup>2 </sup>+ 6<em>x </em>= 0</span> являются числа <span>0</span> и <span>−3</span>. Запишем полностью решение данного уравнения:</p>
+<p><img alt="квадратное уравнение рисунок 7" decoding="async" height="145" loading="lazy" src="assets/8c1b529a0f707f9ac97eec0d.png" width="239"/></p>
+<p>Выполним проверку. Подставим корни <span>0</span> и <span>−3</span> в исходное уравнение и выполним соответствующие вычисления. Если при значениях <span>0</span> и <span>−3</span> левая часть равна нулю, то это будет означать, что уравнение решено верно:</p>
+<p><img alt="квадратное уравнение рисунок 8" decoding="async" height="187" loading="lazy" src="assets/ff27fe7bd5c39982a0db7a72.png" width="436"/></p>
+<p>Следующий случай это когда числа <span><em>b</em></span> и <span><em>с</em></span> равны нулю. Рассмотрим полное квадратное уравнение <span>2<em>x</em><sup>2 </sup>+ 6<em>x </em>− 4 = 0</span>. Сделаем коэффициенты <span><em>b</em></span> и <span><em>c</em></span> нулями. Тогда уравнение примет вид:</p>
+<p><img alt="квадратное уравнение рисунок 27" decoding="async" height="55" loading="lazy" src="assets/28e432bf55979993f6f63fdd.png" width="136"/></p>
+<p>Получили уравнение <span>2<em>x</em><sup>2 </sup>= 0</span>. Левая часть является произведением, а правая часть равна нулю. Произведение равно нулю, если хотя бы один из сомножителей равен нулю. Очевидно, что <span><em>x </em>= 0</span>. Действительно, <span>2 × 0<sup>2 </sup>= 0</span>. Отсюда, <span>0 = 0</span>. При других значениях <span><em>x</em></span> равенства достигаться не будет.</p>
+<p>Проще говоря, если в квадратном уравнении вида <span><em>ax</em><sup>2 </sup>+ <em>bx </em>+ <em>c </em>= 0</span> числа <span><em>b</em></span> и <em><span>с</span></em> равны нулю, то корень такого уравнения равен нулю.</p>
+<p>Отметим, что когда употребляются словосочетания «<span><em>b равно нулю</em></span>» или «<span><em>с равно нулю</em></span>«, то подразумевается, что параметры <span><em>b</em></span> или <span><em>c</em></span> вовсе отсутствуют в уравнении.</p>
+<p>Например, если дано уравнение <span>2<em>x</em><sup>2 </sup>− 32 = 0</span>, то мы говорим, что <span><em>b </em>= 0</span>. Потому что если сравнить с полным уравнением <span><em>ax</em><sup>2 </sup>+ <em>bx </em>+ <em>c </em>= 0</span>, то можно заметить, что в уравнении <span>2<em>x</em><sup>2 </sup>− 32 = 0</span> присутствует старший коэффициент <span><em>a</em></span>, равный 2; присутствует свободный член <span>−32</span>; но отсутствует коэффициент <span><em>b</em></span>.</p>
+<p>Наконец, рассмотрим полное квадратное уравнение <span><em>ax</em><sup>2 </sup>+ <em>bx </em>+ <em>c </em>= 0</span>. В качестве примера решим квадратное уравнение <span><em>x</em><sup>2 </sup>− 2<em>x </em>+ 1 = 0</span>.</p>
+<p>Итак, требуется найти <span><em>x</em></span>, при котором левая часть станет равна нулю. Воспользуемся изученными ранее тождественными преобразованиями.</p>
+<p>Прежде всего заметим, что левая часть уравнения представляет собой <a href="lesson-60.html#kvadrat_raznosti_dvuh_vyrazhenij" title="Перейти к уроку, где рассказывается об этом">квадрат разности двух выражений</a>. Если мы вспомним как <a href="https://spacemath.xyz/razlozhenie-mnogochlena-na-mnozhiteli" rel="noopener noreferrer" title="Перейти к уроку, где рассказывается об этом">раскладывать многочлен на множители</a>, то получим в левой части <span>(<em>x </em>− 1)<sup>2</sup></span>.</p>
+<p><img alt="квадратное уравнение рисунок 41" decoding="async" height="58" loading="lazy" src="assets/bf8129b7281cf44bc13d5261.png" width="121"/></p>
+<p>Рассуждаем дальше. Левая часть возведенá в квадрат и она равна нулю. Какое число в квадрате равно нулю? Очевидно, что только <span>0</span>. Поэтому наша задача найти <span><em>x</em></span>, при котором выражение <span><em>x </em>− 1</span> равно нулю. Решив простейшее уравнение <span><em>x </em>− 1 = 0</span>, можно узнать чему равно <span><em>x</em></span></p>
+<p><img alt="квадратное уравнение рисунок 42" decoding="async" height="47" loading="lazy" src="assets/3c988ac5f13fa1679e6725e0.png" width="71"/></p>
+<p>Этот же результат можно получить, если воспользоваться квадратным корнем. В уравнении <span>(<em>x </em>− 1)<sup>2 </sup>= 0</span> выражение <span>(<em>x </em>− 1)</span> представляет собой квадратный корень из нуля. Тогда можно записать, что <img alt="квадратное уравнение рисунок 43" decoding="async" height="41" loading="lazy" src="assets/5420534edac7bc0eff370f49.png" width="102"/>. В этом примере записывать перед корнем знак <span>±</span> не нужно, поскольку корень из нуля имеет только одно значение — ноль. Тогда получается <span><em>x </em>− 1 = 0</span>. Отсюда <span><em>x </em>= 1</span>.</p>
+<p>Значит корнем уравнения <span><em>x</em><sup>2 </sup>− 2<em>x </em>+ 1 = 0</span> является единица. Других корней у данного уравнения нет. В данном случае мы решили квадратное уравнение, имеющее только один корень. Такое тоже бывает.</p>
+<p>Не всегда бывают даны простые уравнения. Рассмотрим например уравнение <span><em>x</em><sup>2 </sup>+ 2<em>x </em>− 3 = 0</span>.</p>
+<p>В данном случае левая часть уже не является квадратом суммы или разности. Поэтому нужно искать другие пути решения.</p>
+<p>Заметим, что левая часть уравнения представляет собой квадратный трехчлен. Тогда можно попробовать <a href="lesson-63.html#vydelenie_polnogo_kvadrata_iz_kvadratnogo_tryohchlena" title="Перейти к уроку, где рассказывается об этом">выделить полный квадрат из этого трёхчлена</a> и посмотреть что это нам даст.</p>
+<p>Выделим полный квадрат из квадратного трёхчлена, располагающего в левой части уравнения:</p>
+<p><img alt="квадратное уравнение рисунок 16" decoding="async" height="174" loading="lazy" src="assets/da18c3fac3ccca91869bc8c4.png" width="238"/></p>
+<p>В получившемся уравнении перенесем <span>−4</span> в правую часть, изменив знак:</p>
+<p><img alt="квадратное уравнение рисунок 18" decoding="async" height="58" loading="lazy" src="assets/aeb15d80bbe7760bdd4b0710.png" width="125"/></p>
+<p>Теперь воспользуемся квадратным корнем. В уравнении <span>(<em>x </em>+ 1)<sup>2 </sup>= 4</span> выражение <span>(<em>x </em>+ 1)</span> представляет собой квадратный корень из числа <span>4</span>. Тогда можно записать, что <img alt="квадратное уравнение рисунок 44" decoding="async" height="41" loading="lazy" src="assets/d936e945d4cdb5bcf18fe3f3.png" width="119"/>. Вычисление правой части даст выражение <span><em>x </em>+ 1 = ±2</span>. Отсюда полýчится два уравнения: <span><em>x </em>+ 1 = 2</span> и <span><em>x </em>+ 1 = −2</span>, корнями которых являются числа <span>1</span> и <span>−3</span></p>
+<p><img alt="квадратное уравнение рисунок 45" decoding="async" height="144" loading="lazy" src="assets/8b4ad94d229183eab609894c.png" width="311"/></p>
+<p>Значит корнями уравнения <span><em>x</em><sup>2 </sup>+ 2<em>x </em>− 3 = 0</span> являются числа <span>1</span> и <span>−3</span>.</p>
+<p>Выполним проверку:</p>
+<p><img alt="квадратное уравнение рисунок 20" decoding="async" height="152" loading="lazy" src="assets/45f2c9dcb8c0a5f978d46ca1.png" width="449"/></p>
+<hr/>
+<p><strong>Пример 3</strong>. Решить уравнение <span><em>x</em><sup>2 </sup>− 6<em>x </em>+ 9 = 0</span>, выделив полный квадрат.</p>
+<p>Выделим полный квадрат из левой части:</p>
+<p><img alt="квадратное уравнение рисунок 21" decoding="async" height="138" loading="lazy" src="assets/add4eb340dd72aebe9ef2f52.png" width="247"/></p>
+<p>Далее воспользуемся квадратным корнем и узнáем чему равно <span><em>x</em></span></p>
+<p><img alt="квадратное уравнение рисунок 28" decoding="async" height="119" loading="lazy" src="assets/2464e32606ee09540767b5d9.png" width="109"/></p>
+<p>Значит корнем уравнения <span><em>x</em><sup>2 </sup>− 6<em>x </em>+ 9 = 0 является 3. Выполним проверку:</span></p>
+<p><img alt="квадратное уравнение рисунок 23" decoding="async" height="117" loading="lazy" src="assets/4cf749265c2243f148f3f839.png" width="139"/></p>
+<hr/>
+<p><strong>Пример 4</strong>. Решить квадратное уравнение <span>4<em>x</em><sup>2 </sup>+ 28<em>x </em>− 72 = 0</span>, выделив полный квадрат:</p>
+<p>Выделим полный квадрат из левой части:</p>
+<p><img alt="квадратное уравнение рисунок 29" decoding="async" height="181" loading="lazy" src="assets/b4b2994825d1380c70c8346e.png" width="294"/></p>
+<p>Перенесём <span>−121</span> из левой части в правую часть, изменив знак:</p>
+<p><img alt="квадратное уравнение рисунок 30" decoding="async" height="58" loading="lazy" src="assets/61bc8a28e760086160787cc5.png" width="177"/></p>
+<p>Воспользуемся квадратным корнем:</p>
+<p><img alt="квадратное уравнение рисунок 46" decoding="async" height="92" loading="lazy" src="assets/6379035aa9594582b69cf119.png" width="156"/></p>
+<p>Получили два простых уравнения: <span>2<em>x </em>+ 7 = 11</span> и <span>2<em>x </em>+ 7 = −11. </span>Решим их:</p>
+<p><img alt="квадратное уравнение рисунок 32" decoding="async" height="110" loading="lazy" src="assets/f62fe44a19d6b8e6fc06b303.png" width="358"/></p>
+<hr/>
+<p><strong>Пример 5</strong>. Решить уравнение <span>2<em>x</em><sup>2 </sup>+ 3<em>x </em>− 27 = 0</span></p>
+<p>Это уравнение немного посложнее. Когда мы выделяем полный квадрат, первый член квадратного трёхчлена мы представляем в виде квадрата какого-нибудь выражения.</p>
+<p>Так, в прошлом примере первым членом уравнения был <span>4<em>x</em><sup>2</sup></span>. Его можно было представить в виде квадрата выражения <span>2<em>x</em></span>, то есть <span>(2<em>x</em>)<sup>2 </sup>= 2<sup>2</sup><em>x</em><sup>2 </sup>= 4<em>x</em><sup>2</sup></span>. Чтобы убедиться что это правильно, можно извлечь квадратный корень из выражения <span>4<em>x</em><sup>2</sup></span>. Это квадратный корень из произведения — он равен произведению корней:</p>
+<p><img alt="квадратное уравнение рисунок 121" decoding="async" height="27" loading="lazy" src="assets/419443cc20bdb24681b34578.png" width="191"/></p>
+<p>В уравнении <span>2<em>x</em><sup>2 </sup>+ 3<em>x </em>− 27 = 0</span> первый член это <span>2<em>x</em><sup>2</sup></span>. Его нельзя представить в виде квадрата какого-нибудь выражения. Потому что нет числá, квадрат которого равен 2. Если бы такое число было, то этим числом был бы квадратный корень из числа 2. Но квадратный корень из числа 2 извлекается только приближённо. А приближённое значение не годится для представления числá 2 в виде квадрата.</p>
+<p>Если обе части исходного уравнения умножить или разделить на одно и то же число, то полýчится уравнение равносильное исходному. Это правило сохраняется и для квадратного уравнения.</p>
+<p>Тогда можно разделить обе части нашего уравнения на <span>2</span>. Это позвóлит избавиться от двойки перед <span><em>x</em><sup>2</sup></span> что впоследствии даст нам возможность выделить полный квадрат:</p>
+<p><img alt="квадратное уравнение рисунок 33" decoding="async" height="83" loading="lazy" src="assets/290c5a94aca1d3dcd878b671.png" width="152"/></p>
+<p>Перепишем левую часть в виде трёх дробей со знаменателем 2</p>
+<p><img alt="квадратное уравнение рисунок 34" decoding="async" height="116" loading="lazy" src="assets/e2a2fc954a291f1e88d159e9.png" width="159"/></p>
+<p>Сократим первую дробь на 2. Остальные члены левой части перепишем без изменений. Правая часть по-прежнему станет равна нулю:</p>
+<p><img alt="квадратное уравнение рисунок 47" decoding="async" height="45" loading="lazy" src="assets/3517def3ba415cb3dc83ef6e.png" width="151"/></p>
+<p>Выделим полный квадрат.</p>
+<p><img alt="квадратное уравнение рисунок 48" decoding="async" height="183" loading="lazy" src="assets/0b188f0093aae03d298fe445.png" width="356"/></p>
+<p>При представлении члена <img alt="3 на 2 на x" decoding="async" height="45" loading="lazy" src="assets/7c7eb5c2f9636156a8366b7e.png" width="27"/> в виде удвоенного произведения, появление множителя 2 привело бы к тому, что этот множитель и знаменатель дроби <span class="formula" data-tex="\frac{3}{2}">\(\frac{3}{2}\)</span> сократились бы. Чтобы этого не произошло, удвоенное произведение было домножено на <span class="formula" data-tex="\frac{1}{2}">\(\frac{1}{2}\)</span>. При выделении полного квадрата всегда нужно стараться сделать так, чтобы значение изначального выражения не изменилось.</p>
+<p>Свернём полученный полный квадрат:</p>
+<p><img alt="квадратное уравнение рисунок 49" decoding="async" height="125" loading="lazy" src="assets/901adb672fcbe4b85eea64b3.png" width="322"/></p>
+<p>Приведём подобные члены:</p>
+<p><img alt="квадратное уравнение рисунок 50" decoding="async" height="203" loading="lazy" src="assets/b5db59c0ccbf408b02ae50f5.png" width="211"/></p>
+<p>Перенесём дробь <img alt="квадратное уравнение рисунок 51" decoding="async" height="45" loading="lazy" src="assets/68d0ad10eb0e114f76ecf970.png" width="51"/> в правую часть, изменив знак:</p>
+<p><img alt="квадратное уравнение рисунок 52" decoding="async" height="58" loading="lazy" src="assets/6bcc98915466b307b807b4c5.png" width="125"/></p>
+<p>Воспользуемся квадратным корнем. Выражение <img alt="квадратное уравнение рисунок 53" decoding="async" height="53" loading="lazy" src="assets/09b0a68eec92688f2888c2b4.png" width="64"/> представляет собой квадратный корень из числа <img alt="квадратное уравнение рисунок 54" decoding="async" height="45" loading="lazy" src="assets/51d5cabc39f2cd37a9249985.png" width="32"/></p>
+<p><img alt="квадратное уравнение рисунок 55" decoding="async" height="54" loading="lazy" src="assets/2a7ba4618823a178ddc2cc01.png" width="141"/></p>
+<p>Для вычисления правой части воспользуемся правилом извлечения <a href="lesson-64.html#kvadratnyj_koren_iz_drobi" title="Перейти к уроку, где рассказывается об этом">квадратного корня из дроби</a>:</p>
+<p><img alt="квадратный корень из дроби" decoding="async" height="57" loading="lazy" src="assets/dd2a93b8d62f1b6ed700850d.png" width="130"/></p>
+<p>Тогда наше уравнение примет вид:</p>
+<p><img alt="квадратное уравнение рисунок 56" decoding="async" height="182" loading="lazy" src="assets/461cda6378d35d56fedc44df.png" width="139"/></p>
+<p>Полýчим два уравнения:</p>
+<p><img alt="квадратное уравнение рисунок 58" decoding="async" height="45" loading="lazy" src="assets/e944ca6cea9c06532ab6e873.png" width="287"/></p>
+<p>Решим их:</p>
+<p><img alt="квадратное уравнение рисунок 59" decoding="async" height="222" loading="lazy" src="assets/bfe7d26d0ea7f0eb3b7069cb.png" width="320"/></p>
+<p>Значит корнями уравнения <span>2<em>x</em><sup>2 </sup>+ 3<em>x </em>− 27 = 0</span> являются числа <span>3</span> и <img alt="-9 na 2" decoding="async" height="45" loading="lazy" src="assets/cb420bef1257fd7bb5c76c99.png" width="28"/>.</p>
+<p>Корень <img alt="-9 na 2" decoding="async" height="45" loading="lazy" src="assets/cb420bef1257fd7bb5c76c99.png" width="28"/> удобнее оставить в таком виде, не выполняя деления числителя на знаменатель. Так проще будет выполнять проверку.</p>
+<p>Выполним проверку. Подставим найденные корни в исходное уравнение:</p>
+<p><img alt="квадратное уравнение рисунок 60" decoding="async" height="372" loading="lazy" src="assets/a46710fcdf8648b962a2b95a.png" width="532"/></p>
+<p>В обоих случаях левая часть равна нулю, значит уравнение <span>2<em>x</em><sup>2 </sup>+ 3<em>x </em>− 27 = 0</span> решено верно.</p>
+<p>Решая уравнение <span>2<em>x</em><sup>2 </sup>+ 3<em>x </em>− 27 = 0</span>, в самом начале мы разделили обе его части на <span>2</span>. В результате получили квадратное уравнение, в котором коэффициент перед <span><em>x</em><sup>2</sup></span> равен единице:</p>
+<p><img alt="квадратное уравнение рисунок 47" decoding="async" height="45" loading="lazy" src="assets/3517def3ba415cb3dc83ef6e.png" width="151"/></p>
+<p>Такой вид квадратного уравнения называют <strong>приведённым квадратным уравнением</strong>.</p>
+<p>Любое квадратное уравнение вида <span><em>ax</em><sup>2 </sup>+ <em>bx </em>+ <em>c </em>= 0 </span>можно сделать приведённым. Для этого нужно разделить обе его части на коэффициент, который располагается перед <span>x². </span>В данном случае обе части уравнения <span><em>ax</em><sup>2 </sup>+ <em>bx </em>+ <em>c </em>= 0 </span>нужно разделить на <span><em>a</em></span></p>
+<p><img alt="квадратное уравнение рисунок 122" decoding="async" height="230" loading="lazy" src="assets/0aa31347e7109c179237d364.png" width="309"/></p>
+<hr/>
+<p><strong>Пример 6</strong>. Решить квадратное уравнение <span>2<em>x</em><sup>2 </sup>+ <em>x </em>+ 2 = 0</span></p>
+<p>Сделаем данное уравнение приведённым:</p>
+<p><img alt="квадратное уравнение рисунок 75" decoding="async" height="139" loading="lazy" src="assets/0820b71c244af148371c0e38.png" width="143"/></p>
+<p>Выделим полный квадрат:</p>
+<p><img alt="квадратное уравнение рисунок 76" decoding="async" height="501" loading="lazy" src="assets/abda2c10e6fc7ff818936b69.png" width="328"/></p>
+<p>Получили уравнение <img alt="квадратное уравнение рисунок 77" decoding="async" height="61" loading="lazy" src="assets/4de281b37d597c18b13b1829.png" width="140"/> , в котором квадрат выражения <img alt="квадратное уравнение рисунок 78" decoding="async" height="41" loading="lazy" src="assets/72e45ffaa19157583dfd768e.png" width="55"/> равен отрицательному числу <img alt="квадратное уравнение рисунок 79" decoding="async" height="45" loading="lazy" src="assets/36454f4e62226509a01b2df1.png" width="36"/>. Такого быть не может, поскольку квадрат любого числа или выражения всегда положителен.</p>
+<p>Следовательно, нет такого значения <span><em>x</em></span>, при котором левая часть стала бы равна <img alt="квадратное уравнение рисунок 79" decoding="async" height="45" loading="lazy" src="assets/36454f4e62226509a01b2df1.png" width="36"/>. Значит уравнение <img alt="квадратное уравнение рисунок 77" decoding="async" height="61" loading="lazy" src="assets/4de281b37d597c18b13b1829.png" width="140"/> не имеет корней.</p>
+<p>А поскольку уравнение <img alt="квадратное уравнение рисунок 77" decoding="async" height="61" loading="lazy" src="assets/4de281b37d597c18b13b1829.png" width="140"/> равносильно исходному уравнению <span>2<em>x</em><sup>2 </sup>+ <em>x </em>+ 2 = 0</span>, то и оно (исходное уравнение) не имеет корней.</p>
+<hr/>
+<h2 id="formuly_kornej_kvadratnogo_uravneniya">Формулы корней квадратного уравнения</h2>
+<p>Выделять полный квадрат для каждого решаемого квадратного уравнения не очень удобно.</p>
+<p>Можно ли создать универсальные формулы для решения квадратных уравнений? Оказывается можно. Сейчас мы этим и займёмся.</p>
+<p>Взяв за основу буквенное уравнение <span><em>ax</em><sup>2 </sup>+ <em>bx </em>+ <em>c </em>= 0</span>, и выполнив некоторые тождественные преобразования, мы сможем получить формулы для вывода корней квадратного уравнения <span><em>ax</em><sup>2 </sup>+ <em>bx </em>+ <em>c </em>= 0</span>. В эти формулы можно будет подставлять коэффициенты <span><em>a</em></span>, <span><em>b</em></span>, <span><em>с</em></span> и получать готовые решения.</p>
+<p>Итак, выделим полный квадрат из левой части уравнения <span><em>ax</em><sup>2 </sup>+ <em>bx </em>+ <em>c </em>= 0. </span>Сначала сделаем данное уравнение приведённым. Разделим обе его части на <span><em>a</em></span></p>
+<p><img alt="квадратное уравнение рисунок 61" decoding="async" height="163" loading="lazy" src="assets/81d80eb5fd5c5a3582f88662.png" width="151"/></p>
+<p>Теперь в получившемся уравнении выделим полный квадрат:</p>
+<p><img alt="квадратное уравнение рисунок 62" decoding="async" height="313" loading="lazy" src="assets/c11979a9781a9ef2a387b438.png" width="356"/></p>
+<p>Перенесем члены <img alt="квадратное уравнение рисунок 64" decoding="async" height="54" loading="lazy" src="assets/4bf2529e6df14aa2db497903.png" width="49"/> и <img alt="квадратное уравнение рисунок 65" decoding="async" height="41" loading="lazy" src="assets/3367d19084a844a8cb93c169.png" width="13"/> в правую часть, изменив знак:</p>
+<p><img alt="квадратное уравнение рисунок 66" decoding="async" height="57" loading="lazy" src="assets/d8268a97d07557376777802e.png" width="175"/></p>
+<p>Приведём правую часть к общему знаменателю. Дроби, состоящие из букв, привóдят к общему знаменателю <a href="lesson-38.html#privedenie_drobej_k_obshchemu_znamenatelyu">методом «крест-нáкрест»</a>. То есть знаменатель первой дроби станóвится дополнительным множителем второй дроби, а знаменатель второй дроби станóвится дополнительным множителем первой дроби:</p>
+<p><img alt="квадратное уравнение рисунок 67" decoding="async" height="203" loading="lazy" src="assets/7a79a96fe24a3aec38a6e7ed.png" width="223"/></p>
+<p>В числителе правой части вынесем за скобки <span><em>a</em></span></p>
+<p><img alt="квадратное уравнение рисунок 68" decoding="async" height="57" loading="lazy" src="assets/f3c062678fc8350113003aa8.png" width="205"/></p>
+<p>Сократим правую часть на <span><em>a</em></span></p>
+<p><img alt="квадратное уравнение рисунок 69" decoding="async" height="134" loading="lazy" src="assets/656d394bfdd3eb887c3a61a0.png" width="205"/></p>
+<p>Поскольку все преобразования были тождественными, то получившееся уравнение <img alt="квадратное уравнение рисунок 74" decoding="async" height="63" loading="lazy" src="assets/7355394c5ac780ee34ece56e.png" width="175"/> имеет те же корни, что и исходное уравнение <span><em>ax</em><sup>2 </sup>+ <em>bx </em>+ <em>c </em>= 0.</span></p>
+<p>Уравнение <img alt="квадратное уравнение рисунок 74" decoding="async" height="63" loading="lazy" src="assets/7355394c5ac780ee34ece56e.png" width="175"/> будет иметь корни только тогда, если правая часть больше нуля или равна нулю. Это потому что в левой части выполнено возведéние в квадрат, а квадрат любого числа положителен или равен нулю (если в этот квадрат возвóдится ноль). А чему будет равна правая часть зависит от того, что будет подставлено вместо переменных <span><em>a</em></span>, <span><em>b</em></span> и <span><em>c</em></span>.</p>
+<p>Поскольку при любом <span><em>a</em></span> не рáвным нулю, знаменатель правой части уравнения <img alt="квадратное уравнение рисунок 74" decoding="async" height="63" loading="lazy" src="assets/7355394c5ac780ee34ece56e.png" width="175"/> всегда будет положительным, то знак дроби <img alt="квадратное уравнение рисунок 72" decoding="async" height="52" loading="lazy" src="assets/00f3fb96a21bc25341af61ef.png" width="71"/> будет зависеть от знака её числителя, то есть от выражения <span><em>b</em><sup>2 </sup>− 4<em>ac</em></span>.</p>
+<p>Выражение <span><em>b</em><sup>2 </sup>− 4<em>ac</em></span> называют <strong>дискриминантом квадратного уравнения</strong>. Дискриминант это латинское слово, означающее <span><em>различитель</em></span><span>. Дискриминант квадратного уравнения обозначается через букву <span><em>D</em></span></span></p>
+<p><span><em>D = b</em><sup>2 </sup><em>− </em>4<em>ac</em></span></p>
+<p>Дискриминант позволяет заранее узнать имеет ли уравнение корни или нет. Так, в предыдущем задании мы долго решали уравнение <span>2<em>x</em><sup>2 </sup>+ <em>x </em>+ 2 = 0</span> и оказалось, что оно не имеет корней. Дискриминант же позволил бы нам заранее узнать, что корней нет. В уравнении <span>2<em>x</em><sup>2 </sup>+ <em>x </em>+ 2 = 0 </span>коэффициенты <em><span>a</span>, <span>b</span></em> и <span><em>c</em></span> равны <span>2, 1</span> и <span>2</span> соответственно. Подставим их в формулу <span><em>D</em> = <em>b</em><sup>2</sup>−4<em>ac</em></span></p>
+<p><span><em>D</em> = <em>b</em><sup>2</sup> − 4<em>ac</em> = 1<sup>2</sup> − 4 × 2 × 2 = 1 − 16 = −15.</span></p>
+<p>Видим, что <span><em>D</em></span> (оно же <span><em>b</em><sup>2 </sup>− 4<em>ac</em></span>) является отрицательным числом. Тогда нет смысла решать уравнение <span>2<em>x</em><sup>2 </sup>+ <em>x </em>+ 2 = 0,</span> выделяя в нём полный квадрат, потому что когда мы дойдем до уравнения вида <img alt="квадратное уравнение рисунок 74" decoding="async" height="63" loading="lazy" src="assets/7355394c5ac780ee34ece56e.png" width="175"/>, окажется что правая часть станет меньше нуля (из-за отрицательного дискриминанта). А квадрат числа не может быть отрицательным. Следовательно, корней у данного уравнения не будет.</p>
+<p>Станóвится понятно почему древние люди считали выражение <span><em>b</em><sup>2 </sup>− 4<em>ac</em></span> различителем. Это выражение подобно индикатору позволяет различить уравнение имеющего корни от уравнения, не имеющего корней.</p>
+<p>Итак, <span><em>D </em></span>равно <span><em>b</em><sup>2 </sup>− 4<em>ac</em></span>. Подставим в уравнении <img alt="квадратное уравнение рисунок 74" decoding="async" height="63" loading="lazy" src="assets/7355394c5ac780ee34ece56e.png" width="175"/> вместо выражения <span><em>b</em><sup>2 </sup>− 4<em>ac</em></span> букву <span><em>D</em></span></p>
+<p><img alt="квадратное уравнение рисунок 80" decoding="async" height="57" loading="lazy" src="assets/812d97e3ead389f9420f582c.png" width="140"/></p>
+<p>Если дискриминант исходного уравнения окажется меньше нуля <span>(<em>D </em>&lt; 0)</span>, то уравнение примет вид:</p>
+<p><img alt="квадратное уравнение рисунок 81" decoding="async" height="57" loading="lazy" src="assets/777b0aefeb85075db3865599.png" width="155"/></p>
+<p>В этом случае говорят, что у исходного уравнения корней нет, поскольку квадрат любого числа не должен быть отрицательным.</p>
+<p>Если дискриминант исходного уравнения окажется больше нуля <span>(<em>D </em>&gt; 0)</span>, то уравнение примет вид:</p>
+<p><img alt="квадратное уравнение рисунок 82" decoding="async" height="57" loading="lazy" src="assets/df73c27679ec1af38129e44e.png" width="140"/></p>
+<p>В этом случае уравнение будет иметь два корня. Для их вывода воспользуемся квадратным корнем:</p>
+<p><img alt="квадратное уравнение рисунок 83" decoding="async" height="245" loading="lazy" src="assets/84c2449c364598a33b61e3c2.png" width="181"/></p>
+<p>Получили уравнение <img alt="квадратное уравнение рисунок 84" decoding="async" height="59" loading="lazy" src="assets/8c6aa2a6f23cf8d0c416c281.png" width="135"/>. Из него полýчится два уравнения: <img alt="квадратное уравнение рисунок 85" decoding="async" height="59" loading="lazy" src="assets/b3d1ba582255cc992268cfc7.png" width="116"/> и <img alt="квадратное уравнение рисунок 86" decoding="async" height="59" loading="lazy" src="assets/e62a180913a4a32a3399bce4.png" width="131"/>. Выразим <span><em>x</em></span> в каждом из уравнений:</p>
+<p><img alt="квадратное уравнение рисунок 87" decoding="async" height="205" loading="lazy" src="assets/76cefd33edced1df39db8d30.png" width="472"/></p>
+<p>Получившиеся два равенства это и есть универсальные формулы для решения квадратного уравнения <span><em>ax</em><sup>2 </sup>+ <em>bx </em>+ <em>c </em>= 0. </span>Их называют <strong>формулами корней квадратного уравнения</strong><span>.</span></p>
+<p>Чаще всего эти формулы обозначаются как <span><em>x</em><sub>1</sub></span> и <span><em>x</em><sub>2</sub></span>. То есть для вычисления первого корня используется формула c индексом 1; для вывода второго корня — формула с индексом 2. Обозначим свои формулы так же:</p>
+<p><img alt="квадратное уравнение рисунок 90" decoding="async" height="51" loading="lazy" src="assets/4f25498adb7d519d8a4f641a.png" width="315"/></p>
+<p>Очерёдность применения формул не важнá.</p>
+<p>Решим например квадратное уравнение <span><em>x</em><sup>2 </sup>+ 2<em>x </em>− 8 = 0</span> с помощью формул корней квадратного уравнения. Коэффициенты данного квадратного уравнения это числа <span>1</span>, <span>2</span> и <span>−8</span>. То есть, <span><em>a </em>= 1</span>, <span><em>b </em>= 2</span>, <span><em>c </em>= −8</span>.</p>
+<p>Прежде чем использовать формулы корней квадратного уравнения, нужно найти дискриминант этого уравнения.</p>
+<p>Найдём дискриминант квадратного уравнения. Для этого воспользуемся формулой <span><em>D = b</em><sup>2 </sup><em>− </em>4</span><em><span>ac</span>. </em>Вместо переменных<span><em> a, b </em></span>и<span><em> c </em></span>у нас будут коэффициенты уравнения <span><em>x</em><sup>2 </sup>+ 2<em>x </em>− 8 = 0</span></p>
+<p><span><em>D = b</em><sup>2 </sup><em>− </em>4<em>ac</em> = 2<sup>2</sup>− 4 × 1 × (−8) = 4 + 32 = 36</span></p>
+<p>Дискриминант больше нуля. Значит уравнение имеет два корня. Теперь можно воспользоваться формулами корней квадратного уравнения:</p>
+<p><img alt="квадратное уравнение рисунок 91" decoding="async" height="195" loading="lazy" src="assets/edf27d67f083d43902f9a297.png" width="411"/></p>
+<p>Значит корнями уравнения <span><em>x</em><sup>2 </sup>+ 2<em>x </em>− 8 = 0</span> являются числа <span>2</span> и <span>−4</span>. Проверкой убеждаемся, что корни найдены верно:</p>
+<p><img alt="квадратное уравнение рисунок 92" decoding="async" height="190" loading="lazy" src="assets/242cc1f75e9b6ab18fe72fc3.png" width="466"/></p>
+<p>Наконец, рассмотрим случай когда дискриминант квадратного уравнения равен нулю. Вернёмся к уравнению <img alt="квадратное уравнение рисунок 80" decoding="async" height="61" loading="lazy" src="assets/812d97e3ead389f9420f582c.png" width="140"/>. Если дискриминант равен нулю, то правая часть уравнения примет вид:</p>
+<p><img alt="квадратное уравнение рисунок 93" decoding="async" height="57" loading="lazy" src="assets/29a5f45acb42b18cf9a752b2.png" width="115"/></p>
+<p>И в этом случае квадратное уравнение будет иметь только один корень. Воспользуемся квадратным корнем:</p>
+<p><img alt="квадратное уравнение рисунок 94" decoding="async" height="102" loading="lazy" src="assets/feaa8f8d332e6093aa9fdc37.png" width="107"/></p>
+<p>Далее выражаем <span><em>x</em></span></p>
+<p><img alt="квадратное уравнение рисунок 95" decoding="async" height="69" loading="lazy" src="assets/7549f4395f0766e38bef4253.png" width="106"/></p>
+<p>Это ещё одна формула для вывода корня квадратного корня. Рассмотрим её применение. Ранее мы решили уравнение <span><em>x</em><sup>2 </sup>− 6<em>x </em>+ 9 = 0</span>, имеющее один корень 3. Решили мы его методом выделения полного квадрата. Теперь попробуем решить с помощью формул.</p>
+<p>Найдём дискриминант квадратного уравнения. В этом уравнении <span><em>a </em>= 1</span>, <span><em>b </em>= −6</span>, <span><em>c </em>= 9</span>. Тогда по формуле дискриминанта имеем:</p>
+<p><span><em>D = b</em><sup>2 </sup><em>− </em>4<em>ac</em> = (−6)<sup>2 </sup>− 4 × 1 × 9 = 36 − 36 = 0</span></p>
+<p>Дискриминант равен нулю <span>(<em>D </em>= 0)</span>. Это означает, что уравнение имеет только один корень, и вычисляется он по формуле <img alt="квадратное уравнение рисунок 96" decoding="async" height="49" loading="lazy" src="assets/5e762a6f57d0da1c8b3d60ae.png" width="73"/></p>
+<p><img alt="квадратное уравнение рисунок 97" decoding="async" height="47" loading="lazy" src="assets/ab37e8a810c501d5fdfb9ec5.png" width="327"/></p>
+<p>Значит корнем уравнения <span><em>x</em><sup>2 </sup>− 6<em>x </em>+ 9 = 0</span> является число 3.</p>
+<p>Для квадратного уравнения, имеющего один корень также применимы формулы <img alt="формула для вычисления первого корня квадратного уравнения" decoding="async" height="60" loading="lazy" src="assets/84a7e07a79d132915dd122e7.png" width="113"/> и <img alt="формула для вычисления второго корня квадратного уравнения" decoding="async" height="60" loading="lazy" src="assets/805aaf041f0612a69941b410.png" width="119"/>. Но применение каждой из них будет давать один и тот же результат.</p>
+<p>Применим эти две формулы для предыдущего уравнения. В обоих случаях получим один и тот же ответ <span>3</span></p>
+<p><img alt="разложение квадратного трехчлена на множители рис 1" decoding="async" height="124" loading="lazy" src="assets/87fe86956c9e77745ff1a36c.png" width="318"/></p>
+<p> </p>
+<p>Если квадратное уравнение имеет только один корень, то желательно применять формулу <img alt="квадратное уравнение рисунок 96" decoding="async" height="49" loading="lazy" src="assets/5e762a6f57d0da1c8b3d60ae.png" width="73"/>, а не формулы <img alt="формула для вычисления первого корня квадратного уравнения" decoding="async" height="60" loading="lazy" src="assets/84a7e07a79d132915dd122e7.png" width="113"/> и <img alt="формула для вычисления второго корня квадратного уравнения" decoding="async" height="60" loading="lazy" src="assets/805aaf041f0612a69941b410.png" width="119"/>. Это позволяет сэкономить время и место.</p>
+<hr/>
+<p><strong>Пример 3</strong>. Решить уравнение <span>5<em>x</em><sup>2 </sup>− 6<em>x </em>+ 1 = 0</span></p>
+<p>Найдём дискриминант квадратного уравнения:</p>
+<p><img alt="квадратное уравнение рисунок 98" decoding="async" height="25" loading="lazy" src="assets/51ebb67e84a73643194c64b3.png" width="379"/></p>
+<p>Дискриминант больше нуля. Значит уравнение имеет два корня. Воспользуемся формулами корней квадратного уравнения:</p>
+<p><img alt="квадратное уравнение рисунок 99" decoding="async" height="218" loading="lazy" src="assets/d12405754893b3a75278cdfc.png" width="397"/></p>
+<p>Значит корнями уравнения <span>5<em>x</em><sup>2 </sup>− 6<em>x </em>+ 1 = 0</span> являются числа <span>1</span> и <span class="formula" data-tex="\frac{1}{5}">\(\frac{1}{5}\)</span>.</p>
+<p><strong>Ответ</strong>: <span>1; </span><span class="formula" data-tex="\frac{1}{5}">\(\frac{1}{5}\)</span>.</p>
+<hr/>
+<p><strong>Пример 4</strong>. Решить уравнение <span><em>x</em><sup>2 </sup>+ 4<em>x </em>+ 4 = 0</span></p>
+<p>Найдём дискриминант квадратного уравнения:</p>
+<p><img alt="квадратное уравнение рисунок 100" decoding="async" height="21" loading="lazy" src="assets/01a662c54ed7459f5d10e78d.png" width="343"/></p>
+<p>Дискриминант равен нулю. Значит уравнение имеет только один корень. Он вычисляется по формуле <img alt="квадратное уравнение рисунок 96" decoding="async" height="49" loading="lazy" src="assets/5e762a6f57d0da1c8b3d60ae.png" width="73"/></p>
+<p><img alt="квадратное уравнение рисунок 101" decoding="async" height="46" loading="lazy" src="assets/bfc3cccdd30fd622f1068327.png" width="249"/></p>
+<p>Значит корнем уравнения <span><em>x</em><sup>2 </sup>+ 4<em>x </em>+ 4 = 0</span> является число <span>−2</span>.</p>
+<p>Ответ:<span> −2.</span></p>
+<hr/>
+<p><strong>Пример 5</strong>. Решить уравнение <span>3<em>x</em><sup>2 </sup>+ 2<em>x </em>+ 4 = 0</span></p>
+<p>Найдём дискриминант квадратного уравнения:</p>
+<p><img alt="квадратное уравнение рисунок 100" decoding="async" height="20" loading="lazy" src="assets/608ff8bf4729b799d1935d9b.png" width="368"/></p>
+<p>Дискриминант меньше нуля. Значит корней у данного уравнения нет.</p>
+<p><strong>Ответ</strong>: корней нет.</p>
+<hr/>
+<p><strong>Пример 6</strong>. Решить уравнение <span>(<em>x </em>+ 4)<sup>2 </sup>= 3<em>x </em>+ 40</span></p>
+<p>Приведём данное уравнение к нормальному виду. В левой части располагается квадрата суммы двух выражений. Раскрóем его:</p>
+<p><img alt="квадратное уравнение рисунок 101" decoding="async" height="20" loading="lazy" src="assets/e3aa63e1fff58e5ed93a5b98.png" width="183"/></p>
+<p>Перенесём все члены из правой части в левую часть, изменив их знаки. В правой части останется ноль:</p>
+<p><img alt="квадратное уравнение рисунок 102" decoding="async" height="20" loading="lazy" src="assets/e99c3a589148e731b20aba49.png" width="212"/></p>
+<p>Приведём подобные члены в левой части:</p>
+<p><img alt="квадратное уравнение рисунок 103" decoding="async" height="54" loading="lazy" src="assets/054f85f9cefd18f7d5aff4c6.png" width="226"/></p>
+<p>В получившемся уравнении найдём дискриминант:</p>
+<p><img alt="квадратное уравнение рисунок 104" decoding="async" height="24" loading="lazy" src="assets/91c7c0fe6f5e88db5835f383.png" width="405"/></p>
+<p>Дискриминант больше нуля. Значит уравнение имеет два корня. Воспользуемся формулами корней квадратного уравнения:</p>
+<p><img alt="квадратное уравнение рисунок 105" decoding="async" height="111" loading="lazy" src="assets/fae1ff0e6e85a9e429ab1f7c.png" width="428"/></p>
+<p>Значит корнями уравнения <span>(<em>x </em>+ 4)<sup>2 </sup>= 3<em>x </em>+ 40</span> являются числа <span>3</span> и <span>−8</span>.</p>
+<p><strong>Ответ</strong>: 3<span>; −8.</span></p>
+<hr/>
+<p><strong>Пример 7</strong>. Решить уравнение <img alt="квадратное уравнение рисунок 106" decoding="async" height="58" loading="lazy" src="assets/0ef76e305e816718ff5b07f5.png" width="132"/></p>
+<p>Умнóжим обе части данного уравнения на <span>2</span>. Это позвóлит нам избавиться от дроби в левой части:</p>
+<p><img alt="квадратное уравнение рисунок 107" decoding="async" height="145" loading="lazy" src="assets/7a6f84b17a3b28b260a45b0d.png" width="218"/></p>
+<p>В получившемся уравнении перенесём <span>22</span> из правой части в левую часть, изменив знак. В правой части останется <span>0</span></p>
+<p><img alt="квадратное уравнение рисунок 108" decoding="async" height="20" loading="lazy" src="assets/54340f655803c84e3fbcd756.png" width="167"/></p>
+<p>Приведём подобные члены в левой части:</p>
+<p><img alt="квадратное уравнение рисунок 109" decoding="async" height="54" loading="lazy" src="assets/fe3ecf62b95ab050c269da24.png" width="176"/></p>
+<p>В получившемся уравнении найдём дискриминант:</p>
+<p><img alt="квадратное уравнение рисунок 110" decoding="async" height="24" loading="lazy" src="assets/7ef1a4bc762fc5a82e6ae8b3.png" width="447"/></p>
+<p>Дискриминант больше нуля. Значит уравнение имеет два корня. Воспользуемся формулами корней квадратного уравнения:</p>
+<p><img alt="квадратное уравнение рисунок 111" decoding="async" height="111" loading="lazy" src="assets/77bf986c981752be36efbbe1.png" width="445"/></p>
+<p>Значит корнями уравнения <img alt="квадратное уравнение рисунок 106" decoding="async" height="58" loading="lazy" src="assets/0ef76e305e816718ff5b07f5.png" width="132"/> являются числа <span>23</span> и <span>−1</span>.</p>
+<p><strong>Ответ</strong>: <span>23; −1.</span></p>
+<hr/>
+<p><strong>Пример 8</strong>. Решить уравнение <img alt="квадратное уравнение рисунок 112" decoding="async" height="53" loading="lazy" src="assets/8fed664fc821e7c4e1d42cbc.png" width="126"/></p>
+<p>Умнóжим обе части на наименьшее общее кратное знаменателей обеих дробей. Это позвóлит избавиться от дробей в обеих частях. Наименьшее общее кратное чисел <span>2</span> и <span>3</span> это число <span>6</span>. Тогда получим:</p>
+<p><img alt="квадратное уравнение рисунок 113" decoding="async" height="200" loading="lazy" src="assets/519e7ddc33996127d8fe2f9a.png" width="189"/></p>
+<p>В получившемся уравнении раскроем скобки в обеих частях:</p>
+<p><img alt="квадратное уравнение рисунок 114" decoding="async" height="55" loading="lazy" src="assets/7547371d5f78542077380e0e.png" width="173"/></p>
+<p>Теперь перенесём все члены из правой части в левую часть, изменив у них знаки. В правой части останется 0</p>
+<p><img alt="квадратное уравнение рисунок 115" decoding="async" height="21" loading="lazy" src="assets/d5fcf2835cd01819eb864b3c.png" width="189"/></p>
+<p>Приведём подобные члены в левой части:</p>
+<p><img alt="квадратное уравнение рисунок 116" decoding="async" height="55" loading="lazy" src="assets/fb731151c44be13e3e3a0342.png" width="191"/></p>
+<p>В получившемся уравнении найдём дискриминант:</p>
+<p><img alt="квадратное уравнение рисунок 118" decoding="async" height="25" loading="lazy" src="assets/685dd3289d934ebcdf28953a.png" width="392"/></p>
+<p>Дискриминант больше нуля. Значит уравнение имеет два корня. Воспользуемся формулами корней квадратного уравнения:</p>
+<p><img alt="квадратное уравнение рисунок 119" decoding="async" height="112" loading="lazy" src="assets/8da1a805b553b1cea9e77ff6.png" width="456"/></p>
+<p>Значит корнями уравнения <img alt="квадратное уравнение рисунок 112" decoding="async" height="53" loading="lazy" src="assets/8fed664fc821e7c4e1d42cbc.png" width="126"/> являются числа <img alt="две целых одна третья" decoding="async" height="43" loading="lazy" src="assets/153932651e52f89b51ca3dee.png" width="25"/>и <span>2.</span></p>
+<hr/>
+<h2 id="yak3">Примеры решения квадратных уравнений</h2>
+<p><strong id="example_1">Пример 1</strong>. Решить уравнение <span><em>x</em><sup>2 </sup>= 81</span></p>
+<p>Это простейшее квадратное уравнение, в котором надо определить число, квадрат которого равен 81. Таковыми являются числа 9 и −9. Воспользуемся квадратным корнем для их вывода:</p>
+<p><img alt="квадратное уравнение рисунок 125" decoding="async" height="90" loading="lazy" src="assets/872871171ac3913d5c14e666.png" width="150"/></p>
+<p><strong>Ответ</strong>: <span>9, −9</span>.</p>
+<hr/>
+<p><strong>Пример 2</strong>. Решить уравнение <span><em>x</em><sup>2 </sup>− 9 = 0</span></p>
+<p>Это неполное квадратное уравнение. Для его решения нужно перенести член <span>−9</span> в правую часть, изменив знак. Тогда получим:</p>
+<p><img alt="квадратное уравнение рисунок 126" decoding="async" height="158" loading="lazy" src="assets/57118dcc557c4010d2611f12.png" width="164"/></p>
+<p><strong>Ответ</strong>: <span>3, −3.</span></p>
+<hr/>
+<p><strong>Пример 3</strong>. Решить уравнение <span><em>x</em><sup>2 </sup>− 9<em>x </em>= 0</span></p>
+<p>Это неполное квадратное уравнение. Для его решения сначала нужно вынести <span><em>x</em></span> за скобки:</p>
+<p><img alt="квадратное уравнение рисунок 127" decoding="async" height="57" loading="lazy" src="assets/81769eaa0d27424e71fc11e6.png" width="100"/></p>
+<p>Левая часть уравнения является произведением. Произведение равно нулю, если хотя один из сомножителей равен нулю.</p>
+<p>Левая часть станет равна нулю, если отдельно <span><em>x</em></span> равно нулю, или если выражение <span><em>x </em>− 9</span> равно нулю. Получится два уравнения, одно из которых уже решено:</p>
+<p><img alt="квадратное уравнение рисунок 128" decoding="async" height="157" loading="lazy" src="assets/36ad46b3e992d3d3f46aba08.png" width="191"/></p>
+<p><strong>Ответ</strong>: <span>0, 9</span>.</p>
+<hr/>
+<p><strong>Пример 4</strong>. Решить уравнение <span><em>x</em><sup>2 </sup>+ 4<em>x </em>− 5 = 0</span></p>
+<p>Это полное квадратное уравнение. Его можно решить методом выделения полного квадрата или с помощью формул корней квадратного уравнения.</p>
+<p>Решим данное уравнение с помощью формул. Сначала найдём дискриминант:</p>
+<p><span><em>D </em>= <em>b</em><sup>2 </sup>− 4<em>ac </em>= 4<sup>2 </sup>− 4 × 1 × (−5) = 16 + 20 = 36</span></p>
+<p>Дискриминант больше нуля. Значит уравнение имеет два корня. Вычислим их:</p>
+<p><img alt="квадратное уравнение рисунок 129" decoding="async" height="111" loading="lazy" src="assets/26247d7d3add7b4eb8fc1834.png" width="409"/></p>
+<p><strong>Ответ</strong>: <span>1, −5</span>.</p>
+<hr/>
+<p><strong>Пример 5</strong>. Решить уравнение <img alt="квадратное уравнение рисунок 131" decoding="async" height="49" loading="lazy" src="assets/c7200aa31880ecf97566d2e5.png" width="134"/></p>
+<p>Умнóжим обе части на <a href="lesson-11.html#naimenshee_obshchee_kratnoe" title="Перейти к уроку, где рассказывается об этом">наименьшее общее кратное</a> чисел 5, 3 и 6. Это позвóлит избавиться от дробей в обеих частях:</p>
+<p><img alt="квадратное уравнение рисунок 132" decoding="async" height="146" loading="lazy" src="assets/c1245b2aee28fce130ece9d8.png" width="252"/></p>
+<p>В получившемся уравнении перенесём все члены из правой части в левую часть, изменив знак. В правой части останется ноль:</p>
+<p><img alt="квадратное уравнение рисунок 133" decoding="async" height="54" loading="lazy" src="assets/ebe25668762311e4c723a829.png" width="245"/></p>
+<p>Приведём подобные члены:</p>
+<p><img alt="квадратное уравнение рисунок 134" decoding="async" height="55" loading="lazy" src="assets/eb8370d16119dd526df16a22.png" width="205"/></p>
+<p>Решим получившееся уравнение с помощью формул:</p>
+<p><img alt="квадратное уравнение рисунок 135" decoding="async" height="154" loading="lazy" src="assets/b4da797b3b365168bbc70ced.png" width="478"/></p>
+<p><strong>Ответ</strong>: <span>5</span>, <span class="formula" data-tex="-\frac{5}{6}">\(-\frac{5}{6}\)</span>.</p>
+<hr/>
+<p><strong>Пример 6</strong>. Решить уравнение <span><em>x</em><sup>2 </sup>= 6</span></p>
+<p>В данном примере как и <a href="lesson-66.html#example_1">в первом</a> нужно воспользоваться квадратным корнем:</p>
+<p><img alt="квадратное уравнение рисунок 137" decoding="async" height="58" loading="lazy" src="assets/75b53863556c2cf88802126c.png" width="177"/></p>
+<p>Однако, квадратный корень из числа 6 не извлекается. Он извлекается только приближённо. Корень можно извлечь с определённой точностью. Извлечём его с точностью до сотых:</p>
+<p><img alt="квадратное уравнение рисунок 139" decoding="async" height="22" loading="lazy" src="assets/3321957606ef49a924ed43c6.png" width="194"/></p>
+<p>Но чаще всего корень оставляют в виде радикала:</p>
+<p><img alt="квадратное уравнение рисунок 138" decoding="async" height="33" loading="lazy" src="assets/04db40bd3fa83b8597b8e6ab.png" width="177"/></p>
+<p><strong>Ответ</strong>: <img alt="квадратное уравнение рисунок 140" decoding="async" height="41" loading="lazy" src="assets/4d7ef4e7ce122eeb95457c59.png" width="82"/></p>
+<hr/>
+<p><strong>Пример 7</strong>. Решить уравнение <span>(2<em>x </em>+ 3)<sup>2 </sup>+ (<em>x </em>− 2)<sup>2 </sup>= 13</span></p>
+<p>Раскроем скобки в левой части уравнения:</p>
+<p><img alt="квадратное уравнение рисунок 142" decoding="async" height="104" loading="lazy" src="assets/95965e9a95c287f6b8c907f2.png" width="267"/></p>
+<p>В получившемся уравнении перенесём <span>13</span> из правой части в левую часть, изменив знак. Затем приведём подобные члены:</p>
+<p><img alt="квадратное уравнение рисунок 143" decoding="async" height="90" loading="lazy" src="assets/3e5f7a12c6d1844cd9e71def.png" width="299"/></p>
+<p>Получили неполное квадратное уравнение. Решим его:</p>
+<p><img alt="квадратное уравнение рисунок 144" decoding="async" height="210" loading="lazy" src="assets/b7f67d7d48d2df1844dfe4f0.png" width="194"/></p>
+<p><strong>Ответ</strong>: <span>0</span>, <span>−1,6</span>.</p>
+<hr/>
+<p><strong>Пример 8</strong>. Решить уравнение <span>(5 + 7<em>x</em>)(4 − 3<em>x</em>) = 0</span></p>
+<p>Данное уравнение можно решить двумя способами. Рассмотрим каждый из них.</p>
+<p><strong>Первый способ</strong>. Раскрыть скобки и получить нормальный вид квадратного уравнения.</p>
+<p>Раскроем скобки:</p>
+<p><img alt="квадратное уравнение рисунок 148" decoding="async" height="51" loading="lazy" src="assets/9e2bc8faeda001adbfe574e6.png" width="213"/></p>
+<p>Приведём подобные члены:</p>
+<p><img alt="квадратное уравнение рисунок 149" decoding="async" height="55" loading="lazy" src="assets/8f9df79997771b9340e1d456.png" width="214"/></p>
+<p>Перепишем получившееся уравнение так, чтобы член со старшим коэффициентом располагался первым, член со вторым коэффициентом — вторым, а свободный член располагался третьим:</p>
+<p><img alt="квадратное уравнение рисунок 150" decoding="async" height="21" loading="lazy" src="assets/9ff9edf8aa354cebd5d35e91.png" width="180"/></p>
+<p>Чтобы старший член стал положительным, умнóжим обе части уравнения на −1. Тогда все члены уравнения поменяют свои знаки на противоположные:</p>
+<p><img alt="квадратное уравнение рисунок 151" decoding="async" height="55" loading="lazy" src="assets/da812c3a408233b8a145f349.png" width="253"/></p>
+<p>Решим получившееся уравнение с помощью формул корней квадратного уравнения:</p>
+<p><img alt="квадратное уравнение рисунок 152" decoding="async" height="145" loading="lazy" src="assets/ad068245b83ff2592980f72b.png" width="528"/></p>
+<p><strong>Второй способ</strong>. Найти значения <span><em>x</em></span>, при которых сомножители левой части уравнения равны нулю. Этот способ удобнее и намного короче.</p>
+<p>Произведение равно нулю, если хотя бы один из сомножителей равен нулю. В данном случае равенство в уравнении <span>(5 + 7<em>x</em>)(4 − 3<em>x</em>) = 0</span> будет достигаться, если выражение <span>(5 + 7<em>x</em>)</span> равно нулю, или же выражение <span>(4 − 3<em>x</em>) </span>равно нулю. Наша задача выяснить при каких <span><em>x</em></span> это происходит:</p>
+<p><img alt="квадратное уравнение рисунок 154" decoding="async" height="144" loading="lazy" src="assets/8d96f940dc8076e795457152.png" width="314"/></p>
+<hr/>
+<h2 id="yak4">Примеры решения задач</h2>
+<p>Предстáвим, что возникла необходимость построить небольшую комнату, площадь которой <span>8 м<sup>2</sup></span>. При этом длина комнаты должна быть в два раза больше её ширины. Как определить длину и ширину такой комнаты?</p>
+<p>Сделаем примерный рисунок этой комнаты, который иллюстрирует вид сверху:</p>
+<p><img alt="комната x на 2x рисунок 2" decoding="async" height="257" loading="lazy" src="assets/a74a19c547a207d0d913bde9.png" width="584"/></p>
+<p>Обозначим ширину комнаты через <span><em>x</em></span>. А длину комнаты через <span>2<em>x</em></span>, потому что по условию задачи длина должна быть в два раза больше ширины. Множитель <span>2</span> и выполнит это требование:</p>
+<p><img alt="комната x на 2x рисунок 1" decoding="async" height="296" loading="lazy" src="assets/42ac0c877a97069a3dc9be8e.png" width="584"/></p>
+<p>Поверхность комнаты (её пол) является прямоугольником. Для вычисления площади прямоугольника, нужно длину данного прямоугольника умножить на его ширину. Сделаем это:</p>
+<p class="formula" data-tex="2x \times  x">\[2x \times  x\]</p>
+<p>По условию задачи площадь должна быть <span>8 м<sup>2</sup></span>. Значит выражение <span>2<em>x </em>× <em>x</em></span> следует приравнять к <span>8</span></p>
+<p class="formula" data-tex="2x \times  x = 8">\[2x \times  x = 8\]</p>
+<p>Получилось уравнение. Если решить его, то можно найти длину и ширину комнаты.</p>
+<p>Первое что можно сделать это выполнить умножение в левой части уравнения:</p>
+<p><span>2<em>x</em><sup>2</sup> = 8</span></p>
+<p>В результате этого преобразования переменная <span><em>x</em></span> перешла во вторую степень. А мы говорили, что если переменная, входящая в уравнение, возведенá во вторую степень (в квадрат), то такое уравнение является уравнением второй степени или квадратным уравнением.</p>
+<p>Для решения нашего квадратного уравнения воспользуемся изученными ранее тождественными преобразованиями. В данном случае можно разделить обе части на 2</p>
+<p><img alt="квадратное уравнение рисунок 123" decoding="async" height="55" loading="lazy" src="assets/66298a675ebf45bc9ab50b5b.png" width="62"/></p>
+<p>Теперь воспользуемся квадратным корнем. Если <span><em>x</em><sup>2 </sup>= 4</span>, то <img alt="квадратное уравнение рисунок 40" decoding="async" height="41" loading="lazy" src="assets/2bc756fc5c8ebac14b517f9c.png" width="90"/>. Отсюда <span><em>x </em>= 2</span> и <span><em>x </em>= −2</span>.</p>
+<p>Через <span><em>x</em></span> была обозначена ширина комнаты. Ширина не должна быть отрицательной, поэтому в расчёт берём только значение <span>2</span>. Такое часто бывает при решении задачи, в которых применяется квадратное уравнение. В ответе получаются два корня, но условию задачи удовлетворяет только один из них.</p>
+<p>А длина была обозначена через <span>2<em>x</em></span>. Значение <span><em>x</em></span> теперь известно, подставим его в выражение <span>2<em>x</em></span> и вычислим длину:</p>
+<p class="formula" data-tex="2x = 2 \times  2 = 4">\[2x = 2 \times  2 = 4\]</p>
+<p>Значит длина равна <span>4 м</span>, а ширина <span>2 м</span>. Это решение удовлетворяет условию задачи, поскольку площадь комнаты равна <span>8 м<sup>2</sup></span></p>
+<p><span>4 × 2 = 8 м<sup>2</sup></span></p>
+<p><strong>Ответ</strong>: длина комнаты составляет <span>4 м</span>, а ширина <span>2 м</span>.</p>
+<hr/>
+<p><strong>Пример 2</strong>. Огородный участок, имеющий форму прямоугольника, одна сторона которого на <span>10 м</span> больше другой, требуется обнести изгородью. Определить длину изгороди, если известно, что площадь участка равна <span>1200 м<sup>2</sup></span></p>
+<p><strong>Решение</strong></p>
+<p>Длина прямоугольника, как правило, больше его ширины. Пусть ширина участка <span><em>x</em></span> метров, а длина <span>(<em>x </em>+ 10)</span> метров. Площадь участка составляет <span>1200 м<sup>2</sup></span>. Умножим длину участка на его ширину и приравняем к <span>1200</span>, получим уравнение:</p>
+<p class="formula" data-tex="x(x + 10) = 1200">\[x(x + 10) = 1200\]</p>
+<p>Решим данное уравнение. Для начала раскроем скобки в левой части:</p>
+<p><img alt="квадратное уравнение рисунок 145" decoding="async" height="51" loading="lazy" src="assets/e34602fa56e6f99251be8075.png" width="139"/></p>
+<p>Перенесём <span>1200</span> из правой части в левую часть, изменив знак. В правой части останется <span>0</span></p>
+<p><img alt="квадратное уравнение рисунок 146" decoding="async" height="54" loading="lazy" src="assets/9d8562ab7b16c2d4092025c2.png" width="196"/></p>
+<p>Решим получившееся уравнение с помощью формул:</p>
+<p><img alt="квадратное уравнение рисунок 147" decoding="async" height="177" loading="lazy" src="assets/ca64a5386ce33a9f677eeeb8.png" width="479"/></p>
+<p>Несмотря на то, что квадратное уравнение имеет два корня, в расчёт берём только значение <span>30</span>. Потому что ширина не может выражаться отрицательным числом.</p>
+<p>Итак, через <em><span>x</span></em> была обозначена ширина участка. Она равна тридцати метрам. А длина была обозначена через выражение <span><em>x </em>+ 10</span>. Подставим в него найденное значение <span><em>x</em></span> и вычислим длину:</p>
+<p><span><em>x </em>+ 10 = 30 + 10 = 40 м</span></p>
+<p>Значит длина участка составляет сорок метров, а ширина тридцать метров. Эти значения удовлетворяют условию задачи, поскольку если перемножить длину и ширину (числа <span>40</span> и <span>30</span>) получится <span>1200 м<sup>2</sup></span></p>
+<p><span>40 × 30 = 1200 м<sup>2</sup></span></p>
+<p>Теперь ответим на вопрос задачи. Какова длина изгороди? Чтобы её вычислить нужно <a href="lesson-57.html#perimeter" title="Перейти к уроку, где рассказывается об этом">найти периметр</a> участка.</p>
+<p>Периметр прямоугольника это сумма всех его сторон. Тогда:</p>
+<p><span><em>P</em> = 2(<em>a + b</em>) = 2 × (40 + 30) = 2 × 70 = 140 м.</span></p>
+<p><strong>Ответ</strong>: длина изгороди огородного участка составляет <span>140 м.</span></p>
+<hr/>
+<h2 id="yak5">Задания для самостоятельного решения</h2>
+<div>
+<div><span>Задание 1.</span> Решить уравнение:</div>
+<div><img decoding="async" loading="lazy" src="assets/5b09b63ae9f055a50a00e6e8.png"/></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><img decoding="async" loading="lazy" src="assets/484657f25c1c2051000f6962.png"/></div>
+<div><strong>Ответ</strong>: <span>2; −2</span>.</div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 2.</span> Решить уравнение:</div>
+<div><img decoding="async" loading="lazy" src="assets/3b393382d28874110a735c13.png"/></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><img decoding="async" loading="lazy" src="assets/b689cc4171c2f15f4652f87d.png"/></div>
+<div><strong>Ответ</strong>: корней нет.</div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 3.</span> Решить уравнение:</div>
+<div><img decoding="async" loading="lazy" src="assets/cf9748ff38819ec59bbf7afd.png"/></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><img decoding="async" loading="lazy" src="assets/7466beeac4a9ee0fcf4db0f1.png"/></div>
+<div><strong>Ответ</strong>: <span>3; −3</span>.</div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 4.</span> Решить уравнение, используя выделение полного квадрата:</div>
+<div><img decoding="async" loading="lazy" src="assets/5eb69f61a05ec74091b1c9f2.png"/></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><img decoding="async" loading="lazy" src="assets/7a5b3e475f464c384486c0ba.png"/></div>
+<div><strong>Ответ</strong>: <span>3; −13</span>.</div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 5.</span> Решить уравнение, используя выделение полного квадрата:</div>
+<div><img decoding="async" loading="lazy" src="assets/57884d0ccaf9107f4506cd60.png"/></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><img decoding="async" loading="lazy" src="assets/314e6b7de8d2231d9219d78d.png"/></div>
+<div><strong>Ответ</strong>: <span>12; 4</span>.</div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 6.</span> Решить уравнение, используя выделение полного квадрата:</div>
+<div><img decoding="async" loading="lazy" src="assets/deb5152f188dcc0de5937bcb.png"/></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><img decoding="async" loading="lazy" src="assets/62ac50578e373a5a4e998e79.png"/></div>
+<div><strong>Ответ</strong>: <span>7; 5</span>.</div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 7.</span> Решить уравнение:</div>
+<div><img decoding="async" loading="lazy" src="assets/65a695f27c25b64ffcc67a02.png"/></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><img decoding="async" loading="lazy" src="assets/e1a35147a6cd918076af4dcb.png"/></div>
+<div><strong>Ответ</strong>: <span>0; 1</span>.</div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 8.</span> Решить уравнение:</div>
+<div><img decoding="async" loading="lazy" src="assets/56999a3fc0e2e8bca79b332f.png"/></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><img decoding="async" loading="lazy" src="assets/f976ca3e6f92eae6b87ca90b.png"/></div>
+<div><strong>Ответ</strong>: <span>0; −3</span>.</div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 9.</span> Решить уравнение:</div>
+<div><img decoding="async" loading="lazy" src="assets/11b34c40d674d11aeecfd1ff.png"/></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><img decoding="async" loading="lazy" src="assets/3a55767b29f55fb1080107ba.png"/></div>
+<div><strong>Ответ</strong>: <span>7; −7</span>.</div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 10.</span> Решить уравнение:</div>
+<div><img decoding="async" loading="lazy" src="assets/b2a9aef949b98474863589f4.png"/></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><img decoding="async" loading="lazy" src="assets/386ac7590bdeb62dd31e34f5.png"/></div>
+<div><strong>Ответ</strong>: <img decoding="async" loading="lazy" src="assets/680f7c058046300347f6b4c1.png"/></div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 11.</span> Решить уравнение:</div>
+<div><img decoding="async" loading="lazy" src="assets/7d0ee762e67e9054536b97c9.png"/></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><img decoding="async" loading="lazy" src="assets/797327781b16111193693b2a.png"/></div>
+<div><strong>Ответ</strong>: <span>5; −5</span>.</div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 12.</span> Решить уравнение:</div>
+<div><img decoding="async" loading="lazy" src="assets/e1743afbcd16837c89077870.png"/></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><img decoding="async" loading="lazy" src="assets/648b3d0bed7fc6f39942a38c.png"/></div>
+<div><strong>Ответ</strong>: 7; 2</div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 13.</span> Решить уравнение:</div>
+<div><img decoding="async" loading="lazy" src="assets/a7d1091ea77f143bc220c1fb.png"/></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><img decoding="async" loading="lazy" src="assets/b42e6c65827afd726896da89.png"/></div>
+<div><strong>Ответ</strong>: корней нет.</div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 14.</span> Решить уравнение:</div>
+<div><img decoding="async" loading="lazy" src="assets/74c8191805d057247f7af5e1.png"/></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><img decoding="async" loading="lazy" src="assets/1f0de3022a7434f48bf20054.png"/></div>
+<div><strong>Ответ</strong>: <img decoding="async" loading="lazy" src="assets/91c346e7f7c4ee2d91339575.png"/></div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 15.</span> Решить уравнение:</div>
+<div><img decoding="async" loading="lazy" src="assets/88007993faafa427387e56ce.png"/></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><img decoding="async" loading="lazy" src="assets/4609ac1c94dea231edd04b5e.png"/></div>
+<div><strong>Ответ</strong>: <span>1; −5</span>.</div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 16.</span> Решить уравнение:</div>
+<div><img decoding="async" loading="lazy" src="assets/607edbed04a917e209ad82a9.png"/></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><img decoding="async" loading="lazy" src="assets/604774b82fac3bd2fe63ed13.png"/></div>
+<div><strong>Ответ</strong>: <span>5; −9</span>.</div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 17.</span> Решить уравнение:</div>
+<div><img decoding="async" loading="lazy" src="assets/9eb6365c039293c1b7bb8643.png"/></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><img decoding="async" loading="lazy" src="assets/78495cbd72d5460de8b0c625.png"/></div>
+<div><strong>Ответ</strong>: <span>−3; −4</span>.</div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 18.</span> Решить уравнение:</div>
+<div><img decoding="async" loading="lazy" src="assets/a41efca4ec78c7a17e90610d.png"/></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><img decoding="async" loading="lazy" src="assets/3d5fce6dfb35dde7f95c1f39.png"/></div>
+<div><strong>Ответ</strong>: <img decoding="async" loading="lazy" src="assets/473eb1e4b0b9d9e27c82de4a.png"/>.</div>
+</div></details>
+</div>
+<hr/>
+<p><span><strong>Понравился урок? <br/>Вступай в нашу новую группу Вконтакте и начни получать уведомления о новых уроках</strong></span></p>
+
+
+<!-- VK Widget -->
+<div>
+<div id="vk_groups"></div>
+
+<div>
+</div></div>
+<div>
+<p>
+<span><strong>Возникло желание поддержать проект?</strong></span><br/>
+<span><strong>Используй кнопку ниже</strong></span></p>
+
+</div>
+<div>
+<!-- Yandex.RTB R-A-16725112-3 -->
+
+
+</div>
+</article><section id="quiz" aria-label="Тест к уроку"></section><div class="next"><a href="lesson-65.html">← Предыдущий шаг</a><a href="lesson-67.html">Следующий шаг →</a></div></main></div><dialog id="settings"><h2>Настройки</h2><h3>Приложение</h3><button id="install" hidden>Установить приложение</button><p id="install-help"></p><button id="download">Скачать весь курс</button><progress id="download-progress" value="0" max="1" hidden></progress><p id="offline-status" role="status"></p><p><a href="spacemath-offline.zip" download>Скачать ZIP-копию для другого компьютера</a></p><h3>Прогресс</h3><button id="export">Сохранить прогресс</button><label>Восстановить прогресс <input id="import" type="file" accept="application/json"></label><details><summary>Начать заново</summary><p>Очистятся ответы и отметки. Уроки и картинки останутся для следующего ученика.</p><button id="reset">Очистить мой прогресс</button></details><p id="settings-status" role="status"></p><form method="dialog"><button>Закрыть</button></form></dialog><footer>Материалы: <a href="https://spacemath.xyz/">Spacemath</a>. Локальная учебная копия с тестами.</footer></body></html>

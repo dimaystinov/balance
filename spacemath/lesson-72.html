@@ -1,0 +1,279 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#326c9c"><title>Шаг 72. Решение уравнений с модулем методом интервалов — Математика с нуля</title><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="icon.svg"><link rel="stylesheet" href="style.css"><link rel="stylesheet" href="vendor/katex/katex.min.css"><script defer src="vendor/katex/katex.min.js"></script><script defer src="vendor/katex/contrib/auto-render.min.js"></script><script defer src="engine.js"></script><script defer src="quiz-bank.js"></script><script defer src="app.js"></script></head><body data-lesson="72"><header><a href="index.html">Математика с нуля</a><button id="menu" aria-controls="sidebar" aria-expanded="false">Шаги</button><button id="settings-open">Настройки</button></header><div class="layout"><aside id="sidebar"><p id="overall"></p><nav aria-label="Шаги курса"><ol><li><a href="lesson-01.html">Шаг 1. Числа</a></li><li><a href="lesson-02.html">Шаг 2. Основные операции</a></li><li><a href="lesson-03.html">Шаг 3. Выражения</a></li><li><a href="lesson-04.html">Шаг 4. Замены в выражениях</a></li><li><a href="lesson-05.html">Шаг 5. Разряды для начинающих</a></li><li><a href="lesson-06.html">Шаг 6. Умножение</a></li><li><a href="lesson-07.html">Шаг 7. Деление</a></li><li><a href="lesson-08.html">Шаг 8. Порядок действий</a></li><li><a href="lesson-09.html">Шаг 9. Законы математики</a></li><li><a href="lesson-10.html">Шаг 10. Делители и кратные</a></li><li><a href="lesson-11.html">Шаг 11. НОД и НОК</a></li><li><a href="lesson-12.html">Шаг 12. Дроби</a></li><li><a href="lesson-13.html">Шаг 13. Действия с дробями</a></li><li><a href="lesson-14.html">Шаг 14. Смешанные числа</a></li><li><a href="lesson-15.html">Шаг 15. Сравнение дробей</a></li><li><a href="lesson-16.html">Шаг 16. Единицы измерения</a></li><li><a href="lesson-17.html">Шаг 17. Практика по дробям</a></li><li><a href="lesson-18.html">Шаг 18. Десятичные дроби</a></li><li><a href="lesson-19.html">Шаг 19. Действия с десятичными дробями</a></li><li><a href="lesson-20.html">Шаг 20. Практика по десятичным дробям</a></li><li><a href="lesson-21.html">Шаг 21. Округление чисел</a></li><li><a href="lesson-22.html">Шаг 22. Периодические дроби</a></li><li><a href="lesson-23.html">Шаг 23. Перевод единиц</a></li><li><a href="lesson-24.html">Шаг 24. Соотношения</a></li><li><a href="lesson-25.html">Шаг 25. Пропорция</a></li><li><a href="lesson-26.html">Шаг 26. Расстояние, скорость, время</a></li><li><a href="lesson-27.html">Шаг 27. Прямая и обратная пропорциональность</a></li><li><a href="lesson-28.html">Шаг 28. Проценты</a></li><li><a href="lesson-29.html">Шаг 29. Отрицательные числа</a></li><li><a href="lesson-30.html">Шаг 30. Модуль числа</a></li><li><a href="lesson-31.html">Шаг 31. Что такое множество?</a></li><li><a href="lesson-32.html">Шаг 32. Сложение и вычитание целых чисел</a></li><li><a href="lesson-33.html">Шаг 33. Умножение и деление целых чисел</a></li><li><a href="lesson-34.html">Шаг 34. Рациональные числа</a></li><li><a href="lesson-35.html">Шаг 35. Сравнение рациональных чисел</a></li><li><a href="lesson-36.html">Шаг 36. Сложение и вычитание рациональных чисел</a></li><li><a href="lesson-37.html">Шаг 37. Умножение и деление рациональных чисел</a></li><li><a href="lesson-38.html">Шаг 38. Дополнительные сведения о дробях</a></li><li><a href="lesson-39.html">Шаг 39. Буквенные выражения</a></li><li><a href="lesson-40.html">Шаг 40. Вынесение общего множителя за скобки</a></li><li><a href="lesson-41.html">Шаг 41. Раскрытие скобок</a></li><li><a href="lesson-42.html">Шаг 42. Простейшие задачи по математике</a></li><li><a href="lesson-43.html">Шаг 43. Задачи на дроби</a></li><li><a href="lesson-44.html">Шаг 44. Задачи на проценты</a></li><li><a href="lesson-45.html">Шаг 45. Задачи на движение</a></li><li><a href="lesson-46.html">Шаг 46. Производительность</a></li><li><a href="lesson-47.html">Шаг 47. Элементы статистики</a></li><li><a href="lesson-48.html">Шаг 48. Общие сведения об уравнениях</a></li><li><a href="lesson-49.html">Шаг 49. Решение задач с помощью уравнений</a></li><li><a href="lesson-50.html">Шаг 50. Решение задач с помощью пропорции</a></li><li><a href="lesson-51.html">Шаг 51. Системы линейных уравнений</a></li><li><a href="lesson-52.html">Шаг 52. Общие сведения о неравенствах</a></li><li><a href="lesson-53.html">Шаг 53. Системы линейных неравенств с одной переменной</a></li><li><a href="lesson-54.html">Шаг 54. Операции над множествами</a></li><li><a href="lesson-55.html">Шаг 55. Степень с натуральным показателем</a></li><li><a href="lesson-56.html">Шаг 56. Степень с целым показателем</a></li><li><a href="lesson-57.html">Шаг 57. Периметр, площадь и объём</a></li><li><a href="lesson-58.html">Шаг 58. Одночлены</a></li><li><a href="lesson-59.html">Шаг 59. Многочлены</a></li><li><a href="lesson-60.html">Шаг 60. Формулы сокращённого умножения</a></li><li><a href="lesson-61.html">Шаг 61. Разложение многочлена на множители</a></li><li><a href="lesson-62.html">Шаг 62. Деление многочленов</a></li><li><a href="lesson-63.html">Шаг 63. Тождественные преобразования многочленов</a></li><li><a href="lesson-64.html">Шаг 64. Квадратный корень</a></li><li><a href="lesson-65.html">Шаг 65. Алгоритм извлечения квадратного корня</a></li><li><a href="lesson-66.html">Шаг 66. Квадратное уравнение</a></li><li><a href="lesson-67.html">Шаг 67. Квадратное уравнение с чётным вторым коэффициентом</a></li><li><a href="lesson-68.html">Шаг 68. Теорема Виета</a></li><li><a href="lesson-69.html">Шаг 69. Разложение квадратного трёхчлена на множители</a></li><li><a href="lesson-70.html">Шаг 70. Обобщённое понятие модуля числа</a></li><li><a href="lesson-71.html">Шаг 71. Уравнение с модулем</a></li><li><a href="lesson-72.html">Шаг 72. Решение уравнений с модулем методом интервалов</a></li><li><a href="lesson-73.html">Шаг 73. Неравенства с модулем</a></li><li><a href="lesson-74.html">Шаг 74. Решение неравенств с модулем методом интервалов</a></li><li><a href="lesson-75.html">Шаг 75. Извлечение квадратного корня из обеих частей уравнения</a></li></ol></nav></aside><main id="main"><h1>Шаг 72. Решение уравнений с модулем методом интервалов</h1><p class="origin"><a href="https://spacemath.xyz/reshenie-uravnenij-s-modulem-metodom-intervalov/">Оригинал урока</a> · <a href="#quiz">К тесту</a></p><article class="lesson-text">
+<b>Предварительные навыки</b><p></p>
+<ul>
+<li><a href="lesson-15.html">Сравнение дробей<br/>
+</a></li>
+<li><a href="lesson-48.html">Общие сведения об уравнениях<br/>
+</a></li>
+<li><a href="lesson-52.html">Общие сведения о неравенствах<br/>
+</a></li>
+<li><a href="lesson-70.html">Обобщенное понятие модуля числа<br/>
+</a></li>
+<li><a href="lesson-71.html">Уравнение с модулем<br/>
+</a></li>
+</ul>
+
+<b>Содержание урока</b><p></p>
+<ul>
+<li><a href="lesson-72.html#neskolko_modulej_v_odnoj_chasti">Уравнения с несколькими модулями в одной части</a></li>
+<li><a href="lesson-72.html#zadaniya_dlya_samostoyatelnogo_resheniya">Задания для самостоятельного решения</a></li>
+</ul>
+
+<h2 id="neskolko_modulej_v_odnoj_chasti">Уравнения с несколькими модулями в одной части</h2>
+<p>Чем больше модулей, тем больше приходиться их раскрывать и тем больше получается различных уравнений. Когда модулей один или два — это не сложно. Сложность возникает когда модулей больше двух. Человек может забыть рассмотреть какой-то из случаев, и получится что уравнение решено не полностью.</p>
+<p>Давайте решим следующее уравнение:</p>
+<p><span>|<em>x </em>− 5| − |<em>x</em>| = 1</span></p>
+<p>У данного уравнения два модуля в левой части. Оно решается путем раскрытия модулей. Не будем комментировать решение, а сразу приведём его:</p>
+<p><img alt="uravnenie-s-modulem-risunok-52" decoding="async" height="462" loading="lazy" src="assets/03c3646dd658cd1e90e0465f.png" width="288"/></p>
+<p>Такой вид уравнения удобнее решать методом интервалов (или более точно — методом промежутков). Суть этого метода в том, чтобы разбить координатную прямую на несколько промежутков, а затем решить уравнение на каждом из этих промежутков. Модули исходного уравнения на каждом промежутке будут раскрываться по разному.</p>
+<p>Решим уравнение <span>|<em>x </em>−<em> </em>5|<em> </em>−<em> </em>|<em>x</em>|<em> </em>=<em> </em>1</span> методом интервалов.</p>
+<p>Для начала нарисуем координатную прямую и обозначим её как <span><em>x</em></span></p>
+<p><img alt="уравнение с модулем рисунок 49" decoding="async" height="50" loading="lazy" src="assets/f76c448d9fbe9ec1f01613ea.png" width="639"/></p>
+<p>Если координатная прямая содержит все числа, которые существуют в природе, то логично что она содержит и корни нашего уравнения.</p>
+<p>Теперь надо разбить координатную прямую на промежутки. Для этого сначала нужно найти на ней те точки, на которых модули нашего уравнения будут менять свой порядок раскрытия. То есть, найти точки перехода для модулей <span>|<em>x </em>− 5|</span> и <span>|<em>x</em>|</span>.</p>
+<p>Чтобы найти точки перехода, нужно выяснить при каких значениях <em>x</em> подмодульные выражения равны нулю. Узнать это можно приравняв к нулю подмодульные выражения обоих модулей, и решить обычные линейные уравнения:</p>
+<p><img alt="метод интервалов рис 1" decoding="async" height="80" loading="lazy" src="assets/143e1ddfb823253f1a095baa.png" width="269"/></p>
+<p>Для модуля <span>|<em>x </em>− 5|</span> точкой перехода будет <span>5</span>. Для модуля <span>|<em>x</em>|</span> точкой перехода будет <span>0</span>.</p>
+<p>Теперь отметим точки перехода на координатной прямой. Мéньшие числа нужно отмечать левее, большие числа правее:</p>
+<p><img alt="уравнение с модулем рисунок 51" decoding="async" height="53" loading="lazy" src="assets/8de6cd562d6e788dade89d12.png" width="639"/></p>
+<p>Проведем дуги от точек перехода:</p>
+<p><img alt="уравнение с модулем рисунок 52" decoding="async" height="117" loading="lazy" src="assets/20427334a8beb11d9935108b.png" width="639"/></p>
+<p>С помощью неравенств подпишем каждый промежуток. Получится три промежутка: от минус бесконечности до нуля, от нуля до пяти, и от пяти до плюс бесконечности. То есть: <em>x</em> &lt; 0, 0 ≤ <em>x</em> &lt; 5 и <em>x</em> ≥ 5</p>
+<p><img alt="уравнение с модулем рисунок 53" decoding="async" height="116" loading="lazy" src="assets/14913f3e4e88ac5beb15984c.png" width="639"/></p>
+<p>Обратите внимание, что в первом промежутке <span><em>x</em> &lt; 0</span> значение 0 не включено в данный промежуток. Но зато это значение включено во второй промежуток <span>0 ≤ <em>x </em>&lt; 5</span>.</p>
+<p>Во втором же промежутке <span>0 ≤ <em>x</em> &lt; 5</span> значение 5 не включено в данный промежуток, но зато оно включено в третий промежуток <span><em>x</em> ≥ 5</span>.</p>
+<p>Проще говоря, каждый промежуток включает в себя левый конец, и не включает правый. Сделано это специально, чтобы не допустить потерь значений переменной <em>x</em>. Описать с помощью неравенств нужно все значения на координатной прямой, не допуская их потерь.</p>
+<p><img alt="уравнение с модулем рисунок 53" decoding="async" height="116" loading="lazy" src="assets/14913f3e4e88ac5beb15984c.png" width="639"/></p>
+<p>Включение левого конца в рассматриваемый промежуток и исключение его из правого это лишь общепринятое правило. На самом деле концы рассматриваемого промежутка можно включать в любой из соседствующих промежутков. Например, значение 0 можно было включить в первый промежуток. Тогда он принял бы вид <span><em>x </em>≤ 0</span>, а второй промежуток принял бы вид <span>0 &lt; <em>x </em>&lt; 5</span>, потому что ноль уже был включен в первый промежуток.</p>
+<p>Но лучше всего исходить из ситуации, потому что в каких-то случаях левый конец промежутка целесообразнее исключить из рассматриваемого промежутка и включить его в правый конец соседнего промежутка. Об этом мы поговорим позже.</p>
+<p>Теперь выясним как будут вести себя модули |<em>x </em>− 5| и |<em>x</em>| на каждом из этих промежутков. От этого будет зависеть то, как они будут раскрываться.</p>
+<p>Начнем с первого промежутка <em>x</em> &lt; 0.</p>
+<p>Если <span><em>x</em> &lt; 0</span>, то при любом значении <em>x </em>на данном промежутке подмодульное выражение <em>x </em>− 5 станет отрицательным, а значит модуль |<em>x </em>− 5| на промежутке <em>x</em> &lt; 0 будет раскрываться со знаком минус. Второй модуль |<em>x</em>| на промежутке <em>x</em> &lt; 0 тоже будет раскрываться со знаком минус.</p>
+<p>В результате после раскрытия модулей на промежутке <em>x</em> &lt; 0 уравнение с модулем |<em>x</em> − 5| − |<em>x</em>| = 1 примет вид −(<em>x </em>− 5) + <em>x</em> = 1</p>
+<p><img alt="уравнение с модулем рисунок 55" decoding="async" height="146" loading="lazy" src="assets/c3ca842c029985a851083a61.png" width="639"/></p>
+<pre><span>Второй модуль |<em>x</em>| на промежутке <em>x </em>&lt; 0 раскрылся с минусом. В самом же уравнении |<em>x </em>− 5 |− |<em>x</em>| = 1 после выражения |<em>x</em> − 5| тоже располагался минус. В математике два минуса, идущие подряд, дают плюс. Поэтому и получилось выражение −(<em>x </em>− 5) + <em>x</em> = 1.</span></pre>
+<p>Решим уравнение <span>−(<em>x </em>−<em> </em>5) + <em>x</em> = 1</span>, которое получилось после раскрытия модулей на промежутке <span><em>x</em> &lt; 0</span></p>
+<p><img alt="уравнение с модулем рисунок 59" decoding="async" height="88" loading="lazy" src="assets/89897233b25949452fd35c95.png" width="131"/></p>
+<p>Это уравнение решений не имеет. Значит на промежутке <span><em>x </em>&lt;<em> </em>0</span> исходное уравнение не имеет корней. Проще говоря, корень уравнения не является числом меньшим нуля.</p>
+<p>Следующий промежуток, на котором нужно решить уравнение это промежуток <span>0<em> </em>≤<em> </em><em>x </em>&lt;<em> </em>5</span>.</p>
+<p>Если <em>x</em> больше или равно нулю, но меньше пяти, то подмодульное выражение <em>x </em>−<em> </em>5, станет отрицательным, а значит модуль <span>|<em>x </em>−<em> </em>5|</span> на промежутке <span>0<em> </em>≤<em> x </em>&lt;<em> </em>5</span> будет раскрываться со знаком минус. Второй модуль <span>|<em>x</em>|</span> на промежутке <span>0<em> </em>≤<em> </em><em>x </em>&lt;<em> </em>5</span> будет раскрываться с плюсом.</p>
+<p>В результате после раскрытия модулей на промежутке <span>0<em> </em>≤<em> x </em>&lt;<em> </em>5</span> уравнение с модулем <span>|<em>x − </em>5|<em> </em><em>− </em>|<em>x</em>|<em> </em>=<em> </em>1</span> примет вид <span>−(<em>x </em>−<em> </em>5) − <em>x</em> = 1</span></p>
+<p><img alt="уравнение с модулем рисунок 56" decoding="async" height="145" loading="lazy" src="assets/f5f86a784095cfa8cfcd3903.png" width="639"/></p>
+<p>Решим это уравнение:</p>
+<p><img alt="уравнение с модулем рисунок 60" decoding="async" height="119" loading="lazy" src="assets/8faa600685af24742d4ab943.png" width="131"/></p>
+<p>Получили корень 2. Чтобы проверить действительно ли это число является  корнем исходного уравнения, нужно посмотреть принадлежит ли это число рассматриваемому промежутку  <span>0<em> </em>≤<em> x </em>&lt;<em> </em>5</span>. Принадлежит? Да. Значит число 2 является корнем уравнения <span>|<em>x − </em>5|<em> </em><em>− </em>|<em>x</em>|<em> </em>=<em> </em>1</span>. Проверка также показывает это:</p>
+<p><img alt="уравнение с модулем рисунок 70" decoding="async" height="154" loading="lazy" src="assets/8939458c8f12d63898bb2ead.png" width="141"/></p>
+<p>Следующий промежуток, который нужно рассмотреть это промежуток <span><em>x</em> ≥ 5</span>.</p>
+<p>Если <em>x</em> больше или равно пяти, то модуль <span>|<em>x </em>− 5|</span> на промежутке <span><em>x</em> ≥ 5</span> будет раскрываться со знаком плюс. Второй модуль <span>|<em>x</em>|</span> на промежутке <span><em>x</em> ≥ 5</span> тоже будет раскрываться с плюсом.</p>
+<p>В результате после раскрытия модулей на промежутке <span><em>x</em> ≥ 5</span> уравнение с модулем <span>|<em>x − </em>5| <em>− </em>|<em>x</em>| = 1</span> примет вид <span><em>x </em>− 5 − <em>x</em> = 1</span>.</p>
+<p><img alt="уравнение с модулем рисунок 57" decoding="async" height="145" loading="lazy" src="assets/7bd1459ea9227c494277d8bd.png" width="639"/></p>
+<p>Решим это уравнение:</p>
+<p><img alt="уравнение с модулем рисунок 71" decoding="async" height="54" loading="lazy" src="assets/7678476ff57e93aecf19394a.png" width="102"/></p>
+<p>Это уравнение не имеет решений. Значит на промежутке <span><em>x</em> ≥ 5</span> исходное уравнение корней не имеет. Проще говоря, корень уравнения не является числом, бóльшим либо равным пяти.</p>
+<p>В итоге корнем уравнения является число 2, которое мы нашли решив исходное уравнение на промежутке 0<em> </em>≤<em> x </em>&lt;<em> </em>5.</p>
+<p><strong>Ответ</strong>: 2.</p>
+<hr/>
+<p><strong>Пример 2</strong>. Решить уравнение <span>|<em>x </em>− 3| + |<em>x </em>+ 2| = 7</span></p>
+<p><strong>Решение</strong></p>
+<p><strong>Шаг 1</strong>. Находим точки перехода для модулей <span>|<em>x </em>− 3|</span> и <span>|<em>x </em>+ 2|</span></p>
+<p><img alt="метод интервалов рис 2" decoding="async" height="48" loading="lazy" src="assets/c9fca8005749c652fdaabff7.png" width="255"/></p>
+<p><strong>Шаг 2</strong>. Отметим на координатной прямой найденные точки перехода и выделим получившиеся промежутки:</p>
+<p><img alt="метод интервалов рис 3" decoding="async" height="116" loading="lazy" src="assets/54fe6d866ab63793c91d1f0e.png" width="627"/></p>
+<p><strong>Шаг 3</strong>. Решим исходное уравнение на каждом промежутке. Для этого посмóтрим как будут раскрываться модули |<em>x </em>−<em> </em>3| и |<em>x </em>+<em> </em>2| на этих промежутках.</p>
+<p>На промежутке <span><em>x </em>&lt; −2</span> модуль <span>|<em>x </em>− 3|</span> будет раскрываться с минусом. Можно проверить это, подставив в данный модуль любое число из промежутка <span><em>x </em>&lt; −2</span>. Например, числа −4 или −9</p>
+<p><span>|<em>x </em>− 3| = |−4 − 3| = |−7| = −(−7) = 7</span></p>
+<p><span>|<em>x </em>− 3| = |−9 − 3| =|−12| = −(−12) = 12</span></p>
+<p>Следующий модуль |<em>x </em>+ 2| на промежутке <span><em>x </em>&lt; −2</span> тоже будет раскрываться с минусом. Убедимся в этом подставив любые два числа из промежутка <span><em>x </em>&lt; −2</span> в подмодульное выражение. Например, числа −6 и −8</p>
+<p><span>|<em>x </em>+ 2| = |−6 + 2| = |−4| = −(−4) = 4</span></p>
+<p><span>|<em>x </em>+ 2| = |−8 + 2| = |−6| = −(−6) = 6</span></p>
+<p>Значит после раскрытия модулей на промежутке <span><em>x </em>&lt;<em> </em>−2</span> исходное уравнение <span>|<em>x </em>−<em> </em>3|<em> </em>+<em> </em>|<em>x </em>+<em> </em>2|<em> </em>=<em> </em>7</span> принимает следующий вид:</p>
+<p class="formula" data-tex="-x + 3 - x - 2 = 7">\[-x + 3 - x - 2 = 7\]</p>
+<p>Решим его:</p>
+<p><img alt="метод интервалов рис 8" decoding="async" height="79" loading="lazy" src="assets/554d3674258e4b745bc2ae8c.png" width="152"/></p>
+<p>Обязательно нужно проверить входит ли найденный корень −3 в рассматриваемый промежуток <em>x </em>&lt;<em> </em>−2. Для этого нужно подставить в неравенство <span><em>x </em>&lt;<em> </em>−2</span> найденный корень −3 и проверить верное ли оно. В данном случае неравенство <span>−3 &lt; −2</span> верно, значит корень −3 входит в промежуток <span><em>x </em>&lt;<em> </em>−2</span> и соответственно является корнем исходного уравнения.</p>
+<p>На следующем промежутке −2<em> </em>≤<em> </em><em>x </em>&lt;<em> </em>3 модуль |<em>x </em>−<em> </em>3| будет раскрываться с минусом, а модуль|<em>x </em>+<em> </em>2| будет раскрываться с плюсом.</p>
+<p>Значит после раскрытия модулей на промежутке −2<em> </em>≤<em> </em><em>x </em>&lt;<em> </em>3 исходное уравнение |<em>x </em>−<em> </em>3|<em> </em>+<em> </em>|<em>x </em>+<em> </em>2|<em> </em>=<em> </em>7 принимает следующий вид:</p>
+<p class="formula" data-tex="-x + 3 + x + 2 = 7">\[-x + 3 + x + 2 = 7\]</p>
+<p>Решим это уравнение:</p>
+<p><img alt="метод интервалов рис 5" decoding="async" height="55" loading="lazy" src="assets/83d62a9341c3a23f132624c5.png" width="150"/></p>
+<p>Это уравнение не имеет решений, значит на промежутке −2 ≤ <em>x </em>&lt; 3  исходное уравнение тоже не имеет решений (корней).</p>
+<p>Наконец рассмотрим промежуток <em>x </em>≥<em> </em>3</p>
+<p>На промежутке <em>x </em>≥<em> </em>3 модуль |<em>x </em>−<em> </em>3| будет раскрываться с плюсом. Модуль|<em>x </em>+<em> </em>2| так же будет раскрываться с плюсом. Значит на промежутке <span><em>x </em>≥ 3</span> исходное уравнение <span>|<em>x </em>−<em> </em>3|<em> </em>+<em> </em>|<em>x </em>+<em> </em>2|<em> </em>=<em> </em>7</span> принимает следующий вид:</p>
+<p class="formula" data-tex="x - 3 + x + 2 = 7">\[x - 3 + x + 2 = 7\]</p>
+<p>Решим это уравнение:</p>
+<p><img alt="метод интервалов рис 6" decoding="async" height="79" loading="lazy" src="assets/b1c60a8756d7d175cd52b6ff.png" width="132"/></p>
+<p>Этот корень входит в рассматриваемый промежуток <em>x </em>≥ 3, значит является корнем исходного уравнения. Проверка также показывает это:</p>
+<p><img alt="метод интервалов рис 7" decoding="async" height="145" loading="lazy" src="assets/7ce7f51ab66dc5da81662dce.png" width="170"/></p>
+<p><strong>Ответ</strong>: −3 и 4.</p>
+<hr/>
+<p><strong>Пример 3</strong>. Решить уравнение <span>|2<em>x </em>−<em> </em>3|<em> </em>+<em> </em>|2<em>x </em>+<em> </em>7|<em> </em>=<em> </em>16</span></p>
+<p><strong>Решение</strong></p>
+<p>Найдём точки перехода для модулей <span>|2<em>x</em><em> </em>−<em> </em>3|</span> и <span>|2<em>x</em><em> </em>+<em> </em>7|</span></p>
+<p><img alt="метод интервалов рис 9" decoding="async" height="108" loading="lazy" src="assets/dc647186cfe3d48196082da0.png" width="306"/></p>
+<p>Отметим точки перехода на координатной прямой. Меньшие числа нужно отмечать левее, большие правее:</p>
+<p><img alt="метод интервалов рис 10" decoding="async" height="148" loading="lazy" src="assets/1d21716dfd337d18a0ee65b8.png" width="627"/></p>
+<p>Решим исходное уравнение <span>|2<em>x </em>−<em> </em>3|<em> </em>+<em> </em>|2<em>x </em>+<em> </em>7|<em> </em>=<em> </em>16</span> на промежутке <img alt="метод интервалов рис 11" decoding="async" height="48" loading="lazy" src="assets/010cd46d9e0d0f18800d007f.png" width="59"/>. Оба модуля на этом промежутке будут раскрываться с минусом:</p>
+<p><img alt="метод интервалов рис 12" decoding="async" height="79" loading="lazy" src="assets/0b045b858579a3dbb27629c0.png" width="178"/></p>
+<p>Корень <span>−5</span> принадлежит промежутку <img alt="метод интервалов рис 11" decoding="async" height="48" loading="lazy" src="assets/010cd46d9e0d0f18800d007f.png" width="59"/>, значит является корнем исходного уравнения.</p>
+<p>Теперь решим исходное уравнение на промежутке <img alt="метод интервалов рис 13" decoding="async" height="47" loading="lazy" src="assets/6a6550df8fcdc83f420c7246.png" width="99"/>. Модуль <span>|2<em>x</em><em> </em>−<em> </em>3|</span> на этом промежутке раскрывается с минусом, а модуль <span>|2<em>x</em><em> </em>+<em> </em>7|</span> — с плюсом:</p>
+<p><img alt="метод интервалов рис 14" decoding="async" height="55" loading="lazy" src="assets/af83a885a955b5746e5b8e06.png" width="179"/></p>
+<p>Видим, что на промежутке исходное уравнение не имеет решений (корней).</p>
+<p>Теперь решим исходное уравнение на промежутке <img alt="метод интервалов рис 15" decoding="async" height="46" loading="lazy" src="assets/04ec4355370562f8965e1f7d.png" width="48"/>. Оба модуля на данном промежутке раскрываются с плюсом:</p>
+<p><img alt="метод интервалов рис 16" decoding="async" height="79" loading="lazy" src="assets/b304dcf6c982f06daba5b746.png" width="164"/></p>
+<p>Корень 3 принадлежит промежутку <img alt="метод интервалов рис 15" decoding="async" height="46" loading="lazy" src="assets/04ec4355370562f8965e1f7d.png" width="48"/>, значит является корнем исходного уравнения.</p>
+<p><strong>Ответ</strong>: <span>−5</span> и <span>3</span>.</p>
+<hr/>
+<p><strong>Пример 4</strong>. Решить уравнение <span>|<em>x </em>−<em> </em>2|<em> </em>+<em> </em>3<em>x </em>=<em> </em>|<em>x </em>−<em> </em>5|<em> </em>−<em> </em>18</span></p>
+<p><strong>Решение</strong></p>
+<p>Найдём точки перехода для модулей <span>|<em>x</em><em> </em>−<em> </em>2|</span> и <span>|<em>x</em><em> −</em><em> </em>5|</span></p>
+<p><img alt="метод интервалов рис 17" decoding="async" height="47" loading="lazy" src="assets/c309c49b3b13cbff54ff3fe3.png" width="233"/></p>
+<p>Отметим точки перехода на координатной прямой:</p>
+<p><img alt="метод интервалов рис 18" decoding="async" height="114" loading="lazy" src="assets/5acbc5c382639d550b62d41e.png" width="639"/></p>
+<p>Решим исходное уравнение на промежутке <span><em>x </em>&lt;<em> </em>2</span>. Модули <span>|<em>x </em>− 2| </span>и<span> |<em>x </em><em>− </em>5| </span>на этом промежутке раскрываются с минусом:</p>
+<p><img alt="метод интервалов рис 19" decoding="async" height="151" loading="lazy" src="assets/1d4c2a86a7c1aadeea1872b0.png" width="213"/></p>
+<p>Число <span>−5</span> принадлежит промежутку <span><em>x </em>&lt;<em> </em>2</span>, значит является корнем исходного уравнения.</p>
+<p>Решим исходное уравнение на промежутке <span>2<em> </em>≤<em> </em><em>x </em>&lt;<em> </em>5</span>. Модуль <span>|<em>x </em>−<em> </em>2|</span> на этом промежутке раскрывается с плюсом, а модуль <span>|<em>x </em><em>− </em>5| </span>— с минусом:</p>
+<p><img alt="метод интервалов рис 20" decoding="async" height="174" loading="lazy" src="assets/5af720afbdb82c870dfa6107.png" width="208"/></p>
+<p>Число <img alt="-11 na 5" decoding="async" height="47" loading="lazy" src="assets/a57549933310611790d1ca71.png" width="34"/> не принадлежит промежутку <span>2<em> </em>≤<em> x </em>&lt;<em> </em>5</span>, значит не является корнем исходного уравнения.</p>
+<p>Решим исходное уравнение на промежутке <span><em>x </em>≥<em> </em>5</span>. Модули <span>|<em>x </em>− 2| и |<em>x </em><em>− </em>5| </span>на этом промежутке будут раскрываться с плюсом:</p>
+<p><img alt="метод интервалов рис 21" decoding="async" height="145" loading="lazy" src="assets/8a2215bedad6ab406321a960.png" width="212"/></p>
+<p>Число <span>−7</span> не принадлежит промежутку <span><em>x </em>≥<em> </em>5</span>, значит не является корнем исходного уравнения.</p>
+<p><strong>Ответ</strong>: <span>−5</span></p>
+<hr/>
+<p><strong>Пример 5</strong>. Решить уравнение <span>|<em>x</em>| + |<em>x − </em>7| + 2|<em>x </em>−<em> </em>4|<em> </em>=<em> </em>2</span></p>
+<p><strong>Решение</strong></p>
+<p>Найдём точки перехода для модулей |<em>x</em>|, <span>|<em>x</em><em> </em>− 7|</span> и <span>|<em>x</em><em> −</em> 4|</span></p>
+<p><img alt="метод интервалов рис 22" decoding="async" height="47" loading="lazy" src="assets/20867d12e7f0d3953c5a85b6.png" width="339"/></p>
+<p>Отметим точки перехода на координатной прямой:</p>
+<p><img alt="метод интервалов рис 23" decoding="async" height="113" loading="lazy" src="assets/aabaaa0e4f243b491045770a.png" width="633"/></p>
+<p>Решим исходное уравнение на промежутке <span><em>x </em>&lt;<em> </em>0</span>. Все три модуля: |<em>x</em>|, <span>|<em>x </em>− 7|</span> и <span>|<em>x</em><em> −</em> 4| </span>на этом промежутке раскрываются с минусом:</p>
+<p><img alt="метод интервалов рис 24" decoding="async" height="174" loading="lazy" src="assets/7b0a7bc4daa5f80a6cc9a2d0.png" width="229"/></p>
+<p>Число <img alt="13 na 4" decoding="async" height="45" loading="lazy" src="assets/a56312f6762f0e2300d47938.png" width="20"/> не принадлежит промежутку <span><em>x </em>&lt;<em> </em>0</span>, значит не является корнем исходного уравнения.</p>
+<p>Решим теперь исходное уравнение на промежутке 0<em> </em>≤<em> </em><em>x </em>&lt;<em> </em>4. Модуль <span>|<i>x</i>| </span>на этом промежутке раскрывается с плюсом, а модули<span> |<em>x </em>− 7| и |<em>x</em><em> −</em> 4| — </span>с минусом:</p>
+<p><img alt="метод интервалов рис 25" decoding="async" height="174" loading="lazy" src="assets/a56cebaa7d0de5508ba71817.png" width="226"/></p>
+<p>Число <img alt="метод интервалов рис 26" decoding="async" height="45" loading="lazy" src="assets/d29e00f8282d1253f823c8af.png" width="19"/> не принадлежит промежутку <span>0<em> </em>≤<em> </em><em>x </em>&lt;<em> </em>4</span>, значит не является корнем исходного уравнения.</p>
+<p>Решим теперь исходное уравнение на промежутке <span>4<em> </em>≤<em> </em><em>x </em>&lt;<em> </em>7</span>. Модуль <span>|<i>x</i>| </span>на этом промежутке раскрывается с плюсом; модуль <span>|<em>x </em>−<em> </em>7| — </span>с минусом; модуль <span>|<em>x </em><em>− </em>4|</span> — с плюсом:</p>
+<p><img alt="метод интервалов рис 27" decoding="async" height="174" loading="lazy" src="assets/e2656b3e8f471303ad25d83d.png" width="227"/></p>
+<p>Число <span class="formula" data-tex="\frac{3}{2}">\(\frac{3}{2}\)</span> не принадлежит промежутку <span>4<em> </em>≤<em> </em><em>x </em>&lt;<em> </em>7</span>, значит не является корнем исходного уравнения.</p>
+<p>Решим исходное уравнение на промежутке <span><em>x ≥</em> 7</span>. Все три модуля: |<em>x</em>|, <span>|<em>x</em><em> </em>− 7|</span> и <span>|<em>x</em><em> −</em> 4| на этом промежутке раскрываются с плюсом:</span></p>
+<p><img alt="метод интервалов рис 28" decoding="async" height="174" loading="lazy" src="assets/0f66994a59d7d6d455f14d7f.png" width="236"/></p>
+<p>Число <img alt="17 na 4" decoding="async" height="45" loading="lazy" src="assets/94d11704878283305f5daf8e.png" width="21"/> не принадлежит промежутку <span><em>x ≥</em> 7</span>, значит не является корнем исходного уравнения.</p>
+<p>Решив исходное уравнение на каждом промежутке, мы не нашли корней, удовлетворяющих этому уравнению. Значит данное уравнение не имеет корней.</p>
+<p>В ответе можно написать словами, что корней нет (или решений нет), либо указать символ пустого множества. Этот символ будет указывать, что множество корней уравнения <span>|<em>x</em>| + |<em>x − </em>7| + 2|<em>x </em>−<em> </em>4|<em> </em>=<em> </em>2</span> пусто.</p>
+<p><strong>Ответ</strong>: ø.</p>
+<hr/>
+<p><strong>Пример 6</strong>. Решить уравнение <img alt="метод интервалов рис 29" decoding="async" height="38" loading="lazy" src="assets/f2688e0ecc31e7df1f63d87e.png" width="225"/></p>
+<p><strong>Решение</strong></p>
+<p>Найдём точки перехода для модулей <img alt="метод интервалов рис 30" decoding="async" height="38" loading="lazy" src="assets/396219e9ad5fc7c14037f1cd.png" width="110"/> и <img alt="метод интервалов рис 31" decoding="async" height="38" loading="lazy" src="assets/0459634083cb8de6a7108d53.png" width="57"/></p>
+<p>Если методом интервалов нужно решить уравнение с модулем, который в свою очередь содержит внутри себя другой модуль, то точки перехода надо искать для случаев: когда внутренний модуль раскрывается с плюсом и когда он раскрывается с минусом. Точки перехода будут меняться в зависимости от этих случаев. Давайте посмотрим как это происходит.</p>
+<p>Если у модуля <img alt="метод интервалов рис 30" decoding="async" height="38" loading="lazy" src="assets/396219e9ad5fc7c14037f1cd.png" width="110"/> внутренний модуль раскроется с плюсом, то есть если <span>2<em>x </em>− 1 ≥ 0</span> (что равносильно <img alt="метод интервалов рисунок 40" decoding="async" height="46" loading="lazy" src="assets/1d761c527d26a8081ff042f2.png" width="49"/>), то исходное уравнение примет вид <span>|2<em>x </em>− 1 − 5| + <em>x </em>= |6 − <em>x</em>|</span>. Здесь и далее надо учесть, что внутренний модуль будет раскрываться с плюсом при тех значениях <em>x</em>, которые будут больше либо равны <span class="formula" data-tex="\frac{1}{2}">\(\frac{1}{2}\)</span>. Отметим эту точку на координатной прямой.</p>
+<p><img alt="метод интервалов рис 39" decoding="async" height="86" loading="lazy" src="assets/500da2a0e8f96e1783cc1061.png" width="633"/></p>
+<p>Теперь найдем точки перехода. Поскольку исходное уравнение приняло вид <span>|2<em>x </em>− 1 − 5| + <em>x </em>= |6 − <em>x</em>|</span>, то точки перехода надо найти для модулей <span>|2<em>x </em>− 1 − 5|</span> и <span>|6 − <em>x</em>|</span>.</p>
+<p>Для модуля <span>|2<em>x </em>− 1 − 5|</span> точкой перехода будет число <span>3</span>, а для модуля <span>|6 − <em>x</em>|</span> — число <span>6</span>. Отметим эти числа на той же координатной прямой где мы отметили точку <span class="formula" data-tex="\frac{1}{2}">\(\frac{1}{2}\)</span></p>
+<p><img alt="метод интервалов рис 40" decoding="async" height="78" loading="lazy" src="assets/c16cc19d6d814f9b748e51b3.png" width="633"/></p>
+<p>Сейчас нас интересуют только те значения <span><em>x</em></span>, которые удовлетворяют условию <img alt="метод интервалов рис 42" decoding="async" height="48" loading="lazy" src="assets/3d9f05576aa5a1a31f9cbdd5.png" width="50"/>, потому что только при этом условии внутренний модуль исходного уравнения раскрывается с плюсом. Поэтому рассматривать промежуток <img alt="метод интервалов рис 41" decoding="async" height="53" loading="lazy" src="assets/299e4ae4d77e01ace9fcb2ee.png" width="74"/> мы не будем. Рассмотреть нужно те промежутки где <em><span>x</span></em> удовлетворяет условию <img alt="метод интервалов рис 42" decoding="async" height="48" loading="lazy" src="assets/3d9f05576aa5a1a31f9cbdd5.png" width="50"/></p>
+<p><img alt="метод интервалов рис 43" decoding="async" height="148" loading="lazy" src="assets/89d784a054a4575f24c65c34.png" width="627"/></p>
+<p>Первый промежуток на котором мы будем решать уравнение это <img alt="метод интервалов рис 44" decoding="async" height="45" loading="lazy" src="assets/6fa5ea77c35ae734fe2fe397.png" width="79"/>. На нем модуль <span>|2<em>x </em>−<em> </em>1<em> </em>−<em> </em>5|</span> раскрывается с минусом, а модуль <span>|6<em> </em>−<em> </em><em>x</em>|</span> с плюсом:</p>
+<p><img alt="метод интервалов рис 45" decoding="async" height="116" loading="lazy" src="assets/aa84a60a2930a4103fd54ea7.png" width="200"/></p>
+<p>Получили тождество — равенство верное при любом значении <span><em>x</em></span>. В данном случае решением исходного уравнения является любое число из промежутка <img alt="метод интервалов рис 44" decoding="async" height="45" loading="lazy" src="assets/6fa5ea77c35ae734fe2fe397.png" width="79"/>. Любое число из этого промежутка также удовлетворяют условию <img alt="метод интервалов рис 42" decoding="async" height="48" loading="lazy" src="assets/3d9f05576aa5a1a31f9cbdd5.png" width="50"/></p>
+<p>Теперь решим исходное уравнение на промежутке <span>3<em> </em>≤<em> </em><em>x </em>&lt;<em> </em>6</span>. Оба модуля на этом промежутке раскрываются с плюсом. Тогда:</p>
+<p><img alt="метод интервалов рис 46" decoding="async" height="147" loading="lazy" src="assets/1020562facec6c94f2a59503.png" width="199"/></p>
+<p>Корень 3 принадлежит рассматриваемому промежутку. Также этот корень удовлетворяет условию <img alt="метод интервалов рис 42" decoding="async" height="48" loading="lazy" src="assets/3d9f05576aa5a1a31f9cbdd5.png" width="50"/>, согласно которому внутренний модуль исходного уравнения раскрывается с плюсом.</p>
+<p>Теперь решим исходное уравнение на промежутке <span><em>x </em>≥<em> </em>6</span>. На этом промежутке модуль <span>|2<em>x </em>−<em> </em>1<em> </em>−<em> </em>5|</span> раскрывается с плюсом, а модуль <span>|6<em> </em>−<em> </em><em>x</em>|</span> с минусом. Тогда:</p>
+<p><img alt="метод интервалов рис 47" decoding="async" height="147" loading="lazy" src="assets/4f1da587bf17cf2c15f749a0.png" width="196"/></p>
+<p>Корень 0 не удовлетворяет условию <span><em>x </em>≥<em> </em>6</span>, значит на данном промежутке исходное уравнение корней не имеет.</p>
+<p>Итак, если внутренний модуль уравнения <img alt="метод интервалов рис 29" decoding="async" height="38" loading="lazy" src="assets/f2688e0ecc31e7df1f63d87e.png" width="225"/> раскрывается с плюсом, то решениями уравнения являются: промежуток <img alt="метод интервалов рис 44" decoding="async" height="45" loading="lazy" src="assets/6fa5ea77c35ae734fe2fe397.png" width="79"/>, а также число 3. Запишем эти решения одним промежутком:</p>
+<p><img alt="метод интервалов рис 48" decoding="async" height="53" loading="lazy" src="assets/33e340cc9ea1dd80bb398558.png" width="99"/></p>
+<p>Теперь решим исходное уравнение для случая когда внутренний модуль раскрывается с минусом. То есть когда <span>2<em>x </em>− 1 &lt; 0</span> (что равносильно неравенству <img alt="метод интервалов рисунок 41" decoding="async" height="46" loading="lazy" src="assets/a3bb9ea5209eb2527ed28f71.png" width="49"/>). В этом случае исходное уравнение примет вид:</p>
+<p><span>|−2<em>x</em> + 1 − 5| + <em>x</em> = |6 − <em>x</em>|</span></p>
+<p>Отметим точку <span class="formula" data-tex="\frac{1}{2}">\(\frac{1}{2}\)</span> на координатной прямой.</p>
+<p><img alt="метод интервалов рис 49" decoding="async" height="85" loading="lazy" src="assets/5b8a288cf0e528b75445cc59.png" width="633"/></p>
+<p>Нас будут интересовать те значения <em>x</em> которые располагаются слева от <span class="formula" data-tex="\frac{1}{2}">\(\frac{1}{2}\)</span>. Это те значения при которых внутренний модуль исходного уравнения раскрывается с минусом.</p>
+<p>Найдем точки перехода для модулей <span>|−2<em>x </em>+<em> </em>1<em> </em>−<em> </em>5|</span> и <span>|6<em> </em>−<em> </em><em>x</em>|</span>. Для первого модуля это число −2, для второго модуля — число 6</p>
+<p><img alt="метод интервалов рис 50" decoding="async" height="79" loading="lazy" src="assets/4d986b9e142f292b1787ab49.png" width="633"/></p>
+<p>Рассматривать будем только те промежутки, которые располагаются слева от <span class="formula" data-tex="\frac{1}{2}">\(\frac{1}{2}\)</span>. Только при них внутренний модуль исходного уравнения раскрывается с минусом</p>
+<p><img alt="метод интервалов рис 51" decoding="async" height="148" loading="lazy" src="assets/9f42589cc0c19674a17dcf2b.png" width="627"/></p>
+<p>Решим уравнение на промежутке <span><em>x </em>&lt;<em> </em>−2</span>. На этом промежутке оба модуля раскрываются с плюсом. Тогда:</p>
+<p><img alt="метод интервалов рис 52" decoding="async" height="116" loading="lazy" src="assets/c2a31bd373ded4f82b3c2b23.png" width="216"/></p>
+<p>Это уравнение решений не имеет. Значит на промежутке <span><em>x </em>&lt;<em> </em>−2</span> исходное уравнение не имеет корней.</p>
+<p>Решим теперь уравнение на промежутке <img alt="метод интервалов рисунок 42" decoding="async" height="45" loading="lazy" src="assets/1913053da94cacb3e0ded8da.png" width="94"/>. Замечаем, что при подстановке левого конца этого промежутка (числа −2) в модуль<span> |−2<em>x </em>+<em> </em>1<em> </em>−<em> </em>5| </span>данный модуль раскрывается с плюсом, а при остальных значениях промежутка <img alt="метод интервалов рисунок 42" decoding="async" height="45" loading="lazy" src="assets/1913053da94cacb3e0ded8da.png" width="94"/> модуль <span>|−2<em>x </em>+ 1 − 5|</span> раскрывается с минусом.</p>
+<p>Поэтому число −2 разумнее включить в промежуток <span><em>x </em>&lt;<em> </em>−2</span>, который мы уже рассмотрели. На промежутке <span><em>x </em>&lt;<em> </em>−2</span> модуль раскрывался с плюсом, и при включении числа <span>−2</span> в данный промежуток, он также будет раскрываться с плюсом.</p>
+<p>На промежутке <img alt="метод интервалов рисунок 42" decoding="async" height="45" loading="lazy" src="assets/1913053da94cacb3e0ded8da.png" width="94"/> модуль <span>|−2<em>x </em>+ 1 − 5|</span> раскрывается с минусом, а модуль <span>|6 − <em>x</em>|</span> с плюсом. Тогда:</p>
+<p><img alt="метод интервалов рис 53" decoding="async" height="176" loading="lazy" src="assets/a2f4586c538b4bac70970f27.png" width="216"/></p>
+<p>Получится корень который не удовлетворяет условию <img alt="метод интервалов рисунок 42" decoding="async" height="45" loading="lazy" src="assets/1913053da94cacb3e0ded8da.png" width="94"/>. Несмотря на это число <span class="formula" data-tex="\frac{1}{2}">\(\frac{1}{2}\)</span> является корнем исходного уравнения, потому что мы получили его когда решали уравнение для случая <span>2<em>x </em>− 1 ≥ 0</span>.</p>
+<hr/>
+<h2 id="zadaniya_dlya_samostoyatelnogo_resheniya">Задания для самостоятельного решения</h2>
+<p><strong>Примечание</strong>: Решения, не удовлетворяющие исходному уравнению, подчёркнуты красным.</p>
+<div>
+<div><span>Задание 1.</span> Решить уравнение:</div>
+<div><img decoding="async" loading="lazy" src="assets/12b3a77f2e8e494895dc6e2f.png"/></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><img decoding="async" loading="lazy" src="assets/a00da58e03cbc618c3524f12.png"/></div>
+<div><strong>Ответ</strong>: <span><em>x</em> ∈ [−5 ; 3]</span>.</div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 2.</span> Решить уравнение:</div>
+<div><img decoding="async" loading="lazy" src="assets/78624ab9d52b4ffe9ed5e29b.png"/></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><img decoding="async" loading="lazy" src="assets/57f2c3f6dd58366c7627700f.png"/></div>
+<div><strong>Ответ</strong>: <span><em>x</em> ∈ [3 ; +∞)</span>.</div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 3.</span> Решить уравнение:</div>
+<div><img decoding="async" loading="lazy" src="assets/52e6118e2ec6469bd96da688.png"/></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><img decoding="async" loading="lazy" src="assets/43712bdbff24b20d2f095e98.png"/></div>
+<div><strong>Ответ</strong>: корней нет.</div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 4.</span> Решить уравнение:</div>
+<div><img decoding="async" loading="lazy" src="assets/9b372544502504447fad37a6.png"/></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><img decoding="async" loading="lazy" src="assets/a5160ef836d261ce07bf477b.png"/></div>
+<div><strong>Ответ</strong>: <img decoding="async" loading="lazy" src="assets/bbb98bfa7810acb633e32cdd.png"/>, <span>0</span>.</div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 5.</span> Решить уравнение:</div>
+<div><img decoding="async" loading="lazy" src="assets/4924b304d65771cd77ed13fd.png"/></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><img decoding="async" loading="lazy" src="assets/544d84fa754c0f93de5d3931.png"/></div>
+<div><strong>Ответ</strong>: <span>−5</span>.</div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 6.</span> Решить уравнение:</div>
+<div><img decoding="async" loading="lazy" src="assets/7fda2e21e4bee837915f2a60.png"/></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><img decoding="async" loading="lazy" src="assets/4f7334e368b7d5740b69f0e4.png"/></div>
+<div><strong>Ответ</strong>: <span>−4, 2</span>.</div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 7.</span> Решить уравнение:</div>
+<div><img decoding="async" loading="lazy" src="assets/8c3ee5aa317ddc5e3eea758d.png"/></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><img decoding="async" loading="lazy" src="assets/159ce4d7dd5f3d9e064cf4f1.png"/></div>
+<div><strong>Ответ</strong>: <img decoding="async" loading="lazy" src="assets/0a8bae1d26315582cef4f904.png"/>, <img decoding="async" loading="lazy" src="assets/b02e85119f2131d2d97b6359.png"/>.</div>
+</div></details>
+</div>
+<hr/>
+<p><span><strong>Понравился урок? <br/>Вступай в нашу новую группу Вконтакте и начни получать уведомления о новых уроках</strong></span></p>
+</article><section id="quiz" aria-label="Тест к уроку"></section><div class="next"><a href="lesson-71.html">← Предыдущий шаг</a><a href="lesson-73.html">Следующий шаг →</a></div></main></div><dialog id="settings"><h2>Настройки</h2><h3>Приложение</h3><button id="install" hidden>Установить приложение</button><p id="install-help"></p><button id="download">Скачать весь курс</button><progress id="download-progress" value="0" max="1" hidden></progress><p id="offline-status" role="status"></p><p><a href="spacemath-offline.zip" download>Скачать ZIP-копию для другого компьютера</a></p><h3>Прогресс</h3><button id="export">Сохранить прогресс</button><label>Восстановить прогресс <input id="import" type="file" accept="application/json"></label><details><summary>Начать заново</summary><p>Очистятся ответы и отметки. Уроки и картинки останутся для следующего ученика.</p><button id="reset">Очистить мой прогресс</button></details><p id="settings-status" role="status"></p><form method="dialog"><button>Закрыть</button></form></dialog><footer>Материалы: <a href="https://spacemath.xyz/">Spacemath</a>. Локальная учебная копия с тестами.</footer></body></html>

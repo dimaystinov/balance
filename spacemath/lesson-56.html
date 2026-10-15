@@ -1,0 +1,627 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#326c9c"><title>Шаг 56. Степень с целым показателем — Математика с нуля</title><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="icon.svg"><link rel="stylesheet" href="style.css"><link rel="stylesheet" href="vendor/katex/katex.min.css"><script defer src="vendor/katex/katex.min.js"></script><script defer src="vendor/katex/contrib/auto-render.min.js"></script><script defer src="engine.js"></script><script defer src="quiz-bank.js"></script><script defer src="app.js"></script></head><body data-lesson="56"><header><a href="index.html">Математика с нуля</a><button id="menu" aria-controls="sidebar" aria-expanded="false">Шаги</button><button id="settings-open">Настройки</button></header><div class="layout"><aside id="sidebar"><p id="overall"></p><nav aria-label="Шаги курса"><ol><li><a href="lesson-01.html">Шаг 1. Числа</a></li><li><a href="lesson-02.html">Шаг 2. Основные операции</a></li><li><a href="lesson-03.html">Шаг 3. Выражения</a></li><li><a href="lesson-04.html">Шаг 4. Замены в выражениях</a></li><li><a href="lesson-05.html">Шаг 5. Разряды для начинающих</a></li><li><a href="lesson-06.html">Шаг 6. Умножение</a></li><li><a href="lesson-07.html">Шаг 7. Деление</a></li><li><a href="lesson-08.html">Шаг 8. Порядок действий</a></li><li><a href="lesson-09.html">Шаг 9. Законы математики</a></li><li><a href="lesson-10.html">Шаг 10. Делители и кратные</a></li><li><a href="lesson-11.html">Шаг 11. НОД и НОК</a></li><li><a href="lesson-12.html">Шаг 12. Дроби</a></li><li><a href="lesson-13.html">Шаг 13. Действия с дробями</a></li><li><a href="lesson-14.html">Шаг 14. Смешанные числа</a></li><li><a href="lesson-15.html">Шаг 15. Сравнение дробей</a></li><li><a href="lesson-16.html">Шаг 16. Единицы измерения</a></li><li><a href="lesson-17.html">Шаг 17. Практика по дробям</a></li><li><a href="lesson-18.html">Шаг 18. Десятичные дроби</a></li><li><a href="lesson-19.html">Шаг 19. Действия с десятичными дробями</a></li><li><a href="lesson-20.html">Шаг 20. Практика по десятичным дробям</a></li><li><a href="lesson-21.html">Шаг 21. Округление чисел</a></li><li><a href="lesson-22.html">Шаг 22. Периодические дроби</a></li><li><a href="lesson-23.html">Шаг 23. Перевод единиц</a></li><li><a href="lesson-24.html">Шаг 24. Соотношения</a></li><li><a href="lesson-25.html">Шаг 25. Пропорция</a></li><li><a href="lesson-26.html">Шаг 26. Расстояние, скорость, время</a></li><li><a href="lesson-27.html">Шаг 27. Прямая и обратная пропорциональность</a></li><li><a href="lesson-28.html">Шаг 28. Проценты</a></li><li><a href="lesson-29.html">Шаг 29. Отрицательные числа</a></li><li><a href="lesson-30.html">Шаг 30. Модуль числа</a></li><li><a href="lesson-31.html">Шаг 31. Что такое множество?</a></li><li><a href="lesson-32.html">Шаг 32. Сложение и вычитание целых чисел</a></li><li><a href="lesson-33.html">Шаг 33. Умножение и деление целых чисел</a></li><li><a href="lesson-34.html">Шаг 34. Рациональные числа</a></li><li><a href="lesson-35.html">Шаг 35. Сравнение рациональных чисел</a></li><li><a href="lesson-36.html">Шаг 36. Сложение и вычитание рациональных чисел</a></li><li><a href="lesson-37.html">Шаг 37. Умножение и деление рациональных чисел</a></li><li><a href="lesson-38.html">Шаг 38. Дополнительные сведения о дробях</a></li><li><a href="lesson-39.html">Шаг 39. Буквенные выражения</a></li><li><a href="lesson-40.html">Шаг 40. Вынесение общего множителя за скобки</a></li><li><a href="lesson-41.html">Шаг 41. Раскрытие скобок</a></li><li><a href="lesson-42.html">Шаг 42. Простейшие задачи по математике</a></li><li><a href="lesson-43.html">Шаг 43. Задачи на дроби</a></li><li><a href="lesson-44.html">Шаг 44. Задачи на проценты</a></li><li><a href="lesson-45.html">Шаг 45. Задачи на движение</a></li><li><a href="lesson-46.html">Шаг 46. Производительность</a></li><li><a href="lesson-47.html">Шаг 47. Элементы статистики</a></li><li><a href="lesson-48.html">Шаг 48. Общие сведения об уравнениях</a></li><li><a href="lesson-49.html">Шаг 49. Решение задач с помощью уравнений</a></li><li><a href="lesson-50.html">Шаг 50. Решение задач с помощью пропорции</a></li><li><a href="lesson-51.html">Шаг 51. Системы линейных уравнений</a></li><li><a href="lesson-52.html">Шаг 52. Общие сведения о неравенствах</a></li><li><a href="lesson-53.html">Шаг 53. Системы линейных неравенств с одной переменной</a></li><li><a href="lesson-54.html">Шаг 54. Операции над множествами</a></li><li><a href="lesson-55.html">Шаг 55. Степень с натуральным показателем</a></li><li><a href="lesson-56.html">Шаг 56. Степень с целым показателем</a></li><li><a href="lesson-57.html">Шаг 57. Периметр, площадь и объём</a></li><li><a href="lesson-58.html">Шаг 58. Одночлены</a></li><li><a href="lesson-59.html">Шаг 59. Многочлены</a></li><li><a href="lesson-60.html">Шаг 60. Формулы сокращённого умножения</a></li><li><a href="lesson-61.html">Шаг 61. Разложение многочлена на множители</a></li><li><a href="lesson-62.html">Шаг 62. Деление многочленов</a></li><li><a href="lesson-63.html">Шаг 63. Тождественные преобразования многочленов</a></li><li><a href="lesson-64.html">Шаг 64. Квадратный корень</a></li><li><a href="lesson-65.html">Шаг 65. Алгоритм извлечения квадратного корня</a></li><li><a href="lesson-66.html">Шаг 66. Квадратное уравнение</a></li><li><a href="lesson-67.html">Шаг 67. Квадратное уравнение с чётным вторым коэффициентом</a></li><li><a href="lesson-68.html">Шаг 68. Теорема Виета</a></li><li><a href="lesson-69.html">Шаг 69. Разложение квадратного трёхчлена на множители</a></li><li><a href="lesson-70.html">Шаг 70. Обобщённое понятие модуля числа</a></li><li><a href="lesson-71.html">Шаг 71. Уравнение с модулем</a></li><li><a href="lesson-72.html">Шаг 72. Решение уравнений с модулем методом интервалов</a></li><li><a href="lesson-73.html">Шаг 73. Неравенства с модулем</a></li><li><a href="lesson-74.html">Шаг 74. Решение неравенств с модулем методом интервалов</a></li><li><a href="lesson-75.html">Шаг 75. Извлечение квадратного корня из обеих частей уравнения</a></li></ol></nav></aside><main id="main"><h1>Шаг 56. Степень с целым показателем</h1><p class="origin"><a href="https://spacemath.xyz/stepen-s-tselym-pokazatelem/">Оригинал урока</a> · <a href="#quiz">К тесту</a></p><article class="lesson-text">
+<p>Степень с целым показателем — это степень, показателем которой является любое целое число.</p>
+<p>В прошлом уроке мы изучили степень с натуральным показателем. Этот вид степени тоже является степенью с целым показателем, поскольку натуральные числа относятся к целым числам.</p>
+<p>Также, мы рассмотрели степень, показателем которой является 0. Этот вид степени тоже является степенью с целым показателем, поскольку 0 относится к целым числам.</p>
+<p>Рассмотрим ещё один вид степени с целым показателем, а именно показателем которой является целое отрицательное число. Выглядят эти степени так:</p>
+<p><span>2<sup>−2</sup>, 10<sup>−7</sup>, <em>a</em><sup>−8</sup></span></p>
+<p>В дальнейшем любую степень с натуральным, нулевым или целым отрицательным показателем, мы будем называть <strong>степенью с целым показателем</strong>.</p>
+<b>Предварительные навыки</b><p></p>
+<ul>
+<li><a href="lesson-13.html">Действия с дробями</a></li>
+<li><a href="lesson-39.html">Буквенные выражения</a></li>
+<li><a href="lesson-55.html">Степень с натуральным показателем</a></li>
+</ul>
+
+<b>Содержание урока</b><p></p>
+<ul>
+<li><a href="lesson-56.html#yak1">Правило вычисления</a></li>
+<li><a href="lesson-56.html#yak2">Тождественные преобразования</a></li>
+<li><a href="lesson-56.html#yak3">Поднятие степени из знаменателя в числитель и наоборот</a></li>
+<li><a href="lesson-56.html#yak4">Возведение числа 10 в целую отрицательную степень</a></li>
+<li><a href="lesson-56.html#yak5">Представление чисел 0,1, 0,01, 0,001 в виде степени с основанием 10</a></li>
+<li><a href="lesson-56.html#yak6">Стандартный вид числа</a></li>
+<li><a href="lesson-56.html#yak7">Задания для самостоятельного решения</a></li>
+</ul>
+
+<h2 id="yak1">Правило вычисления</h2>
+<p>Рассмотрим следующую последовательность степеней:</p>
+<p><span>2<sup>0</sup>, 2<sup>1</sup>, 2<sup>2</sup>, 2<sup>3</sup>, 2<sup>4</sup>, 2<sup>5</sup></span></p>
+<p>Первая степень в этой последовательности это степень <span>2<sup>0</sup></span>. Предыдущая степень с целым показателем будет уже с отрицательным показателем и выглядеть как <span>2<sup>−1</sup></span>.</p>
+<p><span>2<sup>−1</sup>, 2<sup>0</sup>, 2<sup>1</sup>, 2<sup>2</sup>, 2<sup>3</sup>, 2<sup>4</sup>, 2<sup>5</sup></span></p>
+<p>А предыдущая степень с целым показателем, которая располагается до <span>2<sup>−1</sup></span>, будет степень <span>2<sup>−2</sup></span></p>
+<p><span>2<sup>−2</sup>, 2<sup>−1</sup>, 2<sup>0</sup>, 2<sup>1</sup>, 2<sup>2</sup>, 2<sup>3</sup>, 2<sup>4</sup>, 2<sup>5</sup></span></p>
+<p>Продолжим эту последовательность в сторону степеней с целыми отрицательными показателями:</p>
+<p><span>2<sup>−5</sup>, 2<sup>−4</sup>, 2<sup>−3</sup>, 2<sup>−2</sup>, 2<sup>−1</sup>, 2<sup>0</sup>, 2<sup>1</sup>, 2<sup>2</sup>, 2<sup>3</sup>, 2<sup>4</sup>, 2<sup>5</sup></span></p>
+<p>Теперь попробуем вычислить эти степени. Степени с натуральными показателями и степень, показателем которой является 0, вычисляются легко:</p>
+<p><img alt="степень с ц.п. рисунок 1" decoding="async" height="107" loading="lazy" src="assets/d34af8188725e705b900c969.png" width="580"/></p>
+<p>А как вычислить степени с отрицательными показателями? Для начала немного отойдём от темы и затронем несколько закономерностей.</p>
+<p>В отрицательную степень число возводится немного иначе. Следует понимать, что если при возведении в положительную степень число увеличивается, то при возведении в отрицательную степень это число наоборот уменьшается.</p>
+<p>Если мы возьмём какое-нибудь число <span><em>n</em></span>, и начнём последовательно увеличивать его степень, то получим последовательность чисел, в которой каждое число меньше следующего в <em><span>n</span></em> раз.</p>
+<p>Например, возьмём число 2. Начиная с нуля будем последовательно увеличивать его показатель:</p>
+<p><span>2<sup>0</sup>, 2<sup>1</sup>, 2<sup>2</sup>, 2<sup>3</sup>, 2<sup>4</sup>, 2<sup>5</sup></span></p>
+<p>Вычислим эти степени:</p>
+<p><span>1, 2, 4, 8, 16, 32</span></p>
+<p>Получили последовательность чисел, в которой каждое число меньше следующего числа в 2 раза. Тогда логично предположить, что число, располагающееся до единицы, будет в два раза меньше единицы. Его можно получить, если 1 разделить на 2</p>
+<p><img alt="1 на 2 1 2 4 8 16 32" decoding="async" height="45" loading="lazy" src="assets/3938e13980f5964a6ebced41.png" width="162"/></p>
+<p>Вернёмся к нашей исходной последовательности, где мы вычисляли степени. Получается, что степень <span>2<sup>−1</sup></span> мы вычислили. Она равна рациональному числу <span class="formula" data-tex="\frac{1}{2}">\(\frac{1}{2}\)</span></p>
+<p><img alt="степень с ц.п. рисунок 2" decoding="async" height="143" loading="lazy" src="assets/48f48f1c8b812a392a8dae22.png" width="580"/></p>
+<p>Предыдущее за числом <span class="formula" data-tex="\frac{1}{2}">\(\frac{1}{2}\)</span> должно быть в два раза меньше, чем <span class="formula" data-tex="\frac{1}{2}">\(\frac{1}{2}\)</span>. Чтобы его получить разделим <span class="formula" data-tex="\frac{1}{2}">\(\frac{1}{2}\)</span> на <span>2</span></p>
+<p><img alt="1 на 2 на 2 решение" decoding="async" height="45" loading="lazy" src="assets/7ed886e5472c9548287564a6.png" width="164"/></p>
+<p>Получили <span class="formula" data-tex="\frac{1}{4}">\(\frac{1}{4}\)</span>. Это значение степени <span>2<sup>−2</sup></span></p>
+<p><img alt="степень с ц.п. рисунок 3" decoding="async" height="143" loading="lazy" src="assets/5efbd069709d3875f1ad22b5.png" width="580"/></p>
+<p>Продолжая деление на 2 можно получить значения остальных степеней с целыми отрицательными показателями:</p>
+<p><img alt="степень с ц.п. рисунок 4" decoding="async" height="143" loading="lazy" src="assets/c40d76335710072f132dc0ce.png" width="650"/></p>
+<p>Заметим, что в данной последовательности значения степеней с отрицательными показателями являются <a href="lesson-13.html#yak8" title="Перейти к уроку, где рассказывается об этом">обратными числами</a> к значениям степеней с натуральными показателями:</p>
+<p><img alt="степень с ц.п. рисунок 5" decoding="async" height="312" loading="lazy" src="assets/0b195f5297c224ef1beec4d1.png" width="659"/></p>
+<p>К примеру, значение степени в <span>2<sup>2</sup></span> есть число <span>4</span>. А значение степени <span>2<sup>−2</sup></span> есть число <span class="formula" data-tex="\frac{1}{4}">\(\frac{1}{4}\)</span>. Числа <span>4</span> и <span class="formula" data-tex="\frac{1}{4}">\(\frac{1}{4}\)</span> являются обратными друг другу. А степени <span>2<sup>2</sup></span> и <span>2<sup>−2</sup></span> отличаются только тем, что у них противоположные показатели.</p>
+<p>Можно сделать вывод, что для вычисления степени с отрицательным показателем, нужно записать дробь, в числителе которой единица, а в знаменателе та же самая степень, но с противоположным показателем. Покажем это на примере степени <span>2<sup>−2</sup></span></p>
+<p><img alt="2 v - 2 ravno 1 na 2 v 2" decoding="async" height="45" loading="lazy" src="assets/1e0616af99bce66a51242abf.png" width="79"/></p>
+<p>Вычислим степень, находящуюся в знаменателе:</p>
+<p><img alt="2 v - 2 ravno 1 na 2 v 2 шаг 2" decoding="async" height="45" loading="lazy" src="assets/2c521fd62c79fa8d0aa962dd.png" width="127"/></p>
+<p>Таким образом, чтобы вычислить степень вида <span><em>a</em><sup>−<em>n</em></sup></span> можно воспользоваться следующим правилом:</p>
+<p><img alt="возведение в степень отр числа формула" decoding="async" height="52" loading="lazy" src="assets/88926d704d39eb5616ca33bf.png" width="88"/></p>
+<p>Данное правило можно доказать, используя правило деления степеней с одинаковыми основаниями. Допустим, потребовалось вычислить выражение <span>2<sup>3 </sup>: 2<sup>5</sup></span>. Запишем это деление в виде дроби</p>
+<p><img alt="2 в 2 на 2 в 3 ratio" decoding="async" height="49" loading="lazy" src="assets/13b87ac82f7bff135a456d08.png" width="18"/></p>
+<p>Воспользуемся правилом деления степеней с одинаковыми основаниями:</p>
+<p><img alt="2 в 2 на 2 в 3 ratio 2" decoding="async" height="49" loading="lazy" src="assets/3a057608a0eaf60fd0d53fd2.png" width="127"/></p>
+<p>Получили степень с отрицательным показателем <span>2<sup>−2</sup></span>. Ранее мы выяснили, что её значение равно <span class="formula" data-tex="\frac{1}{4}">\(\frac{1}{4}\)</span>. Чтобы убедиться в этом, попробуем вычислить выражение <img alt="2 в 2 на 2 в 3 ratio" decoding="async" height="49" loading="lazy" src="assets/13b87ac82f7bff135a456d08.png" width="18"/>  как обычно, не используя правило деления степеней:</p>
+<p><img alt="2 в 3 на 2 в 5 решение 1" decoding="async" height="49" loading="lazy" src="assets/4d6f27aaec69be0462511e0e.png" width="221"/></p>
+<p>Получили рациональное число <img alt="8 на 32" decoding="async" height="45" loading="lazy" src="assets/97d79fe6f8acbd2378c6f655.png" width="22"/>. Сократим его на 8. Тогда получим <span class="formula" data-tex="\frac{1}{4}">\(\frac{1}{4}\)</span></p>
+<p><img alt="2 в 3 на 2 в 5 решение" decoding="async" height="49" loading="lazy" src="assets/1e075ded4f7dded4d7c48ec6.png" width="332"/></p>
+<hr/>
+<p><strong>Пример 2</strong>. Найти значение выражения <span>9<sup>−2</sup></span></p>
+<p>Воспользуемся правилом вычисления степени с целым отрицательным показателем:</p>
+<p><img alt="9 v - 2 решение" decoding="async" height="45" loading="lazy" src="assets/4d2bde889ad82e9900de5e0d.png" width="124"/></p>
+<hr/>
+<p><strong>Пример 3</strong>. Найти значение выражения <span>3<sup>−3</sup></span></p>
+<p><img alt="3 в -3 решение" decoding="async" height="45" loading="lazy" src="assets/4ef43694538789c0f9408d0e.png" width="124"/></p>
+<p>Следует упомянуть, что правило <img alt="а в -1 формула 130px" decoding="async" height="49" loading="lazy" src="assets/db335d5ff5f8e049ff5b624e.png" width="73"/> работает только тогда, когда <span><em>a ≠ 0</em></span>.</p>
+<p>Действительно, если <em>a</em> будет равным нулю, то в знаменателе получим 0, а на нуль делить нельзя.</p>
+<hr/>
+<p><strong>Пример 4</strong>. Найти значение выражения <img alt="1 na 2 v -2 пример" decoding="async" height="61" loading="lazy" src="assets/01a87fd54576410c35ab484b.png" width="47"/></p>
+<p><a href="lesson-37.html#multistage_fractions"><img alt="1 na 2 v -2" decoding="async" height="89" loading="lazy" src="assets/f45ce17552343937dd1b8ca5.png" title="Многоэтажные дроби. Щелкните, чтобы перейти к уроку, где рассказывается об этом." width="268"/></a></p>
+<hr/>
+<p><strong>Пример 5</strong>. Найти значение выражения <img alt="-2 на 3 в -3 " decoding="async" height="64" loading="lazy" src="assets/9bb0320f08c88a57baa1ce91.png" width="64"/></p>
+<p><img alt="-2 на 3 в -3 решение" decoding="async" height="90" loading="lazy" src="assets/3ca4c97618729caf41ce4ef0.png" width="457"/></p>
+<p>При возведении обыкновенных дробей в отрицательную степень, можно пользоваться формулой <img alt="a na b v n formula" decoding="async" height="54" loading="lazy" src="assets/a355ad12bfb3a0747cbd7679.png" width="104"/>. Решим предыдущие два примера с помощью этой формулы:</p>
+<p><img alt="a na b v n formula пример" decoding="async" height="130" loading="lazy" src="assets/935153a581d24eb07ddf6234.png" width="320"/></p>
+<p>Желательно уметь возводить обыкновенную дробь в отрицательную степень как с помощью формулы, так и без неё.</p>
+<hr/>
+<h2 id="yak2">Тождественные преобразования</h2>
+<p>Все тождественные преобразования, которые мы рассматривали при изучении степени с натуральным показателем, сохраняются и для степеней с целыми отрицательными показателями.</p>
+<p>Например, чтобы представить выражение <span>2<sup>−1 </sup>× 2<sup>−3</sup></span> в виде степени, можно воспользоваться основным свойством степени:</p>
+<p><span>2<sup>−1</sup> × 2<sup>−3</sup> = 2<sup>−1 + (−3)</sup> = 2<sup>−4</sup></span></p>
+<hr/>
+<p><strong>Пример 2</strong>. Найти значение выражения <span>5<sup>−15 </sup>× 5<sup>16</sup></span></p>
+<p>Воспользуемся основным свойством степени:</p>
+<p><span>5<sup>−15 </sup>× 5<sup>16 </sup>= 5<sup>−15 + 16 </sup>= 5<sup>1 </sup>= 5</span></p>
+<p>или:</p>
+<p><img alt="5-16 на 5 в 16 решение 2" decoding="async" height="49" loading="lazy" src="assets/0f8f5e9da1d65361e5498d81.png" width="345"/></p>
+<p>Видим, что первый вариант решения намного проще и удобнее.</p>
+<hr/>
+<p><strong>Пример 3</strong>. Найти значение выражения <span>(10<sup>−4</sup>)<sup>−1</sup></span></p>
+<p>Воспользуемся правилом возведения степени в степень:</p>
+<p><span>(10<sup>−4</sup>)<sup>−1</sup> = 10<sup>−4 × (−1)</sup> = 10<sup>4</sup> = 10000</span></p>
+<hr/>
+<p><strong>Пример 4</strong>. Найти значение выражения <img alt="10 в -6 на 5 в -6" decoding="async" height="54" loading="lazy" src="assets/22a16c62accc000dc9751a12.png" width="33"/></p>
+<p>Представим число основание <span>10</span> в виде произведения <span>2 × 5</span>. Тогда числитель примет вид <span>(2 × 5)<sup>−6</sup></span></p>
+<p><img alt="10 в -6 на 5 в -6 шаг 1" decoding="async" height="61" loading="lazy" src="assets/c614fbc803ba1b2366d89a47.png" width="129"/></p>
+<p>В числителе применим правило возведения в степень произведения:</p>
+<p><img alt="10 в -6 на 5 в -6 шаг 2" decoding="async" height="49" loading="lazy" src="assets/c04fd13ef4f344b2ce65ceed.png" width="224"/></p>
+<p>Сократим получившуюся дробь на <span>5<sup>−6</sup></span></p>
+<p><img alt="10 в -6 на 5 в -6 шаг 3" decoding="async" height="61" loading="lazy" src="assets/634f1518369dc821877c41b0.png" width="275"/></p>
+<p>Вычислим степень <span>2<sup>−6</sup></span></p>
+<p><img alt="10 в -6 на 5 в -6 шаг 4" decoding="async" height="61" loading="lazy" src="assets/78bdcd19ee677b4b1ba37e1f.png" width="371"/></p>
+<hr/>
+<h2 id="yak3">Поднятие степени из знаменателя в числитель и наоборот</h2>
+<p>Если знаменатель дробного выражения содержит степень, то данную степень можно поднять в числитель, изменив знак показателя этой степени на противоположный. Значение выражения при этом не меняется. Данное преобразование иногда используется при упрощении выражений.</p>
+<p>Рассмотрим следующее равенство:</p>
+<p><img alt="2 в 2 на 2 в 2 равно 1" decoding="async" height="49" loading="lazy" src="assets/2a7fc36b76dbde459b26186a.png" width="52"/></p>
+<p>Данное равенство является верным, поскольку выражение <img alt="2 в 2 на 2 в 2" decoding="async" height="53" loading="lazy" src="assets/f07abf62543b96a22f51470c.png" width="19"/> равно <span>2<sup>0</sup></span>, а любое число в нулевой степени есть единица.</p>
+<p>Попробуем поднять степень <span>2<sup>2</sup></span> из знаменателя в числитель, изменив знак показателя этой степени на противоположный. При этом, поднятую степень и ту степень, которая располагалась в числителе, соединим знаком умножения:</p>
+<p><img alt="1 на 2 в 2 рисунок 1" decoding="async" height="150" loading="lazy" src="assets/f86d8dd0104ac88dbde38b7b.png" width="408"/></p>
+<p>Получили выражение <span>2<sup>2</sup> × 2<sup>−2</sup></span>. Чтобы его вычислить, воспользуемся основным свойством степени:</p>
+<p><span>2<sup>2</sup> × 2<sup>−2</sup> = 2<sup>2 + (−2)</sup> = 2<sup>0</sup> = 1</span></p>
+<p>Получился тот же результат, что и раньше. Значит значение выражения не изменилось. Как это работает?</p>
+<p>Если в равенстве <img alt="а в -1 формула 130px" decoding="async" height="49" loading="lazy" src="assets/db335d5ff5f8e049ff5b624e.png" width="73"/> поменять местами левую и правую часть, то получим равенство <img alt="а в -1 формула 130px 2" decoding="async" height="49" loading="lazy" src="assets/f1413f7f4d7057b028faed7f.png" width="72"/>. Это позволяет заменять в выражениях дробь вида <img alt="1 на a v n" decoding="async" height="45" loading="lazy" src="assets/884153239e3558452ce3eeb8.png" width="19"/> на тождественно равное ей выражение <span><em>a<sup>−n</sup></em></span>.</p>
+<p>Теперь представим выражение <img alt="2 в 2 на 2 в 2" decoding="async" height="53" loading="lazy" src="assets/f07abf62543b96a22f51470c.png" width="19"/> в виде произведения <img alt="2 в 2 на 1 на 2 в 2" decoding="async" height="45" loading="lazy" src="assets/16f8c6ad528d8f60b70f5b29.png" width="62"/>. То есть <a href="lesson-13.html#o_numbers" title="Перейти к уроку, где рассказывается об этом">заменим деление умножением</a>. Напомним, что при замене деления умножением, делимое умножают на число, обратное делителю. А обратное делителю число в данном случае это дробь <img alt="" decoding="async" height="45" loading="lazy" src="assets/fa4c2a431076a33b52614d6e.png" width="22"/></p>
+<p><img alt="1 на 2 в 2 шаг 2" decoding="async" height="50" loading="lazy" src="assets/7a8bc0d7edf1ef4a3ac03298.png" width="107"/></p>
+<p>Теперь воспользуемся правилом <img alt="а в -1 формула 130px 2" decoding="async" height="49" loading="lazy" src="assets/f1413f7f4d7057b028faed7f.png" width="72"/>. В произведении <img alt="2 в 2 на 1 на 2 в 2" decoding="async" height="45" loading="lazy" src="assets/16f8c6ad528d8f60b70f5b29.png" width="62"/> заменим дробь <img alt="" decoding="async" height="45" loading="lazy" src="assets/fa4c2a431076a33b52614d6e.png" width="22"/> на тождественно равное ей выражение <span>2<sup>−2</sup></span></p>
+<p><img alt="1 на 2 в 2 шаг 3" decoding="async" height="50" loading="lazy" src="assets/2fe0a0f969f364b9c83c2d9d.png" width="198"/></p>
+<p>Далее, как и раньше применяем основное свойство степени:</p>
+<p><img alt="1 на 2 в 2 шаг 4" decoding="async" height="50" loading="lazy" src="assets/d5697ba015a525449ff5c65e.png" width="347"/></p>
+<p>Получился тот же результат 1.</p>
+<p>Таким же образом можно опустить степень из числителя в знаменатель, изменив знак показателя этой степени на противоположный.</p>
+<p>Рассмотрим выражение <img alt="2 в -2 на 2 в 2" decoding="async" height="55" loading="lazy" src="assets/927475dfd21d617ef8f64dec.png" width="24"/>. Чтобы найти его значение, воспользуемся правилом деления степеней с одинаковыми основаниями. В результате получим <img alt="1 на 16" decoding="async" height="45" loading="lazy" src="assets/b9612e7b4ab28b1709611272.png" width="20"/></p>
+<p><img alt="2 в -2 на 2 в 2 решение" decoding="async" height="50" loading="lazy" src="assets/adaf267e4a756ac9ad9f0d87.png" width="236"/></p>
+<p>Теперь попробуем решить этот пример, опустив степень <span>2<sup>−2</sup></span> из числителя в знаменатель, изменив знак показателя этой степени на противоположный. При этом, опущенную степень <span>2<sup>−2</sup></span> и ту степень, которая располагалась в знаменателе, соединим знаком умножения. А в числителе останется единица:</p>
+<p><img alt="2 в -2 на 2 в 2 рисунок 1" decoding="async" height="139" loading="lazy" src="assets/920e617dbbfd21028db11ccc.png" width="397"/></p>
+<p>Дальнейшее вычисление не составит особого труда:</p>
+<p><img alt="2 в -2 на 2 в 2 решение 2" decoding="async" height="50" loading="lazy" src="assets/119b96fcdf52f8e9e412d5d0.png" width="272"/></p>
+<p>Как и в прошлом примере выражение <img alt="2 в -2 на 2 в 2" decoding="async" height="55" loading="lazy" src="assets/927475dfd21d617ef8f64dec.png" width="24"/> представимо в виде произведения <img alt="2 в -2 на 2 в 2 шаг 2" decoding="async" height="46" loading="lazy" src="assets/8c2a42986c104878053db436.png" width="70"/></p>
+<p><img alt="2 в -2 на 2 в 2 шаг 1" decoding="async" height="50" loading="lazy" src="assets/567ef106b63ecb7d16270be8.png" width="123"/></p>
+<p>Этим и объясняется появление единицы в числителе, после того как степень <span>2<sup>−2</sup></span> была опущена в знаменатель.</p>
+<p>Переносимых в знаменатель либо в числитель степеней может быть несколько. Например, знаменатель дроби <img alt="1 на 3 в 2 на а в 3 на б на 4" decoding="async" height="45" loading="lazy" src="assets/fd5caa32587b51434c3d2f08.png" width="55"/> содержит степени <span>3<sup>2</sup>, <em>a</em><sup>3</sup>, <em>b</em><sup>4</sup></span>. Перенесём эти степени в числитель, изменив знаки их показателей на противоположные. В результате получим выражение <span>3<sup>−</sup><sup>2</sup><em>a<sup>−</sup></em><sup>3</sup><em>b<sup>−</sup></em><sup>4</sup></span>.</p>
+<p><strong>Пример 2</strong>. Поднять степени из знаменателя дроби <img alt="1 на x2y пример" decoding="async" height="49" loading="lazy" src="assets/c94b8b817a729ffbabcf7bc5.png" width="32"/> в числитель</p>
+<p><img alt="1 на x2y" decoding="async" height="49" loading="lazy" src="assets/4ced09fe0725ca6b2190ad7e.png" width="107"/></p>
+<hr/>
+<p><strong>Пример 3</strong>. Поднять степени из знаменателя дроби <img alt="2 на x3 b4 пример" decoding="async" height="45" loading="lazy" src="assets/fe87170e2cd8d74328b390a0.png" width="35"/> в числитель</p>
+<p><img alt="2 на x3 b4 решение" decoding="async" height="45" loading="lazy" src="assets/6e5f5c28e387d6cbfcc71976.png" width="209"/></p>
+<hr/>
+<p><strong>Пример 4</strong>. Поднять степень из знаменателя дроби <img alt="3a na b пример" decoding="async" height="45" loading="lazy" src="assets/2e9ce2d2e79bfeebcbea9cba.png" width="23"/> в числитель</p>
+<p><img alt="3a na b решение" decoding="async" height="45" loading="lazy" src="assets/ff22284e68a95a44315b3334.png" width="168"/></p>
+<hr/>
+<p><strong>Пример 5</strong>. Опустить степень из числителя дроби <img alt="a -5 na x na 2" decoding="async" height="49" loading="lazy" src="assets/fa23877b06b358e90ca0c072.png" width="25"/> в знаменатель</p>
+<p><img alt="a -5 na x na 2 решение" decoding="async" height="49" loading="lazy" src="assets/ff2f6488b14efa151562e640.png" width="201"/></p>
+<hr/>
+<p><strong>Пример 6</strong>. Степень из числителя дроби <img alt="a-5 na x-2 пример" decoding="async" height="49" loading="lazy" src="assets/0586745ad554f4ae3198c270.png" width="27"/> опустить в знаменатель, а степень из знаменателя поднять в числитель</p>
+<p><img alt="a-5 na x-2 решение" decoding="async" height="49" loading="lazy" src="assets/3cedf8c686a949d2aa2ffd45.png" width="182"/></p>
+<p>Представлять дробь <img alt="a-5 na x-2 пример" decoding="async" height="49" loading="lazy" src="assets/0586745ad554f4ae3198c270.png" width="27"/> в виде произведения <img alt="a-5 na x-2 шаг 2" decoding="async" height="49" loading="lazy" src="assets/e52f22dae5b3d12d7f20ca80.png" width="79"/> вовсе не обязательно. Если пропустить эту запись, то данный пример можно решить короче:</p>
+<p><img alt="a-5 na x-2 решение 2" decoding="async" height="49" loading="lazy" src="assets/9ab51957ca8e172957047d19.png" width="77"/></p>
+<hr/>
+<p><strong>Пример 7</strong>. В дроби <img alt="3ax na 5bcy пример" decoding="async" height="54" loading="lazy" src="assets/7b3e3fa8220db8ccfce69223.png" width="69"/> перенести из знаменателя в числитель только те степени, которые имеют отрицательные показатели:</p>
+<p><img alt="3ax na 5bcy решение" decoding="async" height="54" loading="lazy" src="assets/19430b8d6a7d3533d4e6fc87.png" width="172"/></p>
+<hr/>
+<p><strong>Пример 8</strong>. Представить произведение <span>3<em>x</em><sup>−5</sup></span> в виде дроби, не содержащей степени с отрицательным показателем.</p>
+<p>Перепишем произведение <span>3<em>x</em><sup>−5</sup></span> с помощью знака умножения:</p>
+<p>3 × <em>x</em><sup>−5</sup></p>
+<p>Сомножитель 3 оставим без изменений, а сомножитель <em>x</em><sup>−5</sup> заменим на тождественно равную ему дробь <img alt="1 на x v 5" decoding="async" height="45" loading="lazy" src="assets/8da47600a62f1a1927467669.png" width="22"/></p>
+<p><img alt="3 na x-5 решение шаг 1" decoding="async" height="45" loading="lazy" src="assets/46b2906f6fa612582f138a85.png" width="126"/></p>
+<p>Теперь согласно правилу <a href="lesson-13.html#multiplication_num_frac" title="Перейти к уроку, где рассказывается об этом">умножения целого числа на дробь</a>, умножим множитель 3 на числитель дроби <img alt="1 на x v 5" decoding="async" height="45" loading="lazy" src="assets/8da47600a62f1a1927467669.png" width="22"/>. В результате образуется дробь <img alt="3 на x-5" decoding="async" height="45" loading="lazy" src="assets/11f2ff691ab15932ae5c37d7.png" width="22"/></p>
+<p><img alt="3 na x-5 решение" decoding="async" height="45" loading="lazy" src="assets/2d438e88a381a9f0a7095fdc.png" width="174"/></p>
+<hr/>
+<p><strong>Пример 9</strong>. Представить произведение <span>3(<em>x + y</em>)<sup>−4</sup></span> в виде дроби, не содержащей степени с отрицательным показателем.</p>
+<p>Выражение состоит из сомножителей 3 и <span>(<em>x + y</em>)<sup>−4</sup></span>. Сомножитель 3 оставим без изменений, а сомножитель <span>(<em>x + y</em>)<sup>−4 </sup></span>заменим на тождественно равную ему дробь <img alt="3 на x-5 шаг 1" decoding="async" height="49" loading="lazy" src="assets/1b5fbf9cbfaed709a6a72aa6.png" width="64"/></p>
+<p><img alt="3 на x-5 шаг 2" decoding="async" height="49" loading="lazy" src="assets/acea05523f2b645aefb4300c.png" width="202"/></p>
+<p>Теперь умножим множитель 3 на числитель дроби <img alt="3 на x-5 шаг 1" decoding="async" height="49" loading="lazy" src="assets/1b5fbf9cbfaed709a6a72aa6.png" width="64"/>. В результате образуется дробь <img alt="3 на x-5 шаг 3" decoding="async" height="49" loading="lazy" src="assets/ca63e62cff3241aafaa8dd98.png" width="64"/></p>
+<p><img alt="3 на x-5 решение" decoding="async" height="49" loading="lazy" src="assets/d3d2d06a27749bbb198b3b99.png" width="294"/></p>
+<hr/>
+<p><strong>Пример 10</strong>. Представить дробь <img alt="3 на x v 2" decoding="async" height="45" loading="lazy" src="assets/6ca1578542ea2d0839cac517.png" width="23"/> в виде произведения.</p>
+<p>Чтобы решить этот пример, достаточно поднять степень <span><em>x</em><sup>2</sup></span> в числитель, изменив знак показателя этой степени на противоположный:</p>
+<p><img alt="3 на x v 2 шаг 1" decoding="async" height="45" loading="lazy" src="assets/99acba7d56f0bdf256b1f949.png" width="83"/></p>
+<p>Как и в прошлых примерах дробь <img alt="3 на x v 2" decoding="async" height="45" loading="lazy" src="assets/6ca1578542ea2d0839cac517.png" width="23"/> можно было представить в виде произведения <img alt="3 на x v 2 шаг 2" decoding="async" height="47" loading="lazy" src="assets/6d18a5f244eb14b0ed90649c.png" width="55"/>. Затем воспользовавшись правилом <img alt="а в -1 формула 130px 2" decoding="async" height="49" loading="lazy" src="assets/f1413f7f4d7057b028faed7f.png" width="72"/>, заменить сомножитель <img alt="1 на x v 2" decoding="async" height="45" loading="lazy" src="assets/15e068e8a941b3f8296754bd.png" width="23"/> на тождественно равный ему сомножитель <span><em>x</em><sup>−2</sup></span>.</p>
+<p><img alt="3 на x v 2 решение" decoding="async" height="45" loading="lazy" src="assets/72d9566f712f8e65a5821426.png" width="163"/></p>
+<hr/>
+<p><strong>Пример 11</strong>. Представить дробь <img alt="x na y v 2 na x v 4 na y na 4 пример" decoding="async" height="56" loading="lazy" src="assets/e222b10bc07aa10599f3b76e.png" width="65"/> в виде произведения.</p>
+<p><img alt="x na y v 2 na x v 4 na y na 4 решение" decoding="async" height="57" loading="lazy" src="assets/3c03bfd3a79548a839553c5b.png" width="210"/></p>
+<hr/>
+<p><strong>Пример 12</strong>. Найти значение выражения <img alt="5 в 2 на 10 -2 на 2 -3" decoding="async" height="54" loading="lazy" src="assets/18fb3c4ab4dbc914acbe1af1.png" width="69"/></p>
+<p>Поднимем степень <span>2<sup>−3</sup></span> из знаменателя в числитель, а степень 10<span><sup>−2</sup></span> из числителя опустим в знаменатель:</p>
+<p><img alt="5 в 2 на 10 -2 на 2 -3 шаг 1" decoding="async" height="71" loading="lazy" src="assets/b1b14d157057976698a3121f.png" width="153"/></p>
+<p>Вычислим значения степеней, содержащихся в числителе и в знаменателе:</p>
+<p><img alt="5 в 2 на 10 -2 на 2 -3 шаг 3" decoding="async" height="50" loading="lazy" src="assets/482fd88b1b264dd193d39cf4.png" width="230"/></p>
+<p>Сократим полученную дробь на 25. Тогда останется дробь <span class="formula" data-tex="\frac{8}{4}">\(\frac{8}{4}\)</span>, значение которой равно 2.</p>
+<p><img alt="5 в 2 на 10 -2 на 2 -3 решение" decoding="async" height="71" loading="lazy" src="assets/f484f6ece3c6bd3eac2af1d9.png" width="305"/></p>
+<p>А если бы мы не подняли степень <span>2<sup>−3</sup></span> в числитель, и степень 10<span><sup>−2</sup></span> не опустили в знаменатель, а стали вычислять каждую степень по отдельности, то получили бы не очень компактное решение:</p>
+<p><a href="lesson-37.html#multistage_fractions"><img alt="5 в 2 на 10 -2 на 2 -3 решение 2" decoding="async" height="96" loading="lazy" src="assets/75d051e5eb1f5ac1f7fb86ff.png" title="Многоэтажные дроби. Перейти к уроку, где рассказывается об этом." width="378"/></a></p>
+<hr/>
+<h2 id="yak4">Возведение числа 10 в целую отрицательную степень</h2>
+<p>Число 10 в отрицательную степень возводится таким же образом, как и другие числа. Например:</p>
+<p><img alt="10 в -1 в -2 в -3 примеры" decoding="async" height="157" loading="lazy" src="assets/f9c7805b18aeb41c3aa8e245.png" width="235"/></p>
+<p>Замечаем, что количество нулей, которые получаются в ответе равны <a href="lesson-30.html" title="Перейти к уроку, где рассказывается об этом">модулю</a> показателя исходной степени. Например, в степени <span>10<sup>−2</sup> </span>модуль показателя равен <span>2</span>. Это значит, что в ответе будет содержаться два нуля. Так оно и есть:</p>
+<p><img alt="10 в -2" decoding="async" height="45" loading="lazy" src="assets/fe1d8aa484c076ccfb3bdfe3.png" width="212"/></p>
+<p><strong>Чтобы возвести число 10 в отрицательную степень, нужно перед единицей записать количество нулей, равное модулю показателя исходной степени.</strong></p>
+<p>При этом после первого нуля следует поставить запятую. Примеры:</p>
+<p><img alt="10 в -4 -5 -6" decoding="async" height="91" loading="lazy" src="assets/4304cae2fed39238b5c40f6d.png" width="141"/></p>
+<hr/>
+<h2 id="yak5">Представление чисел 0,1, 0,01, 0,001 в виде степени с основанием 10</h2>
+<p>Чтобы представить числа 0,1, 0,01, 0,001 в виде степени с основанием 10, нужно записать основание 10, и в качестве показателя указать отрицательный показатель, модуль которого равен количеству нулей исходного числа.</p>
+<p>Представим число 0,1 в виде степени с основанием 10. Видим, что в числе 0,1 один нуль. Значит, число 0,1 в виде степени с основанием 10 будет представлено как 10<sup>−</sup><sup>1</sup>. Показатель степени 10<sup>−</sup><sup>1</sup> равен −1. Модуль этого показателя равен количеству нулей в числе 0,1</p>
+<p><span>0,1 = 10<sup>−</sup><sup>1</sup></span></p>
+<p>Число 0,1 это результат деления <img alt="1 на 10" decoding="async" height="45" loading="lazy" src="assets/dd4f725ec7d7bb90d69f1185.png" width="20"/>, а эта дробь есть значение степени 10<sup>−</sup><sup>1</sup>.</p>
+<hr/>
+<p><strong>Пример 2</strong>. Представить число 0,01 в виде степени с основанием 10.</p>
+<p>В числе 0,01 два нуля. Значит, число 0,01 в виде степени с основанием 10 будет представлено как 10<sup>−2</sup>. Показатель степени 10<sup>−2</sup> равен −2. Модуль этого показателя равен количеству нулей в числе 0,01</p>
+<p><span>0,01 = 10<sup>−2</sup></span></p>
+<p>Число 0,01 это результат деления <img alt="1 на 100" decoding="async" height="45" loading="lazy" src="assets/d7aee4ac4492b55c0c0b77cc.png" width="31"/>, то есть <img alt="1 на 10 в 2" decoding="async" height="45" loading="lazy" src="assets/c7910beaed7ced5d751d034e.png" width="26"/>, а эта дробь есть значение степени 10<sup>−2</sup>.</p>
+<hr/>
+<p><strong>Пример 3</strong>. Представить число 0,001 в виде степени с основанием 10.</p>
+<p><span>0,001 = 10<sup>−3</sup></span></p>
+<hr/>
+<p><strong>Пример 4</strong>. Представить число 0,0001 в виде степени с основанием 10.</p>
+<p><span>0,0001 = 10<sup>−4</sup></span></p>
+<hr/>
+<p><strong>Пример 5</strong>. Представить число 0,00001 в виде степени с основанием 10.</p>
+<p><span>0,00001 = 10<sup>−5</sup></span></p>
+<hr/>
+<h2 id="yak6">Стандартный вид числа</h2>
+<p>Запишем число <span>2 000 000</span> в виде произведения числа <span>2</span> и <span>1 000 000</span></p>
+<p class="formula" data-tex="2 \times  1 000 000">\[2 \times  1 000 000\]</p>
+<p>Сомножитель <span>1 000 000</span> можно заменить на степень <span>10<sup>6</sup></span></p>
+<p><span>2 × 10<sup>6</sup></span></p>
+<p>Такой вид записи называют стандартным видом числа. Стандартный вид числа позволяет записывать в компактном виде как большие, так и маленькие числа.</p>
+<p>Например, маленькое число <span>0,005</span> можно записать в виде произведения числа <span>5</span> и десятичной дроби <span>0,001</span>.</p>
+<p class="formula" data-tex="5 \times  0,001">\[5 \times  0,001\]</p>
+<p>Десятичную дробь <span>0,001</span> можно заменить на степень с <span>10<sup>−3</sup></span></p>
+<p><span>5 × 10<sup>−3</sup></span></p>
+<p>Значит, число <span>0,005 </span>в стандартном виде будет выглядеть как <span>5 × 10<sup>−3</sup></span></p>
+<p><span>0,005 = 5 × 10<sup>−3</sup></span></p>
+<p>По стандартному виду числа можно вычислить изначальное число. Так, при записи числа <span>2 000 000</span> в стандартном виде, мы получили произведение <span>2 × 10<sup>6</sup></span>. Если вычислить это произведение, то снова получим <span>2 000 000</span></p>
+<p><span>2 × 10<sup>6</sup> = 2 × 1 000 000 = 2 000 000</span></p>
+<p>А при записи числа <span>0,005</span> в стандартном виде мы получили произведение <span>5 × 10<sup>−3</sup></span>. Если вычислить это произведение, то получим <span>0,005</span></p>
+<p><img alt="5 на 10 в - 3 решение" decoding="async" height="45" loading="lazy" src="assets/eee28e852c1501e3089dfbf4.png" width="398"/></p>
+<p>То есть записывая число в стандартном виде нужно записывать его так, чтобы сохранить его изначальное значение.</p>
+<p><strong>Стандартным видом числа называют запись вида <em>a </em>× 10<em><sup>n</sup></em>, где 1 ≤ <em>a </em>&lt; 10 и <em>n</em> — целое число.</strong></p>
+<p>Число <em>а</em> это исходное число, которое надо записать в стандартном виде. Оно должно удовлетворять <a href="lesson-52.html" title="Перейти к уроку, где рассказывается об этом">неравенству</a> <span>1 ≤ <em>a </em>&lt; 10</span>. Чаще всего исходное число надо приводить к виду, при котором неравенство <span>1 ≤ <em>a </em>&lt; 10</span> становится верным.</p>
+<p>Например, представим число 12 в стандартном виде. Для начала проверим становится ли верным неравенство <span>1 ≤ <em>a </em>&lt; 10</span> при подстановке числа 12 вместо <span><em>а</em></span></p>
+<p><span>1 ≤ 12 &lt; 10</span></p>
+<p>Неравенство верным не становится. Чтобы сделать неравенство верным, приведём число 12 к виду, при котором оно удовлетворяло бы данному неравенству. Для этого передвинем в числе 12 запятую влево на одну цифру:</p>
+<p>1,2</p>
+<p>Число 12 обратилось в число 1,2. Это число будет удовлетворять неравенству <span>1 ≤ <em>a </em>&lt; 10</span></p>
+<p><span>1 ≤ 1,2<em> </em>&lt; 10</span></p>
+<p>Теперь наша задача состоит в том, чтобы записать произведение <span><em>a </em>× 10<em><sup>n</sup></em></span>. С числом <span><em>а</em></span> мы разобрались — этим числом у нас будет 1,2. А как подобрать степень с основанием 10?</p>
+<p>После переноса запятой на одну цифру влево, число <span>12</span> утратило своё изначальное значение. Запятая на одну цифру влево двигается тогда, когда число делят на <span>10</span>. А чтобы восстановить изначальное значение числа запятую нужно передвинуть обратно в правую сторону на одну цифру, то есть умножить число <span>1,2</span> на <span>10</span>.</p>
+<p>Значит, чтобы записать число 12 в стандартном виде, нужно представить его в виде произведения <span>1,2 × 10¹</span></p>
+<p><span>12 = 1,2 × 10¹</span></p>
+<hr/>
+<p><strong>Пример 2</strong>. Записать число 0,5 в стандартном виде.</p>
+<p>Число 0,5 не удовлетворяет неравенству 1 ≤ <em>a</em>&lt; 10, поэтому передвинем запятую в этом числе на одну цифру вправо. В результате получим число 5, которое удовлетворяет неравенству 1 ≤ <em>a</em>&lt; 10.</p>
+<p>Теперь запишем произведение вида <span><em>a </em>× 10<em><sup>n</sup></em></span>. Число <em>a</em> в данном случае это 5. А степень с основанием 10 надо выбрать так, чтобы произведение <span><em>a </em>× 10<em><sup>n</sup></em></span> стало равным числу 0,5. Число 0,5 получится если умножить число 5 на множитель 0,1, который представим в виде степени 10<sup>−1</sup>. В результате получим следующую запись:</p>
+<p><span>0,5 = 5 × 10<sup>−1</sup></span></p>
+<hr/>
+<p><strong>Пример 3</strong>. Записать число 652 000 в стандартном виде.</p>
+<p>Число 652 000 не удовлетворяет неравенству <span>1 ≤ <em>a</em>&lt; 10</span>, поэтому передвинем запятую в этом числе на пять цифр влево. В результате получим число 6,52000 которое удовлетворяет неравенству <span>1 ≤ <em>a</em>&lt; 10</span>.</p>
+<p>Теперь запишем произведение вида <span><em>a </em>× 10<em><sup>n</sup></em></span>. Число <em>a</em> в данном случае это 6,52000. А степень с основанием 10 надо выбрать так, чтобы произведение <span><em>a </em>× 10<em><sup>n</sup></em></span> стало равным числу 652 000. Число 652 000 получится если число 6,52000 умножить на 100 000, а это есть степень 10<sup>5</sup>. В результате получим следующую запись:</p>
+<p><span>652 000 = 6,52000 × 10<sup>5</sup></span></p>
+<p>Нули в конце десятичной дроби <span>6,52000</span> можно отбросить. Тогда получим более компактную запись:</p>
+<p><span>652 000 = 6,52 × 10<sup>5</sup></span></p>
+<hr/>
+<p><strong>Пример 5</strong>. Записать число <span>1 024 000</span> в стандартном виде.</p>
+<p>Число 1 024 000 не удовлетворяет неравенству <span>1 ≤ <em>a</em>&lt; 10</span>, поэтому передвинем запятую в этом числе на шесть цифр влево. В результате получим число 1,024000 которое удовлетворяет неравенству <span>1 ≤ <em>a</em>&lt; 10</span>.</p>
+<p>Теперь запишем произведение вида <span><em>a </em>× 10<em><sup>n</sup></em></span>. Число <span><em>a</em></span> в данном случае это 1,024000 . А степень с основанием 10 надо выбрать так, чтобы произведение <span><em>a </em>× 10<em><sup>n</sup></em></span> было равно изначальному числу 1 024 000. Число 1 024 000 получится если число 1,024000 умножить на 1 000 000, а это есть степень 10<sup>6</sup>. В результате получим следующую запись:</p>
+<p>1 024 000 = 1,024000 × 10<sup>6</sup></p>
+<p>Нули в конце десятичной дроби 1,024000 можно отбросить:</p>
+<p>1 024 000 = 1,024 × 10<sup>6</sup></p>
+<p>Отбрасывать можно только те нули, которые располагаются в конце, и после которых нет других цифр, бóльших нуля. В приведённом примере были отброшены только три нуля, а нуль располагавшийся между запятой и цифрой 2 был сохранен, несмотря на то, что он тоже располагался после запятой.</p>
+<hr/>
+<p><strong>Пример 6</strong>. Записать число 0,000325 в стандартном виде.</p>
+<p>Передвинем в данном числе запятую так, чтобы оно удовлетворяло неравенству 1 ≤ <em>a</em>&lt; 10. В результате получим число 3,25</p>
+<p>Теперь запишем произведение вида <span><em>a </em>× 10<em><sup>n</sup></em></span>. Число <em>a</em> в данном случае это 3,25. А степень с основанием 10 надо выбрать так, чтобы произведение <span><em>a </em>× 10<em><sup>n</sup></em></span> было равно изначальному числу 0,000325. Число 0,000325 получится если число 3,25 умножить на множитель 0,0001 который представим в виде степени 10<sup>−4</sup>. В результате получим следующую запись:</p>
+<p>0,000325 = 3,25 × 10<sup>−4</sup></p>
+<hr/>
+<h2 id="yak7">Задания для самостоятельного решения</h2>
+<div>
+<div><span>Задание 1.</span> Вычислите степень 3<sup>−2</sup></div>
+<div></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><img decoding="async" loading="lazy" src="assets/b5dc158c3bfbe37cc230e7d5.png"/></div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 2.</span> Вычислите степень (−3)<sup>−2</sup></div>
+<div></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><img decoding="async" loading="lazy" src="assets/509b1a6690edf9896295eae3.png"/></div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 3.</span> Вычислите степень −3<sup>−2</sup></div>
+<div></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><img decoding="async" loading="lazy" src="assets/d1b5249ed7e7ba5c7d6ccb6c.png"/></div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 4.</span> Вычислите степень (−1)<sup>−9</sup></div>
+<div></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><img decoding="async" loading="lazy" src="assets/aa84149bf49721f5f82a5f15.png"/></div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 5.</span> Вычислите степень <img decoding="async" loading="lazy" src="assets/7837d655ac8056313346f77b.png"/></div>
+<div></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><img decoding="async" loading="lazy" src="assets/0dc1f5f34cbe4e2fb2d17ac9.png"/></div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 6.</span> Вычислите степень <img decoding="async" loading="lazy" src="assets/6a2955646a8302e221b87333.png"/></div>
+<div></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><img decoding="async" loading="lazy" src="assets/1cdea5a9c6b158d60769d78c.png"/></div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 7.</span> Вычислите степень −(−2)<sup>−3</sup></div>
+<div></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><img decoding="async" loading="lazy" src="assets/0c8069bd17fe86a2d2cf3594.png"/></div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 8.</span> Вычислите степень <img decoding="async" loading="lazy" src="assets/9ac955e21d36ed3cd10fbd1d.png"/></div>
+<div></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><img decoding="async" loading="lazy" src="assets/f5d4410a07b70878a982734b.png"/></div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 9.</span> Найдите значение выражения <span>8 × 4<sup>−3</sup></span></div>
+<div></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><img decoding="async" loading="lazy" src="assets/fcf9ca158493060dda448699.png"/></div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 10.</span> Найдите значение выражения <span>18 × (−9)<sup>−1</sup></span></div>
+<div></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><img decoding="async" loading="lazy" src="assets/a3863d68ae90653845091269.png"/></div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 11.</span> Найдите значение выражения <span>2<sup>−3</sup> − (−2)<sup>−4</sup></span></div>
+<div></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><img decoding="async" loading="lazy" src="assets/0f939a5a7a33fcea1142e2b7.png"/></div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 12.</span> Найдите значение выражения <img decoding="async" loading="lazy" src="assets/4522a7e25abf9429f1b29f23.png"/></div>
+<div></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><img decoding="async" loading="lazy" src="assets/90d425071e7369ee31244507.png"/></div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 13.</span> Представить произведение <span><em>a<sup>−</sup></em><sup>4</sup><em>b</em></span> в виде дроби, не содержащей степени с отрицательным показателем.</div>
+<div></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><img decoding="async" loading="lazy" src="assets/828caf83f7238e3161a13dc6.png"/></div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 14.</span> Представить произведение <span>7<em>xy<sup>−</sup></em><sup>3</sup></span> в виде дроби, не содержащей степени с отрицательным показателем.</div>
+<div></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><img decoding="async" loading="lazy" src="assets/1b4fba2baddf52d4dfb7341a.png"/></div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 15.</span> Представить произведение <span>6(<em>xy)<sup>−</sup></em><sup>6</sup></span> в виде дроби, не содержащей степени с отрицательным показателем.</div>
+<div></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><img decoding="async" loading="lazy" src="assets/31e3dd45cb8fd8306fc74ce2.png"/></div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 16.</span> Представить произведение <span><em>x</em><sup>−1</sup><em>y</em><sup>−2</sup></span> в виде дроби, не содержащей степени с отрицательным показателем.</div>
+<div></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><img decoding="async" loading="lazy" src="assets/f6d93180849d438cf472baf3.png"/></div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 17.</span> Представить произведение <span>9<em>a</em><sup>−1</sup>(<em>a − b</em>)<sup>−2</sup></span> в виде дроби, не содержащей степени с отрицательным показателем.</div>
+<div></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><img decoding="async" loading="lazy" src="assets/bded98febb344d7c76060f8b.png"/></div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 18.</span> Представьте дробь <img decoding="async" loading="lazy" src="assets/ba7b63d2f6856044ea2c8399.png"/> в виде произведения.</div>
+<div></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><img decoding="async" loading="lazy" src="assets/87de0e01e2fa572f742aed07.png"/></div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 19.</span> Представьте дробь <img decoding="async" loading="lazy" src="assets/a0030d7ad6521f7e146d7a61.png"/> в виде произведения.</div>
+<div></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><img decoding="async" loading="lazy" src="assets/2e6019020ab8b82923d2a2a4.png"/></div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 20.</span> Представьте дробь <img decoding="async" loading="lazy" src="assets/7f0293dd7e75e8f57ca7765b.png"/> в виде произведения.</div>
+<div></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><img decoding="async" loading="lazy" src="assets/e429323ee525d9c12331a711.png"/></div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 21.</span> Представьте дробь <img decoding="async" loading="lazy" src="assets/93d91b496cfa8c61fd868857.png"/> в виде произведения.</div>
+<div></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><img decoding="async" loading="lazy" src="assets/9b1e2edcac2e618d9a7ee144.png"/></div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 22.</span> Представьте дробь <img decoding="async" loading="lazy" src="assets/9e8197357ba5449ca3ee1175.png"/> в виде произведения.</div>
+<div></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><img decoding="async" loading="lazy" src="assets/02206a4d831584f8b5283bf7.png"/></div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 23.</span> Представьте дробь <img decoding="async" loading="lazy" src="assets/3da2681f0a2adfc198ac4f82.png"/> в виде произведения.</div>
+<div></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><img decoding="async" loading="lazy" src="assets/60595738be43f15e66324a54.png"/></div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 24.</span> Представьте дробь <img decoding="async" loading="lazy" src="assets/ddf1bea8d8c6b7868a569763.png"/> в виде произведения.</div>
+<div></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><img decoding="async" loading="lazy" src="assets/57ba212f95ce741a84ddbe3b.png"/></div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 25.</span> Представьте дробь <img decoding="async" loading="lazy" src="assets/477ea00cb6c13c19bd32951a.png"/> в виде произведения.</div>
+<div></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><img decoding="async" loading="lazy" src="assets/da7721592b5e96f119c4d184.png"/></div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 26.</span> Представьте дробь <img decoding="async" loading="lazy" src="assets/1e0dd37229addc422f45f038.png"/> в виде произведения.</div>
+<div></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><img decoding="async" loading="lazy" src="assets/57142713473280c214a10107.png"/></div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 27.</span> Представьте число <span>3 000 000</span> в стандартном виде.</div>
+<div></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><span>3 000 000 = 3 × 10<sup>6</sup></span></div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 28.</span> Представьте число <span>0,35</span> в стандартном виде.</div>
+<div></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><span>0,35 = 3,5 × 10<sup>−1</sup></span></div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 29.</span> Представьте число <span>21,56</span> в стандартном виде.</div>
+<div></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><span>21,56 = 2,156 × 10<sup>1</sup></span></div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 30.</span> Представьте число <span>0,000008</span> в стандартном виде.</div>
+<div></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div>0,000008 = 8 × 10<sup>−6</sup></div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 31.</span> Представьте число <span>0,000335</span> в стандартном виде.</div>
+<div></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><span>0,000335 = 3,35 × 10<sup>−4</sup></span></div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 32.</span> Найдите значение выражения <img decoding="async" loading="lazy" src="assets/55826dfdae548a72a6f8ab19.png"/>.</div>
+<div></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><img decoding="async" loading="lazy" src="assets/61b45f2e7aa42a561d187eda.png"/></div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 33.</span> Найдите значение выражения <img decoding="async" loading="lazy" src="assets/fc5a4b6bfc24848eb8da02a1.png"/>.</div>
+<div></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><img decoding="async" loading="lazy" src="assets/c3285e8b62cbfd30896c8b28.png"/></div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 34.</span> Найдите значение выражения <img decoding="async" loading="lazy" src="assets/1e6df0d8a0a843b1e91f1c4d.png"/>.</div>
+<div></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><img decoding="async" loading="lazy" src="assets/2462e711e6a0311caef23f2e.png"/></div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 35.</span> Представьте в виде степени выражение <img decoding="async" loading="lazy" src="assets/54027001e2e5dff7b631861c.png"/>.</div>
+<div></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><img decoding="async" loading="lazy" src="assets/d057ebd505142d8fad41e1a8.png"/></div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 36.</span> Представьте в виде степени выражение <img decoding="async" loading="lazy" src="assets/a9f9a44497aa21ee7cf50b0f.png"/>.</div>
+<div></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><img decoding="async" loading="lazy" src="assets/d361399f355021ba1e6928d5.png"/></div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 37.</span> Представьте в виде степени выражение <img decoding="async" loading="lazy" src="assets/83d1893014f5a1055170e617.png"/>.</div>
+<div></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><img decoding="async" loading="lazy" src="assets/b2deb9469a6aad5b7e9c6e9c.png"/></div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 38.</span> Представьте в виде степени выражение <img decoding="async" loading="lazy" src="assets/01b44de74686600e09e889b1.png"/>.</div>
+<div></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><img decoding="async" loading="lazy" src="assets/2a3a173ec27d07dab4903c08.png"/></div>
+</div></details>
+</div>
+<hr/>
+<p><span><strong>Понравился урок? <br/>Вступай в нашу новую группу Вконтакте и начни получать уведомления о новых уроках</strong></span></p>
+</article><section id="quiz" aria-label="Тест к уроку"></section><div class="next"><a href="lesson-55.html">← Предыдущий шаг</a><a href="lesson-57.html">Следующий шаг →</a></div></main></div><dialog id="settings"><h2>Настройки</h2><h3>Приложение</h3><button id="install" hidden>Установить приложение</button><p id="install-help"></p><button id="download">Скачать весь курс</button><progress id="download-progress" value="0" max="1" hidden></progress><p id="offline-status" role="status"></p><p><a href="spacemath-offline.zip" download>Скачать ZIP-копию для другого компьютера</a></p><h3>Прогресс</h3><button id="export">Сохранить прогресс</button><label>Восстановить прогресс <input id="import" type="file" accept="application/json"></label><details><summary>Начать заново</summary><p>Очистятся ответы и отметки. Уроки и картинки останутся для следующего ученика.</p><button id="reset">Очистить мой прогресс</button></details><p id="settings-status" role="status"></p><form method="dialog"><button>Закрыть</button></form></dialog><footer>Материалы: <a href="https://spacemath.xyz/">Spacemath</a>. Локальная учебная копия с тестами.</footer></body></html>

@@ -161,6 +161,7 @@ function addPathPractice(host,s){
 
 function render(){
  shownTerms.clear();
+ if(!location.hash){location.replace('spacemath/index.html');return;}
  const id=location.hash.slice(1)||'method';
  if(/^step-\d+$/.test(id)){const i=Number(id.slice(5))-1;if(BalancePathway.steps[i]){showStep(i);return;}}
  const session=BalanceSessions.find(s=>s.id===id);if(session){showSession(session);return;}
@@ -232,7 +233,7 @@ function showMethod(){
  current=null;navigation();const main=$('lesson');
  main.replaceChildren(el('span','Введение','badge'),el('h1','Как учиться'),el('p','51 шаг: от числа и четырёх действий — к формулам, графикам и расчёту движения. Бумага и карандаш нужны для схем и вычислений.'));
  const approach=el('div',undefined,'definition');approach.append(el('span','Математика и обучение','study-label'),el('p','Математика не сводится к готовым алгоритмам. Это поиск связей, способов решения и доказательств.'));
- const startTop=el('a','Начать с первого шага →','start-step');startTop.href='#step-1';main.append(startTop);
+ const startTop=el('a','Полный текст Spacemath и тесты →','start-step');startTop.href='spacemath/index.html';main.append(startTop);
  main.append(approach,el('p','Понимание заменяет зубрёжку. Решения задач курса выводятся из нескольких простых правил.'),el('p','Перед решением: что известно? Что требуется найти? Как связаны величины?'));
  main.append(el('h2','Для чего нужна математика'));
  const uses=el('ul');[

@@ -26,7 +26,7 @@ jobs:
       - run: |
           mkdir _site
           cp index.html style.css course.js sessions.js reading.js recall.js reasoning.js terms.js pathway.js engine.js app.js sw.js icon.svg manifest.webmanifest _site/
-          cp -R materials _site/
+          cp -R materials spacemath _site/
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site

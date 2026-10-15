@@ -1,0 +1,985 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#326c9c"><title>Шаг 59. Многочлены — Математика с нуля</title><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="icon.svg"><link rel="stylesheet" href="style.css"><link rel="stylesheet" href="vendor/katex/katex.min.css"><script defer src="vendor/katex/katex.min.js"></script><script defer src="vendor/katex/contrib/auto-render.min.js"></script><script defer src="engine.js"></script><script defer src="quiz-bank.js"></script><script defer src="app.js"></script></head><body data-lesson="59"><header><a href="index.html">Математика с нуля</a><button id="menu" aria-controls="sidebar" aria-expanded="false">Шаги</button><button id="settings-open">Настройки</button></header><div class="layout"><aside id="sidebar"><p id="overall"></p><nav aria-label="Шаги курса"><ol><li><a href="lesson-01.html">Шаг 1. Числа</a></li><li><a href="lesson-02.html">Шаг 2. Основные операции</a></li><li><a href="lesson-03.html">Шаг 3. Выражения</a></li><li><a href="lesson-04.html">Шаг 4. Замены в выражениях</a></li><li><a href="lesson-05.html">Шаг 5. Разряды для начинающих</a></li><li><a href="lesson-06.html">Шаг 6. Умножение</a></li><li><a href="lesson-07.html">Шаг 7. Деление</a></li><li><a href="lesson-08.html">Шаг 8. Порядок действий</a></li><li><a href="lesson-09.html">Шаг 9. Законы математики</a></li><li><a href="lesson-10.html">Шаг 10. Делители и кратные</a></li><li><a href="lesson-11.html">Шаг 11. НОД и НОК</a></li><li><a href="lesson-12.html">Шаг 12. Дроби</a></li><li><a href="lesson-13.html">Шаг 13. Действия с дробями</a></li><li><a href="lesson-14.html">Шаг 14. Смешанные числа</a></li><li><a href="lesson-15.html">Шаг 15. Сравнение дробей</a></li><li><a href="lesson-16.html">Шаг 16. Единицы измерения</a></li><li><a href="lesson-17.html">Шаг 17. Практика по дробям</a></li><li><a href="lesson-18.html">Шаг 18. Десятичные дроби</a></li><li><a href="lesson-19.html">Шаг 19. Действия с десятичными дробями</a></li><li><a href="lesson-20.html">Шаг 20. Практика по десятичным дробям</a></li><li><a href="lesson-21.html">Шаг 21. Округление чисел</a></li><li><a href="lesson-22.html">Шаг 22. Периодические дроби</a></li><li><a href="lesson-23.html">Шаг 23. Перевод единиц</a></li><li><a href="lesson-24.html">Шаг 24. Соотношения</a></li><li><a href="lesson-25.html">Шаг 25. Пропорция</a></li><li><a href="lesson-26.html">Шаг 26. Расстояние, скорость, время</a></li><li><a href="lesson-27.html">Шаг 27. Прямая и обратная пропорциональность</a></li><li><a href="lesson-28.html">Шаг 28. Проценты</a></li><li><a href="lesson-29.html">Шаг 29. Отрицательные числа</a></li><li><a href="lesson-30.html">Шаг 30. Модуль числа</a></li><li><a href="lesson-31.html">Шаг 31. Что такое множество?</a></li><li><a href="lesson-32.html">Шаг 32. Сложение и вычитание целых чисел</a></li><li><a href="lesson-33.html">Шаг 33. Умножение и деление целых чисел</a></li><li><a href="lesson-34.html">Шаг 34. Рациональные числа</a></li><li><a href="lesson-35.html">Шаг 35. Сравнение рациональных чисел</a></li><li><a href="lesson-36.html">Шаг 36. Сложение и вычитание рациональных чисел</a></li><li><a href="lesson-37.html">Шаг 37. Умножение и деление рациональных чисел</a></li><li><a href="lesson-38.html">Шаг 38. Дополнительные сведения о дробях</a></li><li><a href="lesson-39.html">Шаг 39. Буквенные выражения</a></li><li><a href="lesson-40.html">Шаг 40. Вынесение общего множителя за скобки</a></li><li><a href="lesson-41.html">Шаг 41. Раскрытие скобок</a></li><li><a href="lesson-42.html">Шаг 42. Простейшие задачи по математике</a></li><li><a href="lesson-43.html">Шаг 43. Задачи на дроби</a></li><li><a href="lesson-44.html">Шаг 44. Задачи на проценты</a></li><li><a href="lesson-45.html">Шаг 45. Задачи на движение</a></li><li><a href="lesson-46.html">Шаг 46. Производительность</a></li><li><a href="lesson-47.html">Шаг 47. Элементы статистики</a></li><li><a href="lesson-48.html">Шаг 48. Общие сведения об уравнениях</a></li><li><a href="lesson-49.html">Шаг 49. Решение задач с помощью уравнений</a></li><li><a href="lesson-50.html">Шаг 50. Решение задач с помощью пропорции</a></li><li><a href="lesson-51.html">Шаг 51. Системы линейных уравнений</a></li><li><a href="lesson-52.html">Шаг 52. Общие сведения о неравенствах</a></li><li><a href="lesson-53.html">Шаг 53. Системы линейных неравенств с одной переменной</a></li><li><a href="lesson-54.html">Шаг 54. Операции над множествами</a></li><li><a href="lesson-55.html">Шаг 55. Степень с натуральным показателем</a></li><li><a href="lesson-56.html">Шаг 56. Степень с целым показателем</a></li><li><a href="lesson-57.html">Шаг 57. Периметр, площадь и объём</a></li><li><a href="lesson-58.html">Шаг 58. Одночлены</a></li><li><a href="lesson-59.html">Шаг 59. Многочлены</a></li><li><a href="lesson-60.html">Шаг 60. Формулы сокращённого умножения</a></li><li><a href="lesson-61.html">Шаг 61. Разложение многочлена на множители</a></li><li><a href="lesson-62.html">Шаг 62. Деление многочленов</a></li><li><a href="lesson-63.html">Шаг 63. Тождественные преобразования многочленов</a></li><li><a href="lesson-64.html">Шаг 64. Квадратный корень</a></li><li><a href="lesson-65.html">Шаг 65. Алгоритм извлечения квадратного корня</a></li><li><a href="lesson-66.html">Шаг 66. Квадратное уравнение</a></li><li><a href="lesson-67.html">Шаг 67. Квадратное уравнение с чётным вторым коэффициентом</a></li><li><a href="lesson-68.html">Шаг 68. Теорема Виета</a></li><li><a href="lesson-69.html">Шаг 69. Разложение квадратного трёхчлена на множители</a></li><li><a href="lesson-70.html">Шаг 70. Обобщённое понятие модуля числа</a></li><li><a href="lesson-71.html">Шаг 71. Уравнение с модулем</a></li><li><a href="lesson-72.html">Шаг 72. Решение уравнений с модулем методом интервалов</a></li><li><a href="lesson-73.html">Шаг 73. Неравенства с модулем</a></li><li><a href="lesson-74.html">Шаг 74. Решение неравенств с модулем методом интервалов</a></li><li><a href="lesson-75.html">Шаг 75. Извлечение квадратного корня из обеих частей уравнения</a></li></ol></nav></aside><main id="main"><h1>Шаг 59. Многочлены</h1><p class="origin"><a href="https://spacemath.xyz/mnogochleny/">Оригинал урока</a> · <a href="#quiz">К тесту</a></p><article class="lesson-text">
+<b>Предварительные навыки</b><p></p>
+<ul>
+<li><a href="lesson-55.html">Степень с натуральным показателем</a></li>
+<li><a href="lesson-57.html">Периметр, площадь и объём</a></li>
+<li><a href="lesson-58.html">Одночлены</a></li>
+</ul>
+
+<b>Содержание урока</b><p></p>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="lesson-59.html#yak1">Определения и примеры</a></li>
+<li><a href="lesson-59.html#slozhenie_mnogochlenov">Сложение многочленов</a></li>
+<li><a href="lesson-59.html#vychitanie_mnogochlenov">Вычитание многочленов</a></li>
+<li><a href="lesson-59.html#predstavlenie_mnogochlen_vide_summy_ili_raznosti">Представление многочлен в виде суммы или разности</a></li>
+<li><a href="lesson-59.html#mnogochlen_i_ego_standartnyj_vid">Многочлен и его стандартный вид</a></li>
+<li><a href="lesson-59.html#izmenenie_poryadka_sledovaniya_chlenov">Изменение порядка следования членов</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><a href="lesson-59.html#umnozhenie_odnochlena_na_mnogochlen">Умножение одночлена на многочлен</a></li>
+<li><a href="lesson-59.html#umnozhenie_mnogochlena_na_mnogochlen">Умножение многочлена на многочлен</a></li>
+<li><a href="lesson-59.html#vynesenie_obshchego_mnozhitelya_za_skobki">Вынесение общего множителя за скобки</a></li>
+<li><a href="lesson-59.html#proverka_na_tozhdestvennost">Проверка на тождественность</a></li>
+</ul>
+</li>
+<li><a href="lesson-59.html#yak11">Задания для самостоятельного решения</a></li>
+</ul>
+</li>
+</ul>
+
+<h2 id="yak1">Определения и примеры</h2>
+<p>Многочлен — это сумма одночленов.</p>
+<p>Например, выражение <span>2<em>x </em>+ 4<em>xy</em><sup>2</sup> + <em>x </em>+ 2<em>xy</em><sup>2</sup> </span>является многочленом. Проще говоря, многочлен это несколько одночленов, соединенных знаком «плюс».</p>
+<p>В некоторых многочленах одночлены могут соединяться знаком «минус». Например, <span>3<em>x </em>− 5<em>y </em>− 2<em>x</em></span>. Следует иметь ввиду, что это по-прежнему <strong>сумма</strong> одночленов. Многочлен <span>3<em>x </em>− 5<em>y </em>− 2<em>x</em></span> это сумма одночленов <span>3<em>x</em></span>, <span>−5<em>y</em></span> и <span>− 2<em>x</em></span>, то есть <span>3<em>x </em>+ (−5<em>y</em>) + (−2<em>x</em>)</span>. После <a href="lesson-41.html" title="Перейти к уроку, где рассказывается об этом">раскрытия скобок</a> образуется многочлен  <span>3<em>x </em>− 5<em>y </em>− 2<em>x</em></span>.</p>
+<p class="formula" data-tex="3x + (-5y) + (-2x) = 3x - 5y - 2x">\[3x + (-5y) + (-2x) = 3x - 5y - 2x\]</p>
+<p>Соответственно, рассматривая по отдельности каждый одночлен многочлена, его нужно рассматривать вместе со знаком, который перед ним располагается. Так, в многочлене <span>3<em>x </em>− 5<em>y </em>− 2<em>x</em></span> минус перед одночленом <span>5<em>y</em></span> относится к коэффициенту <span>5</span>, а минус перед одночленом <span>2<em>x</em></span> относится к коэффициенту <span>2</span>. Чтобы не противоречить определению многочлена, вычитание можно заменять сложением:</p>
+<p class="formula" data-tex="3x - 5y - 2x = 3x + (-5y) + (-2x)">\[3x - 5y - 2x = 3x + (-5y) + (-2x)\]</p>
+<p>Но это действие нагромождает многочлен скобками, поэтому вычитание на сложение не заменяют, учитывая в будущем, что каждый одночлен многочлена будет рассматриваться вместе со знаком, который перед ним располагается.</p>
+<p>Одночлены, из которых состоит многочлен, называют <strong>членами многочлена</strong>.</p>
+<p>Если многочлен состоит из двух членов, то такой многочлен называют <strong>двучленом</strong>. Например, многочлен <span><em>x + y</em></span> является двучленом.</p>
+<p>Если многочлен состоит из трёх членов, то такой многочлен называют <strong>трехчленом</strong>. Например, многочлен <em><span>x + y + z</span></em> является трехчленом.</p>
+<p>Если какой-нибудь многочлен содержит обычное число, то это число называют <strong>свободным членом многочлена</strong>. Например, в многочлене <span>3<em>x </em>+ 5<em>y </em>+ <em>z </em>+ 7</span> член <span>7</span> является свободным членом. Свободный член многочлена не содержит буквенной части.</p>
+<p>Многочленом также является любое числовое выражение. Так, следующие выражения являются многочленами:</p>
+<p class="formula" data-tex="2 + 3">\[2 + 3\]</p>
+<p class="formula" data-tex="5 + 3 + 2">\[5 + 3 + 2\]</p>
+<p class="formula" data-tex="5 - 4 + 9">\[5 - 4 + 9\]</p>
+<hr/>
+<h2 id="slozhenie_mnogochlenov">Сложение многочленов</h2>
+<p>К многочлену можно прибавить другой многочлен. Например, прибавим к многочлену <span>2<em>x </em>+ <em>y</em></span> многочлен <span>3<em>x </em>+ <em>y</em>.</span></p>
+<p>Заключим в скобки каждый многочлен и соединим их знаком «плюс», указывая тем самым, что мы складываем многочлены:</p>
+<p class="formula" data-tex="(2x + y) + (3x + y)">\[(2x + y) + (3x + y)\]</p>
+<p>Теперь раскрываем скобки:</p>
+<p class="formula" data-tex="2x + y + 3x + y">\[2x + y + 3x + y\]</p>
+<p>Далее приведём подобные слагаемые:</p>
+<p class="formula" data-tex="2x + y + 3x + y = 5x + 2y">\[2x + y + 3x + y = 5x + 2y\]</p>
+<p>Таким образом, при сложении многочленов <span>2<em>x </em>+ <em>y</em></span> и <span>3<em>x </em>+ <em>y</em></span> получается многочлен <span>5<em>x + </em>2<em>y.</em></span></p>
+<p>Разрешается также сложение многочленов в столбик. Для этого их следует записать так, чтобы подобные слагаемые располагались друг под другом, затем выполнить самó сложение. Решим предыдущий пример в столбик:</p>
+<p><img alt="см рис 1" decoding="async" height="101" loading="lazy" src="assets/33d244d87b50ec0f722996f5.png" width="118"/></p>
+<p>Если в одном из многочленов окажется слагаемое, которое не имеет подобного слагаемого в другом многочлене, оно переносится к результату без изменений. Как говорят при сложении обычных чисел — «сносится».</p>
+<p>Например, сложим в столбик многочлены <span>2<em>x</em><sup>2</sup> + <em>y</em><sup>3</sup> + <em>z</em> + 2</span> и <span>5<em>x</em><sup>2</sup> + 2<em>y</em><sup>3</sup></span>. Для начала запишем их так, чтобы подобные слагаемые располагались друг под другом, затем выполним их сложение. Обнаруживаем, что во втором многочлене не содержатся слагаемые, которые можно было бы сложить со слагаемыми <span><em>z</em></span> и <span>2</span> из первого многочлена. Поэтому слагаемые <span><em>z</em></span> и <span>2</span> переносятся к результату без изменений (вместе со своими знаками)</p>
+<p><img alt="см рис 2" decoding="async" height="114" loading="lazy" src="assets/574f9ab11b2ae526ba1e04d2.png" width="220"/></p>
+<p>Решим этот же пример с помощью скобок:</p>
+<p><span>(2<em>x</em><sup>2</sup> + <em>y</em><sup>3</sup> + <em>z</em> + 2) + (5<em>x</em><sup>2</sup> + 2<em>y</em><sup>3</sup>) = 2<em>x</em><sup>2</sup> + <em>y</em><sup>3</sup> + <em>z</em> + 2 + 5<em>x</em><sup>2</sup> + 2<em>y</em><sup>3</sup> = (2<em>x</em><sup>2 </sup>+ 5<em>x</em><sup>2</sup>) + (<em>y</em><sup>3 </sup>+ 2<em>y</em><sup>3</sup>) + <em>z</em> + 2 = 7<em>x</em><sup>2</sup> + 3<em>y</em><sup>3</sup> + <em>z</em> + 2</span></p>
+<hr/>
+<p><strong>Пример 3</strong>. Сложить многочлены <span>7<em>x</em><sup>3</sup> + <em>y</em> + <em>z</em><sup>2</sup></span> и <span><em>x</em><sup>3</sup> − <em>z</em><sup>2</sup></span></p>
+<p>Решим этот пример в столбик. Запишем второй многочлен под первым так, чтобы подобные слагаемые располагались друг под другом:</p>
+<p><img alt="см рис 3" decoding="async" height="110" loading="lazy" src="assets/3565b5fbc7b6c6ab0acca0bd.png" width="172"/></p>
+<p>Во втором многочлене не было слагаемого, которого можно было бы сложить со слагаемым <span><em>y</em></span> из первого многочлена, поэтому это слагаемое было перенесёно к результату без изменений. А сложение подобных слагаемых <span><em>z</em><sup>2</sup></span> и <span>−<em>z</em><sup>2</sup></span> дало в результате <span>0</span>. Ноль по традиции не записываем. Поэтому окончательный ответ это <span>8<em>x</em><sup>3</sup> + <em>y.</em></span></p>
+<p>Решим этот же пример с помощью скобок:</p>
+<p><span>(7<em>x</em><sup>3</sup> + <em>y</em> + <em>z</em><sup>2</sup>) + (<em>x</em><sup>3</sup> − <em>z</em><sup>2</sup>) = 7<em>x</em><sup>3</sup> + <em>y</em> + <em>z</em><sup>2</sup> + <em>x</em><sup>3</sup> − <em>z</em><sup>2</sup> = (7<em>x</em><sup>3 </sup>+ <em>x</em><sup>3</sup>) + (<em>z</em><sup>2 </sup>− <em>z</em><sup>2</sup>) + <em>y</em> = 8<em>x</em><sup>3</sup> + <em>y</em></span></p>
+<hr/>
+<h2 id="vychitanie_mnogochlenov">Вычитание многочленов</h2>
+<p>Из многочлена можно вычесть другой многочлен. Например, вычтем из многочлена <span>2<em>x </em>+ <em>y</em></span> многочлен <span>3<em>x </em>+ <em>y</em></span>.</p>
+<p>Заключим в скобки каждый многочлен и соединим их знаком «минус», указывая тем самым, что мы выполняем вычитание:</p>
+<p class="formula" data-tex="(2x + y) - (3x + y)">\[(2x + y) - (3x + y)\]</p>
+<p>Теперь раскроем скобки:</p>
+<p class="formula" data-tex="2x + y - 3x - y">\[2x + y - 3x - y\]</p>
+<p>Приведём подобные слагаемые. Слагаемые <span><em>y</em></span> и <em><span>−y</span></em> являются противоположными. Сумма противоположных слагаемых равна нулю</p>
+<p class="formula" data-tex="y + (-y) = 0">\[y + (-y) = 0\]</p>
+<p>Приводя подобные слагаемые, мы обычно складываем их. Но в качестве знака операции можно использовать знак одночлена. Так, приводя подобные слагаемые <span><em>y</em></span> и <span><em>−y</em></span> мы сложили их по правилу приведения подобных слагаемых. Но можно не складывая, записать их друг за другом</p>
+<p class="formula" data-tex="y - y">\[y - y\]</p>
+<p>Получится тот же результат, поскольку выражения <span><em>y </em>+ (−<em>y</em>)</span> и <span><em>y − y</em></span> одинаково равны нулю:</p>
+<p class="formula" data-tex="y - y = 0">\[y - y = 0\]</p>
+<p>Возвращаемся к нашему примеру. Вычеркнем члены <span><em>y</em></span> и <span><em>−y</em></span>:</p>
+<p><img alt="2x na y - 3x - y пр.в." decoding="async" height="30" loading="lazy" src="assets/f0b80321ba4bf15de16e337f.png" width="143"/></p>
+<p>А сложение подобных слагаемых <span>2<em>x</em> </span>и <span>−3<em>x</em></span>, даст в результате <span>−<em>x</em></span></p>
+<p class="formula" data-tex="2x + (-3x) = -x">\[2x + (-3x) = -x\]</p>
+<p>Или без сложения, записав члены друг за другом:</p>
+<p class="formula" data-tex="2x - 3x = -x">\[2x - 3x = -x\]</p>
+<p>Значит, при вычитании из многочлена <span>(2<em>x </em>+ <em>y</em>)</span> многочлена <span>(3<em>x </em>+ <em>y</em>)</span> получится одночлен <span>−<em>x</em></span>.</p>
+<p>Решим этот же пример в столбик:</p>
+<p><img alt="см рис 4" decoding="async" height="90" loading="lazy" src="assets/c837b101aa08ca674aada76d.png" width="102"/></p>
+<hr/>
+<p><strong>Пример 2</strong>. Вычесть из многочлена <span>13<em>x </em>− 11<em>y </em>+ 10<em>z</em></span> многочлен <span>−15<em>x </em>+ 10<em>y </em>− 15<em>z</em></span></p>
+<p>Решим этот пример с помощью скобок, а затем в столбик:</p>
+<p class="formula" data-tex="(13x - 11y + 10z) - (-15x + 10y - 15z) = 13x - 11y + 10z + 15x - 10y + 15z = (13x + 15x) + (-11y - 10y) + (10z + 15z) = 28x + (-21y) + 25z = 28x - 21y + 25z">\[(13x - 11y + 10z) - (-15x + 10y - 15z) = 13x - 11y + 10z + 15x - 10y + 15z = (13x + 15x) + (-11y - 10y) + (10z + 15z) = 28x + (-21y) + 25z = 28x - 21y + 25z\]</p>
+<p><img alt="см рис 5" decoding="async" height="103" loading="lazy" src="assets/82b9ca30067c2534b4b2ad2c.png" width="222"/></p>
+<p>Следует быть внимательным при вычитании в столбик. Если не следить за знаками, вероятность допустить ошибку очень высокá. Нужно учитывать не только знак операции вычитания, но и знак располагающийся перед слагаемым.</p>
+<p>Так, в данном примере из слагаемого <span>10<em>z</em></span> вычиталось слагаемое <span>−15<em>z</em></span></p>
+<p class="formula" data-tex="10z - (-15z)">\[10z - (-15z)\]</p>
+<p>Результат вычисления этого выражения должен быть положительным, поскольку <span>10<em>z</em> − (−15<em>z</em>) = 10<em>z</em> + 15<em>z</em></span>.</p>
+<p>Складывая или вычитая многочлены при помощи скобок, первый многочлен в скобки можно не заключать. Так, в данном примере из многочлена <span>13<em>x </em>− 11<em>y </em>+ 10<em>z</em></span> требовалось вычесть многочлен <span>−15<em>x </em>+ 10<em>y </em>− 15<em>z</em></span></p>
+<p>Вычитание было записано так:</p>
+<p class="formula" data-tex="(13x - 11y + 10z) - (-15x + 10y - 15z)">\[(13x - 11y + 10z) - (-15x + 10y - 15z)\]</p>
+<p>Но первый многочлен можно не заключать в скобки:</p>
+<p class="formula" data-tex="13x - 11y + 10z - (-15x + 10y - 15z)">\[13x - 11y + 10z - (-15x + 10y - 15z)\]</p>
+<p>Заключение первого многочлена в скобки на первых порах позволяет начинающим наглядно увидеть, что второй многочлен полностью вычитается из первого, а не из определенной его части.</p>
+<hr/>
+<h2 id="predstavlenie_mnogochlen_vide_summy_ili_raznosti">Представление многочлена в виде суммы или разности</h2>
+<p>Многочлен можно представить в виде суммы или разности многочленов. По сути это обратное действие раскрытию скобок, поскольку идея подразумевает, что имеется некий многочлен, и из него можно образовать сумму или разность многочленов, заключив в скобки некоторые из членов исходного многочлена.</p>
+<p>Пусть имеется многочлен <span>3<em>x</em> + 5<em>y</em> + <em>z</em> + 7</span>. Представим его в виде суммы двух многочленов.</p>
+<p>Итак, из членов исходного многочлена нужно образовать два многочлена, сложенные между собой. Давайте заключим в скобки члены <span>3<em>x</em> </span>и <span>5<em>y</em></span>, а также члены <span><em>z</em> </span>и <span>7</span>. Далее объединим их с помощью знака «плюс»</p>
+<p class="formula" data-tex="(3x + 5y) + (z + 7)">\[(3x + 5y) + (z + 7)\]</p>
+<p>Значение исходного многочлена при этом не меняется. Если раскрыть скобки в получившемся выражении <span>(3<em>x</em> + 5<em>y</em>) + (<em>z</em> + 7)</span>, то снова получим многочлен <span>3<em>x</em> + 5<em>y</em> + <em>z</em> + 7</span>.</p>
+<p class="formula" data-tex="(3x + 5y) + (z + 7) = 3x + 5y + z + 7">\[(3x + 5y) + (z + 7) = 3x + 5y + z + 7\]</p>
+<p>В скобки также можно было бы заключить члены <span>3<em>x</em>, 5<em>y</em>,<em> z</em></span> и прибавить это выражение в скобках к члену 7</p>
+<p class="formula" data-tex="(3x + 5y + z) + 7">\[(3x + 5y + z) + 7\]</p>
+<p>Представляя многочлен в виде разности многочленов, нужно придерживаться следующего правила. Если члены заключаются в скобки после знака минуса, то этим членам внутри скобок нужно поменять знаки на противоположные.</p>
+<p>Вернемся к многочлену <span>3<em>x</em> + 5<em>y</em> + <em>z</em> + 7</span>. Представим его в виде разности двух многочленов. Давайте заключим в скобки многочлен <span>3<em>x</em></span> и <span>5<em>y</em></span>, а также <span><em>z</em></span> и 7, затем объединим их знаком «минус»</p>
+<p class="formula" data-tex="(3x + 5y) - (z + 7)">\[(3x + 5y) - (z + 7)\]</p>
+<p>Но мы видим, что после знака минуса следует заключение членов z и 7 в скобки. Поэтому этим членам нужно поменять знаки на противоположные. Делать это нужно внутри скобок:</p>
+<p class="formula" data-tex="(3x + 5y) - (-z - 7)">\[(3x + 5y) - (-z - 7)\]</p>
+<p>Заключая члены в скобки, нужно следить за тем, чтобы значение нового выражения тождественно было равно предыдущему выражению. Этим и объясняется замена знаков членов внутри скобок. Если в выражении <span>(3<em>x</em> + 5<em>y</em>) − (−<em>z −</em> 7)</span> раскрыть скобки, то получим изначальный многочлен <span>3<em>x</em> + 5<em>y</em> + <em>z</em> + 7</span>.</p>
+<p class="formula" data-tex="(3x + 5y) - (-z - 7) = 3x + 5y + z + 7">\[(3x + 5y) - (-z - 7) = 3x + 5y + z + 7\]</p>
+<p>Вообще, представляя многочлен в виде суммы или разности, можно придерживаться следующих правил:</p>
+<p><strong>Если перед скобками ставится знак «плюс», то все члены внутри скобок записываются со своими же знаками.</strong></p>
+<p><strong>Если перед скобками ставится знак «минус», то все члены внутри скобок записываются с противоположными знаками.</strong></p>
+<p><strong>Пример 1</strong>. Представить многочлен <span>3<em>x</em><sup>4 </sup>+ 2<em>x</em><sup>3 </sup>+ 5<em>x</em><sup>2 </sup>− 4</span> в виде суммы каких-нибудь двучленов:</p>
+<p><span>(3<em>x</em><sup>4 </sup>+ 2<em>x</em><sup>3</sup>) + (5<em>x</em><sup>2 </sup>− 4)</span></p>
+<hr/>
+<p><strong>Пример 2</strong>. Представить многочлен <span>3<em>x</em><sup>4 </sup>+ 2<em>x</em><sup>3 </sup>+ 5<em>x</em><sup>2 </sup>− 4</span> в виде разности каких-нибудь двучленов:</p>
+<p><span>(3<em>x</em><sup>4 </sup>+ 2<em>x</em><sup>3</sup>) − (−5<em>x</em><sup>2 </sup>+ 4)</span></p>
+<p>Перед вторыми скобками располагался минус, поэтому члены <span>5<em>x</em><sup>2</sup></span> и <span>−4</span> были записаны с противоположными знаками.</p>
+<hr/>
+<h2 id="mnogochlen_i_ego_standartnyj_vid">Многочлен и его стандартный вид</h2>
+<p>Многочлен, как и одночлен, можно привести к стандартному виду. В результате получается упрощенный многочлен, с которым удобно работать.</p>
+<p>Чтобы привести многочлен к стандартному виду, нужно привести подобные слагаемые в этом многочлене. Подобные слагаемые в многочлене называют <strong>подобными членами многочлена</strong>, а приведение подобных слагаемых в многочлене — <strong>приведением его подобных членов</strong>.</p>
+<p><strong>Подобные члены многочлена это члены, имеющие одинаковую буквенную часть.</strong></p>
+<p>Приведём многочлен <span>2<em>x </em>+ 4<em>xy</em><sup>2</sup> + <em>x </em>− <em>xy</em><sup>2</sup></span> к стандартному виду. Для этого приведём его подобные члены. Подобными членами в этом многочлене являются <span>2<em>x</em></span> и <em><span>x</span></em>, а также <span>4<em>xy</em><sup>2</sup></span> и <span>−<em>xy</em><sup>2</sup></span>.</p>
+<p><img alt="многочлены ппс пр 1" decoding="async" height="30" loading="lazy" src="assets/25f0621b24dce98aa1b444a3.png" width="270"/></p>
+<p>В результате получили многочлен <span>3<em>x</em> + 3<em>xy</em><sup>2</sup></span>, который не имеет подобных членов. Такой вид многочлена называют <strong>многочленом стандартного вида</strong>.</p>
+<p>Как и у одночлена, у многочлена имеется степень. Чтобы определить степень многочлена, сначала его нужно привести к стандартному виду, затем выбрать тот одночлен, степень которого является наибольшей из всех.</p>
+<p>В предыдущем примере мы привели многочлен <span>2<em>x </em>+ 4<em>xy</em><sup>2 </sup>+ <em>x </em>− <em>xy</em><sup>2</sup></span> к стандартному виду. В результате получили многочлен <span>3<em>x </em>+ 3<em>xy</em><sup>2</sup></span>. Он состоит из двух одночленов. Степенью первого одночлена является 1, а степенью второго одночлена является 3. Наибольшая из этих степеней является 3. Значит, многочлен <span>3<em>x </em>+ 3<em>xy</em><sup>2</sup></span> является многочленом третьей степени.</p>
+<p>А поскольку многочлен <span>3<em>x </em>+ 3<em>xy</em><sup>2</sup></span> тождественно равен предыдущему многочлену <span>2<em>x </em>+ 4<em>xy</em><sup>2 </sup>+ <em>x </em>− <em>xy</em><sup>2</sup></span>, то и этот предыдущий многочлен является многочленом третьей степени.</p>
+<p><strong>Степенью многочлена стандартного вида называют наибольшую из степеней, входящих в него одночленов.</strong></p>
+<p>В некоторых многочленах прежде всего требуется привести к стандартному виду одночлены, входящие в него, и только потом приводить сам многочлен к стандартному виду.</p>
+<p>Например, приведем многочлен <span>3<em>xx</em><sup>4 </sup>+ 3<em>xx</em><sup>3 </sup>− 5<em>x</em><sup>2</sup><em>x</em><sup>3 </sup>− 5<em>x</em><sup>2</sup><em>x</em></span> к стандартному виду. Этот многочлен состоит из одночленов, которые не приведены к стандартному виду. Сначала приведём их к стандартному виду:</p>
+<p><span>3<em>xx</em><sup>4 </sup>+ 3<em>xx</em><sup>3 </sup>− 5<em>x</em><sup>2</sup><em>x</em><sup>3 </sup>− 5<em>x</em><sup>2</sup><em>x </em>= 3<em>x</em><sup>5 </sup>+ 3<em>x</em><sup>4 </sup>− 5<em>x</em><sup>5 </sup>− 5<em>x</em><sup>3</sup></span></p>
+<p>Теперь получившийся многочлен <span>3<em>x</em><sup>5 </sup>+ 3<em>x</em><sup>4 </sup>− 5<em>x</em><sup>5 </sup>− 5<em>x</em><sup>3</sup></span> можно привести к стандартному виду. Для этого приведем его подобные члены. Подобными являются члены <span>3<em>x</em><sup>5</sup></span> и <span>−5<em>x</em><sup>5</sup></span>. Больше подобных членов нет. Члены <span>3<em>x</em><sup>4</sup></span> и <span>−5<em>x</em><sup>3</sup></span> будут переписаны без изменений:</p>
+<p><span>3<em>xx</em><sup>4 </sup>+ 3<em>xx</em><sup>3 </sup>− 5<em>x</em><sup>2</sup><em>x</em><sup>3 </sup>− 5<em>x</em><sup>2</sup><em>x </em>= 3<em>x</em><sup>5 </sup>+ 3<em>x</em><sup>4 </sup>− 5<em>x</em><sup>5 </sup>− 5<em>x</em><sup>3 </sup>= −2<em>x</em><sup>5 </sup>+ 3<em>x</em><sup>4 </sup>− 5<em>x</em><sup>3</sup></span></p>
+<hr/>
+<p><strong>Пример 2</strong>. Привести многочлен <span>3<em>ab </em>+ 4<em>cc </em>+ <em>ab </em>+ 3<em>c</em><sup>2</sup></span> к стандартному виду.</p>
+<p>Сначала приведем одночлен <span>4<em>cc</em></span>, входящий в исходный многочлен, к стандартному виду, получим <span>4<em>с</em><sup>2</sup></span></p>
+<p><span>3<em>ab </em>+ 4<em>cc </em>+ <em>ab </em>+ 3<em>c</em><sup>2</sup> = 3<em>ab </em>+ 4<em>с</em><sup>2</sup><em> </em>+ <em>ab </em>+ 3<em>c</em><sup>2</sup></span></p>
+<p>Далее приведём подобные члены:</p>
+<p><span>3<em>ab </em>+ 4<em>cc </em>+ <em>ab </em>+ 3<em>c</em><sup>2</sup> = 3<em>ab </em>+ 4<em>с</em><sup>2</sup><em> </em>+ <em>ab </em>+ 3<em>c</em><sup>2 </sup>= 4<em>ab </em>+ 7<em>c</em><sup>2</sup></span></p>
+<hr/>
+<p><strong>Пример 3</strong>. Привести многочлен <span>4<em>x</em><sup>2 </sup>− 4<em>y </em>− <em>x</em><sup>2 </sup>+ 17<em>y </em>− <em>y</em></span> к стандартному виду.</p>
+<p>Подобными членами в данном многочлене являются <span>4<em>x</em><sup>2</sup></span> и <span>−<em>x</em><sup>2</sup></span>, а также <span>−4<em>y</em></span>, <span>17<em>y</em></span> и <span><em>−y</em></span>. Приведем их:</p>
+<p><span>4<em>x</em><sup>2 </sup>− 4<em>y </em>− <em>x</em><sup>2 </sup>+ 17<em>y </em>− <em>y</em> = 3<em>x</em><sup>2 </sup>+ 12<em>y</em></span></p>
+<p>Приводя подобные члены, можно использовать скобки. Для этого подобные члены следует заключить в скобки, затем объединить выражения в скобках с помощью знака «плюс».</p>
+<p>Решим предыдущий пример с помощью скобок. Подобными членами в нём были <span>4<em>x</em><sup>2</sup></span> и <span>−<em>x</em><sup>2</sup></span>, а также <span>−4<em>y</em></span>, <span>17<em>y</em></span> и <span><em>−y</em></span>. Заключим их в скобки и объединим с помощью знака «плюс»</p>
+<p><span>4<em>x</em><sup>2 </sup>− 4<em>y </em>− <em>x</em><sup>2 </sup>+ 17<em>y </em>− <em>y</em> = (4<em>x</em><sup>2 </sup>− <em>x</em><sup>2</sup>) + (−4<em>y </em>+ 17<em>y </em>− <em>y</em>)</span></p>
+<p>Теперь в скобках выполним приведение подобных членов:</p>
+<p><span>4<em>x</em><sup>2 </sup>− 4<em>y </em>− <em>x</em><sup>2 </sup>+ 17<em>y </em>− <em>y</em> = (4<em>x</em><sup>2 </sup>− <em>x</em><sup>2</sup>) + (−4<em>y </em>+ 17<em>y </em>− <em>y</em>) = (3<em>x</em><sup>2</sup>) + (12<em>y</em>)</span></p>
+<p>В получившемся выражении <span>(3<em>x</em><sup>2</sup>) + (12<em>y</em>)</span> раскроем скобки:</p>
+<p><span>4<em>x</em><sup>2 </sup>− 4<em>y </em>− <em>x</em><sup>2 </sup>+ 17<em>y </em>− <em>y</em> = (4<em>x</em><sup>2 </sup>− <em>x</em><sup>2</sup>) + (−4<em>y </em>+ 17<em>y </em>− <em>y</em>) = (3<em>x</em><sup>2</sup>) + (12<em>y</em>) = 3<em>x</em><sup>2 </sup>+ 12<em>y</em></span></p>
+<p>Конечно, такой подход нагромождает выражение, но зато позволяет свести к минимуму допущение ошибок.</p>
+<hr/>
+<p><strong>Пример 4</strong>. Привести многочлен <span>12<em>x</em><sup>2 </sup>− 9<em>y </em>− 9<em>x</em><sup>2 </sup>+ 6<em>y </em>+ <em>y</em></span> к стандартному виду.</p>
+<p>Заключим в скобки подобные слагаемые и объединим их с помощью знака «плюс»</p>
+<p><span>12<em>x</em><sup>2 </sup>− 9<em>y </em>− 9<em>x</em><sup>2 </sup>+ 6<em>y </em>+ <em>y</em> <strong>=</strong> (12<em>x</em><sup>2 </sup>− 9<em>x</em><sup>2</sup>) + (−9<em>y </em>+ 6<em>y </em>+ <em>y</em>)</span></p>
+<p>Далее вычисляем содержимое скобок:</p>
+<p><span>12<em>x</em><sup>2 </sup>− 9<em>y </em>− 9<em>x</em><sup>2 </sup>+ 6<em>y </em>+ <em>y</em> <strong>=</strong> (12<em>x</em><sup>2 </sup>− 9<em>x</em><sup>2</sup>) + (−9<em>y </em>+ 6<em>y </em>+ <em>y</em>) = (3<em>x</em><sup>2</sup>) + (−2<em>y</em>)</span></p>
+<p>Избавляемся от скобок при помощи раскрытия:</p>
+<p><span>12<em>x</em><sup>2 </sup>− 9<em>y </em>− 9<em>x</em><sup>2 </sup>+ 6<em>y </em>+ <em>y</em> <strong>=</strong> (12<em>x</em><sup>2 </sup>− 9<em>x</em><sup>2</sup>) + (−9<em>y </em>+ 6<em>y </em>+ <em>y</em>) = (3<em>x</em><sup>2</sup>) + (−2<em>y</em>) = 3<em>x</em><sup>2 </sup>− 2<em>y</em></span></p>
+<hr/>
+<h2 id="izmenenie_poryadka_sledovaniya_chlenov">Изменение порядка следования членов</h2>
+<p>Рассмотрим двучлен <span><em>x − y</em></span>. Как сделать так, чтобы член <span>−<em>y</em></span> располагался первым, а член <span><em>x</em></span> вторым?</p>
+<p>Многочлен это сумма одночленов. То есть исходный двучлен двучлен <span><em>x − y</em></span> является суммой <span><em>x</em></span> и <span><em>−y</em></span></p>
+<p class="formula" data-tex="x + (-y)">\[x + (-y)\]</p>
+<p>От перестановки мест слагаемых сумма не меняется. Тогда <span><em>x</em></span> и <span><em>−y</em></span> можно поменять местами</p>
+<p class="formula" data-tex="-y + x">\[-y + x\]</p>
+<hr/>
+<p><strong>Пример 2</strong>. В двучлене <span><em>−y − x</em></span> поменять местами члены.</p>
+<p>Двучлен <span><em>−y − x</em></span> это сумма членов <span><em>−y</em></span> и <span><em>−x</em></span></p>
+<p class="formula" data-tex="-y + (-x)">\[-y + (-x)\]</p>
+<p>Тогда согласно переместительному закону сложения получим <span>(−<em>x</em>) + (−<em>y</em>)</span>. Избавим выражение от скобок:</p>
+<p class="formula" data-tex="-x - y">\[-x - y\]</p>
+<p>Таким образом, решение можно записать покороче:</p>
+<p class="formula" data-tex="-y - x = -x - y">\[-y - x = -x - y\]</p>
+<hr/>
+<p><strong>Пример 3</strong>. Упорядочить члены многочлена <span><em>x</em> + <em>xy</em><sup>3</sup> − <em>x</em><sup>2</sup></span> в порядке убывания степеней.</p>
+<p>Наибольшую степень в данном многочлене имеет член <span><em>xy</em><sup>3</sup></span>, далее <span>−<em>x</em><sup>2</sup></span>, а затем <span><em>x</em></span>. Запишем их в этом порядке:</p>
+<p><span><em>x</em> + <em>xy</em><sup>3</sup> − <em>x</em><sup>2</sup> = <em>xy</em><sup>3 </sup>− <em>x</em><sup>2 </sup>+ <em>x</em></span></p>
+<hr/>
+<h2 id="umnozhenie_odnochlena_na_mnogochlen">Умножение одночлена на многочлен</h2>
+<p>Одночлен можно умножить на многочлен. Чтобы умножить одночлен на многочлен, нужно этот одночлен умножить на каждый член многочлена и полученные произведения сложить.</p>
+<p>Например, умножим одночлен <span>3<em>x</em><sup>2</sup></span> на многочлен <span>2<em>x </em>+ <em>y </em>+ 5</span>. При умножении одночлена на многочлен, последний нужно заключать в скобки:</p>
+<p><span>3<em>x</em><sup>2</sup>(2<em>x </em>+ <em>y </em>+ 5)</span></p>
+<p>Теперь умножим одночлен <span>3<em>x</em><sup>2</sup></span> на каждый член многочлена <span>2<em>x </em>+ <em>y </em>+ 5</span>. Получающиеся произведения будем складывать:</p>
+<p><span>3<em>x</em><sup>2</sup>(2<em>x </em>+ <em>y </em>+ 5) = 3<em>x</em><sup>2</sup><em> ×</em> 2<em>x </em>+ 3<em>x</em><sup>2 </sup>× <em>y </em>+ 3<em>x</em><sup>2 </sup>× 5</span></p>
+<p>Вычислим получившиеся произведения:</p>
+<p><span>3<em>x</em><sup>2</sup>(2<em>x </em>+ <em>y </em>+ 5) = 3<em>x</em><sup>2</sup><em> ×</em> 2<em>x </em>+ 3<em>x</em><sup>2 </sup>× <em>y </em>+ 3<em>x</em><sup>2 </sup>× 5 = 6<em>x</em><sup>3 </sup>+ 3<em>x</em><sup>2</sup><em>y </em>+ 15<em>x</em><sup>2</sup></span></p>
+<p>Таким образом, при умножении одночлена <span>3<em>x</em><sup>2</sup></span> на многочлен <span>2<em>x </em>+ <em>y </em>+ 5</span> получается многочлен <span>6<em>x</em><sup>3 </sup>+ 3<em>x</em><sup>2</sup><em>y </em>+ 15<em>x</em><sup>2</sup></span>.</p>
+<p>Умножение желательно выполнять в уме. Так решение получается короче:</p>
+<p><span>3<em>x</em><sup>2</sup>(2<em>x </em>+ <em>y </em>+ 5) = 6<em>x</em><sup>3 </sup>+ 3<em>x</em><sup>2</sup><em>y </em>+ 15<em>x</em><sup>2</sup></span></p>
+<p>В некоторых примерах одночлен располагается после многочлена. В этом случае опять же каждый член многочлена нужно перемножить с одночленом и полученные произведения сложить.</p>
+<p>Например, предыдущий пример мог быть дан в следующем виде:</p>
+<p><span>(2<em>x </em>+ <em>y </em>+ 5)</span><span> × </span><span>3<em>x</em><sup>2</sup></span></p>
+<p>В этом случае мы умножили бы каждый член многочлен <span>(2<em>x </em>+ <em>y </em>+ 5)</span> на одночлен <span>3<em>x</em><sup>2</sup></span> и сложили бы полученные результаты:</p>
+<p><span>(2<em>x </em>+ <em>y </em>+ 5) × 3<em>x</em><sup>2</sup> = 2<em>x </em>× 3<em>x</em><sup>2</sup> + <em>y </em>× 3<em>x</em><sup>2</sup> + 5 × 3<em>x</em><sup>2</sup> = 6<em>x</em><sup>3 </sup>+ 3<em>x</em><sup>2</sup><em>y </em>+ 15<em>x</em><sup>2</sup></span></p>
+<p>Умножение одночлена на многочлен (или умножение многочлена на одночлен) основано на распределительном законе умножения.</p>
+<p class="formula" data-tex="a(b + c) = ab + ac">\[a(b + c) = ab + ac\]</p>
+<p>То есть чтобы умножить число <span><em>a</em></span> на сумму <span><em>b + c</em></span>, нужно число <span><em>a</em></span> умножить на каждое слагаемое суммы <span><em>b + c</em></span>, и полученные произведения сложить.</p>
+<p>Вообще, умножение одночлена на многочлен, да и распределительный закон умножения имеют геометрический смысл.</p>
+<p>Допустим, имеется прямоугольник со сторонами <span><em>a</em></span> и <span><em>b</em></span></p>
+<p><img alt="пр ab plus c рис 2" decoding="async" height="204" loading="lazy" src="assets/0adc918664e25eec60de603b.png" width="443"/></p>
+<p>Увеличим сторону <span><em>b</em></span> на <span><em>c</em></span></p>
+<p><img alt="пр ab plus c рис 3" decoding="async" height="204" loading="lazy" src="assets/566295c4817d7d4433d1b87a.png" width="443"/></p>
+<p>Достроим отсутствующую сторону и закрасим для наглядности получившийся прямоугольник:</p>
+<p><img alt="пр ab plus c рис 4" decoding="async" height="204" loading="lazy" src="assets/e8b408a42dcce19fa7b67c90.png" width="443"/></p>
+<p>Теперь вычислим площадь получившегося большого прямоугольника. Он включает в себя желтый и серый прямоугольники.</p>
+<p>Чтобы вычислить площадь получившегося большого прямоугольника, можно по отдельности вычислить площади желтого и серого прямоугольников и сложить полученные результаты. Площадь желтого прямоугольника будет равна <span><em>ab</em></span>, а площадь серого <span><em>ac</em></span></p>
+<p class="formula" data-tex="ab + ac">\[ab + ac\]</p>
+<p>А это всё равно что длину большого прямоугольника умножить на его ширину. Длина в данном случае это <em><span>b + c</span>,</em> а ширина это <span><em>a</em></span></p>
+<p class="formula" data-tex="(b + c) \times  a">\[(b + c) \times  a\]</p>
+<p>или ширину умножить на длину, чтобы расположить буквы <span><em>a, b</em></span> и <span><em>c</em></span> в алфавитном порядке:</p>
+<p class="formula" data-tex="a \times  (b + c)">\[a \times  (b + c)\]</p>
+<p>Таким образом, выражения <span><em>a × </em>(<em>b + c</em>)</span> и <span><em>ab + ac</em></span> равны одному и тому же значению (одной и той же площади)</p>
+<p class="formula" data-tex="a \times  (b + c) = ab + ac">\[a \times  (b + c) = ab + ac\]</p>
+<p>К примеру, пусть у нас имеется прямоугольник длиной 4 см, и шириной 2 см, и мы увеличили длину на 2 см</p>
+<p><img alt="пр 42 plus 2 рис 1" decoding="async" height="205" loading="lazy" src="assets/cb8cb10f2d7d52567a4ed194.png" width="535"/></p>
+<p>Тогда площадь данного прямоугольника будет равна <span>2 × (4 + 2)</span> или сумме площадей желтого и серого прямоугольников: <span>2 × 4 </span>+ <span>2 × 2</span>. Выражения <span>2 × (4 + 2)</span> и <span>2 × 4 </span>+ <span>2 × 2</span> равны одному и тому же значению <span>12</span></p>
+<p class="formula" data-tex="2 \times  (4 + 2) = 12">\[2 \times  (4 + 2) = 12\]</p>
+<p class="formula" data-tex="2 \times  4 + 2 \times  2 = 12">\[2 \times  4 + 2 \times  2 = 12\]</p>
+<p>Поэтому,</p>
+<p class="formula" data-tex="2 \times  (4 + 2) = 2 \times  4 + 2 \times  2 = 12.">\[2 \times  (4 + 2) = 2 \times  4 + 2 \times  2 = 12.\]</p>
+<p>Действительно, в получившемся большом прямоугольнике содержится двенадцать квадратных сантиметров:</p>
+<p><img alt="пр 42 plus 2 финал" decoding="async" height="205" loading="lazy" src="assets/94e0d054730e23a20619c483.png" width="535"/></p>
+<hr/>
+<p><strong>Пример 2</strong>. Умножить одночлен <span>2<em>a</em></span> на многочлен <span><em>a</em><sup>2 </sup>− 7<em>a </em>− 3</span></p>
+<p>Умножим одночлен <span>2<em>a</em></span> на каждый член многочлена <span><em>a</em><sup>2 </sup>− 7<em>a </em>− 3 </span>и сложим полученные произведения:</p>
+<p><span>2<em>a</em>(<em>a</em><sup>2 </sup>− 7<em>a </em>− 3) = 2<em>a</em> × <em>a</em><sup>2</sup> + 2<em>a</em> × (−7<em>a</em>) + 2<em>a</em> × (−3) = 2<em>a</em><sup>3</sup> + (−14<em>a</em><sup>2</sup>) + (−6<em>a</em>) = 2<em>a</em><sup>3 </sup>− 14<em>a</em><sup>2 </sup>− 6<em>a</em></span></p>
+<p>Или покороче:</p>
+<p><span>2<em>a</em>(<em>a</em><sup>2 </sup>− 7<em>a </em>− 3) = 2<em>a</em><sup>3 </sup>− 14<em>a</em><sup>2 </sup>− 6<em>a</em></span></p>
+<hr/>
+<p><strong>Пример 3</strong>. Умножить одночлен <em><span>−a</span></em><span><sup>2</sup></span><em><span>b</span></em><span><sup>2</sup></span> на многочлен <span><em>a</em><sup>2</sup><em>b</em><sup>2 </sup><em>− a</em><sup>2 </sup><em>− b</em><sup>2</sup></span></p>
+<p>Умножим одночлен <em><span>−a</span></em><span><sup>2</sup></span><em><span>b</span></em><span><sup>2</sup></span> на каждый член многочлена <span><em>a</em><sup>2</sup><em>b</em><sup>2 </sup><em>− a</em><sup>2 </sup><em>− b</em><sup>2</sup></span> и сложим полученные произведения:</p>
+<p><img alt="-a2b2 na a2b2 - a2 - b2 решение" decoding="async" height="55" loading="lazy" src="assets/bfa98970031ccb18d91e5fdc.png" width="629"/></p>
+<p>Или покороче:</p>
+<p><img alt="-a2b2 na a2b2 - a2 - b2 решение 2" decoding="async" height="25" loading="lazy" src="assets/ee3c0c0fafedf63748d521f4.png" width="376"/></p>
+<hr/>
+<p><strong>Пример 4</strong>. Выполнить умножение <span>−1,4<em>x</em><sup>2</sup><em>y</em><sup>6</sup>(5<em>x</em><sup>3</sup><em>y </em>− 1,5<em>xy</em><sup>2 </sup>− 2<em>y</em><sup>3</sup>)</span></p>
+<p>Умножим одночлен <span>−1,4<em>x</em><sup>2</sup><em>y</em><sup>6</sup></span> на каждый член многочлена <span>5<em>x</em><sup>3</sup><em>y </em>− 1,5<em>xy</em><sup>2 </sup>− 2<em>y</em><sup>3</sup></span> и сложим полученные произведения:</p>
+<p><img alt="-14x2y6 na 5x3y-15xy2-2y3 решение" decoding="async" height="58" loading="lazy" src="assets/c1cb33f7452902ee46b79e82.png" width="641"/></p>
+<p>Или покороче:</p>
+<p><img alt="-14x2y6 na 5x3y-15xy2-2y3 решение 2" decoding="async" height="24" loading="lazy" src="assets/272b773cf583bbbc3c1ca57d.png" width="507"/></p>
+<hr/>
+<p><strong>Пример 5</strong>. Выполнить умножение <img alt="1na2xy na 2na3x2-3na4xy na 4na5y2 пример" decoding="async" height="53" loading="lazy" src="assets/639e0f19da938c5416a9dcf3.png" width="224"/></p>
+<p>Умножим одночлен <img alt="-1на2xy" decoding="async" height="46" loading="lazy" src="assets/1f31aaa639f940bbc9c4cd4d.png" width="53"/> на каждый член многочлена <img alt="2na3x2-3na4xy na 4na5y2 без скобок" decoding="async" height="46" loading="lazy" src="assets/6ff6da6bf03013f45ed4e663.png" width="148"/> и сложим полученные произведения:</p>
+<p><img alt="1na2xy na 2na3x2-3na4xy na 4na5y2 решение" decoding="async" height="225" loading="lazy" src="assets/4ec2bf21f5be65504cfac4a5.png" width="559"/></p>
+<p>Или покороче:</p>
+<p><img alt="1na2xy na 2na3x2-3na4xy na 4na5y2 решение 2" decoding="async" height="53" loading="lazy" src="assets/d21204e28288aa0b76af650b.png" width="456"/></p>
+<p>Выполняя короткие решения, результаты записывают сразу друг за другом вместе со знаком полученного члена. Рассмотрим поэтапно, как было выполнено короткое решение данного примера.</p>
+<p>Сначала одночлен <img alt="-1на2xy" decoding="async" height="46" loading="lazy" src="assets/1f31aaa639f940bbc9c4cd4d.png" width="53"/> нужно умножить на первый член многочлена <img alt="2na3x2-3na4xy na 4na5y2" decoding="async" height="53" loading="lazy" src="assets/f3059d73f62662240c81a3b1.png" width="171"/>, то есть на <img alt="2na3x2" decoding="async" height="46" loading="lazy" src="assets/f724dc4fb8f3300153aabe18.png" width="35"/>. Умножение выполняется в уме. Получается результат <img alt="-1na3x3y" decoding="async" height="45" loading="lazy" src="assets/7a92e3fe10a1c1082e63e21e.png" width="61"/>. В исходном выражении ставим знак равенства и записываем первый результат:</p>
+<p><img alt="1na2xy na 2na3x2-3na4xy na 4na5y2 шаг 1" decoding="async" height="53" loading="lazy" src="assets/cfba55327d1e8c989ededf82.png" width="456"/></p>
+<p>После этого в исходном выражении никаких знаков ставить нельзя. Нужно сразу приступать к следующему умножению.</p>
+<p>Следующим шагом будет умножение одночлена <img alt="-1на2xy" decoding="async" height="46" loading="lazy" src="assets/1f31aaa639f940bbc9c4cd4d.png" width="53"/> на второй член многочлена <img alt="2na3x2-3na4xy na 4na5y2" decoding="async" height="53" loading="lazy" src="assets/f3059d73f62662240c81a3b1.png" width="171"/>, то есть на <img alt="-3na4xy" decoding="async" height="46" loading="lazy" src="assets/df6b19f30895f914bb83c219.png" width="53"/>. Получается результат <img alt="3на8x2y2" decoding="async" height="45" loading="lazy" src="assets/c9f3e04e06e3179f5c0df7cd.png" width="53"/>. Этот результат является положительным, то есть со знаком плюс <img alt="3на8x2y2 с плюсом" decoding="async" height="45" loading="lazy" src="assets/8dc9a38eaa6a9c258b5d441e.png" width="69"/>. В исходном выражении этот результат записывается вместе с этим плюсом сразу после члена <img alt="-1na3x3y" decoding="async" height="45" loading="lazy" src="assets/7a92e3fe10a1c1082e63e21e.png" width="61"/></p>
+<p><img alt="1na2xy na 2na3x2-3na4xy na 4na5y2 шаг 2" decoding="async" height="55" loading="lazy" src="assets/239a865976567d7e216d752f.png" width="456"/></p>
+<p>После этого в исходном выражении никаких знаков ставить нельзя. Нужно сразу приступать к следующему умножению.</p>
+<p>Следующим шагом будет умножение одночлена <img alt="-1на2xy" decoding="async" height="46" loading="lazy" src="assets/1f31aaa639f940bbc9c4cd4d.png" width="53"/> на третий член многочлена <img alt="2na3x2-3na4xy na 4na5y2" decoding="async" height="53" loading="lazy" src="assets/f3059d73f62662240c81a3b1.png" width="171"/>, то есть на <img alt="4na5y2" decoding="async" height="46" loading="lazy" src="assets/d08617b8403580d72f369e5a.png" width="35"/>. Получается результат <img alt="-2на5xy3" decoding="async" height="45" loading="lazy" src="assets/7c36a4391d5fe7fd3b95a4d7.png" width="59"/>. Этот результат является отрицательным, то есть со знаком минус. В исходном выражении этот результат записывается вместе со своим минусом сразу после члена <img alt="3на8x2y2 с плюсом" decoding="async" height="45" loading="lazy" src="assets/8dc9a38eaa6a9c258b5d441e.png" width="69"/></p>
+<p><img alt="1na2xy na 2na3x2-3na4xy na 4na5y2 шаг 3" decoding="async" height="55" loading="lazy" src="assets/5f1b6cafc0ec3c9baab7d0c0.png" width="456"/></p>
+<hr/>
+<p>Иногда встречаются выражения, в которых сначала нужно выполнить умножение одночлена на многочлен, затем опять на одночлен. Например:</p>
+<p class="formula" data-tex="2(a + b)c">\[2(a + b)c\]</p>
+<p>В этом примере сначала член 2 умножается на многочлен <span>(<em>a + b</em>)</span>, затем результат умножается на <span><em>c</em></span>. Для начала выполним умножение <span>2</span> на <span>(<em>a + b</em>)</span> и заключим полученный результат в скобки</p>
+<p><span>2(<em>a + b</em>)<em>c</em> = (2<em>a </em>+ 2<em>b</em>)<em>с</em></span></p>
+<p>Скобки говорят о том, что результат умножения <span>2</span> на <span>(<em>a + b</em>)</span> полностью умножается на <span><em>c</em></span>. Если бы мы не заключили скобки <span>2<em>a </em>+ 2<em>b</em></span>, то получилось бы выражение <span>2<em>a</em> + 2<em>b</em> × <em>с</em></span>, в котором на <span><em>с</em></span> умножается только <span>2<em>b</em></span>. Это привело бы к изменению значения изначального выражения, а это недопустимо.</p>
+<p>Итак, получили <span>(2<em>a</em> + 2<em>b</em>)<em>с</em></span>. Теперь умножаем многочлен <span>(2<em>a</em> + 2<em>b</em>)</span> на одночлен <span><em>c</em></span> и получаем окончательный результат:</p>
+<p><span>2(<em>a + b</em>)<em>c</em> = (2<em>a </em>+ 2<em>b</em>)<em>с</em> = 2<em>ac</em> + 2<em>bc</em></span></p>
+<p>Умножение также можно было бы выполнить сначала умножив <span>(<em>a + b</em>)</span> на <span><em>с</em></span> и полученный результат перемножить с членом 2</p>
+<p class="formula" data-tex="2(a + b)c = 2(ac + bc) = 2ac + 2bc">\[2(a + b)c = 2(ac + bc) = 2ac + 2bc\]</p>
+<p>В данном случае срабатывает <a href="lesson-09.html#sochetatelnyj_zakon_umnozheniya" title="Перейти к уроку, где рассказывается об этом">сочетательный закон умножения</a>, который говорит о том, что если выражение состоит из нескольких сомножителей, то произведение не будет зависеть от порядка действий:</p>
+<p><em>a × b × с = (a × b) × с = a × (b × с)</em></p>
+<p>То есть умножение можно выполнять в любом порядке. Это не приведёт к изменению значения изначального выражения.</p>
+<hr/>
+<h2 id="umnozhenie_mnogochlena_na_mnogochlen">Умножение многочлена на многочлен</h2>
+<p>Чтобы умножить многочлен на многочлен, нужно каждый член первого многочлена умножить на каждый член второго многочлена и полученные произведения сложить.</p>
+<p>Например, умножим многочлен <span><em>x </em>+ 3</span> на <span><em>y </em>+ 4</span></p>
+<p>Заключим в скобки каждый многочлен и объединим их знаком умножения ×</p>
+<p class="formula" data-tex="(x + 3) \times  (y + 4)">\[(x + 3) \times  (y + 4)\]</p>
+<p>Либо запишем их друг за другом без знака <span>×</span>. Это тоже будет означать умножение:</p>
+<p class="formula" data-tex="(x + 3)(y + 4)">\[(x + 3)(y + 4)\]</p>
+<p>Теперь умножим каждый член первого многочлена <span>(<em>x </em>+ 3)</span> на каждый член второго многочлена <span>(<em>y </em>+ 4)</span>. Здесь опять же будет применяться распределительный закон умножения:</p>
+<p class="formula" data-tex="(a + b)c= ac + bc">\[(a + b)c= ac + bc\]</p>
+<p>Отличие в том, что у нас вместо переменной <span><em>c</em></span> имеется многочлен <span>(<em>y </em>+ 4)</span>, состоящий из членов <span><em>y</em></span> и <span>4</span>. Наша задача умножить <span>(<em>x </em>+ 3)</span> сначала на <span><em>y</em></span>, затем на 4. Чтобы не допустить ошибку, можно представить, что члена 4 пока не существует вовсе. Для этого его можно закрыть рукой:</p>
+<p><img alt="x na 3 na y na 4 step 1" decoding="async" height="209" loading="lazy" src="assets/4619ffbfd7a25aed813d341c.png" width="374"/></p>
+<p>Получаем привычное для нас умножение многочлена на одночлен. А именно, умножение многочлена <span>(<em>x </em>+ 3)</span> на одночлен <span><em>y</em></span>. Выполним это умножение:</p>
+<p class="formula" data-tex="(x + 3)(y + 4) = xy + 3y">\[(x + 3)(y + 4) = xy + 3y\]</p>
+<p>Мы умножили <span>(<em>x </em>+ 3)</span> на <span><em>y</em></span>. Теперь осталось умножить <span>(<em>x</em> + 3)</span> на 4. Для этого умножаем каждый член многочлена <span>(<em>x</em> + 3)</span> на одночлен 4. На этот раз в исходном выражении <span>(<em>x </em>+ 3)(<em>y </em>+ 4)</span> рукой закроем <span><em>y</em></span>, поскольку на него мы уже умножали многочлен <span>(<em>x </em>+ 3)</span></p>
+<p><img alt="x na 3 na y na 4 step 2" decoding="async" height="209" loading="lazy" src="assets/8a0433c14a019f6595b1c428.png" width="437"/></p>
+<p>Получаем умножение многочлена <span>(<em>x </em>+ 3)</span> на одночлен 4. Выполним это умножение. Умножение необходимо продолжать в исходном примере <span>(<em>x </em>+ 3)(<em>y </em>+ 4) = <em>xy</em> + 3<em>y</em></span></p>
+<p class="formula" data-tex="(x + 3)(y + 4) = xy + 3y + 4x + 12">\[(x + 3)(y + 4) = xy + 3y + 4x + 12\]</p>
+<p>Таким образом, при умножении многочлена <span>(<em>x </em>+ 3)</span> на многочлен <span>(<em>y </em>+ 4)</span> получается многочлен <span><em>xy</em> + 3<em>y</em> + 4<em>x</em> + 12.</span></p>
+<p>По другому умножение многочлена на многочлен можно выполнить ещё так: каждый член первого многочлена умножить на второй многочлен целиком и полученные произведения сложить.</p>
+<p>Решим предыдущий пример, воспользовавшись этим способом. Умножим каждый член многочлена <span><em>x </em>+ 3</span> на весь многочлен <span><em>y </em>+ 4</span> целиком и сложим полученные произведения:</p>
+<p class="formula" data-tex="(x + 3)(y + 4) = x(y + 4) + 3(y + 4)">\[(x + 3)(y + 4) = x(y + 4) + 3(y + 4)\]</p>
+<p>В результате приходим к умножению одночлена на многочлен, которое мы изучили ранее. Выполним это умножение:</p>
+<p class="formula" data-tex="(x + 3)(y + 4) = x(y + 4) + 3(y + 4) = xy + 4x + 3y + 12">\[(x + 3)(y + 4) = x(y + 4) + 3(y + 4) = xy + 4x + 3y + 12\]</p>
+<p>Получится тот же результат что и раньше, но члены полученного многочлена будут располагаться немного по другому.</p>
+<p>Умножение многочлена на многочлен имеет геометрический смысл. Допустим, имеется прямоугольник, длина которого <span><em>a</em></span> и ширина <span><em>b</em></span></p>
+<p><img alt="пр ab na xy рис 1" decoding="async" height="225" loading="lazy" src="assets/d0b1f4aed3347a6180473d70.png" width="544"/></p>
+<p>Площадь этого прямоугольника будет равна <span><em>a × b</em></span>.</p>
+<p>Увеличим длину данного прямоугольника на <span><em>x</em></span>, а ширину на <span><em>y</em></span></p>
+<p><img alt="пр ab na xy рис 2" decoding="async" height="312" loading="lazy" src="assets/5cdeb4e0907f098f90c23a5c.png" width="544"/></p>
+<p>Достроим отсутствующие стороны и закрасим для наглядности получившиеся прямоугольники:</p>
+<p><img alt="пр ab na xy рис 3" decoding="async" height="312" loading="lazy" src="assets/fb751cbfd072ab7951583c36.png" width="544"/></p>
+<p>Теперь вычислим площадь получившегося большого прямоугольника. Для этого вычислим по отдельности площадь каждого прямоугольника, входящего в этот большой прямоугольник и сложим полученные результаты. Площадь жёлтого прямоугольника будет равна <span><em>ab</em></span>, площадь серого <span><em>xb</em></span>, площадь фиолетового <span><em>ay</em></span>, площадь розового <span><em>xy</em></span></p>
+<p class="formula" data-tex="ab + xb + ay + xy">\[ab + xb + ay + xy\]</p>
+<p>А это всё равно что умножить длину получившегося большого прямоугольника на его ширину. Длина в данном случае это <span><em>a + x</em></span>, а ширина <span><em>b + y</em></span></p>
+<p class="formula" data-tex="(a + x)(b + y)">\[(a + x)(b + y)\]</p>
+<p>То есть выражения <span>(<em>a + x</em>)(<em>b + y</em>)</span> и <span><em>ab + xb + ay + xy</em></span> тождественно равны</p>
+<p class="formula" data-tex="(a + x)(b + y) = ab + xb + ay + xy">\[(a + x)(b + y) = ab + xb + ay + xy\]</p>
+<p>Представим, что у нас имелся прямоугольник, длиной 6 см и шириной 3 см, и мы увеличили его длину на 2 см, а ширину на 1 см</p>
+<p><img alt="пр 62 и 31 шаг 1" decoding="async" height="301" loading="lazy" src="assets/96a4904d075d7e2687b55e22.png" width="572"/></p>
+<p>Достроим отсутствующие стороны и закрасим для наглядности получившиеся прямоугольники:</p>
+<p><img alt="пр 62 и 31 шаг 2" decoding="async" height="300" loading="lazy" src="assets/6e4b70e7ad5358e8a62847a9.png" width="572"/></p>
+<p>Площадь получившегося большого прямоугольника будет равна <span>(6 + 2)(3 + 1)</span> или сумме площадей прямоугольников, входящих в большой прямоугольник: <span>6 × 3 + 2 × 3 + 6 × 1 + 2 × 1</span>. В обоих случаях получим один и тот же результат <span>32</span></p>
+<p class="formula" data-tex="(6 + 2)(3 + 1) = 32">\[(6 + 2)(3 + 1) = 32\]</p>
+<p class="formula" data-tex="6 \times  3 + 2 \times  3 + 6 \times  1 + 2 \times  1 = 32">\[6 \times  3 + 2 \times  3 + 6 \times  1 + 2 \times  1 = 32\]</p>
+<p>Поэтому,</p>
+<p class="formula" data-tex="(6 + 2)(3 + 1) = 6 \times  3 + 2 \times  3 + 6 \times  1 + 2 \times  1 = 18 + 6 + 6 + 2 = 32">\[(6 + 2)(3 + 1) = 6 \times  3 + 2 \times  3 + 6 \times  1 + 2 \times  1 = 18 + 6 + 6 + 2 = 32\]</p>
+<p>Действительно, в получившемся большом прямоугольнике содержится тридцать два квадратных сантиметра:</p>
+<p><img alt="пр 62 и 31 шаг 3" decoding="async" height="301" loading="lazy" src="assets/12536f08afb6a43eb7a3cb60.png" width="572"/></p>
+<hr/>
+<p><strong>Пример 2</strong>. Умножить многочлен <span><em>a + b</em> </span>на <span><em>c + d</em></span></p>
+<p>Заключим исходные многочлены в скобки и запишем их друг за другом:</p>
+<p class="formula" data-tex="(a + b)(c + d)">\[(a + b)(c + d)\]</p>
+<p>Теперь умножим каждый член первого многочлена <span>(<em>a + b</em>)</span> на каждый член второго многочлена <span>(<em>c + d</em>)</span></p>
+<p class="formula" data-tex="(a + b)(c + d) = ac + bc + ad + bd">\[(a + b)(c + d) = ac + bc + ad + bd\]</p>
+<hr/>
+<p><strong>Пример 4</strong>. Выполнить умножение <span>(−<em>x </em>− 2<em>y</em>)(<em>x </em>+ 2<em>y</em><sup>2</sup>)</span></p>
+<p>Умножим каждый член многочлена <span>(−<em>x </em>− 2<em>y</em>)</span> на каждый член многочлена <span>(<em>x </em>+ 2<em>y</em><sup>2</sup>)</span></p>
+<p><span>(−<em>x </em>− 2<em>y</em>)(<em>x </em>+ 2<em>y</em><sup>2</sup>) = −<em>x</em><sup>2 </sup>− 2<em>xy </em>− 2<em>xy</em><sup>2 </sup>− 4<em>y</em><sup>3</sup></span></p>
+<p>Результат перемножения членов нужно записывать вместе со знаками этих членов. Рассмотрим поэтапно, как был решён данный пример.</p>
+<p>Итак, требуется умножить многочлен <span>(−<em>x </em>− 2<em>y</em>)</span> на многочлен <span>(<em>x </em>+ 2<em>y</em><sup>2</sup>)</span>. Сначала надо умножить многочлен <span>(−<em>x </em>− 2<em>y</em>)</span> на первый член многочлена <span>(<em>x </em>+ 2<em>y</em><sup>2</sup>)</span>, то есть на <span><em>x</em></span>.</p>
+<p>Умножаем <span>−<em>x</em></span> на <span><em>x</em></span>, получаем <span>−<em>x</em><sup>2</sup></span>. В исходном выражении <span>(−<em>x </em>− 2<em>y</em>)(<em>x </em>+ 2<em>y</em><sup>2</sup>)</span> ставим знак равенства и записываем <span>−<em>x</em><sup>2</sup></span></p>
+<p><span>(−<em>x </em>− 2<em>y</em>)(<em>x </em>+ 2<em>y</em><sup>2</sup>) = −<em>x</em><sup>2</sup></span></p>
+<p>После этого в исходном выражении никаких знаков ставить нельзя. Нужно сразу приступать к следующему умножению. А именно умножению <span>−2<em>y</em></span> на <span><em>x .</em></span> Получится <span>−2<em>xy</em></span>. Этот результат является отрицательным, то есть со знаком минус. В исходном выражении записываем результат <span>−2<em>xy</em></span> сразу после члена <span>−<em>x</em><sup>2</sup></span></p>
+<p><span>(−<em>x </em>− 2<em>y</em>)(<em>x </em>+ 2<em>y</em><sup>2</sup>) = −<em>x</em><sup>2 </sup>− 2<em>xy</em></span></p>
+<p>Теперь умножаем многочлен <span>(−<em>x </em>− 2<em>y</em>)</span> на второй член многочлена <span>(<em>x</em> + 2<em>y</em><sup>2</sup>)</span>, то есть на <span>2<em>y</em><sup>2</sup></span></p>
+<p>Умножаем <span>−<em>x</em></span> на <span>2<em>y</em><sup>2</sup></span>, получаем <span>−2<em>xy</em><sup>2</sup></span>. В исходном выражении записываем этот результат сразу после члена <span>−2<em>xy</em></span></p>
+<p><span>(−<em>x </em>− 2<em>y</em>)(<em>x </em>+ 2<em>y</em><sup>2</sup>) = −<em>x</em><sup>2 </sup>− 2<em>xy </em>− 2<em>xy</em><sup>2</sup></span></p>
+<p>Приступаем к следующему умножению. А именно умножению <span>−2<em>y</em></span> на <span>2<em>y</em><sup>2</sup></span>. Получаем <span>−4<em>y</em><sup>3</sup></span>. В исходном выражении этот результат записываем вместе со своим минусом сразу после члена <span>−2<em>xy</em><sup>2</sup></span></p>
+<p><span>(−<em>x </em>− 2<em>y</em>)(<em>x </em>+ 2<em>y</em><sup>2</sup>) = −<em>x</em><sup>2 </sup>− 2<em>xy </em>− 2<em>xy</em><sup>2</sup> − 4<em>y</em><sup>3</sup></span></p>
+<hr/>
+<p><strong>Пример 5</strong>. Выполнить умножение <span>(4<em>a</em><sup>2</sup> + 2<em>ab </em>− <em>b</em><sup>2</sup>)(2<em>a − b</em>)</span></p>
+<p>Умножим каждый член многочлена <span>(4<em>a</em><sup>2</sup> + 2<em>ab </em>− <em>b</em><sup>2</sup>)</span> на каждый член многочлена <span>(2<em>a − b</em>)</span></p>
+<p><img alt="4a2na2ab-b2 na2a-b решение 0" decoding="async" height="24" loading="lazy" src="assets/d656c94e7cd1634e8003ba98.png" width="530"/></p>
+<p>В получившемся выражении можно привести подобные слагаемые:</p>
+<p><img alt="4a2na2ab-b2 na2a-b решение" decoding="async" height="67" loading="lazy" src="assets/24d35167f4303b04c83595d5.png" width="546"/></p>
+<hr/>
+<p><strong>Пример 6</strong>. Выполнить умножение <span>−(<em>a</em> + <em>b</em>)(<em>с</em> − <em>d</em>)</span></p>
+<p>В этот раз перед скобками располагается минус. Этот минус является коэффициентом <span>−1</span>. То есть исходное выражение является произведением трёх сомножителей: <span>−1</span>, многочлена <span>(<em>a + b</em>)</span> и многочлена <span>(<em>с − d</em>)</span>.</p>
+<p><span>−1(<em>a</em> + <em>b</em>)(<em>с</em> − <em>d</em>)</span></p>
+<p>Согласно сочетательному закону умножения, если выражение состоит из нескольких сомножителей, то его можно вычислять в любом порядке.</p>
+<p>Поэтому сначала можно перемножить многочлены <span>(<em>a </em>+ <em>b</em>)</span> и <span>(<em>с </em>− <em>d</em>)</span> и полученный в результате многочлен умножить на <span>−1</span>. Перемножение многочленов <span>(<em>a + b</em>)</span> и <span>(<em>с − d</em>)</span> нужно выполнять в скобках</p>
+<p><span>−1(<em>a</em> + <em>b</em>)(<em>с</em> − <em>d</em>) = −1(<em>ac + bc − ad − bd</em>)</span></p>
+<p>Теперь перемножаем <span>−1</span> и многочлен <span>(<em>ac + bc − ad − bd</em>)</span>. В результате все члены многочлена (<span><em>ac + bc − ad − bd</em></span>) поменяют свои знаки на противоположные:</p>
+<p><span>−1(<em>a</em> + <em>b</em>)(<em>с</em> − <em>d</em>) = −1(<em>ac + bc − ad − bd</em>) = <em>−ac − bc + ad + bd</em></span></p>
+<p>Либо можно было перемножить −1 с первым многочленом <span>(<em>a + b</em>)</span> и результат перемножить с многочленом <span>(<em>с − d</em>)</span></p>
+<p><span>−1(<em>a</em> + <em>b</em>)(<em>с</em> − <em>d</em>) = (<em>−a − b</em>)(<em>с − d</em>) = <em>−ac − bc + ad + bd</em></span></p>
+<hr/>
+<p><strong>Пример 7</strong>. Выполнить умножение <span><em>x</em><sup>2</sup>(<em>x </em>+ 5)(<em>x </em>− 3)</span></p>
+<p>Сначала перемножим многочлены <span>(<em>x </em>+ 5)</span> и <span>(<em>x </em>− 3)</span>, затем полученный в результате многочлен перемножим с <span><em>x</em><sup>2</sup></span></p>
+<p><img alt="x2 na xna5 na x-3 решение" decoding="async" height="55" loading="lazy" src="assets/2278a3c6bfe22129c43db00b.png" width="539"/></p>
+<hr/>
+<p><strong>Пример 8</strong>. Выполнить умножение <span>(<em>a </em>+ 1)(<em>a </em>+ 2)(<em>a </em>+ 3)</span></p>
+<p>Сначала перемножим многочлены <span>(<em>a </em>+ 1)</span> и <span>(<em>a </em>+ 2)</span>, затем полученный многочлен перемножим с многочленом <span>(<em>a </em>+ 3)</span></p>
+<p>Итак, перемножим <span>(<em>a </em>+ 1)</span> и <span>(<em>a </em>+ 2)</span></p>
+<p><img alt="ana1 na ana2 na ana3 решение 0" decoding="async" height="25" loading="lazy" src="assets/4ce252d682f1f01ec093cd3a.png" width="375"/></p>
+<p>Полученный многочлен <span>(<em>a</em><sup>2</sup> + <em>a </em>+ 2<em>a </em>+ 2)</span> перемножим с <span>(<em>a </em>+ 3)</span></p>
+<p><img alt="ana1 na ana2 na ana3 решение" decoding="async" height="64" loading="lazy" src="assets/a201250123500acf6921761e.png" width="502"/></p>
+<p>Если быстрое перемножение многочленов на первых порах даётся тяжело, можно воспользоваться подробным решением, суть которого заключается в том, чтобы записать, как каждый член первого многочлена умножается на весь второй многочлен целиком. Такая запись хоть и занимает место, но позволяет свести к минимуму допущение ошибок.</p>
+<p>Например, выполним умножение <span>(<em>a + b</em>)(<em>c + d</em>)</span></p>
+<p>Запишем как каждый член многочлена <span><em>a + b</em></span> умножается на весь многочлен <span><em>c + d</em></span> целиком. В результате придём к умножению одночлена на многочлен, выполнять которое проще:</p>
+<p><span>(<em>a + b</em>)(<em>c + d</em>) = <em>a</em>(<em>с + d</em>) + <em>b</em>(<em>с + d</em>) = <em>aс + ad + bс + bd</em></span></p>
+<p>Такая запись удобна при умножении двучлена на какой-нибудь многочлен, в котором содержится больше двух членов. Например:</p>
+<p><span>(<em>x + y</em>)(<em>x</em><sup>2 </sup>+ 2<em>xy </em>+ <em>y</em><sup>2</sup>) = <em>x</em>(<em>x</em><sup>2 </sup>+ 2<em>xy</em> + <em>y</em><sup>2</sup>) + <em>y</em>(<em>x</em><sup>2 </sup>+ 2<em>xy</em> + <em>y</em><sup>2</sup>) = <em>x</em><sup>3 </sup>+ 2<em>x</em><sup>2</sup><em>y</em> + <em>xy</em><sup>2 </sup>+ <em>x</em><sup>2</sup><em>y</em> + 2<em>xy</em><sup>2 </sup>+ <em>y</em><sup>3</sup> = <em>x</em><sup>3 </sup>+ 3<em>x</em><sup>2</sup><em>y </em>+ 3<em>xy</em><sup>2 </sup>+ <em>y</em><sup>3</sup></span></p>
+<p>Или при перемножении многочленов, содержащих больше двух членов. Например, умножим многочлен <span><em>x</em><sup>2 </sup>+ 2<em>x</em> − 5</span> на многочлен <span><em>x</em><sup>3 </sup>− <em>x</em> + 2</span></p>
+<p><span>(<em>x</em><sup>2 </sup>+ 2<em>x</em> − 5)(<em>x</em><sup>3 </sup>− <em>x</em> + 2)</span></p>
+<p>Запишем перемножение исходных многочленов в виде умножения каждого члена многочлена <span><em>x</em><sup>2 </sup>+ 2<em>x</em> − 5</span> на многочлен <span><em>x</em><sup>3 </sup>− <em>x</em> + 2</span>.</p>
+<p><img alt="ум пример 11 шаг 1" decoding="async" height="25" loading="lazy" src="assets/eb41c61a9a285cb4bfff95dd.png" width="594"/></p>
+<p>Получили привычное для нас умножения одночленов на многочлены. Выполним эти умножения:</p>
+<p><img alt="ум пример 11 шаг 2" decoding="async" height="54" loading="lazy" src="assets/39fd531e282ea776628f7fa6.png" width="611"/></p>
+<p>В получившемся многочлене приведём подобные члены:</p>
+<p><img alt="ум пример 11 шаг 3" decoding="async" height="88" loading="lazy" src="assets/679f840669b1c1b7f6199209.png" width="612"/></p>
+<p>Одночлены, входящие в получившийся многочлен, расположим в порядке убывания степеней. Делать это необязательно. Но такая запись будет красивее:</p>
+<p><img alt="ум пример 11 решение" decoding="async" height="122" loading="lazy" src="assets/98869d01751d972131d08144.png" width="612"/></p>
+<hr/>
+<h2 id="vynesenie_obshchego_mnozhitelya_za_skobki">Вынесение общего множителя за скобки</h2>
+<p>Мы уже учились выносить общий множитель за скобки в простых буквенных выражениях. Теперь мы немного углубимся в эту тему, и научимся выносить общий множитель за скобки в многочлене. Принцип вынесения будет таким же, как и в простом буквенном выражении. Небольшие трудности могут возникнуть лишь с многочленами, состоящими из степеней.</p>
+<p>Рассмотрим простой двучлен <span>6<em>xy </em>+ 3<em>xz</em></span>. Вынесем в нём общий множитель за скобки. В данном случае за скобки можно вынести общий множитель <span>3<em>x</em></span>. Напомним, что при вынесении общего множителя за скобки, каждое слагаемое исходного выражения надо разделить на этот общий множитель:</p>
+<p><img alt="6xy na 3xz пример" decoding="async" height="53" loading="lazy" src="assets/8f79b87bd239fa3293b428e7.png" width="341"/></p>
+<p>Или покороче:</p>
+<p><img alt="6xy na 3xz решение 2" decoding="async" height="21" loading="lazy" src="assets/fa02f78af0debed70b2583dc.png" width="192"/></p>
+<p>В результате получили <span>3<em>x</em>(2<em>y </em>+ <em>z</em>)</span>. При этом в скобках образовался другой более простой многочлен <span>(2<em>y </em>+ <em>z</em>)</span>. Выносимый за скобки общий множитель выбирают так, чтобы в скобках остались члены, которые не содержат общего буквенного множителя, а модули коэффициентов этих членов не имели общего делителя, кроме единицы.</p>
+<p>Поэтому в приведенном примере за скобки был вынесен общий множитель <span>3<em>x</em></span>. В скобках образовался многочлен <span>2<em>y </em>+ <em>z</em></span>, модули коэффициентов которого не имеют общего делителя кроме единицы. Это требование можно выполнить, если найти <a href="lesson-11.html" title="Перейти к уроку, где рассказывается об этом">наибольший общий делитель</a> (НОД) модулей коэффициентов исходных членов. Этот НОД станóвится коэффициентом общего множителя, выносимого за скобки. В нашем случае исходный многочлен был <span>6<em>xy </em>+ 3<em>xz</em></span>. Коэффициенты исходных членов это числа 6 и 3, а их НОД равен 3.</p>
+<p>А буквенную часть общего множителя выбирают так, чтобы члены в скобках не имели общих буквенных множителей. В данном случае это требование выполнилось легко. Общий буквенный множитель был виден невооруженным глазом — это был множитель <span><em>x</em></span>.</p>
+<hr/>
+<p><strong>Пример 2</strong>. Вынести общий множитель за скобки в многочлене <span><em>x</em><sup>2 </sup>+ <em>x</em> + <em>xy</em></span></p>
+<p>Все члены данного многочлены имеют коэффициент единицу. Наибольший общий делитель модулей из этих единиц есть единица. Поэтому числовая часть выносимого за скобки множителя будет единицей. Но единицу в качестве коэффициента не записывают.</p>
+<p>Далее выбираем буквенную часть общего множителя. Прежде всего надо понимать, что любой член, входящий в многочлен, является одночленом. А одночлен это произведение чисел, переменных и степеней. Даже если членом многочлена является обычное число, его всегда можно представить в виде произведения единицы и самого этого числа. Например, если в многочлене содержится число 5, его можно представить в виде <span>1 × 5</span>. Если в многочлене содержится число <span>8</span>, то его можно представить в виде произведения множителей <span>2 × 2 × 2</span> (или как <span>2 × 4</span>)</p>
+<p>С переменными такая же ситуация. Если в многочлене содержится член, являющийся переменной или степенью, их всегда можно представить в виде произведения. К примеру, если многочлен содержит одночлен <span><em>x</em></span>, его можно представить в виде произведения <span>1 × <em>x</em></span>. Если же многочлен содержит одночлен <span><em>x</em><sup>3</sup></span>, его можно представить в виде произведения <span><em>xxx</em></span>.</p>
+<p>Одночлены, из которых состоит многочлен <span><em>x</em><sup>2 </sup>+ <em>x</em> + <em>xy</em></span>, можно разложить на множители так, чтобы мы смогли увидеть буквенный сомножитель, который является общим для всех членов.</p>
+<p>Итак, первый член многочлена <span><em>x</em><sup>2 </sup>+ <em>x</em> + <em>xy</em></span>, а именно <span><em>x</em><sup>2</sup></span> можно представить в виде произведения <span><em>x × x</em></span>. Второй член <span><em>x</em></span> можно представить в виде <span>1 × <em>x</em></span>. А третий член <span><em>xy</em></span> оставим без изменения, или для наглядности перепишем его с помощью знака умножения <em>x × y</em></p>
+<p><img alt="xx na x1 na xy step 1" decoding="async" height="56" loading="lazy" src="assets/595fe8950787e2368895892a.png" width="520"/></p>
+<p>Каждый член многочлена представлен в виде произведения множителей, из которых состоят эти члены. Легко заметить, что во всех трёх произведениях общим сомножителем является <span><em>x. </em></span>Выделим его:</p>
+<p><img alt="xx na x1 na xy step 2" decoding="async" height="56" loading="lazy" src="assets/152febdff3c9e661147ac15f.png" width="518"/></p>
+<p>Этот множитель <span><em>x</em></span> и вынесем за скобки. Опять же при вынесении общего множителя за скобки каждое слагаемое исходного выражения делим на этот общий множитель. В нашем случае каждый член многочлена <em><span>x × x + </span></em><span>1 × </span><em><span>x + x × y</span></em> нужно разделить на общий множитель <span><em>x</em></span></p>
+<p><img alt="xx na x1 na xy step 3" decoding="async" height="79" loading="lazy" src="assets/c7d0fa266263bd2c09272618.png" width="645"/></p>
+<p>Значит, при вынесении общего множителя за скобки в многочлене <span><em>x</em><sup>2 </sup>+ <em>x</em> + <em>xy</em></span>, получается <span><em>x</em>(<em>x</em> + 1 + <em>y</em>)</span></p>
+<p><img alt="xx na x1 na xy step 4" decoding="async" height="59" loading="lazy" src="assets/b79c2bb3578a86ca42546d37.png" width="379"/></p>
+<p>Или покороче:</p>
+<p><img alt="xx na x1 na xy step 5" decoding="async" height="23" loading="lazy" src="assets/232ab80c6ebe87e2c2d0cb70.png" width="213"/></p>
+<p>В результате в скобках остаются члены, которые не имеют общих буквенных сомножителей, а модули коэффициентов этих членов не имеют общих делителей, кроме 1.</p>
+<p><strong>Пример 2</strong>. Вынести общий множитель за скобки в многочлене <span>15<em>x</em><sup>2</sup><em>y</em><sup>3 </sup>+ 12<em>xy</em><sup>2 </sup>+ 3<em>xy</em><sup>2</sup></span></p>
+<p>Определим коэффициент общего множителя, выносимого за скобки. Наибольший общий делитель модулей коэффициентов 15, 12 и 3 это число 3. Значит, число 3 будет коэффициентом общего множителя, выносимого за скобки.</p>
+<p>Теперь определим буквенную часть общего множителя, выносимого за скобки. Её нужно выбирать так, чтобы в скобках остались члены, которые не содержат общего буквенного множителя.</p>
+<p>Перепишем буквенные части исходного многочлена <span>15<em>x</em><sup>2</sup><em>y</em><sup>3 </sup>+ 12<em>xy</em><sup>2 </sup>+ 3<em>xy</em><sup>2</sup></span> в виде разложения на множители. Это позволит хорошо увидеть, что именно можно вынести за скобки:</p>
+<p><img alt="15xxyyy na 12xyy na 3xyy" decoding="async" height="39" loading="lazy" src="assets/2ec09c93530000e37534f705.png" width="401"/></p>
+<p>Видим, что среди буквенных частей общим множителем является <span><em>xyy</em></span>, то есть <span><em>xy</em><sup>2</sup></span>. Если вынести этот множитель за скобки, в скобках останется многочлен, не имеющий общего буквенного множителя.</p>
+<p>В итоге общим множителем, выносимым за скобки, будет множитель <span>3<em>xy</em><sup>2</sup></span></p>
+<p><img alt="15xxyyy na 12xyy na 3xyy решение" decoding="async" height="59" loading="lazy" src="assets/67b72386dbd2744130ddfb48.png" width="631"/></p>
+<p>Или покороче:</p>
+<p><img alt="15xxyyy na 12xyy na 3xyy решение 2" decoding="async" height="24" loading="lazy" src="assets/0d91abe2418c86e2fae97fa7.png" width="348"/></p>
+<p>Для проверки можно выполнить умножение <span>3<em>xy</em><sup>2</sup>(5<em>xy</em> + 4 + 1)</span>. В результате должен получиться многочлен <span>15<em>x</em><sup>2</sup><em>y</em><sup>3 </sup>+ 12<em>xy</em><sup>2 </sup>+ 3<em>xy</em><sup>2</sup></span></p>
+<p><span>3<em>xy</em><sup>2</sup>(5<em>xy</em> + 4 + 1) = 3<em>xy</em><sup>2 </sup>× 5<em>xy</em> + 3<em>xy</em><sup>2 </sup>× 4 + 3<em>xy</em><sup>2 </sup>× 1 = 15<em>x</em><sup>2</sup><em>y</em><sup>3 </sup>+ 12<em>xy</em><sup>2 </sup>+ 3<em>xy</em><sup>2</sup></span></p>
+<hr/>
+<p><strong>Пример 3</strong>. Вынести общий множитель за скобки в выражении <span><em>x</em><sup>2 </sup>+ <em>x</em></span></p>
+<p>В данном случае за скобки можно вынести <span><em>x</em></span></p>
+<p><img alt="x2 na x решение" decoding="async" height="59" loading="lazy" src="assets/2dae54f3e88416e6dedbe948.png" width="261"/></p>
+<p>Это потому что первый член <span><em>x</em><sup>2</sup></span> можно представить как <span><em>xx</em></span>. А второй член <em>x</em> представить как <span>1 × <em>x</em></span></p>
+<p><span><em>x</em><sup>2</sup><em> + x = xx</em> + 1 × x </span></p>
+<p>Не следует на письме подробно расписывать содержимое каждого члена, разлагая его на множители. Это легко делается в уме.</p>
+<hr/>
+<p><strong>Пример 4</strong>. Вынести общий множитель за скобки в многочлене <span>5<em>y</em><sup>2</sup> − 15<em>y</em></span></p>
+<p>В данном случае за скобки можно вынести <span>5<em>y</em></span>. Наибольший общий делитель модулей коэффициентов 5 и 15 это число 5. Среди буквенных множителей общим является <span><em>y</em></span></p>
+<p><img alt="5y2 -15y решение" decoding="async" height="59" loading="lazy" src="assets/62a7b9eabaa21d675215c5a1.png" width="347"/></p>
+<hr/>
+<p><strong>Пример 5</strong>. Вынести общий множитель за скобки в многочлене <span>5<em>y</em><sup>2</sup> − 15<em>y</em><sup>3</sup></span></p>
+<p>В данном примере за скобки можно вынести <span>5<em>y</em><sup>2</sup></span>. Наибольший общий делитель модулей коэффициентов <span>5</span> и <span>15</span> это число <span>5</span>. Среди буквенных множителей общим является <span><em>y</em><sup>2</sup></span></p>
+<p><img alt="5y2 -15y2 решение" decoding="async" height="59" loading="lazy" src="assets/403126332bc0fd811ff9e18e.png" width="388"/></p>
+<hr/>
+<p><strong>Пример 6</strong>. Вынести общий множитель за скобки в многочлене <span>20<em>x</em><sup>4</sup> − 25<em>x</em><sup>2</sup><em>y</em><sup>2</sup> − 10<em>x</em><sup>3</sup></span></p>
+<p>В данном примере за скобки можно вынести <span>5<em>x</em><sup>2</sup></span>. Наибольший общий делитель модулей коэффициентов <span>20, −25 </span>и <span>−10</span> это число <span>5</span>. Среди буквенных множителей общим является <span><em>x</em></span><sup>2</sup></p>
+<p><img alt="20x4 - 25x2y2 - 10x3 решение" decoding="async" height="59" loading="lazy" src="assets/5b600e934a27b95afd588f46.png" width="636"/></p>
+<hr/>
+<p><strong>Пример 7</strong>. Вынести общий множитель за скобки в многочлене <span><em>a</em><sup><em>m </em></sup>+ <em>a</em><sup><em>m </em>+ 1</sup></span></p>
+<p>Второй член <span><em>a</em><sup><em>m </em>+ 1</sup></span> представляет собой произведение из <span><em>a</em><sup><em>m</em></sup></span> и <span><em>a</em></span>, поскольку <span><em>a</em><sup><em>m </em></sup>× <em>a </em>= <em>a</em><sup><em>m </em>+ 1</sup></span></p>
+<p>Заменим в исходном примере член <span><em>a</em><sup><em>m </em>+ 1</sup></span> на тождественно равное ему произведение <span><em>a</em><sup><em>m </em></sup>× <em>a</em></span>. Так проще будет увидеть общий множитель:</p>
+<p><img alt="avm na a v m na 1 step 2" decoding="async" height="21" loading="lazy" src="assets/18242625def965aaad62fe7a.png" width="196"/></p>
+<p>Теперь можно увидеть, что общим множителем является <span><em>a</em><sup><em>m</em></sup></span>. Его и вынесем за скобки:</p>
+<p><img alt="avm na a v m na 1 step 3" decoding="async" height="59" loading="lazy" src="assets/e43303839cf35873bdd661a0.png" width="463"/></p>
+<hr/>
+<h2 id="proverka_na_tozhdestvennost">Проверка на тождественность</h2>
+<p>Решение задачи с многочленами порой растягивается на несколько строк. Каждое следующее преобразование должно быть тождественно равно предыдущему. Если возникают сомнения в правильности своих действий, то можно подставить произвольные значения переменных в исходное и полученное выражение. Если исходное и полученное выражение будут равны одному и тому же значению, то можно быть уверенным, что задача была решена правильно.</p>
+<p>Допустим, нам нужно вынести общий множитель за скобки в следующем многочлене:</p>
+<p><span>2<em>x</em> + 4<em>x</em><sup>2</sup></span></p>
+<p>В данном случае за скобки можно вынести общий множитель <span>2<em>x</em></span></p>
+<p><span>2<em>x</em> + 4<em>x</em><sup>2</sup> = 2<em>x</em>(1 + 2<em>x</em>)</span></p>
+<p>Представим, что мы не уверены в таком решении. В этом случае нужно взять любое значение переменной <span><em>x</em></span> и подставить его сначала в исходное выражение <span>2<em>x </em>+ 4<em>x</em><sup>2</sup></span>, затем в полученное <span>2<em>x</em>(1 + 2<em>x</em>)</span>. Если в обоих случаях результат будет одинаковым, то это будет означать, что задача решена правильно.</p>
+<p>Возьмём произвольное значение <span><em>x</em></span> и подставим его в исходное выражение <span>2<em>x </em>+ 4<em>x</em><sup>2</sup></span>. Пусть <span><em>x </em>= 2</span>. Тогда получим:</p>
+<p><span>2<em>x </em>+ 4<em>x</em><sup>2</sup> = 2 × <span>2</span> + 4 × <span>2</span><sup>2</sup> = 4 + 16 = <strong>20</strong></span></p>
+<p>Теперь подставим значение <span>2</span> в преобразованное выражение <span>2<em>x</em>(1 + 2<em>x</em>)</span></p>
+<p class="formula" data-tex="2x(1 + 2x) = 2 \times  2 \times  (1 + 2 \times  2) = 4 \times  5 = 20">\[2x(1 + 2x) = 2 \times  2 \times  (1 + 2 \times  2) = 4 \times  5 = 20\]</p>
+<p>То есть при <span><em>x </em>= 2</span> выражения <span>2<em>x </em>+ 4<em>x</em><sup>2</sup></span> и <span>2<em>x</em>(1 + 2<em>x</em>)</span> равны одному и тому же значению. Это значит, что задача была решена правильно. Тоже самое будет происходить и при других значениях переменных <span><em>x</em></span>. Например, проверим наше решение при <span><em>x </em>= 1</span></p>
+<p><span>2<em>x </em>+ 4<em>x</em><sup>2</sup> = 2 × <span>1</span> + 4 × <span>1</span><sup>2 </sup>= 2 + 4 = <strong>6</strong></span><br/>
+<span>2<em>x</em>(1 + 2<em>x</em>) = 2 × <span>1</span> × (1 + 2 × <span>1</span>) = 2 × 3 = <strong>6</strong></span></p>
+<hr/>
+<p><strong>Пример 2</strong>. Вычесть из многочлена <span>5<em>x</em><sup>2 </sup>− 3<em>x </em>+ 4</span> многочлен <span>4<em>x</em><sup>2 </sup>− <em>x</em></span> и проверить полученный результат, подставив вместо переменной <span><em>x</em></span> произвольное значение.</p>
+<p>Выполним вычитание:</p>
+<p><img alt="многочлены рис 1" decoding="async" height="31" loading="lazy" src="assets/064089d7df873172b32b8d42.png" width="519"/></p>
+<p>Мы выполнили два преобразования: cначала раскрыли скобки, а затем привели подобные члены. Теперь проверим эти два преобразования на тождественность. Пусть <span><em>x</em> = 2</span>. Подставим это значение сначала в исходное выражение, а затем в преобразованные:</p>
+<p><img alt="м рис 1" decoding="async" height="92" loading="lazy" src="assets/b947ae5738f3bd7da80b043c.png" width="637"/></p>
+<p>Видим, что при каждом преобразовании значение выражения при <span><em>x</em> = 2</span> не менялось. Это значит, что задача была решена правильно.</p>
+<hr/>
+<h2 id="yak11">Задания для самостоятельного решения</h2>
+<div>
+<div><span>Задание 1.</span> Сложить многочлены <span>8<em>x</em> + 11</span> и <span>7<em>x</em> + 5</span></div>
+<div></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><span>(8<em>x</em> + 11) + (7<em>x</em> + 5) = 8<em>x </em>+ 11 + 7<em>x </em>+ 5 = 15<em>x</em> + 16</span></div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 2.</span> Вычесть из многочлена <span>8<em>x</em> + 11</span> многочлен <span>7<em>x</em> + 5</span></div>
+<div></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><span>(8<em>x</em> + 11) − (7<em>x</em> + 5) = 8<em>x </em>+ 11 − 7<em>x −</em> 5 = <em>x</em> + 6</span></div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 3.</span> Выполнить сложение</div>
+<div><span>8<em>a </em>+ (3<em>b </em>+ 5<em>a</em>)</span></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><span>8<em>a </em>+ (3<em>b </em>+ 5<em>a</em>) = 8<em>a </em>+ 3<em>b </em>+ 5<em>a </em>= 13<em>a </em>+ 3<em>b</em></span></div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 4.</span> Выполнить сложение</div>
+<div><img decoding="async" loading="lazy" src="assets/3ef20eafd1059a20d04e1da7.png"/></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><img decoding="async" loading="lazy" src="assets/f546f4c7c71e5aef1ef58b90.png"/></div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 5.</span> Выполнить сложение</div>
+<div><img decoding="async" loading="lazy" src="assets/8972353da5098e48675b705e.png"/></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><img decoding="async" loading="lazy" src="assets/b38b35dfb21e6ae92bbbcb4d.png"/></div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 6.</span> Выполнить сложение</div>
+<div><img decoding="async" loading="lazy" src="assets/f03bb399696047c94ddc93c1.png"/></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><img decoding="async" loading="lazy" src="assets/4e034277a75e9658c2cc7438.png"/></div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 7.</span> Приведите следующий многочлен к стандартному виду:</div>
+<div><img decoding="async" loading="lazy" src="assets/babf8290eae6bcf9f58f07fb.png"/></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><img decoding="async" loading="lazy" src="assets/d40db4ee9f716a9e8ed0895f.png"/></div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 8.</span> Приведите следующий многочлен к стандартному виду:</div>
+<div><img decoding="async" loading="lazy" src="assets/a6afb0d3b61e6c04249e82cf.png"/></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><img decoding="async" loading="lazy" src="assets/e8de4e8d6111bdb9f3c0c38e.png"/></div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 9.</span> Упростите следующее выражение:</div>
+<div><img decoding="async" loading="lazy" src="assets/25e8e2b96434c47ef7326e0c.png"/></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><img decoding="async" loading="lazy" src="assets/70d58ea8d78f7339288a120e.png"/></div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 10.</span> Упростите следующее выражение:</div>
+<div><img decoding="async" loading="lazy" src="assets/f998b0b9043f812c25905cb7.png"/></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><img decoding="async" loading="lazy" src="assets/312915cdab492adea023222b.png"/></div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 11.</span> Упростите следующее выражение:</div>
+<div><img decoding="async" loading="lazy" src="assets/80e66090ffac1f0084b2c682.png"/></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><img decoding="async" loading="lazy" src="assets/64b11e5ff12def5ea573220a.png"/></div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 12.</span> Представьте многочлен <span>5<em>a<sup>2</sup></em> − 2<em>a</em> − 3<em>ab + b<sup>2</sup></em></span> в виде суммы двух слагаемых, одно из которых <span>5<em>a² − </em>2<em>a</em></span></div>
+<div></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><span>5<em>a<sup>2</sup></em> − 2<em>a</em> − 3<em>ab + b<sup>2</sup></em> = (5<em>a<sup>2</sup></em> − 2<em>a</em>) + (−3<em>ab + b<sup>2</sup></em>)</span></div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 13.</span> В многочлене <span>2<em>x<sup>3</sup></em> + 5<em>x<sup>2</sup>y</em> − 4<em>xy<sup>2</sup> − y<sup>3</sup></em></span> заключить крайние члены в скобки со знаком плюс (+) перед ними, а средние члены заключить в скобки со знаком минус (−) перед ними.</div>
+<div></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><span>2<em>x<sup>3</sup></em> + 5<em>x<sup>2</sup>y</em> − 4<em>xy<sup>2</sup> − y<sup>3</sup></em></span> <span>= (2<em>x<sup>3</sup> − y<sup>3</sup></em>) − (−5<em>x<sup>2</sup>y</em> + 4<em>xy²</em>)</span></div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 14.</span> Не изменяя значения выражения <span>2<em>a<sup>3</sup> </em>− 3<em>a<sup>2</sup>b </em>+ 3<em>ab<sup>2</sup> − b<sup>3</sup></em></span>, заключите его в скобки, поставив перед скобками знак (−)</div>
+<div></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><span>2<em>a<sup>3</sup> </em>− 3<em>a<sup>2</sup>b </em>+ 3<em>ab<sup>2</sup> − b<sup>3</sup> = </em>−(−2<em>a<sup>3</sup> +</em> 3<em>a<sup>2</sup>b −</em> 3<em>ab<sup>2</sup> + b<sup>3</sup>)</em></span></div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 15.</span> Представьте трёхчлен <span>2<em>a − b </em>+ 4</span> в виде разности двух выражений с уменьшаемым <span>2<em>a</em></span></div>
+<div></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><span>2<em>a − b </em>+ 4</span> <span>= 2<em>a</em> − (<em>b</em> − 4)</span></div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 16.</span> Привести подобные слагаемые в следующем многочлене:</div>
+<div><img decoding="async" loading="lazy" src="assets/0187b6d6b12e07f2c8e98bb6.png"/></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><img decoding="async" loading="lazy" src="assets/97a7d05101b0cab2358c2958.png"/></div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 17.</span> Выполните умножение одночлена на многочлен:</div>
+<div><img decoding="async" loading="lazy" src="assets/7705a2e4c995c9cfd2dde4b9.png"/></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><img decoding="async" loading="lazy" src="assets/1273bee1f8cc5000a764cb90.png"/></div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 18.</span> Выполните умножение одночлена на многочлен:</div>
+<div><img decoding="async" loading="lazy" src="assets/3bb7f36ae7279c5ff8c49e27.png"/></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><img decoding="async" loading="lazy" src="assets/0c00c1b71d61318d1817cae1.png"/></div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 19.</span> Выполните умножение одночлена на многочлен:</div>
+<div><img decoding="async" loading="lazy" src="assets/593ef503196a832b5f1287b2.png"/></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><img decoding="async" loading="lazy" src="assets/34523d6148f104a883b8a5e0.png"/></div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 20.</span> Выполните умножение одночлена на многочлен:</div>
+<div><img decoding="async" loading="lazy" src="assets/d9d30257af1b2e319ce6b0d3.png"/></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><img decoding="async" loading="lazy" src="assets/985a375767c9a32cec64c14a.png"/></div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 21.</span> Выполните умножение одночлена на многочлен:</div>
+<div><img decoding="async" loading="lazy" src="assets/03249f43a8f0c6dc225e479a.png"/></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><img decoding="async" loading="lazy" src="assets/3854b85053ddaa0cb60fdb24.png"/></div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 22.</span> Выполните умножение одночлена на многочлен:</div>
+<div><img decoding="async" loading="lazy" src="assets/71b1eb5f6091bb83fbac7ff3.png"/></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><img decoding="async" loading="lazy" src="assets/1a102c021c8ad2618f1dc8f1.png"/></div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 23.</span> Выполните умножение одночлена на многочлен:</div>
+<div><img decoding="async" loading="lazy" src="assets/e29319d3018ab7164ff0edc1.png"/></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><img decoding="async" loading="lazy" src="assets/3beac0dbdd63f00ba65220c5.png"/></div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 24.</span> Выполните умножение одночлена на многочлен:</div>
+<div><img decoding="async" loading="lazy" src="assets/41f977827e5bf6f81ad8852c.png"/></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><img decoding="async" loading="lazy" src="assets/9e203e4c0972042f533df78b.png"/></div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 25.</span> Выполните умножение одночлена на многочлен:</div>
+<div><img decoding="async" loading="lazy" src="assets/9bcbaa5c58adcbaa8baf9cac.png"/></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><img decoding="async" loading="lazy" src="assets/878d794f7603b6e049a9fed6.png"/></div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 26.</span> Выполните умножение многочлена на многочлен:</div>
+<div><img decoding="async" loading="lazy" src="assets/9f5c11c145aeebf3815f1bef.png"/></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><img decoding="async" loading="lazy" src="assets/bbc43fbac1c27670db5e9273.png"/></div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 27.</span> Выполните умножение многочлена на многочлен:</div>
+<div><img decoding="async" loading="lazy" src="assets/d2fee2e3c793194ee25722c5.png"/></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><img decoding="async" loading="lazy" src="assets/ca91f4e566ab1281fe9e56fa.png"/></div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 28.</span> Выполните умножение многочлена на многочлен:</div>
+<div><img decoding="async" loading="lazy" src="assets/618e3136390d5e58c703a4c1.png"/></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><img decoding="async" loading="lazy" src="assets/1bc9f5d9801d2458fa1921a1.png"/></div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 29.</span> Выполните умножение многочлена на многочлен:</div>
+<div><img decoding="async" loading="lazy" src="assets/3c07e889342927c64c080002.png"/></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><img decoding="async" loading="lazy" src="assets/abd4130fd524afb2393d0ac4.png"/></div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 30.</span> Выполните умножение многочлена на многочлен:</div>
+<div><img decoding="async" loading="lazy" src="assets/cfc604ba214179893986978d.png"/></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><img decoding="async" loading="lazy" src="assets/21327f3ac949a778b4bddd49.png"/></div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 31.</span> Выполните умножение многочлена на многочлен:</div>
+<div><img decoding="async" loading="lazy" src="assets/0cda296789afbc014cd7a0f9.png"/></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><img decoding="async" loading="lazy" src="assets/9b069812db881e4b1b228971.png"/></div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 32.</span> Выполните умножение многочлена на многочлен:</div>
+<div><img decoding="async" loading="lazy" src="assets/8a4a33ede9d275067ef03685.png"/></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><img decoding="async" loading="lazy" src="assets/0fdbb3e723f1a861c0f3897a.png"/></div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 33.</span> Выполните умножение многочлена на многочлен:</div>
+<div><img decoding="async" loading="lazy" src="assets/89ec942170c477b0e4738c08.png"/></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><img decoding="async" loading="lazy" src="assets/af16ec8f42d6d1aa8e4d858f.png"/></div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 34.</span> Выполните умножение многочлена на многочлен:</div>
+<div><img decoding="async" loading="lazy" src="assets/54d9208d619f99242a3bf19a.png"/></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><img decoding="async" loading="lazy" src="assets/a706892ae81ef1057ee954bf.png"/></div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 35.</span> Выполните умножение многочлена на многочлен:</div>
+<div><img decoding="async" loading="lazy" src="assets/f29ba37a160cad79132ce10d.png"/></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><img decoding="async" loading="lazy" src="assets/5180d0e18647cd432ea62174.png"/></div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 36.</span> В многочлене <span>6<em>a </em>+ 12</span> вынесите общий множитель за скобки</div>
+<div></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><span>6<em>a </em>+ 12 = 6(<em>a </em>+ 2)</span></div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 37.</span> В многочлене <span>5<em>mn</em> − 5<em>m</em></span> вынесите общий множитель за скобки</div>
+<div></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><span>5<em>mn</em> − 5<em>m </em>= 5<em>m</em>(<em>n − </em>1)</span></div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 38.</span> В многочлене <span><em>x</em><sup>3</sup><em> − x</em><sup>2</sup></span> вынесите общий множитель за скобки</div>
+<div></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><span><em>x</em><sup>3</sup><em> − x</em><sup>2</sup>= <em>x</em><sup>2</sup>(<em>x − </em>1)</span></div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 39.</span> В многочлене <span>3<em>x<sup>2</sup></em> − 6<em>x<sup>3</sup></em></span> вынесите общий множитель за скобки</div>
+<div></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><span>3<em>x</em><sup>2</sup> − 6<em>x</em><sup>3</sup>= 3<em>x</em><sup>2</sup>(1 − 2<em>x</em>)</span></div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 40.</span> В многочлене <span><em>x</em><sup>4</sup> − <em>x</em><sup>2</sup></span> вынесите общий множитель за скобки</div>
+<div></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><span><em>x</em><sup>4</sup> − <em>x</em><sup>2</sup> = <em>x</em><sup>2</sup>(<em>x</em><sup>2</sup> − 1)</span></div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 41.</span> В многочлене <span><em>x</em><sup>2</sup><em>y − xy</em><sup>2</sup></span> вынесите общий множитель за скобки</div>
+<div></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><span><em>x</em><sup>2</sup><em>y − xy</em><sup>2</sup>= <em>xy</em>(<em>x − y</em>)</span></div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 42.</span> В многочлене <span><em>a<sup>3</sup>b<sup>2</sup> + a<sup>2</sup>b<sup>3</sup></em></span> вынесите общий множитель за скобки</div>
+<div></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><span><em>a<sup>3</sup>b<sup>2</sup> + a<sup>2</sup>b<sup>3</sup> </em>= <em>a<sup>2</sup>b<sup>2</sup></em>(<em>a + b</em>)</span></div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 43.</span> В многочлене <span><em>a</em><sup>8</sup><em>b</em><sup>2</sup><em> + ab</em><sup>4</sup></span> вынесите общий множитель за скобки</div>
+<div></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><span><em>a</em><sup>8</sup><em>b</em><sup>2</sup><em> + ab</em><sup>4</sup>= <em>ab</em><sup>2</sup>(<em>a</em><sup>7</sup><em> + b</em><sup>2</sup>)</span></div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 44.</span> Вынесите общий множитель за скобки в следующем многочлене:</div>
+<div><img decoding="async" loading="lazy" src="assets/4053c9d175ed7507beb32971.png"/></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><img decoding="async" loading="lazy" src="assets/e6d5f1c0166d1814a15c2579.png"/></div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 45.</span> Вынесите общий множитель за скобки в следующем многочлене:</div>
+<div><img decoding="async" loading="lazy" src="assets/4e738da9facdb4c82cceb073.png"/></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><img decoding="async" loading="lazy" src="assets/e52e5a1e0767b232d96f5511.png"/></div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 46.</span> Вынесите общий множитель за скобки в следующем многочлене:</div>
+<div><img decoding="async" loading="lazy" src="assets/633cfd688baea133674d395c.png"/></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><img decoding="async" loading="lazy" src="assets/20c49937cd797b3af54496d8.png"/></div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 47.</span> Вынесите общий множитель за скобки в следующем многочлене:</div>
+<div><img decoding="async" loading="lazy" src="assets/4daa2841db924bf07ce2b312.png"/></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><img decoding="async" loading="lazy" src="assets/4ac352bc416b24610b18a028.png"/></div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 48.</span> Вынесите общий множитель за скобки в следующем многочлене:</div>
+<div><img decoding="async" loading="lazy" src="assets/37c4b3989151f33b0314a428.png"/></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><img decoding="async" loading="lazy" src="assets/8f5feaa6423a0ad52a1139e2.png"/></div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 49.</span> Вынесите общий множитель за скобки в следующем многочлене:</div>
+<div><img decoding="async" loading="lazy" src="assets/730b2b5f420a2000077ef220.png"/></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><img decoding="async" loading="lazy" src="assets/c0e27187e199e21489f47aaf.png"/></div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 50.</span> Вынесите общий множитель за скобки в следующем многочлене:</div>
+<div><img decoding="async" loading="lazy" src="assets/d045670f7b918dbc03700fcf.png"/></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><img decoding="async" loading="lazy" src="assets/cae053ab9979acb07f37f13b.png"/></div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 51.</span> Вынесите общий множитель за скобки в следующем многочлене:</div>
+<div><img decoding="async" loading="lazy" src="assets/79060359fbc332ac3e50bf0b.png"/></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><img decoding="async" loading="lazy" src="assets/ce3dfe525a571b23b51fd365.png"/></div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 52.</span> Вынесите общий множитель за скобки в следующем многочлене:</div>
+<div><img decoding="async" loading="lazy" src="assets/ca2c3b0fd43114740865032e.png"/></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><img decoding="async" loading="lazy" src="assets/4efc121a7db47582a3415d6b.png"/></div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 53.</span> Вынесите общий множитель за скобки в следующем многочлене:</div>
+<div><img decoding="async" loading="lazy" src="assets/ea1ccecf516724045d6a6efb.png"/></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><img decoding="async" loading="lazy" src="assets/784a1d64f20898d130c98d6a.png"/></div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 54.</span> Вынесите общий множитель за скобки в следующем многочлене:</div>
+<div><img decoding="async" loading="lazy" src="assets/4a726303300d6c2b2ce56614.png"/></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><img decoding="async" loading="lazy" src="assets/ea34223729b6b48f5294714a.png"/></div>
+</div></details>
+</div>
+<hr/>
+<p><span><strong>Понравился урок? <br/>Вступай в нашу новую группу Вконтакте и начни получать уведомления о новых уроках</strong></span></p>
+</article><section id="quiz" aria-label="Тест к уроку"></section><div class="next"><a href="lesson-58.html">← Предыдущий шаг</a><a href="lesson-60.html">Следующий шаг →</a></div></main></div><dialog id="settings"><h2>Настройки</h2><h3>Приложение</h3><button id="install" hidden>Установить приложение</button><p id="install-help"></p><button id="download">Скачать весь курс</button><progress id="download-progress" value="0" max="1" hidden></progress><p id="offline-status" role="status"></p><p><a href="spacemath-offline.zip" download>Скачать ZIP-копию для другого компьютера</a></p><h3>Прогресс</h3><button id="export">Сохранить прогресс</button><label>Восстановить прогресс <input id="import" type="file" accept="application/json"></label><details><summary>Начать заново</summary><p>Очистятся ответы и отметки. Уроки и картинки останутся для следующего ученика.</p><button id="reset">Очистить мой прогресс</button></details><p id="settings-status" role="status"></p><form method="dialog"><button>Закрыть</button></form></dialog><footer>Материалы: <a href="https://spacemath.xyz/">Spacemath</a>. Локальная учебная копия с тестами.</footer></body></html>

@@ -1,0 +1,192 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#326c9c"><title>Шаг 73. Неравенства с модулем — Математика с нуля</title><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="icon.svg"><link rel="stylesheet" href="style.css"><link rel="stylesheet" href="vendor/katex/katex.min.css"><script defer src="vendor/katex/katex.min.js"></script><script defer src="vendor/katex/contrib/auto-render.min.js"></script><script defer src="engine.js"></script><script defer src="quiz-bank.js"></script><script defer src="app.js"></script></head><body data-lesson="73"><header><a href="index.html">Математика с нуля</a><button id="menu" aria-controls="sidebar" aria-expanded="false">Шаги</button><button id="settings-open">Настройки</button></header><div class="layout"><aside id="sidebar"><p id="overall"></p><nav aria-label="Шаги курса"><ol><li><a href="lesson-01.html">Шаг 1. Числа</a></li><li><a href="lesson-02.html">Шаг 2. Основные операции</a></li><li><a href="lesson-03.html">Шаг 3. Выражения</a></li><li><a href="lesson-04.html">Шаг 4. Замены в выражениях</a></li><li><a href="lesson-05.html">Шаг 5. Разряды для начинающих</a></li><li><a href="lesson-06.html">Шаг 6. Умножение</a></li><li><a href="lesson-07.html">Шаг 7. Деление</a></li><li><a href="lesson-08.html">Шаг 8. Порядок действий</a></li><li><a href="lesson-09.html">Шаг 9. Законы математики</a></li><li><a href="lesson-10.html">Шаг 10. Делители и кратные</a></li><li><a href="lesson-11.html">Шаг 11. НОД и НОК</a></li><li><a href="lesson-12.html">Шаг 12. Дроби</a></li><li><a href="lesson-13.html">Шаг 13. Действия с дробями</a></li><li><a href="lesson-14.html">Шаг 14. Смешанные числа</a></li><li><a href="lesson-15.html">Шаг 15. Сравнение дробей</a></li><li><a href="lesson-16.html">Шаг 16. Единицы измерения</a></li><li><a href="lesson-17.html">Шаг 17. Практика по дробям</a></li><li><a href="lesson-18.html">Шаг 18. Десятичные дроби</a></li><li><a href="lesson-19.html">Шаг 19. Действия с десятичными дробями</a></li><li><a href="lesson-20.html">Шаг 20. Практика по десятичным дробям</a></li><li><a href="lesson-21.html">Шаг 21. Округление чисел</a></li><li><a href="lesson-22.html">Шаг 22. Периодические дроби</a></li><li><a href="lesson-23.html">Шаг 23. Перевод единиц</a></li><li><a href="lesson-24.html">Шаг 24. Соотношения</a></li><li><a href="lesson-25.html">Шаг 25. Пропорция</a></li><li><a href="lesson-26.html">Шаг 26. Расстояние, скорость, время</a></li><li><a href="lesson-27.html">Шаг 27. Прямая и обратная пропорциональность</a></li><li><a href="lesson-28.html">Шаг 28. Проценты</a></li><li><a href="lesson-29.html">Шаг 29. Отрицательные числа</a></li><li><a href="lesson-30.html">Шаг 30. Модуль числа</a></li><li><a href="lesson-31.html">Шаг 31. Что такое множество?</a></li><li><a href="lesson-32.html">Шаг 32. Сложение и вычитание целых чисел</a></li><li><a href="lesson-33.html">Шаг 33. Умножение и деление целых чисел</a></li><li><a href="lesson-34.html">Шаг 34. Рациональные числа</a></li><li><a href="lesson-35.html">Шаг 35. Сравнение рациональных чисел</a></li><li><a href="lesson-36.html">Шаг 36. Сложение и вычитание рациональных чисел</a></li><li><a href="lesson-37.html">Шаг 37. Умножение и деление рациональных чисел</a></li><li><a href="lesson-38.html">Шаг 38. Дополнительные сведения о дробях</a></li><li><a href="lesson-39.html">Шаг 39. Буквенные выражения</a></li><li><a href="lesson-40.html">Шаг 40. Вынесение общего множителя за скобки</a></li><li><a href="lesson-41.html">Шаг 41. Раскрытие скобок</a></li><li><a href="lesson-42.html">Шаг 42. Простейшие задачи по математике</a></li><li><a href="lesson-43.html">Шаг 43. Задачи на дроби</a></li><li><a href="lesson-44.html">Шаг 44. Задачи на проценты</a></li><li><a href="lesson-45.html">Шаг 45. Задачи на движение</a></li><li><a href="lesson-46.html">Шаг 46. Производительность</a></li><li><a href="lesson-47.html">Шаг 47. Элементы статистики</a></li><li><a href="lesson-48.html">Шаг 48. Общие сведения об уравнениях</a></li><li><a href="lesson-49.html">Шаг 49. Решение задач с помощью уравнений</a></li><li><a href="lesson-50.html">Шаг 50. Решение задач с помощью пропорции</a></li><li><a href="lesson-51.html">Шаг 51. Системы линейных уравнений</a></li><li><a href="lesson-52.html">Шаг 52. Общие сведения о неравенствах</a></li><li><a href="lesson-53.html">Шаг 53. Системы линейных неравенств с одной переменной</a></li><li><a href="lesson-54.html">Шаг 54. Операции над множествами</a></li><li><a href="lesson-55.html">Шаг 55. Степень с натуральным показателем</a></li><li><a href="lesson-56.html">Шаг 56. Степень с целым показателем</a></li><li><a href="lesson-57.html">Шаг 57. Периметр, площадь и объём</a></li><li><a href="lesson-58.html">Шаг 58. Одночлены</a></li><li><a href="lesson-59.html">Шаг 59. Многочлены</a></li><li><a href="lesson-60.html">Шаг 60. Формулы сокращённого умножения</a></li><li><a href="lesson-61.html">Шаг 61. Разложение многочлена на множители</a></li><li><a href="lesson-62.html">Шаг 62. Деление многочленов</a></li><li><a href="lesson-63.html">Шаг 63. Тождественные преобразования многочленов</a></li><li><a href="lesson-64.html">Шаг 64. Квадратный корень</a></li><li><a href="lesson-65.html">Шаг 65. Алгоритм извлечения квадратного корня</a></li><li><a href="lesson-66.html">Шаг 66. Квадратное уравнение</a></li><li><a href="lesson-67.html">Шаг 67. Квадратное уравнение с чётным вторым коэффициентом</a></li><li><a href="lesson-68.html">Шаг 68. Теорема Виета</a></li><li><a href="lesson-69.html">Шаг 69. Разложение квадратного трёхчлена на множители</a></li><li><a href="lesson-70.html">Шаг 70. Обобщённое понятие модуля числа</a></li><li><a href="lesson-71.html">Шаг 71. Уравнение с модулем</a></li><li><a href="lesson-72.html">Шаг 72. Решение уравнений с модулем методом интервалов</a></li><li><a href="lesson-73.html">Шаг 73. Неравенства с модулем</a></li><li><a href="lesson-74.html">Шаг 74. Решение неравенств с модулем методом интервалов</a></li><li><a href="lesson-75.html">Шаг 75. Извлечение квадратного корня из обеих частей уравнения</a></li></ol></nav></aside><main id="main"><h1>Шаг 73. Неравенства с модулем</h1><p class="origin"><a href="https://spacemath.xyz/neravenstva-s-modulem/">Оригинал урока</a> · <a href="#quiz">К тесту</a></p><article class="lesson-text">
+<b>Предварительные навыки</b><p></p>
+<ul>
+<li><a href="lesson-52.html">Общие сведения о неравенствах<br/>
+</a></li>
+<li><a href="lesson-53.html">Системы линейных неравенств с одной переменной<br/>
+</a></li>
+<li><a href="lesson-54.html">Операции над множествами<br/>
+</a></li>
+<li><a href="lesson-70.html">Обобщенное понятие модуля числа<br/>
+</a></li>
+</ul>
+
+<p>Продолжаем изучать модуль числа. Сегодня мы научимся решать неравенства с модулем.</p>
+<p>Чтобы решать неравенства с модулем, нужно прежде всего уметь решать <a href="lesson-52.html" title="Перейти к уроку, где рассказывается об этом">простейшие линейные неравенства</a>, а также знать что такое модуль и как его раскрывать.</p>
+<p>Независимо от того, решаем мы уравнение или неравенство, нужно <a href="lesson-70.html" title="Перейти к уроку, где рассказывается об этом">уметь раскрывать модуль</a>.</p>
+<p>Рассмотрим к примеру простейшее неравенство с модулем:</p>
+<p><span>|<em>x</em>| &gt; 2</span></p>
+<p>Чтобы решить данное неравенство раскроем его модуль.</p>
+<p>Если подмодульное выражение больше или равно нулю, то исходное неравенство примет вид:</p>
+<p class="formula" data-tex="x &gt; 2">\[x &gt; 2\]</p>
+<p>Решением этого неравенства является множество всех чисел, бóльших 2. Отметим их на координатной прямой:</p>
+<p><img alt="неравенство с модулем рис 1" decoding="async" height="82" loading="lazy" src="assets/9d6b3d306d13f306304f2bf1.png" width="658"/></p>
+<p>А если подмодульное выражение меньше нуля, то исходное неравенство примет вид:</p>
+<p class="formula" data-tex="-x &gt; 2">\[-x &gt; 2\]</p>
+<p>Умнóжим обе части этого неравенства на −1. Тогда полýчим неравенство <em>x </em>&lt; −2. Решением этого неравенства является множество всех чисел, мéньших −2. Отметим эти решения на том же рисунке, где мы отметили решения для неравенства <span><em>x </em>&gt; 2</span></p>
+<p><img alt="неравенство с модулем рис 2" decoding="async" height="83" loading="lazy" src="assets/2d1d208755cbef75bc938c17.png" width="653"/></p>
+<p>Забавно, но получившиеся промежутки <span><em>x </em>&lt; −2 и <em>x </em>&gt; 2</span> являются ответом к нашей задаче. Если в исходное неравенство <span>|<em>x</em>| &gt; 2</span> подставить какое-нибудь значение <em>x</em>, удовлетворяющее данному неравенству, то это значение будет принадлежать промежутку <span>(−∞ ; −2)</span> <strong>или</strong> промежутку <span>(2 ; +∞)</span>.</p>
+<p>То есть решением исходного неравенства является совокупность из <span><em>x </em>&lt; −2 и <em>x </em>&gt; 2</span></p>
+<p><img alt="неравенство с модулем рис 12" decoding="async" height="59" loading="lazy" src="assets/1495ec0c54a3234d62eeb022.png" width="66"/></p>
+<p><strong>Совокупностью неравенств</strong> мы будем называть несколько неравенств, объединённых квадратной скобкой, и которые имеют множество решений, удовлетворяющих хотя бы одному из неравенств, входящих в данную совокупность.</p>
+<p>Чтобы записать окончательный ответ, промежутки <span><em>x </em>&lt; −2 и <em>x </em>&gt; 2</span> следует объединить. В математике знаком объединения служит ∪. Тогда:</p>
+<p><span><em>x</em> ∈ (−∞ ; −2) ∪ (2 ; +∞)</span></p>
+<p>Знак объединения <span>∪ </span>читается как «или». Тогда запись <span><em>x</em> ∈ (−∞ ; −2) ∪ (2 ; +∞) </span>можно прочитать так:</p>
+<p><strong>Значение переменной <em>x</em> принадлежит промежутку <span>(−∞ ; −2)</span> или промежутку <span>(2 ; +∞)</span></strong></p>
+<p>Действительно, если подставить какое-нибудь значение <em>x</em>, являющееся решением исходного неравенства, то это значение будет принадлежать промежутку<span> (−∞ ; −2) </span>или промежутку <span>(2 ; +∞)</span>.</p>
+<p>Например, число 3, является решением исходного неравенства <span>|<em>x</em>| &gt; 2</span></p>
+<p><span>|3| &gt; 2   <strong>⇔</strong>   3 &gt; 2</span></p>
+<p>Значение 3 принадлежит промежутку <span>(2 ; +∞). Также оно удовлетворяет хотя бы одному из неравенств совокупности <img alt="неравенство с модулем рис 12" decoding="async" height="59" loading="lazy" src="assets/1495ec0c54a3234d62eeb022.png" width="66"/>, а именно неравенству <em>x</em>&gt;2.</span></p>
+<p>Значение −4 тоже является решением исходного неравенства <span>|<em>x</em>| &gt; 2. </span>Это значение принадлежит промежутку <span>(−∞ ; −2)</span></p>
+<p><span>|−4| &gt; 2    <strong>⇔</strong>    4 &gt; 2</span></p>
+<p>Также значение <span>−4</span> удовлетворяет хотя бы одному из неравенств совокупности <span><img alt="неравенство с модулем рис 12" decoding="async" height="59" loading="lazy" src="assets/1495ec0c54a3234d62eeb022.png" width="66"/>, а именно неравенству <em>x </em>&lt; −2.</span></p>
+<p>Согласно определению, модуль числа <em>x</em> есть расстояние от начала координат до точки <em>x</em>. В неравенстве <span>|<em>x</em>| &gt; 2</span> это расстояние больше чем 2.</p>
+<p>Действительно, от начала координат (точка 0) любое расстояние бóльшее двух, будет решением неравенства <span>|<em>x</em>| &gt; 2</span></p>
+<p><img alt="неравенство с модулем рис 7" decoding="async" height="99" loading="lazy" src="assets/f1a0c979089d5c7f304ee187.png" width="632"/></p>
+<p><strong>Ответ</strong>: <span><em>x</em> ∈ (−∞ ; −2) ∪ (2 ; +∞)</span></p>
+<p>Обратите внимание, что границы −2 и 2 не включены в соответствующие промежутки. Это потому, что при подстановке этих чисел в исходное неравенство, получается неверное неравенство.</p>
+<p>Теперь немного поменяем наш пример. В неравенстве<span>|<em>x</em>| &gt; 2</span> поменяем знак &gt; на знак &lt;</p>
+<p><span>|<em>x</em>| &lt; 2</span></p>
+<p>Решим это неравенство.</p>
+<p>Как и раньше для начала раскрываем модуль. Если подмодульное выражение больше или равно нулю, то получим неравенство <span><em>x </em>&lt; 2</span>. Решениями этого неравенства являются все числа, мéньшие двух. Отметим их:</p>
+<p><img alt="" decoding="async" height="56" loading="lazy" src="assets/885a002d506b03618bcc9d82.png" width="632"/></p>
+<p>А если подмодульное выражение меньше нуля, то получим неравенство <span>−<em>x </em>&lt; 2</span>. Умнóжим обе части этого неравенства на −1. Тогда получим неравенство <span><em>x </em>&gt; −2</span>. Решениями этого неравенства являются все числа, бóльшие −2. Отметим эти решения на том же рисунке, где мы отметили решения для неравенства <span><em>x &lt;</em> 2. </span></p>
+<p>Для наглядности, решения неравенства <span><em>x </em>&gt; −2</span> отметим красным цветом:</p>
+<p><img alt="неравенство с модулем рис 10" decoding="async" height="55" loading="lazy" src="assets/91b94ca288ba0320d24c70f6.png" width="632"/></p>
+<p>Если выражение <span>|<em>x</em>|</span> это расстояние от начала координат до точки <span><em>x</em></span>, то неравенство <span>|<em>x</em>| &lt; 2 </span>говорит, что это расстояние меньше чем 2. На рисунке видно, что от начала координат расстояния, мéньшие двух, лежат в промежутках от −2 до 0 и от 0 до 2</p>
+<p><img alt="неравенство с модулем рис 10" decoding="async" height="104" loading="lazy" src="assets/65594f4c12c0f749e0c67fe7.png" width="632"/></p>
+<p>А эти расстояния одновременно будут принадлежать промежуткам <span><em>x </em>&lt; 2</span> и <span><em>x </em>&gt; −2</span></p>
+<p><img alt="неравенство с модулем рис 13" decoding="async" height="58" loading="lazy" src="assets/189df4830a15ec33a9f2bdac.png" width="75"/></p>
+<p>Обратите внимание, что в этот раз промежутки обрамлены знáком системы, а не знáком совокупности как в прошлом примере. Это означает, что значения <span><em>x</em></span> одновременно удовлетворяют обоим неравенствам (промежуткам <span><em>x </em>&lt; 2</span> и <span><em>x </em>&gt; −2</span>)</p>
+<p>То есть решением неравенства <span>|<em>x</em>| &lt; 2</span> является пересечение промежутков <span><em>x </em>&lt; 2</span> и <span><em>x </em>&gt; −2</span>. Напомним, что пересечением двух промежутков является промежуток, состоящий из чисел, которые принадлежат как первому промежутку так и второму:</p>
+<p><span><em>x</em> ∈  (−2 ; 0) ∩ (0 ; 2)</span></p>
+<p>Знак пересечения ∩<span> </span>читается как «и». Тогда запись <span><em>x </em>∈ (−∞ ; 2) ∩ (−2 ; +∞) </span>можно прочитать так:</p>
+<p><strong>Значение переменной <em>x</em> одновременно принадлежит промежутку <span>(−∞ ; 2) и промежутку (−2 ; +∞)</span></strong></p>
+<p>Действительно, если подставить какое-нибудь значение <em>x</em>, являющееся решением неравенства <span>|<em>x</em>| &lt; 2</span>, то это значение будет принадлежать одновременно промежутку <span>(−∞ ; 2)</span> и <span>(−2 ; +∞)</span>.</p>
+<p>Например, число 1 является решением исходного неравенства <span>|<em>x</em>| &lt; 2</span></p>
+<p><span>|1| &lt; 2   <strong>⇔</strong>   1 &lt; 2</span></p>
+<p>Значение 1 одновременно принадлежит промежутку  <span>(−∞ ; 2)</span> и промежутку <span>(−2 ; +∞)</span></p>
+<p><img alt="неравенство с модулем рис 11" decoding="async" height="54" loading="lazy" src="assets/ff622fa677f06c678a21e5df.png" width="632"/></p>
+<p><span>Также, значение 1 удовлетворяет обоим неравенствам системы <img alt="неравенство с модулем рис 13" decoding="async" height="58" loading="lazy" src="assets/189df4830a15ec33a9f2bdac.png" width="75"/></span></p>
+<p>А если к примеру подставить значение, не являющееся решением неравенства <span>|<em>x</em>| &lt; 2</span>, то это значение <strong>не будет</strong> одновременно принадлежать промежуткам <span>(−∞ ; 2)</span> и <span>(−2 ; +∞)</span>. Например, значение 7</p>
+<p>|7| &lt; 2   <span><strong>⇔</strong>   7 &lt; 2</span></p>
+<p>Несмотря на то, что значение 7 принадлежит одному из промежутков, а именно промежутку (−2 ; +∞), данное значение не является решением исходного неравенства, поскольку оно не удовлетворяет ему. Также, данное значение не принадлежит одновременно обоим промежуткам: <span>(−∞ ; 2)</span> и <span>(−2 ; +∞)</span>.</p>
+<p>Для неравенства <span>|<em>x</em>| &lt; 2</span> ответ можно записать покороче:</p>
+<p><span><em>x</em> ∈ (−2 ; 2)</span></p>
+<p>Из рассмотренных примеров видно, что решением неравенства с модулем может быть либо объединение промежутков либо их пересечение.</p>
+<p>В первом примере мы решили неравенство <span>|<em>x</em>| &gt; 2, то есть неравенство</span> вида <span>|<em>x</em>| &gt; <em>a</em>. </span>Это неравенство <strong>при котором модуль больше какого-нибудь числа или буквенного выражения</strong>. Решением такого неравенства является объединение решений неравенств, получающихся после раскрытия модуля исходного неравенства. Неравенства, получающиеся после раскрытия модуля, следует записывать в виде совокупности:</p>
+<p><img alt="неравенство с модулем рис 14" decoding="async" height="58" loading="lazy" src="assets/835218e8da80f3257171e33b.png" width="75"/></p>
+<p>Совокупность свóдится потому, что итоговые решения будут удовлетворять хотя бы одному из неравенств, полученных после раскрытия модуля исходного неравенства.</p>
+<p>Во втором примере мы решили неравенство <span>|<em>x</em>| &lt; 2, то есть </span>неравенство вида <span>|<em>x</em>| &lt; <em>a</em></span>. От предыдущего неравенства оно отличается только знáком. Но это неравенство<strong> при котором модуль меньше какого-нибудь числа или буквенного выражения</strong>. Решением такого неравенства является пересечение решений неравенств, получающихся после раскрытия модуля исходного неравенства. Неравенства, получающиеся после раскрытия модуля, следует записывать в виде системы:</p>
+<p><img alt="неравенство с модулем рис 15" decoding="async" height="58" loading="lazy" src="assets/f4c9995739a1c5ad088871fe.png" width="74"/></p>
+<p>Система записывается потому, что итоговые решения будут удовлетворять обоим неравенствам, полученным после раскрытия модуля исходного неравенства.</p>
+<p>Эти же правила сохраняются и для неравенств, содержащих знаки ≥ и ≤</p>
+<p>Например, решим неравенство |<em>x</em>| ≥ 1. Модуль <strong>больше или равен</strong> числу. Поэтому решением будет <strong>объединение</strong> решений неравенств, которые получатся после раскрытия модуля. После раскрытия модуля и выполнения необходимых тождественных преобразований, получим совокупность неравенств <span><em>x </em>≥<em> </em>1</span> и <span><em>x </em>≤<em> </em>−1</span></p>
+<p><img alt="неравенство с модулем рис 16" decoding="async" height="58" loading="lazy" src="assets/4b1406c90b5468b0371c3793.png" width="68"/></p>
+<p><img alt="неравенство с модулем рис 17" decoding="async" height="51" loading="lazy" src="assets/6af25490caf0af793d3d2e63.png" width="653"/></p>
+<p>Решением служит объединение промежутков <span><em>x </em>≤<em> </em>−1</span> и <span><em>x </em>≥<em> </em>1</span></p>
+<p><span><em>x</em> ∈ (−∞ ; −1] ∪ [1 ; +∞)</span></p>
+<p>Обратите внимание, что границы <span>−1</span> и <span>1</span> <strong>включены</strong> в соответствующие промежутки. Это потому что при подстановке этих чисел в исходное неравенство, получается верное неравенство.</p>
+<p>Решим теперь к примеру неравенство <span>|<em>x</em>|<em> </em>≤<em> </em>1</span>. Модуль <strong>меньше или равен</strong> числу. Поэтому решением будет <strong>пересечение</strong> решений неравенств, которые получатся после раскрытия модуля. После раскрытия модуля и выполнения необходимых тождественных преобразований, получим систему неравенства: <span><em>x </em>≤<em> </em>1</span> и <span><em>x </em>≥<em> </em>−1</span></p>
+<p><img alt="неравенство с модулем рис 18" decoding="async" height="58" loading="lazy" src="assets/c0775d0471a0fb9afe9581bb.png" width="74"/></p>
+<p><img alt="неравенство с модулем рис 19" decoding="async" height="53" loading="lazy" src="assets/c4de09399138210721f76a52.png" width="631"/></p>
+<p>Решением служит пересечение промежутков <span><em>x </em>≤<em> </em>1</span> и <span><em>x </em>≥<em> </em>−1</span></p>
+<p><span><em>x</em> ∈ (−∞ ; 1] ∩ [−1 ; +∞)</span></p>
+<p>или покороче:</p>
+<p><span><em>x</em> ∈ [−1 ; 1]</span></p>
+<p>Обратите внимание, что границы <span>−1</span> и <span>1</span> <strong>включены</strong> в соответствующие промежутки. Это потому что при подстановке этих чисел в исходное неравенство, получается верное неравенство.</p>
+<p>Аналогично решаются неравенства, в левой части которого модуль, а справа не просто число, а буквенное выражение.</p>
+<p><strong>Пример 4</strong>. Решить неравенство <span>|7<em>x </em>−<em> </em>6|<em> </em>&lt;<em> </em><em>x </em>+<em> </em>12</span></p>
+<p><strong>Решение</strong></p>
+<p>Для начала раскроем модуль. Вспоминаем, что если неравенство содержит знак &lt; или ≤, то неравенства получившиеся после раскрытия модуля, следует записать в виде системы. Это будет означать, что итоговые решения будут удовлетворять обоим неравенствам.</p>
+<p>Итак, после раскрытия модуля получим следующую систему:</p>
+<p><img alt="неравенство с модулем рис 20" decoding="async" height="58" loading="lazy" src="assets/6451cc74d60ba67657f67d30.png" width="175"/></p>
+<p>В данном случае система содержит не совсем элементарные неравенства как в прошлых примерах. Данные неравенства следует упростить, используя известные тождественные преобразования.</p>
+<p>Раскроем скобки во втором неравенстве. Тогда получим следующую систему:</p>
+<p><img alt="неравенство с модулем рис 22" decoding="async" height="58" loading="lazy" src="assets/0894f2056a2f9a6f2e95df6f.png" width="168"/></p>
+<p>В обоих неравенствах выражения, содержащие неизвестные, перенесём в левую часть, а числовые выражения — в правую. Затем приведём подобные слагаемые. Тогда получим систему:</p>
+<p><img alt="неравенство с модулем рис 23" decoding="async" height="58" loading="lazy" src="assets/37592787b04c913aba434fd3.png" width="91"/></p>
+<p>В первом неравенстве разделим обе части на 6. Во втором неравенстве разделим обе части на −8. Тогда получим окончательную систему:</p>
+<p><img alt="неравенство с модулем рис 24" decoding="async" height="82" loading="lazy" src="assets/a69cc188303a849b84ba5479.png" width="83"/></p>
+<p>Изобразим решения на координатной прямой:</p>
+<p><img alt="неравенство с модулем рис 25" decoding="async" height="84" loading="lazy" src="assets/532d7ba88a7145c8b1c7d320.png" width="631"/></p>
+<p>Решением является пересечение промежутков <span>(−∞ ; 3)</span> и <img alt="" decoding="async" height="53" loading="lazy" src="assets/44d67e81f86d19b7924255fb.png" width="97"/>, то есть промежуток <img alt="неравенство с модулем рис 30" decoding="async" height="53" loading="lazy" src="assets/1ec8511a2e8a83ca86d76361.png" width="77"/></p>
+<p><img alt="неравенство с модулем рис 29" decoding="async" height="53" loading="lazy" src="assets/ee7d85e54e072965ca85f21c.png" width="314"/></p>
+<p><strong>Ответ</strong>: <img alt="неравенство с модулем рис 30" decoding="async" height="53" loading="lazy" src="assets/1ec8511a2e8a83ca86d76361.png" width="77"/></p>
+<hr/>
+<p><strong>Пример 5</strong>. Решить неравенство <span>|1 − 2<em>x</em>| ≥ 4 − 5<em>x</em></span></p>
+<p><strong>Решение</strong></p>
+<p>Для начала раскроем модуль. Вспоминаем, что если неравенство содержит знак &gt; или ≥, то неравенства получившиеся после раскрытия модуля, следует записать в виде совокупности:</p>
+<p>После раскрытия модуля получим следующую совокупность:</p>
+<p><img alt="неравенство с модулем рис 31" decoding="async" height="58" loading="lazy" src="assets/e1a83b2497d510c1c598ee16.png" width="154"/></p>
+<p>Выполним необходимые тождественные преобразования в обоих неравенствах. В результате получим:</p>
+<p><img alt="неравенство с модулем рис 32" decoding="async" height="180" loading="lazy" src="assets/267e6c149d1a5a4a1b2afadb.png" width="69"/></p>
+<p>Изобразим решения на координатной прямой:</p>
+<p><img alt="неравенство с модулем рис 33" decoding="async" height="83" loading="lazy" src="assets/73f3f3dbcbd3031563587937.png" width="641"/></p>
+<p>Решением является объединение промежутков <img alt="неравенство с модулем рис 34" decoding="async" height="53" loading="lazy" src="assets/d41afc44e2c62736c74e183b.png" width="82"/> и [1 ; +∞), то есть промежуток <img alt="неравенство с модулем рис 34" decoding="async" height="53" loading="lazy" src="assets/d41afc44e2c62736c74e183b.png" width="82"/></p>
+<p><img alt="неравенство с модулем рис 35" decoding="async" height="53" loading="lazy" src="assets/43afe93bea183760b85f33bd.png" width="288"/></p>
+<p><strong>Ответ</strong>: <img alt="неравенство с модулем рис 34" decoding="async" height="53" loading="lazy" src="assets/d41afc44e2c62736c74e183b.png" width="82"/>.</p>
+<h2 id="zadaniya_dlya_samostoyatelnogo_resheniya">Задания для самостоятельного решения</h2>
+<div>
+<div><span>Задание 1.</span> Решить неравенство:</div>
+<div><img decoding="async" loading="lazy" src="assets/a7cd82bad50a9ac9103b5d79.png"/></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><img decoding="async" loading="lazy" src="assets/60105c38146d16f681452524.png"/></div>
+<div><strong>Ответ</strong>: <span><em>x</em> ∈ (−36 ; 36)</span>.</div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 2.</span> Решить неравенство:</div>
+<div><img decoding="async" loading="lazy" src="assets/e935b7fab0f19e79fc46a963.png"/></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><img decoding="async" loading="lazy" src="assets/2bdd03dcc00be807aedc84b9.png"/></div>
+<div><strong>Ответ</strong>: <em>x</em> ∈ (−∞ ; −2) ∪ (2 ; +∞).</div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 3.</span> Решить неравенство:</div>
+<div><img decoding="async" loading="lazy" src="assets/b19e088cfaf6be791b7b72ee.png"/></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><img decoding="async" loading="lazy" src="assets/3328c45a985088acc7a10e43.png"/></div>
+<div><strong>Ответ</strong>: <img decoding="async" loading="lazy" src="assets/d7773c8385b06eff8c9db4bb.png"/></div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 4.</span> Решить неравенство:</div>
+<div><img decoding="async" loading="lazy" src="assets/e05c4da9e75099835a510123.png"/></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><img decoding="async" loading="lazy" src="assets/a7d48a64a58e5fdd59a27ff6.png"/></div>
+<div><strong>Ответ</strong>: <span><em>x</em> ∈ [−5 ; 2]</span></div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 5.</span> Решить неравенство:</div>
+<div><img decoding="async" loading="lazy" src="assets/bd7d0db2626f65ef2d3fa2c8.png"/></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><img decoding="async" loading="lazy" src="assets/95ae34af919dc7c31a3f9c98.png"/></div>
+<div><strong>Ответ</strong>: <span><em>x</em> ∈ (−∞ ; 0)</span></div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 6.</span> Решить неравенство:</div>
+<div><img decoding="async" loading="lazy" src="assets/ac90a050a1c665229568ba26.png"/></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><img decoding="async" loading="lazy" src="assets/ce80b095371f02a045902d2d.png"/></div>
+<div><strong>Ответ</strong>: <img decoding="async" loading="lazy" src="assets/1216623d48116b4927c9109f.png"/></div>
+</div></details>
+</div>
+<hr/>
+<p><span><strong>Понравился урок? <br/>Вступай в нашу новую группу Вконтакте и начни получать уведомления о новых уроках</strong></span></p>
+</article><section id="quiz" aria-label="Тест к уроку"></section><div class="next"><a href="lesson-72.html">← Предыдущий шаг</a><a href="lesson-74.html">Следующий шаг →</a></div></main></div><dialog id="settings"><h2>Настройки</h2><h3>Приложение</h3><button id="install" hidden>Установить приложение</button><p id="install-help"></p><button id="download">Скачать весь курс</button><progress id="download-progress" value="0" max="1" hidden></progress><p id="offline-status" role="status"></p><p><a href="spacemath-offline.zip" download>Скачать ZIP-копию для другого компьютера</a></p><h3>Прогресс</h3><button id="export">Сохранить прогресс</button><label>Восстановить прогресс <input id="import" type="file" accept="application/json"></label><details><summary>Начать заново</summary><p>Очистятся ответы и отметки. Уроки и картинки останутся для следующего ученика.</p><button id="reset">Очистить мой прогресс</button></details><p id="settings-status" role="status"></p><form method="dialog"><button>Закрыть</button></form></dialog><footer>Материалы: <a href="https://spacemath.xyz/">Spacemath</a>. Локальная учебная копия с тестами.</footer></body></html>

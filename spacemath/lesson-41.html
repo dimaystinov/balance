@@ -1,0 +1,377 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#326c9c"><title>Шаг 41. Раскрытие скобок — Математика с нуля</title><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="icon.svg"><link rel="stylesheet" href="style.css"><link rel="stylesheet" href="vendor/katex/katex.min.css"><script defer src="vendor/katex/katex.min.js"></script><script defer src="vendor/katex/contrib/auto-render.min.js"></script><script defer src="engine.js"></script><script defer src="quiz-bank.js"></script><script defer src="app.js"></script></head><body data-lesson="41"><header><a href="index.html">Математика с нуля</a><button id="menu" aria-controls="sidebar" aria-expanded="false">Шаги</button><button id="settings-open">Настройки</button></header><div class="layout"><aside id="sidebar"><p id="overall"></p><nav aria-label="Шаги курса"><ol><li><a href="lesson-01.html">Шаг 1. Числа</a></li><li><a href="lesson-02.html">Шаг 2. Основные операции</a></li><li><a href="lesson-03.html">Шаг 3. Выражения</a></li><li><a href="lesson-04.html">Шаг 4. Замены в выражениях</a></li><li><a href="lesson-05.html">Шаг 5. Разряды для начинающих</a></li><li><a href="lesson-06.html">Шаг 6. Умножение</a></li><li><a href="lesson-07.html">Шаг 7. Деление</a></li><li><a href="lesson-08.html">Шаг 8. Порядок действий</a></li><li><a href="lesson-09.html">Шаг 9. Законы математики</a></li><li><a href="lesson-10.html">Шаг 10. Делители и кратные</a></li><li><a href="lesson-11.html">Шаг 11. НОД и НОК</a></li><li><a href="lesson-12.html">Шаг 12. Дроби</a></li><li><a href="lesson-13.html">Шаг 13. Действия с дробями</a></li><li><a href="lesson-14.html">Шаг 14. Смешанные числа</a></li><li><a href="lesson-15.html">Шаг 15. Сравнение дробей</a></li><li><a href="lesson-16.html">Шаг 16. Единицы измерения</a></li><li><a href="lesson-17.html">Шаг 17. Практика по дробям</a></li><li><a href="lesson-18.html">Шаг 18. Десятичные дроби</a></li><li><a href="lesson-19.html">Шаг 19. Действия с десятичными дробями</a></li><li><a href="lesson-20.html">Шаг 20. Практика по десятичным дробям</a></li><li><a href="lesson-21.html">Шаг 21. Округление чисел</a></li><li><a href="lesson-22.html">Шаг 22. Периодические дроби</a></li><li><a href="lesson-23.html">Шаг 23. Перевод единиц</a></li><li><a href="lesson-24.html">Шаг 24. Соотношения</a></li><li><a href="lesson-25.html">Шаг 25. Пропорция</a></li><li><a href="lesson-26.html">Шаг 26. Расстояние, скорость, время</a></li><li><a href="lesson-27.html">Шаг 27. Прямая и обратная пропорциональность</a></li><li><a href="lesson-28.html">Шаг 28. Проценты</a></li><li><a href="lesson-29.html">Шаг 29. Отрицательные числа</a></li><li><a href="lesson-30.html">Шаг 30. Модуль числа</a></li><li><a href="lesson-31.html">Шаг 31. Что такое множество?</a></li><li><a href="lesson-32.html">Шаг 32. Сложение и вычитание целых чисел</a></li><li><a href="lesson-33.html">Шаг 33. Умножение и деление целых чисел</a></li><li><a href="lesson-34.html">Шаг 34. Рациональные числа</a></li><li><a href="lesson-35.html">Шаг 35. Сравнение рациональных чисел</a></li><li><a href="lesson-36.html">Шаг 36. Сложение и вычитание рациональных чисел</a></li><li><a href="lesson-37.html">Шаг 37. Умножение и деление рациональных чисел</a></li><li><a href="lesson-38.html">Шаг 38. Дополнительные сведения о дробях</a></li><li><a href="lesson-39.html">Шаг 39. Буквенные выражения</a></li><li><a href="lesson-40.html">Шаг 40. Вынесение общего множителя за скобки</a></li><li><a href="lesson-41.html">Шаг 41. Раскрытие скобок</a></li><li><a href="lesson-42.html">Шаг 42. Простейшие задачи по математике</a></li><li><a href="lesson-43.html">Шаг 43. Задачи на дроби</a></li><li><a href="lesson-44.html">Шаг 44. Задачи на проценты</a></li><li><a href="lesson-45.html">Шаг 45. Задачи на движение</a></li><li><a href="lesson-46.html">Шаг 46. Производительность</a></li><li><a href="lesson-47.html">Шаг 47. Элементы статистики</a></li><li><a href="lesson-48.html">Шаг 48. Общие сведения об уравнениях</a></li><li><a href="lesson-49.html">Шаг 49. Решение задач с помощью уравнений</a></li><li><a href="lesson-50.html">Шаг 50. Решение задач с помощью пропорции</a></li><li><a href="lesson-51.html">Шаг 51. Системы линейных уравнений</a></li><li><a href="lesson-52.html">Шаг 52. Общие сведения о неравенствах</a></li><li><a href="lesson-53.html">Шаг 53. Системы линейных неравенств с одной переменной</a></li><li><a href="lesson-54.html">Шаг 54. Операции над множествами</a></li><li><a href="lesson-55.html">Шаг 55. Степень с натуральным показателем</a></li><li><a href="lesson-56.html">Шаг 56. Степень с целым показателем</a></li><li><a href="lesson-57.html">Шаг 57. Периметр, площадь и объём</a></li><li><a href="lesson-58.html">Шаг 58. Одночлены</a></li><li><a href="lesson-59.html">Шаг 59. Многочлены</a></li><li><a href="lesson-60.html">Шаг 60. Формулы сокращённого умножения</a></li><li><a href="lesson-61.html">Шаг 61. Разложение многочлена на множители</a></li><li><a href="lesson-62.html">Шаг 62. Деление многочленов</a></li><li><a href="lesson-63.html">Шаг 63. Тождественные преобразования многочленов</a></li><li><a href="lesson-64.html">Шаг 64. Квадратный корень</a></li><li><a href="lesson-65.html">Шаг 65. Алгоритм извлечения квадратного корня</a></li><li><a href="lesson-66.html">Шаг 66. Квадратное уравнение</a></li><li><a href="lesson-67.html">Шаг 67. Квадратное уравнение с чётным вторым коэффициентом</a></li><li><a href="lesson-68.html">Шаг 68. Теорема Виета</a></li><li><a href="lesson-69.html">Шаг 69. Разложение квадратного трёхчлена на множители</a></li><li><a href="lesson-70.html">Шаг 70. Обобщённое понятие модуля числа</a></li><li><a href="lesson-71.html">Шаг 71. Уравнение с модулем</a></li><li><a href="lesson-72.html">Шаг 72. Решение уравнений с модулем методом интервалов</a></li><li><a href="lesson-73.html">Шаг 73. Неравенства с модулем</a></li><li><a href="lesson-74.html">Шаг 74. Решение неравенств с модулем методом интервалов</a></li><li><a href="lesson-75.html">Шаг 75. Извлечение квадратного корня из обеих частей уравнения</a></li></ol></nav></aside><main id="main"><h1>Шаг 41. Раскрытие скобок</h1><p class="origin"><a href="https://spacemath.xyz/raskrytie-skobok/">Оригинал урока</a> · <a href="#quiz">К тесту</a></p><article class="lesson-text">
+<p>Продолжаем изучать основы алгебры. В данном уроке мы научимся раскрывать скобки в выражениях. Раскрыть скобки означает избавить выражение от этих скобок.</p>
+<p>Чтобы раскрывать скобки, нужно выучить наизусть два правила. При регулярных занятиях раскрывать скобки можно с закрытыми глазами, и про те правила которые требовалось заучивать наизусть, можно благополучно забыть.</p>
+<b>Содержание урока</b><p></p>
+<ul>
+<li><a href="lesson-41.html#yak1">Первое правило раскрытия скобок</a></li>
+<li><a href="lesson-41.html#second_rule">Второе правило раскрытия скобок</a></li>
+<li><a href="lesson-41.html#yak3">Механизм раскрытия скобок</a></li>
+<li><a href="lesson-41.html#yak4">Задания для самостоятельного решения</a></li>
+</ul>
+
+<h2 id="yak1">Первое правило раскрытия скобок</h2>
+<p>Рассмотрим следующее выражение:</p>
+<p class="formula" data-tex="8 + (-9 + 3)">\[8 + (-9 + 3)\]</p>
+<p>Значение данного выражения равно <em>2</em>. Раскроем скобки в данном выражении. Раскрыть скобки означает избавиться от них, не влияя на значение выражения. То есть после избавления от скобок значение выражения <span>8 + (−9 + 3)</span> по прежнему должно быть равно двум.</p>
+<p>Первое правило раскрытия скобок выглядит следующим образом:</p>
+<p>При раскрытии скобок, если перед скобками стоит плюс, то этот плюс опускается вместе со скобками.</p>
+<p>Итак, мы видим что в выражении <span>8 + (−9 + 3)</span> перед скобками стоит плюс. Этот плюс нужно опустить вместе со скобками. Иными словами, скобки исчезнут вместе с плюсом, который перед ними стоял. А то, что было в скобках запишется без изменений:</p>
+<p><img alt="восемь плюс в скобках минус девять плюс три опускаем скобки" decoding="async" height="320" loading="lazy" src="assets/22b5b55c09b41448c644afdd.png" width="426"/></p>
+<p>Мы получили выражение без скобок <span>8−9+3</span>. Данное выражение равно 2, как и предыдущее выражение со скобками было равно 2.</p>
+<p class="formula" data-tex="8 + (-9 + 3) = 2">\[8 + (-9 + 3) = 2\]</p>
+<p class="formula" data-tex="8 - 9 + 3 = 2">\[8 - 9 + 3 = 2\]</p>
+<p>Таким образом, между выражениями <span>8+(−9+3) </span>и<span> 8−9+3</span> можно поставить знак равенства, поскольку они равны одному и тому же значению:</p>
+<p class="formula" data-tex="8 + (-9 + 3) = 8 - 9 + 3">\[8 + (-9 + 3) = 8 - 9 + 3\]</p>
+<p class="formula" data-tex="2 = 2">\[2 = 2\]</p>
+<hr/>
+<p><strong>Пример 2.</strong> Раскрыть скобки в выражении <span>3 + (−1 − 4)</span></p>
+<p>Перед скобками стоит плюс, значит этот плюс опускается вместе со скобками. То, что было в скобках останется без изменений:</p>
+<p class="formula" data-tex="3 + (-1 - 4) = 3 - 1 - 4">\[3 + (-1 - 4) = 3 - 1 - 4\]</p>
+<hr/>
+<p><strong>Пример 3.</strong> Раскрыть скобки в выражении <span>2 + (−1)</span></p>
+<p>Перед скобками стоит плюс, значит этот плюс опускается вместе со скобками. То, что было в скобках останется без изменений:</p>
+<p class="formula" data-tex="2 + (-1) = 2 - 1">\[2 + (-1) = 2 - 1\]</p>
+<p>В данном примере раскрытие скобок стало своего рода обратной операцией замене вычитания сложением. Как это понимать?</p>
+<p>В выражении <span>2 − 1</span> происходит вычитание, но его можно заменить сложением. Тогда получится выражение <span>2 + (−1)</span>. Но если в выражении <span>2 + (−1)</span> раскрыть скобки, то получится изначальное <span>2 − 1</span>.</p>
+<p>Поэтому первое правило раскрытия скобок можно использовать для упрощения выражений после каких-нибудь преобразований. То есть избавить его от скобок и сделать проще.</p>
+<p>Например, упростим выражение <span>2<em>a </em>+ <em>a</em>− 5<em>b </em>+ <em>b</em></span>.</p>
+<p>Чтобы упростить данное выражение, можно привести подобные слагаемые. Напомним, что для приведения подобных слагаемых, нужно сложить коэффициенты подобных слагаемых и результат умножить на общую буквенную часть:</p>
+<p><img alt="упрощение 2a a -5b +b" decoding="async" height="23" loading="lazy" src="assets/a68a549180148fbf65414f8b.png" width="655"/></p>
+<p>Получили выражение <span>3<em>a </em>+ (−4<em>b</em>)</span>. В этом выражении раскроем скобки. Перед скобками стоит плюс, поэтому используем первое правило раскрытия скобок, то есть опускаем скобки вместе с плюсом, который стоит перед этими скобками:</p>
+<p class="formula" data-tex="3a + (-4b) = 3a - 4b">\[3a + (-4b) = 3a - 4b\]</p>
+<p>Таким образом, выражение <span>2<em>a+a−</em>5<em>b+b</em></span> упрощается до <span>3<em>a−</em>4<em>b</em></span>.</p>
+<p>Раскрыв одни скобки, по пути могут встретиться другие. К ним применяем те же правила, что и к первым. Например, раскроем скобки в следующем выражении:</p>
+<p class="formula" data-tex="2 + (-3 + 1) + 3 + (-6)">\[2 + (-3 + 1) + 3 + (-6)\]</p>
+<p>Здесь два места, где нужно раскрыть скобки. В данном случае применимо первое правило раскрытия скобок, а именно опускание скобок вместе с плюсом, который стоит перед этими скобками:</p>
+<p class="formula" data-tex="2 + (-3 + 1) + 3 + (-6) = 2 - 3 + 1 + 3 - 6">\[2 + (-3 + 1) + 3 + (-6) = 2 - 3 + 1 + 3 - 6\]</p>
+<hr/>
+<p><strong>Пример 3.</strong> Раскрыть скобки в выражении <span>6+(−3)+(−2)</span></p>
+<p>В обоих местах, где имеются скобки, перед ними стоит плюс. Здесь опять же применяется первое правило раскрытия скобок:</p>
+<p class="formula" data-tex="6 + (-3) + (-2) = 6 - 3 - 2">\[6 + (-3) + (-2) = 6 - 3 - 2\]</p>
+<hr/>
+<p>Иногда первое слагаемое в скобках записано без знака. Например, в выражении <span>1+(2+3−4)</span> первое слагаемое в скобках <em>2</em> записано без знака. Возникает вопрос, а какой знак будет стоять перед двойкой после того, как скобки и плюс, стоящий перед скобками опустятся? Ответ напрашивается сам — перед двойкой будет стоять плюс.</p>
+<p>На самом деле даже будучи в скобках перед двойкой стоит плюс, но мы его не видим по причине того, что его не записывают. Мы уже говорили, что полная запись положительных чисел выглядит как <span>+1, +2, +3</span><em>.</em> Но плюсы по традиции не записывают, поэтому мы и видим привычные для нас положительные числа <span>1, 2, 3</span>.</p>
+<p>Поэтому, чтобы раскрыть скобки в выражении <span>1+(2+3−4)</span>, нужно как обычно опустить скобки вместе с плюсом, стоящим перед этими скобками, но первое слагаемое которое было в скобках записать со знаком плюс:</p>
+<p class="formula" data-tex="1 + (2 + 3 - 4) = 1 + 2 + 3 - 4">\[1 + (2 + 3 - 4) = 1 + 2 + 3 - 4\]</p>
+<hr/>
+<p><strong>Пример 4.</strong> Раскрыть скобки в выражении <span>−5 + (2 − 3)</span></p>
+<p>Перед скобками стоит плюс, поэтому применяем первое правило раскрытия скобок, а именно опускаем скобки вместе с плюсом, который стоит перед этими скобками. Но первое слагаемое, которое в скобках записываем со знаком плюс:</p>
+<p class="formula" data-tex="-5 + (2 - 3) = -5 + 2 - 3">\[-5 + (2 - 3) = -5 + 2 - 3\]</p>
+<hr/>
+<p><strong>Пример 5.</strong> Раскрыть скобки в выражении <span>(−5)</span></p>
+<p>Перед скобками стоит плюс, но он не записан по причине того, что до него не было других чисел или выражений. Наша задача убрать скобки, применив первое правило раскрытия скобок, а именно опустить скобки вместе с этим плюсом (даже если он невидим)</p>
+<p class="formula" data-tex="(-5) = -5">\[(-5) = -5\]</p>
+<hr/>
+<p><strong>Пример 6.</strong> Раскрыть скобки в выражении <span>2<em>a + (−</em>6<em>a + b)</em></span></p>
+<p>Перед скобками стоит плюс, значит этот плюс опускается вместе со скобками. То, что было в скобках запишется без изменений:</p>
+<p class="formula" data-tex="2a + (-6a + b) = 2a -6a + b">\[2a + (-6a + b) = 2a -6a + b\]</p>
+<hr/>
+<p><strong>Пример 7.</strong> Раскрыть скобки в выражении <span>5<em>a</em> + (−7<em>b</em> + 6<em>c</em>) + 3<em>a</em> + (−2<em>d</em>)</span></p>
+<p>В данном выражении имеется два места, где нужно раскрыть скобки. В обоих участках перед скобками стоит плюс, значит этот плюс опускается вместе со скобками. То, что было в скобках запишется без изменений:</p>
+<p class="formula" data-tex="5a + (-7b + 6c) + 3a + (-2d) = 5a -7b + 6c + 3a - 2d">\[5a + (-7b + 6c) + 3a + (-2d) = 5a -7b + 6c + 3a - 2d\]</p>
+<hr/>
+<h2 id="second_rule">Второе правило раскрытия скобок</h2>
+<p>Теперь рассмотрим второе правило раскрытия скобок. Оно применяется тогда, когда перед скобками стоит минус.</p>
+<p>Если перед скобками стоит минус, то этот минус опускается вместе со скобками, но слагаемые, которые были в скобках, меняют свой знак на противоположный.</p>
+<p>Например, раскроем скобки в следующем выражении</p>
+<p class="formula" data-tex="5 - (-2 - 3)">\[5 - (-2 - 3)\]</p>
+<p>Видим, что перед скобками стоит минус. Значит нужно применить второе правило раскрытия, а именно опустить скобки вместе с минусом, стоящим перед этими скобками. При этом слагаемые, которые были в скобках, поменяют свой знак на противоположный:</p>
+<p><img alt="пять минус в скобках минус два минус три опускаем скобки" decoding="async" height="320" loading="lazy" src="assets/4d2d18434f98e23a0e5e9a07.png" width="552"/></p>
+<p>Мы получили выражение без скобок <span>5 + 2 + 3</span>. Данное выражение равно 10, как и предыдущее выражение со скобками было равно 10.</p>
+<p class="formula" data-tex="5 - (-2 - 3) = 10">\[5 - (-2 - 3) = 10\]</p>
+<p class="formula" data-tex="5 + 2 + 3 = 10">\[5 + 2 + 3 = 10\]</p>
+<p>Таким образом, между выражениями <span><em>5−(−2−3)</em></span> и <span><em>5+2+3</em></span> можно поставить знак равенства, поскольку они равны одному и тому же значению:</p>
+<p class="formula" data-tex="5 - (-2 - 3) = 5 + 2 + 3">\[5 - (-2 - 3) = 5 + 2 + 3\]</p>
+<p class="formula" data-tex="10 = 10">\[10 = 10\]</p>
+<hr/>
+<p><strong>Пример 2.</strong> Раскрыть скобки в выражении <span>6 − (−2 − 5)</span></p>
+<p>Перед скобками стоит минус, поэтому применяем второе правило раскрытия скобок, а именно опускаем скобки вместе с минусом, который стоит перед этими скобками. При этом слагаемые, которые были в скобках, записываем с противоположными знаками:</p>
+<p class="formula" data-tex="6 - (-2 - 5) = 6 + 2 + 5">\[6 - (-2 - 5) = 6 + 2 + 5\]</p>
+<hr/>
+<p><strong>Пример 3.</strong> Раскрыть скобки в выражении <span>2 − (7 + 3)</span></p>
+<p>Перед скобками стоит минус, поэтому применяем второе правило раскрытия скобок:</p>
+<p class="formula" data-tex="2 - (7 + 3) = 2 - 7 - 3">\[2 - (7 + 3) = 2 - 7 - 3\]</p>
+<hr/>
+<p><strong>Пример 4.</strong> Раскрыть скобки в выражении <span>−(−3 + 4)</span></p>
+<p>Перед скобками стоит минус, поэтому применяем второе правило раскрытия скобок:</p>
+<p class="formula" data-tex="-(-3 + 4) = 3 - 4">\[-(-3 + 4) = 3 - 4\]</p>
+<hr/>
+<p><strong>Пример 5.</strong> Раскрыть скобки в выражении <span>−(−8 − 2) + 16 + (−9 − 2)</span></p>
+<p>Здесь два места, где нужно раскрыть скобки. В первом случае нужно применить второе правило раскрытия скобок, а когда очередь доходит до выражения <span>+(−9 − 2) </span>нужно применить первое правило:</p>
+<p class="formula" data-tex="-(-8 - 2) + 16 + (-9 - 2) = 8 + 2 + 16 - 9 - 2">\[-(-8 - 2) + 16 + (-9 - 2) = 8 + 2 + 16 - 9 - 2\]</p>
+<hr/>
+<p><strong>Пример 6.</strong> Раскрыть скобки в выражении <span><em>−(−a − 1) </em></span></p>
+<p>Перед скобками стоит минус, поэтому применяем второе правило раскрытия скобок:</p>
+<p class="formula" data-tex="-(-a - 1) = a + 1">\[-(-a - 1) = a + 1\]</p>
+<hr/>
+<p><strong>Пример 7.</strong> Раскрыть скобки в выражении <span><em>−(4a + 3) </em></span></p>
+<p>Перед скобками стоит минус, поэтому применяем второе правило раскрытия скобок:</p>
+<p class="formula" data-tex="-(4a + 3) = -4a - 3">\[-(4a + 3) = -4a - 3\]</p>
+<hr/>
+<p><strong>Пример 8.</strong> Раскрыть скобки в выражении <em>a </em><span><em>− (4b + 3) + 15 </em></span></p>
+<p>Перед скобками стоит минус, поэтому применяем второе правило раскрытия скобок:</p>
+<p class="formula" data-tex="a - (4b + 3) + 15 = a - 4b - 3 + 15">\[a - (4b + 3) + 15 = a - 4b - 3 + 15\]</p>
+<hr/>
+<p><strong>Пример 9.</strong> Раскрыть скобки в выражении <span><em>2a </em><em><span>+ (3b − b) − (3c + 5)</span><br/>
+</em></span></p>
+<p>Здесь два места, где нужно раскрыть скобки. В первом случае нужно применить первое правило раскрытия скобок, а когда очередь доходит до выражения <span><em>−(3c+5) </em></span>нужно применить второе правило:</p>
+<p class="formula" data-tex="2a + (3b - b) - (3c + 5) = 2a + 3b - b - 3c - 5">\[2a + (3b - b) - (3c + 5) = 2a + 3b - b - 3c - 5\]</p>
+<hr/>
+<p><strong>Пример 10.</strong> Раскрыть скобки в выражении <span><em>−a </em><em><span>− (−4a) + (−6b) − (−8c + 15)</span><br/>
+</em></span></p>
+<p>Здесь три места, где нужно раскрыть скобки. Вначале нужно применить второе правило раскрытия скобок, затем первое, а затем опять второе:</p>
+<p class="formula" data-tex="-a - (-4a) + (-6b) - (-8c + 15) = -a + 4a - 6b + 8c - 15">\[-a - (-4a) + (-6b) - (-8c + 15) = -a + 4a - 6b + 8c - 15\]</p>
+<hr/>
+<h2 id="yak3">Механизм раскрытия скобок</h2>
+<p>Правила раскрытия скобок, которые мы сейчас рассмотрели, основаны на распределительном законе умножения:</p>
+<p class="formula" data-tex="a(b + c) = ab + ac">\[a(b + c) = ab + ac\]</p>
+<p>На самом деле <em>раскрытием скобок</em> называют ту процедуру, когда общий множитель умножают на каждое слагаемое в скобках. В результате такого умножения скобки исчезают. Например, раскроем скобки в выражении <span><em>3×(4+5)</em></span></p>
+<p class="formula" data-tex="3 \times  (4 + 5) = 3 \times  4 + 3 \times  5">\[3 \times  (4 + 5) = 3 \times  4 + 3 \times  5\]</p>
+<p>Поэтому, если нужно умножить число на выражение в скобках (или выражение в скобках умножить на число) надо говорить <em>раскроем скобки</em>.</p>
+<p>Но как связан распределительный закон умножения с правилами раскрытия скобок, которые мы рассматривали ранее?</p>
+<p>Дело в том, что перед любыми скобками стоит общий множитель. В примере <span>3 × (4 + 5) </span>общий множитель это <span>3</span>. А в примере <span><em>a(b + c)</em></span> общий множитель это переменная <em><span>a</span>.</em></p>
+<p>Если перед скобками нет чисел или переменных, то общим множителем является <span>1</span> или <span>−1</span>, в зависимости от того, какой знак стоит перед скобками. Если перед скобками стоит плюс, значит общим множителем является <span>1</span>. Если перед скобками стоит минус, значит общим множителем является <span>−1</span>.</p>
+<p>К примеру, раскроем скобки в выражении <span>−(3<em>b </em>− 1)</span>. Перед скобками стоит минус, поэтому нужно воспользоваться вторым правилом раскрытия скобок, то есть опустить скобки вместе с минусом, стоящим перед скобками. А выражение, которое было в скобках, записать с противоположными знаками:</p>
+<p class="formula" data-tex="-(3b - 1) = -3b + 1">\[-(3b - 1) = -3b + 1\]</p>
+<p>Мы раскрыли скобки, воспользовавшись правилом раскрытия скобок. Но эти же скобки можно раскрыть, воспользовавшись распределительным законом умножения. Для этого сначала записываем перед скобками общий множитель 1, который не был записан:</p>
+<p class="formula" data-tex="-1(3b -1)">\[-1(3b -1)\]</p>
+<p>Минус, который раньше стоял перед скобками относился к этой единице. Теперь можно раскрыть скобки, применяя распределительный закон умножения. Для этого общий множитель <span>−1</span> нужно умножить на каждое слагаемое в скобках и полученные результаты сложить.</p>
+<p>Для удобства заменим разность, находящуюся в скобках на сумму:</p>
+<p class="formula" data-tex="-1(3b -1) = -1( 3b + (-1) )">\[-1(3b -1) = -1( 3b + (-1) )\]</p>
+<p>Далее умножаем общий множитель <span>−1</span> на каждое слагаемое в скобках:</p>
+<p class="formula" data-tex="-1(3b -1) = -1(3b + (-1)) = -1 \times  3b + (-1) \times  (-1) = -3b + 1">\[-1(3b -1) = -1(3b + (-1)) = -1 \times  3b + (-1) \times  (-1) = -3b + 1\]</p>
+<p>Как и в прошлый раз мы получили выражение <span>−3<em>b </em>+ 1</span>. Каждый согласится с тем, что в этот раз затрачено больше времени на решение столь простейшего примера. Поэтому разумнее пользоваться готовыми правилами раскрытия скобок, которые мы рассматривали в данном уроке:</p>
+<p class="formula" data-tex="-(3b - 1) = -3b + 1">\[-(3b - 1) = -3b + 1\]</p>
+<p>Но не мешает знать, как эти правила работают.</p>
+<hr/>
+<p>В данном уроке мы научились ещё одному тождественному преобразованию. Вместе с раскрытием скобок, <a href="lesson-40.html">вынесением общего за скобки</a> и <a href="lesson-39.html">приведением подобных слагаемых</a> можно немного расширить круг решаемых задач. Например:</p>
+<p>Раскрыть скобки и привести подобные слагаемые в следующем выражении:</p>
+<p><img alt="минус 4 на 2b плюс 1 минус 2b плюс 3" decoding="async" height="19" loading="lazy" src="assets/beb6385a99669fd85c3420ec.png" width="161"/></p>
+<p>Здесь нужно выполнить два действия — сначала раскрыть скобки, а потом привести подобные слагаемые. Итак, по порядку:</p>
+<p><strong>1) Раскрываем скобки:</strong></p>
+<p><img alt="минус 4 на 2b плюс 1 минус 2b плюс 3 шаг 1" decoding="async" height="19" loading="lazy" src="assets/5b3200b39ab59385cb5daa83.png" width="313"/></p>
+<p><strong>2) Приводим подобные слагаемые:</strong></p>
+<p><img alt="минус 4 на 2b плюс 1 минус 2b плюс 3 шаг 2" decoding="async" height="53" loading="lazy" src="assets/fd6b171ea8d8906708ab345a.png" width="535"/></p>
+<p>В получившемся выражении <em><span>−10b+(−1)</span></em> можно раскрыть скобки:</p>
+<p><img alt="минус 4 на 2b плюс 1 минус 2b плюс 3 шаг 3" decoding="async" height="52" loading="lazy" src="assets/646db24670ddb9259d43e004.png" width="535"/></p>
+<hr/>
+<p><strong>Пример 2.</strong> Раскрыть скобки и привести подобные слагаемые в следующем выражении:</p>
+<p><img alt="5 на едница минус 2a минус 3 на a минус 1" decoding="async" height="19" loading="lazy" src="assets/7912864110daf8772262c1d8.png" width="161"/></p>
+<p><strong>1) Раскроем скобки:</strong></p>
+<p><img alt="5 на едница минус 2a минус 3 на a минус 1 шаг 1" decoding="async" height="19" loading="lazy" src="assets/748f054d1ba5bd304941a85e.png" width="309"/></p>
+<p><strong>2) Приведем подобные слагаемые.</strong> В этот раз для экономии времени и места, не будем записывать, как коэффициенты умножаются на общую буквенную часть</p>
+<p><img alt="5 на едница минус 2a минус 3 на a минус 1 шаг 2" decoding="async" height="26" loading="lazy" src="assets/b77861f18236d90dc6956b14.png" width="636"/></p>
+<hr/>
+<p><strong>Пример 3.</strong> Упростить выражение <span><em>8m+3m</em></span> и найти его значение при <span><em>m=−4</em></span></p>
+<p>1) Сначала упростим выражение. Чтобы упростить выражение <span><em>8m+3m</em></span>, можно вынести в нём общий множитель <span><em>m</em></span> за скобки:</p>
+<p class="formula" data-tex="8m + 3m = m(8 + 3)">\[8m + 3m = m(8 + 3)\]</p>
+<p>2) Находим значение выражения <span><em>m</em>(8 + 3)</span> при <span><em>m </em>= −4</span>. Для этого в выражение <span><em>m</em>(8 + 3)</span> вместо переменной <span><em>m</em></span> подставляем число <span>−4</span></p>
+<p class="formula" data-tex="m (8 + 3) = -4 (8 + 3) = -4 \times  8 + (-4) \times  3 = -32 + (-12) = -44">\[m (8 + 3) = -4 (8 + 3) = -4 \times  8 + (-4) \times  3 = -32 + (-12) = -44\]</p>
+<hr/>
+<h2 id="yak4">Задания для самостоятельного решения</h2>
+<div>
+<div><span>Задание 1.</span> Раскройте скобки в следующем выражении:</div>
+<div><img decoding="async" loading="lazy" src="assets/eeefbd36e3c495d9f641daf9.png"/></div>
+
+<details><summary>Показать решение</summary><div>
+<div><img decoding="async" loading="lazy" src="assets/87e658c66f2f0cd3e7e165e4.png"/></div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 2.</span> Раскройте скобки в следующем выражении:</div>
+<div><img decoding="async" loading="lazy" src="assets/47be44ad759a22bff59d5590.png"/></div>
+
+<details><summary>Показать решение</summary><div>
+<div><img decoding="async" loading="lazy" src="assets/2dedb1632e8f615e1da767ae.png"/></div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 3.</span> Раскройте скобки в следующем выражении:</div>
+<div><img decoding="async" loading="lazy" src="assets/b7622cd79484ffe28187cabb.png"/></div>
+
+<details><summary>Показать решение</summary><div>
+<div><img decoding="async" loading="lazy" src="assets/5c4b7e37eb90a502e160aaa3.png"/></div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 4.</span> Раскройте скобки в следующем выражении:</div>
+<div><img decoding="async" loading="lazy" src="assets/0a5cabd0eea2ee7292188d07.png"/></div>
+
+<details><summary>Показать решение</summary><div>
+<div><img decoding="async" loading="lazy" src="assets/3ce0a099dee3dfe915275ee5.png"/></div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 5.</span> Раскройте скобки в следующем выражении:</div>
+<div><img decoding="async" loading="lazy" src="assets/f2c97ef56e2abc7e0cd11347.png"/></div>
+
+<details><summary>Показать решение</summary><div>
+<div><img decoding="async" loading="lazy" src="assets/0b15bcbbed7c064984b7195f.png"/></div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 6.</span> Раскройте скобки в следующем выражении:</div>
+<div><img decoding="async" loading="lazy" src="assets/0808d44d6c883f400ecd80e5.png"/></div>
+
+<details><summary>Показать решение</summary><div>
+<div><img decoding="async" loading="lazy" src="assets/34fa44b931b6d5864fc278f0.png"/></div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 7.</span> Раскройте скобки в следующем выражении:</div>
+<div><img decoding="async" loading="lazy" src="assets/42bea3899bcae30eb21b898c.png"/></div>
+
+<details><summary>Показать решение</summary><div>
+<div><img decoding="async" loading="lazy" src="assets/07a444baa2f5363287ef98cf.png"/></div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 8.</span> Раскройте скобки в следующем выражении:</div>
+<div><img decoding="async" loading="lazy" src="assets/4a2fa9df5b4b238d6e319ca9.png"/></div>
+
+<details><summary>Показать решение</summary><div>
+<div><img decoding="async" loading="lazy" src="assets/a8dff082f520836d377ac370.png"/></div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 9.</span> Раскройте скобки в следующем выражении:</div>
+<div><img decoding="async" loading="lazy" src="assets/ac657ce4ca6c5040555de37b.png"/></div>
+
+<details><summary>Показать решение</summary><div>
+<div><img decoding="async" loading="lazy" src="assets/b21cfb300509c5a052779ae7.png"/></div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 10.</span> Раскройте скобки в следующем выражении:</div>
+<div><img decoding="async" loading="lazy" src="assets/169a35c36649feb9d518d9ff.png"/></div>
+
+<details><summary>Показать решение</summary><div>
+<div><img decoding="async" loading="lazy" src="assets/d4c1a2bae8466b908cd984d7.png"/></div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 11.</span> Раскройте скобки в следующем выражении:</div>
+<div><img decoding="async" loading="lazy" src="assets/7c986ac45da87ef0c06cd66f.png"/></div>
+
+<details><summary>Показать решение</summary><div>
+<div><img decoding="async" loading="lazy" src="assets/1a0c61acd7d12758da77ff3a.png"/></div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 12.</span> Раскройте скобки в следующем выражении:</div>
+<div><img decoding="async" loading="lazy" src="assets/db112ef1fa50fb2400bdb7cb.png"/></div>
+
+<details><summary>Показать решение</summary><div>
+<div><img decoding="async" loading="lazy" src="assets/5df2f036c1ac14c95a313253.png"/></div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 13.</span> Раскройте скобки в следующем выражении:</div>
+<div><img decoding="async" loading="lazy" src="assets/d88e1eef21cfe30205173d9b.png"/></div>
+
+<details><summary>Показать решение</summary><div>
+<div><img decoding="async" loading="lazy" src="assets/a7da21a69dc9df8f977f72f6.png"/></div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 14.</span> Раскройте скобки в следующем выражении:</div>
+<div><img decoding="async" loading="lazy" src="assets/96e3185cb9e5ae8bb9d74789.png"/></div>
+
+<details><summary>Показать решение</summary><div>
+<div><img decoding="async" loading="lazy" src="assets/a844890df6a570d44fc4c267.png"/></div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 15.</span> Раскройте скобки в следующем выражении:</div>
+<div><img decoding="async" loading="lazy" src="assets/1f1fd79ad96125cd74829485.png"/></div>
+
+<details><summary>Показать решение</summary><div>
+<div><img decoding="async" loading="lazy" src="assets/c7e6a3299ceeb7362835a461.png"/></div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 16.</span> Раскройте скобки в следующем выражении:</div>
+<div><img decoding="async" loading="lazy" src="assets/108f13c72cc8adacdee0d54c.png"/></div>
+
+<details><summary>Показать решение</summary><div>
+<div><img decoding="async" loading="lazy" src="assets/19c4e98a44befe8b3615a426.png"/></div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 17.</span> Раскройте скобки в следующем выражении:</div>
+<div><img decoding="async" loading="lazy" src="assets/e9354cae7f41210682fe3fa2.png"/></div>
+
+<details><summary>Показать решение</summary><div>
+<div><img decoding="async" loading="lazy" src="assets/b51b30348c38171ab091f4b1.png"/></div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 18.</span> Раскройте скобки в следующем выражении:</div>
+<div><img decoding="async" loading="lazy" src="assets/ba0f67396916f5ad5fd7235b.png"/></div>
+
+<details><summary>Показать решение</summary><div>
+<div><img decoding="async" loading="lazy" src="assets/fcc01e971bc55b49f88aee8c.png"/></div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 19.</span> Раскройте скобки в следующем выражении:</div>
+<div><img decoding="async" loading="lazy" src="assets/c0d8d35a5a52a7c729f36a81.png"/></div>
+
+<details><summary>Показать решение</summary><div>
+<div><img decoding="async" loading="lazy" src="assets/fe7e9c2ec21ae765727b0e44.png"/></div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 20.</span> Раскройте скобки в следующем выражении:</div>
+<div><img decoding="async" loading="lazy" src="assets/ee42053630f8abf500a69cb1.png"/></div>
+
+<details><summary>Показать решение</summary><div>
+<div><img decoding="async" loading="lazy" src="assets/59d2b4495a965da26dc8b68e.png"/></div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 21.</span> Раскройте скобки в следующем выражении:</div>
+<div><img decoding="async" loading="lazy" src="assets/b534e2bdffae0212aec9d933.png"/></div>
+
+<details><summary>Показать решение</summary><div>
+<div><img decoding="async" loading="lazy" src="assets/995157158e054c1911c3e48a.png"/></div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 22.</span> Раскройте скобки и приведите подобные слагаемые в следующем выражении:</div>
+<div><img decoding="async" loading="lazy" src="assets/d428a396f02865a779e83839.png"/></div>
+
+<details><summary>Показать решение</summary><div>
+<div><img decoding="async" loading="lazy" src="assets/c32d078bca8f12528bcc9c8b.png"/></div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 23.</span> Раскройте скобки и приведите подобные слагаемые в следующем выражении:</div>
+<div><img decoding="async" loading="lazy" src="assets/041c769029a1e3dd36a79087.png"/></div>
+
+<details><summary>Показать решение</summary><div>
+<div><img decoding="async" loading="lazy" src="assets/bb9dfb83428fe93698d4a0b4.png"/></div>
+</div></details>
+</div>
+<hr/>
+<p><span><strong>Понравился урок? <br/>Вступай в нашу новую группу Вконтакте и начни получать уведомления о новых уроках</strong></span></p>
+
+
+<!-- VK Widget -->
+<div>
+<div id="vk_groups"></div>
+
+<div>
+</div></div>
+<div>
+<p>
+<span><strong>Возникло желание поддержать проект?</strong></span><br/>
+<span><strong>Используй кнопку ниже</strong></span></p>
+
+</div>
+<div>
+<!-- Yandex.RTB R-A-16725112-3 -->
+
+
+</div>
+</article><section id="quiz" aria-label="Тест к уроку"></section><div class="next"><a href="lesson-40.html">← Предыдущий шаг</a><a href="lesson-42.html">Следующий шаг →</a></div></main></div><dialog id="settings"><h2>Настройки</h2><h3>Приложение</h3><button id="install" hidden>Установить приложение</button><p id="install-help"></p><button id="download">Скачать весь курс</button><progress id="download-progress" value="0" max="1" hidden></progress><p id="offline-status" role="status"></p><p><a href="spacemath-offline.zip" download>Скачать ZIP-копию для другого компьютера</a></p><h3>Прогресс</h3><button id="export">Сохранить прогресс</button><label>Восстановить прогресс <input id="import" type="file" accept="application/json"></label><details><summary>Начать заново</summary><p>Очистятся ответы и отметки. Уроки и картинки останутся для следующего ученика.</p><button id="reset">Очистить мой прогресс</button></details><p id="settings-status" role="status"></p><form method="dialog"><button>Закрыть</button></form></dialog><footer>Материалы: <a href="https://spacemath.xyz/">Spacemath</a>. Локальная учебная копия с тестами.</footer></body></html>

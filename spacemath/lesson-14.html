@@ -1,0 +1,424 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#326c9c"><title>Шаг 14. Смешанные числа — Математика с нуля</title><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="icon.svg"><link rel="stylesheet" href="style.css"><link rel="stylesheet" href="vendor/katex/katex.min.css"><script defer src="vendor/katex/katex.min.js"></script><script defer src="vendor/katex/contrib/auto-render.min.js"></script><script defer src="engine.js"></script><script defer src="quiz-bank.js"></script><script defer src="app.js"></script></head><body data-lesson="14"><header><a href="index.html">Математика с нуля</a><button id="menu" aria-controls="sidebar" aria-expanded="false">Шаги</button><button id="settings-open">Настройки</button></header><div class="layout"><aside id="sidebar"><p id="overall"></p><nav aria-label="Шаги курса"><ol><li><a href="lesson-01.html">Шаг 1. Числа</a></li><li><a href="lesson-02.html">Шаг 2. Основные операции</a></li><li><a href="lesson-03.html">Шаг 3. Выражения</a></li><li><a href="lesson-04.html">Шаг 4. Замены в выражениях</a></li><li><a href="lesson-05.html">Шаг 5. Разряды для начинающих</a></li><li><a href="lesson-06.html">Шаг 6. Умножение</a></li><li><a href="lesson-07.html">Шаг 7. Деление</a></li><li><a href="lesson-08.html">Шаг 8. Порядок действий</a></li><li><a href="lesson-09.html">Шаг 9. Законы математики</a></li><li><a href="lesson-10.html">Шаг 10. Делители и кратные</a></li><li><a href="lesson-11.html">Шаг 11. НОД и НОК</a></li><li><a href="lesson-12.html">Шаг 12. Дроби</a></li><li><a href="lesson-13.html">Шаг 13. Действия с дробями</a></li><li><a href="lesson-14.html">Шаг 14. Смешанные числа</a></li><li><a href="lesson-15.html">Шаг 15. Сравнение дробей</a></li><li><a href="lesson-16.html">Шаг 16. Единицы измерения</a></li><li><a href="lesson-17.html">Шаг 17. Практика по дробям</a></li><li><a href="lesson-18.html">Шаг 18. Десятичные дроби</a></li><li><a href="lesson-19.html">Шаг 19. Действия с десятичными дробями</a></li><li><a href="lesson-20.html">Шаг 20. Практика по десятичным дробям</a></li><li><a href="lesson-21.html">Шаг 21. Округление чисел</a></li><li><a href="lesson-22.html">Шаг 22. Периодические дроби</a></li><li><a href="lesson-23.html">Шаг 23. Перевод единиц</a></li><li><a href="lesson-24.html">Шаг 24. Соотношения</a></li><li><a href="lesson-25.html">Шаг 25. Пропорция</a></li><li><a href="lesson-26.html">Шаг 26. Расстояние, скорость, время</a></li><li><a href="lesson-27.html">Шаг 27. Прямая и обратная пропорциональность</a></li><li><a href="lesson-28.html">Шаг 28. Проценты</a></li><li><a href="lesson-29.html">Шаг 29. Отрицательные числа</a></li><li><a href="lesson-30.html">Шаг 30. Модуль числа</a></li><li><a href="lesson-31.html">Шаг 31. Что такое множество?</a></li><li><a href="lesson-32.html">Шаг 32. Сложение и вычитание целых чисел</a></li><li><a href="lesson-33.html">Шаг 33. Умножение и деление целых чисел</a></li><li><a href="lesson-34.html">Шаг 34. Рациональные числа</a></li><li><a href="lesson-35.html">Шаг 35. Сравнение рациональных чисел</a></li><li><a href="lesson-36.html">Шаг 36. Сложение и вычитание рациональных чисел</a></li><li><a href="lesson-37.html">Шаг 37. Умножение и деление рациональных чисел</a></li><li><a href="lesson-38.html">Шаг 38. Дополнительные сведения о дробях</a></li><li><a href="lesson-39.html">Шаг 39. Буквенные выражения</a></li><li><a href="lesson-40.html">Шаг 40. Вынесение общего множителя за скобки</a></li><li><a href="lesson-41.html">Шаг 41. Раскрытие скобок</a></li><li><a href="lesson-42.html">Шаг 42. Простейшие задачи по математике</a></li><li><a href="lesson-43.html">Шаг 43. Задачи на дроби</a></li><li><a href="lesson-44.html">Шаг 44. Задачи на проценты</a></li><li><a href="lesson-45.html">Шаг 45. Задачи на движение</a></li><li><a href="lesson-46.html">Шаг 46. Производительность</a></li><li><a href="lesson-47.html">Шаг 47. Элементы статистики</a></li><li><a href="lesson-48.html">Шаг 48. Общие сведения об уравнениях</a></li><li><a href="lesson-49.html">Шаг 49. Решение задач с помощью уравнений</a></li><li><a href="lesson-50.html">Шаг 50. Решение задач с помощью пропорции</a></li><li><a href="lesson-51.html">Шаг 51. Системы линейных уравнений</a></li><li><a href="lesson-52.html">Шаг 52. Общие сведения о неравенствах</a></li><li><a href="lesson-53.html">Шаг 53. Системы линейных неравенств с одной переменной</a></li><li><a href="lesson-54.html">Шаг 54. Операции над множествами</a></li><li><a href="lesson-55.html">Шаг 55. Степень с натуральным показателем</a></li><li><a href="lesson-56.html">Шаг 56. Степень с целым показателем</a></li><li><a href="lesson-57.html">Шаг 57. Периметр, площадь и объём</a></li><li><a href="lesson-58.html">Шаг 58. Одночлены</a></li><li><a href="lesson-59.html">Шаг 59. Многочлены</a></li><li><a href="lesson-60.html">Шаг 60. Формулы сокращённого умножения</a></li><li><a href="lesson-61.html">Шаг 61. Разложение многочлена на множители</a></li><li><a href="lesson-62.html">Шаг 62. Деление многочленов</a></li><li><a href="lesson-63.html">Шаг 63. Тождественные преобразования многочленов</a></li><li><a href="lesson-64.html">Шаг 64. Квадратный корень</a></li><li><a href="lesson-65.html">Шаг 65. Алгоритм извлечения квадратного корня</a></li><li><a href="lesson-66.html">Шаг 66. Квадратное уравнение</a></li><li><a href="lesson-67.html">Шаг 67. Квадратное уравнение с чётным вторым коэффициентом</a></li><li><a href="lesson-68.html">Шаг 68. Теорема Виета</a></li><li><a href="lesson-69.html">Шаг 69. Разложение квадратного трёхчлена на множители</a></li><li><a href="lesson-70.html">Шаг 70. Обобщённое понятие модуля числа</a></li><li><a href="lesson-71.html">Шаг 71. Уравнение с модулем</a></li><li><a href="lesson-72.html">Шаг 72. Решение уравнений с модулем методом интервалов</a></li><li><a href="lesson-73.html">Шаг 73. Неравенства с модулем</a></li><li><a href="lesson-74.html">Шаг 74. Решение неравенств с модулем методом интервалов</a></li><li><a href="lesson-75.html">Шаг 75. Извлечение квадратного корня из обеих частей уравнения</a></li></ol></nav></aside><main id="main"><h1>Шаг 14. Смешанные числа</h1><p class="origin"><a href="https://spacemath.xyz/smeshanie_chisla/">Оригинал урока</a> · <a href="#quiz">К тесту</a></p><article class="lesson-text">
+<p>В предыдущих уроках мы узнали, что дробь, состоящая из целой и дробной частей, называется <strong>смéшанным числом</strong>.</p>
+<p>Все числа, состоящие из целой и дробной частей, называют <strong>смéшанными числами</strong>.</p>
+<p>Смéшанные числа, как и обыкновенные дроби, можно складывать, вычитать, умножать и делить. В этом уроке мы рассмотрим каждое из этих действий отдельно.</p>
+<b>Содержание урока</b><p></p>
+<ul>
+<li><a href="lesson-14.html#yak1">Сложение целого числа и правильной дроби</a></li>
+<li><a href="lesson-14.html#yak2">Сложение смешанных чисел</a></li>
+<li><a href="lesson-14.html#yak3">Сложение целого и смешанного числа</a></li>
+<li><a href="lesson-14.html#yak4">Вычитание дроби из целого числа</a></li>
+<li><a href="lesson-14.html#yak6">Вычитание смешанного числа из целого числа</a></li>
+<li><a href="lesson-14.html#yak7">Вычитание смешанных чисел</a></li>
+<li><a href="lesson-14.html#yak8">Умножение целого числа на дробь</a></li>
+<li><a href="lesson-14.html#yak16">Умножение смешанного числа на дробь</a></li>
+<li><a href="lesson-14.html#yak9">Умножение смешанных чисел</a></li>
+<li><a href="lesson-14.html#yak10">Деление целого числа на дробь</a></li>
+<li><a href="lesson-14.html#yak11">Деление дроби на целое число</a></li>
+<li><a href="lesson-14.html#yak12">Деление целого числа на смешанное число</a></li>
+<li><a href="lesson-14.html#yak13">Деление смешанного числа на целое число</a></li>
+<li><a href="lesson-14.html#yak14">Деление смешанных чисел</a></li>
+<li><a href="lesson-14.html#yak15">Задания для самостоятельного решения</a></li>
+</ul>
+
+<h2 id="yak1"><strong>Сложение целого числа и правильной дроби</strong></h2>
+<p>Встречаются задачи, в которых требуется сложить целое число и правильную дробь. Например, сложить число 2 и дробь <span class="formula" data-tex="\frac{1}{2}">\(\frac{1}{2}\)</span>. Чтобы решить этот пример, нужно число 2 представить в виде дроби <img alt="две первых" decoding="async" height="43" loading="lazy" src="assets/541004000d951702bc1a4a99.png" title="две первых" width="12"/> . Затем сложить дроби с разными знаменателями:</p>
+<p><img alt="два прибавить одну вторую будет две целых одна вторая" decoding="async" height="56" loading="lazy" src="assets/dc509b9ca7c067305cf2f283.png" title="два прибавить одну вторую будет две целых одна вторая" width="611"/></p>
+<p>А теперь внимательно посмотрим на этот пример. Смотрим на его начало и на его конец. Начало у него выглядит так: <img alt="два плюс одна вторая" decoding="async" height="40" loading="lazy" src="assets/abaf2a8a19ad1f9d116f20cd.png" title="два плюс одна вторая" width="63"/>, а конец так: <img alt="две целых одна вторая" decoding="async" height="40" loading="lazy" src="assets/c584aa4a1278f01a131550cf.png" title="две целых одна вторая" width="33"/>. Различие в том, что в первом случае число 2 и дробь <span class="formula" data-tex="\frac{1}{2}">\(\frac{1}{2}\)</span> соединяются знаком сложения, а во втором случае они записаны вместе. На самом деле это одно и то же. Дело в том, что <img alt="две целых одна вторая" decoding="async" height="40" loading="lazy" src="assets/c584aa4a1278f01a131550cf.png" title="две целых одна вторая" width="33"/> это свёрнутая форма записи смешанного числа, а <img alt="два плюс одна вторая" decoding="async" height="40" loading="lazy" src="assets/abaf2a8a19ad1f9d116f20cd.png" title="два плюс одна вторая" width="63"/> — развёрнутая.</p>
+<p>Когда перед нами смешанное число вида <img alt="две целых одна вторая" decoding="async" height="40" loading="lazy" src="assets/c584aa4a1278f01a131550cf.png" title="две целых одна вторая" width="33"/> , мы должны понимать, что знак сложения опущен.</p>
+<p>Какой можно сделать вывод? Если потребуется сложить целое число и правильную дробь, можно опустить плюс и записать целое число и дробь вместе.</p>
+<p>Значит значение выражения <img alt="два плюс одна вторая" decoding="async" height="40" loading="lazy" src="assets/abaf2a8a19ad1f9d116f20cd.png" width="63"/> равно <img alt="две целых одна вторая" decoding="async" height="40" loading="lazy" src="assets/c584aa4a1278f01a131550cf.png" width="33"/></p>
+<p><img alt="два плюс одна вторая будет две целых и одна вторая" decoding="async" height="43" loading="lazy" src="assets/6d1ece5343784c8d1a068d3b.png" title="два плюс одна вторая будет две целых и одна вторая" width="105"/></p>
+<p>Если к двум целым пиццам прибавить половину пиццы, то получится две целые пиццы и ещё половина пиццы:</p>
+<p><img alt="две целых плюс половина решение в пиццах" decoding="async" height="191" loading="lazy" src="assets/4fc06c8960b9821c824f630a.png" width="659"/></p>
+<hr/>
+<p><strong>Пример 2.</strong> Найти значение выражения <img alt="152" decoding="async" height="49" loading="lazy" src="assets/aa7833cfafc4b26998bb1e3d.png" width="55"/></p>
+<p>Представим число 3 в виде дроби <img alt="1522" decoding="async" height="48" loading="lazy" src="assets/6102b71d4c602c58ccb7e8b5.png" width="15"/>. Затем сложим дроби с разными знаменателями:</p>
+<p><img alt="1523" decoding="async" height="55" loading="lazy" src="assets/b7839cc45c032c68bc7d6e5e.png" width="547"/></p>
+<p>Это первый способ. Второй способ намного проще. Можно поставить знак равенства и записать целую и дробную часть вместе. То есть опустить знак сложения:</p>
+<p><img alt="1526" decoding="async" height="42" loading="lazy" src="assets/829123d82fcec14047ca1637.png" width="118"/></p>
+<hr/>
+<p><strong>Пример 3</strong>. Найти значение выражения <img alt="две плюс две пятых" decoding="async" height="46" loading="lazy" src="assets/7cea6864c9e64c76bb8aa8e5.png" width="51"/></p>
+<p>Можно записать вместе число 2 и дробь <span class="formula" data-tex="\frac{5}{2}">\(\frac{5}{2}\)</span>, но этот ответ не будет окончательным, поскольку в дроби <span class="formula" data-tex="\frac{5}{2}">\(\frac{5}{2}\)</span> можно выделить целую часть.</p>
+<p>Поэтому в данном примере сначала нужно выделить целую часть в дроби <span class="formula" data-tex="\frac{5}{2}">\(\frac{5}{2}\)</span> . Пять вторых это две целых и одна вторая:</p>
+<p><img alt="выделение целой части в дроби пять вторых" decoding="async" height="43" loading="lazy" src="assets/fa8b96b7acb787e2f8fd5bd3.png" width="68"/></p>
+<p>Теперь в главном выражении <img alt="две плюс две пятых" decoding="async" height="46" loading="lazy" src="assets/7cea6864c9e64c76bb8aa8e5.png" width="51"/> вместо дроби <span class="formula" data-tex="\frac{5}{2}">\(\frac{5}{2}\)</span> запишем смешанное число <img alt="две целых одна вторая" decoding="async" height="40" loading="lazy" src="assets/c584aa4a1278f01a131550cf.png" width="33"/></p>
+<p><img alt="две плюс две пятых шаг 2" decoding="async" height="192" loading="lazy" src="assets/7e9093f42c4afdb6bd578900.png" width="520"/></p>
+<p>Получили новое выражение <img alt="два плюс две целых одна вторая" decoding="async" height="43" loading="lazy" src="assets/3832ce8ab1958f3e88a404e5.png" width="61"/>. В этом выражении смешанное число <img alt="две целых одна вторая" decoding="async" height="40" loading="lazy" src="assets/c584aa4a1278f01a131550cf.png" width="33"/> запишем в развёрнутом виде:</p>
+<p><img alt="два плюс два плюс одна вторая" decoding="async" height="43" loading="lazy" src="assets/42cd46fe08b8fe816decc333.png" width="83"/></p>
+<p>Применим <a href="lesson-09.html">сочетательный закон сложения</a>. Сложим две двойки, получим 4:</p>
+<p><img alt="четыре плюс половина" decoding="async" height="43" loading="lazy" src="assets/abd649a38b2b47b76f5eed50.png" width="48"/></p>
+<p>Теперь свернём полученное смешанное число:</p>
+<p><img alt="четыре плюс половина сворачивание" decoding="async" height="43" loading="lazy" src="assets/fa435e45e01055a61651bb1d.png" width="103"/></p>
+<p>Это окончательный ответ. Подробное решение этого примера можно записать следующим образом:</p>
+<p><img alt="две плюс две пятых окончательное решение" decoding="async" height="48" loading="lazy" src="assets/e19ff5bdbb6391d64ef1bcd1.png" width="400"/></p>
+<hr/>
+<h2 id="yak2"><strong>Сложение смешанных чисел</strong></h2>
+<p>Встречаются задачи, в которых требуется сложить смешанные числа. Например, найти значение выражения <img alt="1531" decoding="async" height="49" loading="lazy" src="assets/b644abc020fdf7dd87ce7efd.png" width="83"/>. Чтобы решить этот пример, нужно целые и дробные части сложить по отдельности.</p>
+<p>Для начала запишем смешанные числа в развёрнутом виде:</p>
+<p><img alt="1532" decoding="async" height="48" loading="lazy" src="assets/d5680556cbb8e52b4b535b00.png" width="129"/></p>
+<p>Применим <a href="lesson-09.html">сочетательный закон сложения</a>. Сгруппируем целые и дробные части по отдельности:</p>
+<p><img alt="2 plus 3 plus 1 na 2 plus 1 na 8" decoding="async" height="53" loading="lazy" src="assets/aeacb26af55cccb4dc36e3dd.png" width="158"/></p>
+<p>Вычислим целые части: 2 + 3 = 5. В главном выражении заменяем выражение в скобках (2 + 3) на полученную пятёрку:</p>
+<p><img alt="5 plus 1 na 2 plus 1 na 8" decoding="async" height="53" loading="lazy" src="assets/1c4164ac0d60ef36f08ad3c3.png" width="106"/></p>
+<p>Теперь вычислим дробные части. Это сложение дробей с разными знаменателями. Как складывать такие дроби мы уже знаем:</p>
+<p><img alt="1535" decoding="async" height="56" loading="lazy" src="assets/97df4239bd6f5cfd4e1d64c1.png" width="386"/></p>
+<p>Получили  <img alt="1536" decoding="async" height="46" loading="lazy" src="assets/e6b6ee54a50830cd5757dc39.png" width="16"/> . Теперь в главном выражении <img alt="5 plus 1 na 2 plus 1 na 8" decoding="async" height="53" loading="lazy" src="assets/1c4164ac0d60ef36f08ad3c3.png" width="106"/> заменяем дробные части на полученную дробь <img alt="1536" decoding="async" height="46" loading="lazy" src="assets/e6b6ee54a50830cd5757dc39.png" width="16"/></p>
+<p><img alt="1537" decoding="async" height="47" loading="lazy" src="assets/1eeee083382e27f595bd5055.png" width="51"/></p>
+<p>Теперь свернем полученное смешанное число:</p>
+<p><img alt="1538" decoding="async" height="47" loading="lazy" src="assets/1e6ef5e7e1b372d0d2c53619.png" width="103"/></p>
+<p>Таким образом, значение выражения <img alt="1531" decoding="async" height="49" loading="lazy" src="assets/b644abc020fdf7dd87ce7efd.png" width="83"/> равно <img alt="1539" decoding="async" height="47" loading="lazy" src="assets/4b1fa77136f24c64bdf9fb28.png" width="28"/>. Попробуем изобразить это решение в виде рисунка. Если к двум целым и половине пиццы прибавить три целые и одну восьмую пиццы, то получится пять целых пицц и ещё пять восьмых пиццы:</p>
+<p><img alt="5 plus 1 na 2 plus 1 na 8 pic" decoding="async" height="435" loading="lazy" src="assets/eb04fd0ae91a5c7bd3d3724d.png" width="550"/></p>
+<p>Подобные примеры нужно решать быстро, не останавливаясь на подробностях. Находясь в школе, нам пришлось бы записать решение этого примера следующим образом:</p>
+<p><img alt="15310" decoding="async" height="48" loading="lazy" src="assets/cb54c1a4e8f00c8ea07144c7.png" width="239"/></p>
+<p>Если в будущем увидите такое короткое решение, не пугайтесь. Вы уже понимаете, что откуда взялось.</p>
+<hr/>
+<p><strong>Пример 2</strong>. Найти значение выражения <img alt="5 на 5 на 6 плюс 3 на 3 на 4 пример" decoding="async" height="45" loading="lazy" src="assets/5670a281078f4591af9c1106.png" width="83"/></p>
+<p>Запишем смешанные числа в развёрнутом виде:</p>
+<p><img alt="5 на 5 на 6 плюс 3 на 3 на 4 рисунок 1" decoding="async" height="45" loading="lazy" src="assets/c082eaedf4d09ac7e5dbda0b.png" width="125"/></p>
+<p>Сгруппируем целые и дробные части по отдельности:</p>
+<p><img alt="5 на 5 на 6 плюс 3 на 3 на 4 рисунок 2" decoding="async" height="53" loading="lazy" src="assets/548ab4e5254efab104e10a72.png" width="152"/></p>
+<p>Вычислим целые части: <span>5 + 3 = 8</span>. В главном выражении заменяем выражение в скобках <span>(5 + 3)</span> на полученное число 8</p>
+<p><img alt="5 на 5 на 6 плюс 3 на 3 на 4 рисунок 3" decoding="async" height="53" loading="lazy" src="assets/4cd8e2cf38ed4b98902ced28.png" width="106"/></p>
+<p>Теперь вычислим дробные части:</p>
+<p><img alt="1544" decoding="async" height="57" loading="lazy" src="assets/cd2c89eac8165f1c1775c439.png" width="489"/></p>
+<p>Получили смешанное число <img alt="1545" decoding="async" height="43" loading="lazy" src="assets/2412a404a7e7f25ff27f3c9f.png" width="40"/>. Теперь в главном выражении <img alt="5 на 5 на 6 плюс 3 на 3 на 4 рисунок 3" decoding="async" height="53" loading="lazy" src="assets/4cd8e2cf38ed4b98902ced28.png" width="106"/> заменяем выражение в скобках на полученное смешанное число <img alt="1545" decoding="async" height="43" loading="lazy" src="assets/2412a404a7e7f25ff27f3c9f.png" width="40"/></p>
+<p><img alt="5 на 5 на 6 плюс 3 на 3 на 4 рисунок 4" decoding="async" height="45" loading="lazy" src="assets/7d77a798535717ad65982777.png" width="68"/></p>
+<p>Получили выражение <img alt="5 на 5 на 6 плюс 3 на 3 на 4 рисунок 4" decoding="async" height="45" loading="lazy" src="assets/7d77a798535717ad65982777.png" width="68"/>. В данном случае число 8 надо прибавить к целой части смешанного числа <img alt="1545" decoding="async" height="43" loading="lazy" src="assets/2412a404a7e7f25ff27f3c9f.png" width="40"/> . Для этого смешанное число <img alt="1545" decoding="async" height="43" loading="lazy" src="assets/2412a404a7e7f25ff27f3c9f.png" width="40"/> можно временно развернуть, чтобы было понятнее, что с чем складывать:</p>
+<p><img alt="1547" decoding="async" height="48" loading="lazy" src="assets/ca241a475b976c74b2e901b7.png" width="94"/></p>
+<p>Сложим целые части. Получаем 9</p>
+<p><img alt="1549" decoding="async" height="47" loading="lazy" src="assets/5e0eaebdc667c41b7f2f0d0e.png" width="62"/></p>
+<p>Сворачиваем готовый ответ:</p>
+<p><img alt="1550" decoding="async" height="47" loading="lazy" src="assets/25ba2ab40e5c076d41ef6550.png" width="122"/></p>
+<p>Таким образом, значение выражения <img alt="5 на 5 на 6 плюс 3 на 3 на 4 пример" decoding="async" height="45" loading="lazy" src="assets/5670a281078f4591af9c1106.png" width="83"/> равно <img alt="1551" decoding="async" height="47" loading="lazy" src="assets/b431bcfb613027a6e0a151d6.png" width="36"/>.</p>
+<p>Полное решение этого примера выглядит следующим образом:</p>
+<p><img alt="1552" decoding="async" height="49" loading="lazy" src="assets/99a0b285a1c655982f5623d3.png" width="304"/></p>
+<hr/>
+<p>Для решения подобных примеров существует универсальное правило. Выглядит оно следующим образом:</p>
+<p><strong>Чтобы сложить смешанные числа, надо:</strong></p>
+<ul>
+<li><strong>привести дробные части этих чисел к общему знаменателю;</strong></li>
+<li><strong>отдельно выполнить сложение целых и дробных частей.</strong></li>
+</ul>
+<p><strong>Если при сложении дробных частей получилась неправильная дробь, выделить целую часть в этой дроби и прибавить ее к полученной целой части.</strong></p>
+<p>Применение готовых правил допустимо в том случае, если суть темы полностью понятна. Решение по-шаблону, поглядывая в другие подобные примеры, приводит к ошибкам на обнаружение которых уходит дополнительное время. Поэтому, сначала разумнее понять тему, а затем пользоваться готовым правилом.</p>
+<p><strong>Пример 3</strong>. Найти значение выражения <img alt="4 na 2 na 3 plus 3 na 2 na 5" decoding="async" height="45" loading="lazy" src="assets/41f61e173703b5a435417e57.png" width="78"/></p>
+<p>Воспользуемся готовым правилом. Приведём дробные части к общему знаменателю, затем по отдельности сложим целые и дробные части:</p>
+<p><img alt="4 na 2 na 3 plus 3 na 2 na 5 step 2" decoding="async" height="60" loading="lazy" src="assets/fcdf1b31c55619b20d5ffc00.png" width="404"/></p>
+<hr/>
+<h2 id="yak3"><strong>Сложение целого и смешанного числа</strong></h2>
+<p>Встречаются задачи, в которых нужно сложить целое и смешанное число. Например, сложить 2 и смешанное число <img alt="1561" decoding="async" height="47" loading="lazy" src="assets/59619cf01d635d15796f5703.png" width="25"/> . В этом случае целые части складываются отдельно, а дробная часть остаётся без изменения:</p>
+<p><img alt="1562" decoding="async" height="48" loading="lazy" src="assets/263de1fb8d5ae2db32e78029.png" width="394"/></p>
+<p>Здесь смешанная дробь <img alt="1561" decoding="async" height="47" loading="lazy" src="assets/59619cf01d635d15796f5703.png" width="25"/> была развёрнута в ходе решения, затем целые части были сгруппированы и сложены. В конце целая и дробная части были свёрнуты. В результате получили ответ <img alt="1563" decoding="async" height="48" loading="lazy" src="assets/49b08e08a1883206d00d53f9.png" width="25"/>.</p>
+<p>Попробуем изобразить это решение в виде рисунка. Если к двум целым пиццам прибавить три целые и треть пиццы, то получятся пять целых и треть пиццы:</p>
+<p><img alt="2 plus 3 na 1 na 3 pic" decoding="async" height="417" loading="lazy" src="assets/1e4056fbb5018b4775034d39.png" width="472"/></p>
+<hr/>
+<p><strong>Пример 2.</strong> Найти значение выражения <img alt="1564" decoding="async" height="47" loading="lazy" src="assets/086462fc38486d89cd6aa2ef.png" width="57"/></p>
+<p>В этом примере, как и в предыдущем, нужно сложить целые части:</p>
+<p><img alt="1573" decoding="async" height="47" loading="lazy" src="assets/3887cc29094ea0e0bc2e4c6a.png" width="343"/></p>
+<p>Осталось свернуть целую и дробную части, но дело в том, что дробная часть <img alt="1574" decoding="async" height="47" loading="lazy" src="assets/81d7c5442ac46e9b487f2bb8.png" width="13"/>  представляет собой неправильную дробь. Сначала нужно выделить целую часть в этой неправильной дроби. Затем целую часть этой дроби прибавить к 4, а дробную часть оставить без изменения. Продолжим данный пример на новой строке:</p>
+<p><img alt="1575" decoding="async" height="120" loading="lazy" src="assets/1573379bf3b4465d2b5659a7.png" width="420"/></p>
+<hr/>
+<h2 id="yak4"><strong>Вычитание дроби из целого числа</strong></h2>
+<p>Встречаются задачи, в которых требуется вычесть дробь из целого числа. Например, вычесть из числа <span>1</span> дробь <span class="formula" data-tex="\frac{1}{2}">\(\frac{1}{2}\)</span>. Чтобы решить такой пример, нужно целое число 1 представить в виде дроби <img alt="1na1" decoding="async" height="45" loading="lazy" src="assets/754fc24dca123f47b22665d0.png" width="9"/> , и выполнить вычитание дробей с разными знаменателями:</p>
+<p><img alt="1 na 1 minus 1 na 2 ravno 1 na 2 step 1" decoding="async" height="57" loading="lazy" src="assets/1a16529e5130fae8686df26d.png" width="369"/></p>
+<p>Если имеется одна целая пицца и мы вычтем из неё половину пиццы, то у нас получится половина пиццы:</p>
+<p><img alt="1 na 1 minus 1 na 2 ravno 1 na 2 step 2" decoding="async" height="315" loading="lazy" src="assets/065d6b40a06433d8e6160fd2.png" width="610"/></p>
+<hr/>
+<p><strong>Пример 2</strong>. Найти значение выражения <img alt="1581" decoding="async" height="48" loading="lazy" src="assets/28184ba3f5d32e60b0174757.png" width="48"/>.</p>
+<p>Представим число <span>2</span> в виде дроби <img alt="14167" decoding="async" height="46" loading="lazy" src="assets/f59e90e789bbfa990cfbf54d.png" width="14"/> , и выполним вычитание дробей с разными знаменателями:</p>
+<p><img alt="1582" decoding="async" height="56" loading="lazy" src="assets/53c7bb11e1f82ae1d3bc19ce.png" width="501"/></p>
+<p>Если имеются две целые пиццы и мы вычтем из низ половину, то останется одна целая и половина пиццы:</p>
+<p><img alt="2 minus 1 na 2 рисунок 1" decoding="async" height="191" loading="lazy" src="assets/1a21c4394faa0a676b5d943c.png" width="578"/></p>
+<p>Такие примеры можно решать в уме. Достаточно суметь воспроизвести их в своём воображении. К примеру, найдём значение выражения <img alt="3 минус 1 на 3" decoding="async" height="48" loading="lazy" src="assets/1f2ab3544496a825a9491347.png" width="43"/>, не приводя на бумаге никаких вычислений.</p>
+<p>Представим, что число 3 это три пиццы:</p>
+<p><img alt="3 na 1 na 2 рисунок 1" decoding="async" height="216" loading="lazy" src="assets/98e22fcec1e5afe3e881fd20.png" width="659"/></p>
+<p>Нужно вычесть из них <span class="formula" data-tex="\frac{1}{3}">\(\frac{1}{3}\)</span>. Мы помним, что треть выглядит следующим образом:</p>
+<p><img alt="3 минус 1 на 3 рисунок 2" decoding="async" height="157" loading="lazy" src="assets/325a712d98b63c010f79566d.png" width="109"/></p>
+<p>Теперь представим, во что превратятся три пиццы, если отрезать от них эту треть</p>
+<p><img alt="3 минус 1 на 3 рисунок 3" decoding="async" height="213" loading="lazy" src="assets/588fdd9609b918167d979d46.png" width="637"/></p>
+<p>Получилось <img alt="две целых две третьих" decoding="async" height="43" loading="lazy" src="assets/d6f7618d4665ba5aa9d9ab24.png" width="26"/> (две целых и две трети пиццы).</p>
+<p>Чтобы убедиться в правильности решения, можно найти значение выражения <img alt="3 минус 1 на 3" decoding="async" height="48" loading="lazy" src="assets/1f2ab3544496a825a9491347.png" width="43"/> обычным методом, представив число 3 в виде дроби, и выполнив вычитание дробей с разными знаменателями:</p>
+<p><img alt="3 минус 1 на 3 решение" decoding="async" height="57" loading="lazy" src="assets/cca3e6236c274b2a7a84cd39.png" width="404"/></p>
+<hr/>
+<p><strong>Пример 3.</strong> Найти значение выражения <img alt="1591" decoding="async" height="48" loading="lazy" src="assets/9160feb199b73f0d0a11d403.png" width="48"/></p>
+<p>Представим число 3 в виде дроби <img alt="1592" decoding="async" height="46" loading="lazy" src="assets/68b4cb862c31233aae6488d1.png" width="12"/>. Затем выполним вычитание дробей с разными знаменателями:</p>
+<p><img alt="1593" decoding="async" height="55" loading="lazy" src="assets/c8ef5c574625cf6d0ee92d8c.png" width="523"/></p>
+<hr/>
+<h2 id="yak6"><strong>Вычитание смешанного числа из целого числа</strong></h2>
+<p>Теперь мы готовы к тому, чтобы вычесть смешанное число из целого числа. Найдём значение выражения <img alt="пять минус одна целая и одна вторая" decoding="async" height="46" loading="lazy" src="assets/7232c98d52030c1ab4128708.png" title="пять минус одна целая и одна вторая" width="59"/> .</p>
+<p>Чтобы решить этот пример, число 5 нужно представить в виде дроби, а смешанное число <img alt="одна целая и одна вторая" decoding="async" height="46" loading="lazy" src="assets/4e76c596cd68dd218df5672b.png" title="одна целая и одна вторая" width="24"/> перевести в неправильную дробь. После перевода смешанного числа <img alt="одна целая и одна вторая" decoding="async" height="46" loading="lazy" src="assets/4e76c596cd68dd218df5672b.png" title="одна целая и одна вторая" width="24"/> в неправильную дробь, получим дробь <img alt="15123" decoding="async" height="46" loading="lazy" src="assets/8ac57418294bc55f1c3d1713.png" width="13"/>. Теперь выполним вычитание дробей с разными знаменателями:</p>
+<p><img alt="15124" decoding="async" height="55" loading="lazy" src="assets/6ab45310119460d6925726af.png" width="522"/></p>
+<p>Если из пяти целых пицц вычесть одну целую и половину пиццы, то останутся три целые пиццы и половина пиццы:</p>
+<p><img alt="5-1 na 1 na 2 рисунок" decoding="async" height="417" loading="lazy" src="assets/3889b8ccb42f538944c86a05.png" width="425"/></p>
+<hr/>
+<p><strong>Пример 2.</strong> Найти значение выражения <img alt="15131" decoding="async" height="46" loading="lazy" src="assets/cb87e6b90ed8cedbd9b1ee2c.png" width="60"/></p>
+<p>Представим 6 в виде дроби <img alt="15132" decoding="async" height="47" loading="lazy" src="assets/84f78d1b00d28f737d1608e6.png" width="14"/> , а смешанное число <img alt="15133" decoding="async" height="46" loading="lazy" src="assets/86bb6eae0a10cdf123e486fd.png" width="26"/>, в виде неправильной дроби. После перевода смешанного числа <img alt="15133" decoding="async" height="46" loading="lazy" src="assets/86bb6eae0a10cdf123e486fd.png" width="26"/>  в неправильную дробь, получим дробь <img alt="15134" decoding="async" height="47" loading="lazy" src="assets/b15c27da67d38bc9ba4b816a.png" width="23"/>. Теперь выполним вычитание дробей с разными знаменателями:</p>
+<p><img alt="15135" decoding="async" height="54" loading="lazy" src="assets/5288d9e563c0032419232666.png" width="500"/></p>
+<p>Примеры на вычитание дроби из числа или вычитание смешанной дроби из числа опять же можно выполнять в уме. Этот процесс легко поддаётся воображению.</p>
+<p>К примеру, если нужно быстро найти значение выражения <img alt="2 minus 2 na 3 step 1" decoding="async" height="45" loading="lazy" src="assets/8f01ed970326f09f21f3a230.png" width="50"/>, то вовсе необязательно представлять число <span>2</span> в виде дроби и выполнять вычитание дробей с разными знаменателями. Число 2 можно вообразить, как две целые пиццы и далее представить, как от одной из них отрезали две третьих (два куска из трёх)</p>
+<p><img alt="2 minus 2 na 3 step 3" decoding="async" height="306" loading="lazy" src="assets/2f3540ef46e8b68f5d172c2d.png" width="633"/></p>
+<p>Тогда от той пиццы, от которой отрезали <span class="formula" data-tex="\frac{2}{3}">\(\frac{2}{3}\)</span> останется <span class="formula" data-tex="\frac{1}{3}">\(\frac{1}{3}\)</span> пиццы. Плюс одна из пицц останется нетронутой. Получится одна целая пицца и треть пиццы:</p>
+<p><img alt="2 minus 2 na 3 step 2" decoding="async" height="45" loading="lazy" src="assets/357e097e63361d285e714d07.png" width="97"/></p>
+<p>Если на рисунке вы закроете рукой две третьих пиццы (она закрашена), то сразу всё поймёте.</p>
+<hr/>
+<h2 id="yak7"><strong>Вычитание смешанных чисел</strong></h2>
+<p>Встречаются задачи, в которых требуется вычесть из одного смешанного числа другое смешанное число. Например, найдём значение выражения: <img alt="15141" decoding="async" height="47" loading="lazy" src="assets/888f0dd40fe828fe29629d20.png" width="79"/></p>
+<p>Чтобы решить этот пример, нужно смешанные числа <img alt="15142" decoding="async" height="46" loading="lazy" src="assets/0f148cd84d2578b681d7dcb4.png" width="28"/> и <img alt="15143" decoding="async" height="46" loading="lazy" src="assets/78002a595ff85246a5ad58c9.png" width="25"/> перевести в неправильные дроби, затем выполнить вычитание дробей с разными знаменателями:</p>
+<p><img alt="15144" decoding="async" height="56" loading="lazy" src="assets/c469b02ebddd8af7b1f1e5ae.png" width="562"/></p>
+<p>Если от трёх целых и половины пиццы вычесть две целые и треть пиццы, то останутся одна целая и одна шестая пиццы:</p>
+<p><img alt="3 na 1 na minus 2 na 1 na 3 рисунок" decoding="async" height="416" loading="lazy" src="assets/61c675f902db51c515c80d1e.png" width="301"/></p>
+<hr/>
+<p><strong>Пример 2.</strong> Найти значение выражения <img alt="15141" decoding="async" height="46" loading="lazy" src="assets/ec52d10d9e5b1e794d53ea6a.png" width="79"/></p>
+<p>Переводим смешанные числа <img alt="15142" decoding="async" height="46" loading="lazy" src="assets/10ea9b0bb4b98a662cc78cff.png" width="27"/> и <img alt="15143" decoding="async" height="46" loading="lazy" src="assets/9e9fa98ab29d70778ab162e3.png" width="27"/> в неправильные дроби и выполняем вычитание дробей с разными знаменателями:</p>
+<p><img alt="15144" decoding="async" height="55" loading="lazy" src="assets/03a91492a669e69a41e7688e.png" width="632"/></p>
+<p>К вычитанию смешанных чисел мы ещё вернёмся. В вычитании дробей есть немало тонкостей, которым новичок пока не готов. Например, возможен случай, когда уменьшаемое может оказаться меньше вычитаемого. Это может вывести нас в мир отрицательных чисел, которых мы ещё не изучали.</p>
+<p>А пока изучим умножение смешанных чисел. Благо оно не такое сложное, как сложение и вычитание.</p>
+<hr/>
+<h2 id="yak8"><strong>Умножение целого числа на дробь</strong></h2>
+<p>Чтобы целое число умножить на дробь, достаточно умножить это целое число на числитель дроби, а знаменатель оставить без изменения.</p>
+<p>Например, умножим число <span>5</span> на дробь <span class="formula" data-tex="\frac{1}{2}">\(\frac{1}{2}\)</span>. Чтобы решить этот пример, нужно число 5 умножить на числитель дроби <span class="formula" data-tex="\frac{1}{2}">\(\frac{1}{2}\)</span>, а знаменатель оставить без изменения:</p>
+<p><img alt="15151" decoding="async" height="47" loading="lazy" src="assets/818def113cfaa10375dfb3cd.png" width="158"/></p>
+<p>В ответе получилась неправильная дробь. Выделим в ней целую часть:</p>
+<p><img alt="15152" decoding="async" height="46" loading="lazy" src="assets/f4ed5efc1e2a7117bbc41a5f.png" width="212"/></p>
+<p>Если имеются пять целых пицц и мы возьмём от этого количества половину, то у нас окажется две целые пиццы и половина пиццы:</p>
+<p><img alt="5 na 1 na 2 рисунок" decoding="async" height="624" loading="lazy" src="assets/4372f60bec0addf92cf2dc60.png" width="428"/></p>
+<hr/>
+<p><strong>Пример 2.</strong> Найти значение выражения <img alt="15161" decoding="async" height="47" loading="lazy" src="assets/fd39e4d6ed190d839801739c.png" width="56"/></p>
+<p>Умножим число 3 на числитель дроби <img alt="15163" decoding="async" height="47" loading="lazy" src="assets/1a6d718cb5f8502584e3cba8.png" width="15"/></p>
+<p><img alt="15162" decoding="async" height="48" loading="lazy" src="assets/a4e1ee3735408ebc5faa105a.png" width="200"/></p>
+<p>В ответе получилась неправильная дробь <img alt="15164" decoding="async" height="46" loading="lazy" src="assets/7c6cc8f524be6860e9c1ecb9.png" width="12"/>, но мы выделили её целую часть и получили 2.</p>
+<p>Также, можно было сократить эту дробь. Получился бы тот же результат. Выглядело бы это следующим образом:</p>
+<p><img alt="15165" decoding="async" height="51" loading="lazy" src="assets/e8fb8b73a6bf18c1a208db3d.png" width="305"/></p>
+<p>Если имеются три целые пиццы и мы возьмём от этого количества две третьих, то у нас окажется две целые пиццы:</p>
+<p><img alt="3 na 2 na 3 рисунок" decoding="async" height="596" loading="lazy" src="assets/f386fa84e6bdfee17693ffc0.png" width="256"/></p>
+<hr/>
+<p><strong>Пример 3.</strong> Найти значение выражения <img alt="15171" decoding="async" height="46" loading="lazy" src="assets/491e30f55c8bdb3200df85ef.png" width="55"/></p>
+<p>Этот пример решается так же, как и предыдущие. Целое число и числитель дроби нужно перемножить:</p>
+<p><img alt="15172" decoding="async" height="46" loading="lazy" src="assets/e58483742e88dc4c87cb7ed2.png" width="221"/></p>
+<hr/>
+<p><strong>Пример 4.</strong> Найти значение выражения <img alt="15181" decoding="async" height="46" loading="lazy" src="assets/31ab7e831063d5442c2e7211.png" width="55"/></p>
+<p>Умножим число 3 на числитель дроби <span class="formula" data-tex="\frac{1}{2}">\(\frac{1}{2}\)</span></p>
+<p><img alt="15183" decoding="async" height="46" loading="lazy" src="assets/a8cfe47c86958940807fccf9.png" width="211"/></p>
+<hr/>
+<h2 id="yak16">Умножение смешанного числа на дробь</h2>
+<p>Чтобы умножить смешанное число на дробь, нужно смешанное число перевести в неправильную дробь, затем выполнить перемножение обыкновенных дробей.</p>
+<p><strong>Пример 1</strong>. Найти значение выражения <img alt="2 na 1 na 2 na 2 na 3 ravno 1" decoding="async" height="45" loading="lazy" src="assets/4c0260c76aa3286fd4d2b825.png" width="61"/></p>
+<p>Переведём смешанное число <img alt="" decoding="async" height="43" loading="lazy" src="assets/ca57db85d74dd05cc3547015.png" width="23"/> в неправильную дробь. После перевода это число превратится в дробь <span class="formula" data-tex="\frac{3}{2}">\(\frac{3}{2}\)</span>. Затем можно будет умножить эту дробь на <span class="formula" data-tex="\frac{2}{3}">\(\frac{2}{3}\)</span></p>
+<p><img alt="2 na 1 na 2 na 2 na 3 ravno 1 решение" decoding="async" height="45" loading="lazy" src="assets/9788d2baa5758408bfd7be64.png" width="211"/></p>
+<p>Допустим, имеются одна целая и половина пиццы:</p>
+<p><img alt="2 na 1 na 2 na 2 na 3 ravno 1 рисунок 1" decoding="async" height="208" loading="lazy" src="assets/bea28c240c92034113463dbd.png" width="328"/></p>
+<p>Умножить эти куски на <span class="formula" data-tex="\frac{2}{3}">\(\frac{2}{3}\)</span> означает взять от них две трети. Чтобы взять от них две трети, сначала разделим их на три равные части. Разделим пополам ту пиццу, которая слева. Тогда у нас получится три равных куска:</p>
+<p><img alt="2 na 1 na 2 na 2 na 3 ravno 1 рисунок 2" decoding="async" height="208" loading="lazy" src="assets/2d991dc0548be0032f55cde7.png" width="345"/></p>
+<p>Теперь если мы возьмем <span class="formula" data-tex="\frac{2}{3}">\(\frac{2}{3}\)</span> (два куска из трёх имеющихся), то получим одну целую пиццу. Для наглядности закрасим эти два куска:</p>
+<p><img alt="2 na 1 na 2 na 2 na 3 ravno 1 рисунок 3" decoding="async" height="293" loading="lazy" src="assets/b2619b09f90f52be572421bd.png" width="344"/></p>
+<p>Поэтому значение выражения <img alt="2 na 1 na 2 na 2 na 3 ravno 1" decoding="async" height="45" loading="lazy" src="assets/4c0260c76aa3286fd4d2b825.png" width="61"/> было равно 1</p>
+<p><img alt="2 na 1 na 2 na 2 na 3 ravno 1 рисунок 4" decoding="async" height="255" loading="lazy" src="assets/ba5ac53e1a9d3ab372d54bd1.png" width="658"/></p>
+<hr/>
+<h2 id="yak9"><strong>Умножение смешанных чисел</strong></h2>
+<p>Встречаются задачи, в которых требуется перемножить смешанные числа. Например, перемножить <img alt="" decoding="async" height="43" loading="lazy" src="assets/ca57db85d74dd05cc3547015.png" width="23"/> и <img alt="две целых одна вторая" decoding="async" height="40" loading="lazy" src="assets/c584aa4a1278f01a131550cf.png" width="33"/>. Чтобы решить этот пример, нужно перевести эти смешанные числа в неправильные дроби, затем выполнить умножение неправильных дробей:</p>
+<p><img alt="1 na 1 na 2 na 2 na 1 na 2 решение" decoding="async" height="45" loading="lazy" src="assets/df6335c1dcce73ac0a0b2d95.png" width="251"/></p>
+<p>Попробуем разобраться в этом примере с помощью рисунка. Допустим, имеются одна целая и половина пиццы:</p>
+<p><img alt="1 na 1 na 2 na 2 na 1 na 2 рисунок 1" decoding="async" height="169" loading="lazy" src="assets/7be12d6ef9b928e2d27682c2.png" width="265"/></p>
+<p>Теперь разберемся со смешанным множителем <img alt="две целых одна вторая" decoding="async" height="40" loading="lazy" src="assets/c584aa4a1278f01a131550cf.png" width="33"/>. Этот множитель означает, что одну целую и половину пиццы нужно взять <span>2</span> раза и еще <span class="formula" data-tex="\frac{1}{2}">\(\frac{1}{2}\)</span> раза.</p>
+<p>С множителем 2 всё понятно, он означает что одну целую и половину пиццы нужно взять два раза. Давайте возьмём два раза целую пиццу и половину:</p>
+<p><img alt="1 na 1 na 2 na 2 na 1 na 2 рисунок 2" decoding="async" height="256" loading="lazy" src="assets/3e8fb1638745d3fa245d167d.png" width="568"/></p>
+<p>Но ещё осталось взять <span class="formula" data-tex="\frac{1}{2}">\(\frac{1}{2}\)</span> от изначальной целой пиццы и половины, ведь множителем было смешанное число <img alt="две целых одна вторая" decoding="async" height="40" loading="lazy" src="assets/c584aa4a1278f01a131550cf.png" width="33"/>. Для этого вернёмся к изначальной одной целой и половине пиццы, и разделим их на равные части так, чтобы можно было взять от них ровно половину. А половину мы сможем взять, если разделим целую пиццу на четыре части, а половину на две части:</p>
+<p><img alt="1 na 1 na 2 na 2 na 1 na 2 рисунок 3" decoding="async" height="177" loading="lazy" src="assets/41e22647cdfa1947007c284f.png" width="272"/></p>
+<p>Мы разделили нашу целую пиццу и половину на равные части, и теперь можем сказать, что является половиной от этих кусков. Половиной от этих кусков является <span class="formula" data-tex="\frac{3}{4}">\(\frac{3}{4}\)</span> пиццы. Это можно хорошо увидеть, если мы упорядочим наши равные кусочки следующим образом:</p>
+<p><img alt="1 na 1 na 2 na 2 na 1 na 2 рисунок 4" decoding="async" height="178" loading="lazy" src="assets/78456079e865d2ec1cc29a0e.png" width="388"/></p>
+<p>А если смотреть на изначальную целую пиццу и половину с точки зрения такого порядка, как на этом рисунке, то половиной от них является <span class="formula" data-tex="\frac{3}{4}">\(\frac{3}{4}\)</span>пиццы.</p>
+<p>Поэтому значение выражения <img alt="1 na 1 na 2 na 2 na 1 na 2" decoding="async" height="45" loading="lazy" src="assets/61676d6ef57cad4008ed77d3.png" width="73"/> равно <img alt="3 na 3 na 4" decoding="async" height="45" loading="lazy" src="assets/410625044accbf9564cc47c2.png" width="25"/></p>
+<p><img alt="1 na 1 na 2 na 2 na 1 na 2 рисунок 5" decoding="async" height="575" loading="lazy" src="assets/f2c845a443f7fd7ed33c4059.png" width="651"/></p>
+<hr/>
+<p> </p>
+<p><strong>Пример 2.</strong> Найти значение выражения <img alt="2 на 1 на 3 на 3 на 1 на 4 пример" decoding="async" height="45" loading="lazy" src="assets/faec5c1e2f4d2e8a8af9ad14.png" width="76"/></p>
+<p>Переводим смешанные числа в неправильные дроби и перемножаем эти неправильные дроби. Если в ответе получится неправильная дробь, выделим в ней целую часть:</p>
+<p><img alt="2 на 1 на 3 на 3 на 1 на 4 решение" decoding="async" height="45" loading="lazy" src="assets/c5a5b9bf00f5118d6d954b5b.png" width="343"/></p>
+<hr/>
+<h2 id="yak10"><strong>Деление целого числа на дробь</strong></h2>
+<p>Чтобы разделить целое число на дробь, нужно это целое число умножить на дробь, обратную делителю.</p>
+<p>Например, разделим число <span>3</span> на дробь <span class="formula" data-tex="\frac{1}{2}">\(\frac{1}{2}\)</span>. Здесь число <span>3</span> — это делимое, а дробь <span class="formula" data-tex="\frac{1}{2}">\(\frac{1}{2}\)</span> — делитель.</p>
+<p>Чтобы решить этот пример, нужно число 3 умножить на дробь, обратную дроби <span class="formula" data-tex="\frac{1}{2}">\(\frac{1}{2}\)</span>. А обратная дробь для дроби <span class="formula" data-tex="\frac{1}{2}">\(\frac{1}{2}\)</span> это дробь <img alt="две первых" decoding="async" height="43" loading="lazy" src="assets/541004000d951702bc1a4a99.png" width="12"/>. Поэтому умножаем число 3 на дробь <img alt="15221" decoding="async" height="47" loading="lazy" src="assets/1fe3e0c83c2d2b93273c9b4f.png" width="15"/></p>
+<p><img alt="3 na 1 na 2 решение" decoding="async" height="45" loading="lazy" src="assets/cf10f8d4ba68d23760a49f14.png" width="253"/></p>
+<p>Допустим, имеются три целые пиццы:</p>
+<p><img alt="3 na 1 na 2 рисунок 1" decoding="async" height="216" loading="lazy" src="assets/98e22fcec1e5afe3e881fd20.png" width="659"/></p>
+<p>Если мы зададим вопрос <em><span>«cколько раз</span> <span class="formula" data-tex="\frac{1}{2}">\(\frac{1}{2}\)</span> (половина пиццы) содержится в трёх пиццах»</em>, то ответом будет <span><em>«шесть раз»</em></span>.</p>
+<p>Действительно, если мы разделим каждую пиццу пополам, то у нас получится шесть половинок:</p>
+<p><img alt="3 na 1 na 2 рисунок 2" decoding="async" height="204" loading="lazy" src="assets/8cf054312819059e9979278e.png" width="650"/></p>
+<p>Поэтому значение выражения <img alt="3 na 1 na 2 выражение" decoding="async" height="45" loading="lazy" src="assets/aa614c6bc8fa646c041868b6.png" width="40"/> равно 6.</p>
+<hr/>
+<p><strong id="d_c_ch_n_d">Пример 2</strong>. Найти значение выражения <img alt="2 на 3 на 2 пример" decoding="async" height="45" loading="lazy" src="assets/893c9e84712d6b0ca7d9d8d6.png" width="41"/></p>
+<p>Чтобы решить этот пример, нужно число 2 умножить на дробь, обратную дроби <span class="formula" data-tex="\frac{3}{2}">\(\frac{3}{2}\)</span>. А обратная дробь для дроби <span class="formula" data-tex="\frac{3}{2}">\(\frac{3}{2}\)</span> это дробь <span class="formula" data-tex="\frac{2}{3}">\(\frac{2}{3}\)</span></p>
+<p><img alt="2 на 3 на 2 решение" decoding="async" height="45" loading="lazy" src="assets/78003d0fae4d581d65a8dd40.png" width="203"/></p>
+<p>Допустим, имеются две целые пиццы:</p>
+<p><img alt="2 на 3 на 2 рисунок 1" decoding="async" height="213" loading="lazy" src="assets/ae9f4ea93e8859ba1e8931d9.png" width="432"/></p>
+<p>Зададим вопрос <span><em>«Сколько раз <span class="formula" data-tex="\frac{3}{2}">\(\frac{3}{2}\)</span> пиццы содержится в этих двух пиццах?»</em></span> Чтобы ответить на этот вопрос, выделим целую часть в дроби <span class="formula" data-tex="\frac{3}{2}">\(\frac{3}{2}\)</span>. После выделения целой части в этой дроби получим <img alt="" decoding="async" height="43" loading="lazy" src="assets/ca57db85d74dd05cc3547015.png" width="23"/></p>
+<p>Теперь поставим вопрос так: «<em>Сколько раз <img alt="" decoding="async" height="43" loading="lazy" src="assets/ca57db85d74dd05cc3547015.png" width="23"/> (одна целая и половина пиццы) содержится в двух пиццах?»</em>.</p>
+<p>Чтобы ответить на этот вопрос, нужно найти в двух пиццах такое количество пиццы, которое изображено на следующем рисунке:</p>
+<p><img alt="2 на 3 на 2 рисунок 5" decoding="async" height="212" loading="lazy" src="assets/19eb165feca5d2b29002f320.png" width="329"/></p>
+<p>В двух пиццах одна целая и половина пиццы содержится один раз. Это можно увидеть, если вторую пиццу разделить пополам:</p>
+<p><img alt="2 на 3 на 2 рисунок 2" decoding="async" height="343" loading="lazy" src="assets/3f663297a5d0b3eb081dfdfd.png" width="441"/></p>
+<p>А оставшаяся половина это треть от <em><img alt="" decoding="async" height="43" loading="lazy" src="assets/ca57db85d74dd05cc3547015.png" width="23"/>, </em>которая не вместилась. Третью она является по той причине, что в одной целой и половине пиццы целую часть пиццы можно разделить пополам. Тогда каждый кусок будет третью от этого количества<em>:</em></p>
+<p><img alt="2 на 3 на 2 рисунок 4" decoding="async" height="213" loading="lazy" src="assets/ad2a9b840247973befb93e84.png" width="333"/></p>
+<p>Поэтому значение выражения <img alt="2 на 3 на 2 пример" decoding="async" height="45" loading="lazy" src="assets/893c9e84712d6b0ca7d9d8d6.png" width="41"/> равно <img alt="одна целая одна третья" decoding="async" height="43" loading="lazy" src="assets/b4e77cbd8d210edbd0b5138c.png" width="21"/></p>
+<hr/>
+<p><strong>Пример 3.</strong> Найти значение выражения <img alt="5 na 9 na 2" decoding="async" height="45" loading="lazy" src="assets/12d674666e6f1739f99703fc.png" width="41"/></p>
+<p>Чтобы решить этот пример, нужно число 5 умножить на дробь, обратную дроби <img alt="9 na 4" decoding="async" height="45" loading="lazy" src="assets/e45d1c508bf725b8520f8165.png" width="12"/>. А обратная дробь для дроби <img alt="9 na 4" decoding="async" height="45" loading="lazy" src="assets/e45d1c508bf725b8520f8165.png" width="12"/> это дробь <img alt="4 na 9" decoding="async" height="45" loading="lazy" src="assets/2749fa2fe8ec5ea8c995b632.png" width="13"/>. Поэтому умножаем число 5 на <img alt="4 na 9" decoding="async" height="45" loading="lazy" src="assets/2749fa2fe8ec5ea8c995b632.png" width="13"/></p>
+<p><img alt="5 na 9 na 4 решение" decoding="async" height="45" loading="lazy" src="assets/3d71d08dedf2df73f31b486f.png" width="291"/></p>
+<p>Дробь <img alt="9 na 4" decoding="async" height="45" loading="lazy" src="assets/e45d1c508bf725b8520f8165.png" width="12"/> это <span>2</span> целых и <span class="formula" data-tex="\frac{1}{4}">\(\frac{1}{4}\)</span>. Проще говоря, две целые и четверть пиццы:</p>
+<p><img alt="5 na 9 na 4 рисунок 1" decoding="async" height="170" loading="lazy" src="assets/7c36c9c15046c47edc8a8c19.png" width="441"/></p>
+<p>А выражение <img alt="5 na 9 na 2" decoding="async" height="45" loading="lazy" src="assets/12d674666e6f1739f99703fc.png" width="41"/> определяет сколько раз <img alt="" decoding="async" height="43" loading="lazy" src="assets/dc254cd7a70d506cb5d39f86.png" width="26"/> содержится в пяти целых пиццах. Ответом было смешанное число <img alt="2 na 2 na 9" decoding="async" height="45" loading="lazy" src="assets/404654a056d15c4e4ae2c13f.png" width="26"/>.</p>
+<p>То есть <img alt="" decoding="async" height="43" loading="lazy" src="assets/dc254cd7a70d506cb5d39f86.png" width="26"/> пиццы содержится в пяти целых пиццах <img alt="2 na 2 na 9" decoding="async" height="45" loading="lazy" src="assets/404654a056d15c4e4ae2c13f.png" width="26"/> раза.</p>
+<p>Давайте нащупаем в пяти пиццах два раза по <img alt="" decoding="async" height="43" loading="lazy" src="assets/dc254cd7a70d506cb5d39f86.png" width="26"/></p>
+<p><img alt="5-1 na 1 na 2 рисунок 3" decoding="async" height="251" loading="lazy" src="assets/799bd20fe64a771668cb1123.png" width="659"/></p>
+<p>Белым цветом осталось не выделено две четверти. Эти две четверти представляют собой <span class="formula" data-tex="\frac{2}{9}">\(\frac{2}{9}\)</span> от <img alt="" decoding="async" height="43" loading="lazy" src="assets/dc254cd7a70d506cb5d39f86.png" width="26"/>, которые не вместились. Двумя девятыми они являются по той причине, что в <img alt="" decoding="async" height="43" loading="lazy" src="assets/dc254cd7a70d506cb5d39f86.png" width="26"/> пиццы каждую целую пиццу можно разделить на четыре части. Тогда каждый кусок будет девятой частью от этого количества, а два куска соответственно двумя из девяти<em>:</em></p>
+<p><img alt="5-1 na 1 na 2 рисунок 4" decoding="async" height="134" loading="lazy" src="assets/5e7c9be711f5dd062451876f.png" width="353"/></p>
+<p>Поэтому значение выражения <img alt="5 na 9 na 2" decoding="async" height="45" loading="lazy" src="assets/12d674666e6f1739f99703fc.png" width="41"/> равно <img alt="2 na 2 na 9" decoding="async" height="45" loading="lazy" src="assets/404654a056d15c4e4ae2c13f.png" width="26"/></p>
+<hr/>
+<h2 id="yak11"><strong>Деление дроби на целое число</strong></h2>
+<p>Чтобы разделить дробь на целое число, нужно данную дробь умножить на число, обратное делителю. Таким делением мы занимались в прошлом уроке. Вспомним ещё раз.</p>
+<p><strong>Пример 1</strong>. Разделим дробь <span class="formula" data-tex="\frac{1}{2}">\(\frac{1}{2}\)</span> на число 2</p>
+<p>Чтобы разделить дробь <span class="formula" data-tex="\frac{1}{2}">\(\frac{1}{2}\)</span> на 2, нужно данную дробь умножить на число, обратное числу 2. А обратное числу 2 это дробь <span class="formula" data-tex="\frac{1}{2}">\(\frac{1}{2}\)</span></p>
+<p><img alt="1 на 2 на 2 решение" decoding="async" height="45" loading="lazy" src="assets/7ed886e5472c9548287564a6.png" width="164"/></p>
+<p>Пусть имеется половина пиццы:</p>
+<p><img alt="рисунок половина пиццы" decoding="async" height="377" loading="lazy" src="assets/bef59064c10fb8439fe4e310.png" width="140"/></p>
+<p>Разделим её поровну на две части. Тогда каждая получившаяся часть будет одной четвертой пиццы:</p>
+<p><img alt="1 na 2 na 2 рисунок" decoding="async" height="308" loading="lazy" src="assets/49793785d378d5512eda2d68.png" width="139"/></p>
+<p>Поэтому значение выражения <img alt="1 na 2 na 2" decoding="async" height="45" loading="lazy" src="assets/320e5bd1abc7f041abaf5aec.png" width="42"/> равно <span class="formula" data-tex="\frac{1}{4}">\(\frac{1}{4}\)</span></p>
+<hr/>
+<p><strong>Пример 2</strong>. Найти значение выражения <img alt="5 на 7 на 2 пример" decoding="async" height="45" loading="lazy" src="assets/111d84e8319cf711b80cf7c3.png" width="40"/></p>
+<p>Чтобы решить этот пример, нужно дробь <img alt="5 на 7" decoding="async" height="45" loading="lazy" src="assets/f03befceccebcf6418fb2ab7.png" width="12"/> умножить на число, обратное числу 2. Обратное числу 2 это дробь <span class="formula" data-tex="\frac{1}{2}">\(\frac{1}{2}\)</span></p>
+<p><img alt="5 на 7 на 2 решение" decoding="async" height="45" loading="lazy" src="assets/897370b14799fbc70fb56d85.png" width="232"/></p>
+<hr/>
+<p><strong>Пример 3.</strong> Найти значение выражения <img alt="3 на 5 на 3 пример" decoding="async" height="45" loading="lazy" src="assets/d35b9c94ffe945611c7ac94b.png" width="38"/></p>
+<p>Умножаем первую дробь <span class="formula" data-tex="\frac{3}{5}">\(\frac{3}{5}\)</span> на число, обратное числу 3. Обратное числу 3 это дробь <span class="formula" data-tex="\frac{1}{3}">\(\frac{1}{3}\)</span></p>
+<p><img alt="3 на 5 на 3 решение" decoding="async" height="45" loading="lazy" src="assets/511dbf78d68286fc9eab76a4.png" width="329"/></p>
+<hr/>
+<h2 id="yak12"><strong>Деление целого числа на смешанное число</strong></h2>
+<p>Встречаются задачи, в которых требуется разделить целое число на смешанное число. Например, разделим 2 на <em><img alt="" decoding="async" height="43" loading="lazy" src="assets/ca57db85d74dd05cc3547015.png" width="23"/></em>.</p>
+<p>Чтобы решить этот пример, нужно делитель <em><img alt="" decoding="async" height="43" loading="lazy" src="assets/ca57db85d74dd05cc3547015.png" width="23"/></em> перевести в неправильную дробь. Затем умножить число 2 на дробь, обратную делителю.</p>
+<p>Переведём делитель <em><img alt="" decoding="async" height="43" loading="lazy" src="assets/ca57db85d74dd05cc3547015.png" width="23"/> </em>в неправильную дробь, получим <span><em><span class="formula" data-tex="\frac{3}{2}">\(\frac{3}{2}\)</span></em></span>. Затем умножим 2 на дробь, обратную дроби <span><em><span class="formula" data-tex="\frac{3}{2}">\(\frac{3}{2}\)</span></em></span>. Обратная для дроби <span><em><span class="formula" data-tex="\frac{3}{2}">\(\frac{3}{2}\)</span></em></span> это дробь <span class="formula" data-tex="\frac{2}{3}">\(\frac{2}{3}\)</span></p>
+<p><img alt="2 на 1 на 1 на 2 решение" decoding="async" height="45" loading="lazy" src="assets/2cdd70c651293e62e2346d99.png" width="285"/></p>
+<p>Допустим, имеются две целые пиццы:</p>
+<p><img alt="2 на 3 на 2 рисунок 1" decoding="async" height="213" loading="lazy" src="assets/ae9f4ea93e8859ba1e8931d9.png" width="432"/></p>
+<p>Зададим вопрос <span><em>«Сколько раз <img alt="" decoding="async" height="43" loading="lazy" src="assets/ca57db85d74dd05cc3547015.png" width="23"/> (одна целая и половина пиццы) содержится в двух целых пиццах?»</em></span>. Похожий пример мы решали ранее, когда учились <a href="lesson-14.html#d_c_ch_n_d">делить целое число на дробь</a>.</p>
+<p>В двух пиццах одна целая и половина пиццы содержится один раз. Это можно увидеть, если вторую пиццу разделить пополам:</p>
+<p><img alt="2 на 3 на 2 рисунок 2" decoding="async" height="343" loading="lazy" src="assets/3f663297a5d0b3eb081dfdfd.png" width="441"/></p>
+<p>А оставшаяся половина это треть от <em><img alt="" decoding="async" height="43" loading="lazy" src="assets/ca57db85d74dd05cc3547015.png" width="23"/>, </em>которая не вместилась. Третью она является по той причине, что в одной целой и половине пиццы целую часть пиццы можно разделить пополам. Тогда каждый кусок будет третью от этого количества<em>:</em></p>
+<p><img alt="2 на 3 на 2 рисунок 4" decoding="async" height="213" loading="lazy" src="assets/ad2a9b840247973befb93e84.png" width="333"/></p>
+<p>Поэтому значение выражения <img alt="2 на 1 на 1 на 2 пример" decoding="async" height="45" loading="lazy" src="assets/10325c3b4b18eb09028df835.png" width="53"/> равно <img alt="одна целая одна третья" decoding="async" height="43" loading="lazy" src="assets/b4e77cbd8d210edbd0b5138c.png" width="21"/></p>
+<hr/>
+<p><strong>Пример 2.</strong> Найти значение выражения <img alt="5 на 2 на 1 на 7 пример" decoding="async" height="45" loading="lazy" src="assets/a92ac4c20d61290702202bd5.png" width="52"/></p>
+<p>Переводим делитель <img alt="2 на 1 на 7" decoding="async" height="45" loading="lazy" src="assets/e5cf7dfac60104b9b6069dfd.png" width="26"/> в неправильную дробь, получаем <img alt="15 на 7" decoding="async" height="45" loading="lazy" src="assets/e4c42484232f687777fa97e1.png" width="20"/>. Теперь умножаем число 5 на дробь, обратную дроби <img alt="15 на 7" decoding="async" height="45" loading="lazy" src="assets/e4c42484232f687777fa97e1.png" width="20"/>. Обратная для дроби <img alt="15 на 7" decoding="async" height="45" loading="lazy" src="assets/e4c42484232f687777fa97e1.png" width="20"/> это дробь <img alt="7 на 15" decoding="async" height="45" loading="lazy" src="assets/5998a303131cec8f2e9f5540.png" width="20"/></p>
+<p><img alt="5 на 2 на 1 на 7 решение" decoding="async" height="45" loading="lazy" src="assets/43f8e0e6ae40747d57daf9f3.png" width="483"/></p>
+<p>Сначала мы получили ответ <img alt="152611" decoding="async" height="46" loading="lazy" src="assets/c50aae123469c041fb8de3bd.png" width="25"/>, затем сократили эту дробь на 5, и получили <img alt="7 на 3" decoding="async" height="45" loading="lazy" src="assets/a486bc1da6868e0e948846d5.png" width="12"/>, но этот ответ нас тоже не устроил, поскольку он представлял собой неправильную дробь. Мы выделили в этой неправильной дроби целую часть. В результате получили ответ <img alt="две целых одна третья" decoding="async" height="43" loading="lazy" src="assets/153932651e52f89b51ca3dee.png" width="25"/></p>
+<hr/>
+<h2 id="yak13"><strong>Деление смешанного числа на целое число</strong></h2>
+<p>Чтобы разделить смешанное число на целое число, нужно смешанное число перевести в неправильную дробь, затем умножить эту дробь на число, обратное делителю.</p>
+<p>Например, разделим <em><img alt="" decoding="async" height="43" loading="lazy" src="assets/ca57db85d74dd05cc3547015.png" width="23"/></em> на 2. Чтобы решить этот пример, нужно делимое <em><img alt="" decoding="async" height="43" loading="lazy" src="assets/ca57db85d74dd05cc3547015.png" width="23"/></em> перевести в неправильную дробь. Затем умножить эту дробь на число, обратное делителю 2.</p>
+<p>Переведём смешанное число <em><img alt="" decoding="async" height="43" loading="lazy" src="assets/ca57db85d74dd05cc3547015.png" width="23"/></em> в неправильную дробь, получим <span><em><span class="formula" data-tex="\frac{3}{2}">\(\frac{3}{2}\)</span></em></span>.</p>
+<p>Теперь умножаем <span><em><span class="formula" data-tex="\frac{3}{2}">\(\frac{3}{2}\)</span></em></span> на число, обратное числу 2. Обратное числу 2 это дробь <span class="formula" data-tex="\frac{1}{2}">\(\frac{1}{2}\)</span></p>
+<p><img alt="1 на 1 на 2 на 2 решение" decoding="async" height="45" loading="lazy" src="assets/e5d81eae8b52a9667682a1bf.png" width="169"/></p>
+<p>Допустим, имеется одна целая и половина пиццы:</p>
+<p><img alt="1 на 1 на 2 на 2 рисунок 1" decoding="async" height="213" loading="lazy" src="assets/ce5324c54dde14b68e3b3af2.png" width="425"/></p>
+<p>Разделим это количество пиццы поровну на две части. Для этого сначала разделим на две части целую пиццу:</p>
+<p><img alt="1 на 1 на 2 на 2 рисунок 2" decoding="async" height="212" loading="lazy" src="assets/f9942edc88baecc43c4a1c9f.png" width="431"/></p>
+<p>Затем разделим поровну на две части и половину:</p>
+<p><img alt="1 на 1 на 2 на 2 рисунок 3" decoding="async" height="212" loading="lazy" src="assets/8501addd8b737225ad7e386e.png" width="431"/></p>
+<p>Теперь если мы сгруппируем эти кусочки на две группы, то получим по <span class="formula" data-tex="\frac{3}{4}">\(\frac{3}{4}\)</span> пиццы в каждой группе:</p>
+<p><img alt="1 на 1 на 2 на 2 рисунок 3" decoding="async" height="213" loading="lazy" src="assets/b85461912bd324a3f3d88fb9.png" width="531"/></p>
+<p>Поэтому значение выражения <img alt="1 на 1 на 2 на 2 пример" decoding="async" height="45" loading="lazy" src="assets/bd983e2bac0970dd6368417c.png" width="50"/> равно <span class="formula" data-tex="\frac{3}{4}">\(\frac{3}{4}\)</span></p>
+<hr/>
+<p><strong>Пример 2.</strong> Найти значение выражения <img alt="3 на 1 на 5 на 4 пример" decoding="async" height="45" loading="lazy" src="assets/2dcdf20d4d762d816f347331.png" width="54"/></p>
+<p>Переведём делимое <img alt="3 на 1 на 5 на 4" decoding="async" height="45" loading="lazy" src="assets/c25b458efd67ec292ea8d678.png" width="24"/> в неправильную дробь, получим <img alt="16 на 5" decoding="async" height="45" loading="lazy" src="assets/968160c68a4591de044521f5.png" width="21"/>. Теперь умножаем <img alt="16 на 5" decoding="async" height="45" loading="lazy" src="assets/968160c68a4591de044521f5.png" width="21"/> на число, обратное числу 4. Обратное числу 4 это дробь <img alt="15294" decoding="async" height="47" loading="lazy" src="assets/f677c487990a2bfa36531f07.png" width="15"/>.</p>
+<p><img alt="3 на 1 на 5 на 4 решение" decoding="async" height="45" loading="lazy" src="assets/1b071d78b4a7c149a56c3a15.png" width="303"/></p>
+<hr/>
+<h2 id="yak14"><strong>Деление смешанных чисел</strong></h2>
+<p>Чтобы разделить смешанные числа, нужно перевести их в неправильные дроби, затем выполнить обычное деление дробей. То есть умножить первую дробь на дробь, обратную второй.</p>
+<p><strong>Пример 1.</strong> Найти значение выражения <img alt="2 на 1 на 2 на 1 на 1 на 4 шаг 1" decoding="async" height="45" loading="lazy" src="assets/45820285ca225320ee073d01.png" width="69"/></p>
+<p>Переведём смешанные числа в неправильные дроби. Получим следующее выражение:</p>
+<p><img alt="2 на 1 на 2 на 1 на 1 на 4 шаг 2" decoding="async" height="45" loading="lazy" src="assets/38d6d993de236b42414cc2c8.png" width="142"/></p>
+<p>Как решать дальше мы уже знаем. Первую дробь <span class="formula" data-tex="\frac{5}{2}">\(\frac{5}{2}\)</span> нужно умножить на дробь, обратную второй. Обратная для второй дроби это дробь <img alt="4 на 5" decoding="async" height="45" loading="lazy" src="assets/029ba9332b4a3564c00b3012.png" width="12"/> .</p>
+<p>Дорешаем данный пример до конца:</p>
+<p><img alt="2 на 1 на 2 на 1 на 1 на 4 шаг 3" decoding="async" height="45" loading="lazy" src="assets/ecb2eb6d46a74a261e65cf16.png" width="367"/></p>
+<p>Допустим, имеются две целые и половина пиццы:</p>
+<p><img alt="2 на 1 на 2 на 1 на 1 на 4 рисунок 1" decoding="async" height="212" loading="lazy" src="assets/8c67eeade4a0885fc6595857.png" width="549"/></p>
+<p>Если зададим вопрос <span><em>«Сколько раз <img alt="одна целая одна четвертая" decoding="async" height="43" loading="lazy" src="assets/c9c89e41b74558ef6a79b5b3.png" width="23"/> <span>(одна целая и четверть пиццы) содержится в двух целых и половине пиццы»</span></em></span>, то ответом будет <span><em>«два раза»:</em></span></p>
+<p><img alt="2 на 1 на 2 на 1 на 1 на 4 шаг 4" decoding="async" height="364" loading="lazy" src="assets/2d34c11b9e16d72d05ccbda0.png" width="584"/></p>
+<hr/>
+<p><strong>Пример 2.</strong> Найти значение выражения <img alt="15311" decoding="async" height="46" loading="lazy" src="assets/06bb331fc2ed8875280dc317.png" width="77"/></p>
+<p>Переведём смешанные числа в неправильные дроби. Получим следующее выражение:</p>
+<p><img alt="15312" decoding="async" height="47" loading="lazy" src="assets/170a9efde59019dc7ef25cc9.png" width="160"/></p>
+<p>Теперь умножаем первую дробь на дробь, обратную второй. Обратная для дроби это дробь <img alt="15314" decoding="async" height="48" loading="lazy" src="assets/f6c8d5bd360b674bff2de0d4.png" width="16"/></p>
+<p><img alt="15316" decoding="async" height="48" loading="lazy" src="assets/72a3f9c2e5a5ff46ccd82c9c.png" width="543"/></p>
+<p>Сначала мы получили дробь<img alt="15317" decoding="async" height="47" loading="lazy" src="assets/ab2455b5a16b5b4f1733b5be.png" width="27"/>. Эту дробь мы сократили на 9. В результате получили дробь <img alt="15318" decoding="async" height="46" loading="lazy" src="assets/a8017439036e4b78ef7b4b67.png" width="14"/>, но такой ответ нас тоже не устроил и мы выделили в дроби <img alt="15318" decoding="async" height="46" loading="lazy" src="assets/a8017439036e4b78ef7b4b67.png" width="14"/> целую часть. В результате получили окончательный ответ <img alt="15319" decoding="async" height="48" loading="lazy" src="assets/90165d9c050e6bbb3a7f7d8a.png" width="22"/>.</p>
+<hr/>
+<h2 id="yak15">Задания для самостоятельного решения</h2>
+<div>
+<div><span>Задание 1.</span> Найдите значение выражения:</div>
+<div><img decoding="async" loading="lazy" src="assets/67b439edf44d0718ee3d8b0b.png"/></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><img decoding="async" loading="lazy" src="assets/e14d5c0094f6f6aacb44ab6c.png"/></div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 2.</span> Найдите значение выражения:</div>
+<div><img decoding="async" loading="lazy" src="assets/a9d3e152aba71bb52e2782e7.png"/></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><img decoding="async" loading="lazy" src="assets/8e1bed1ac076128763e9f937.png"/></div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 3.</span> Найдите значение выражения:</div>
+<div><img decoding="async" loading="lazy" src="assets/1a98495431af097025f7f2fc.png"/></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><img decoding="async" loading="lazy" src="assets/276ffb8c2423ed14b26a698d.png"/></div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 4.</span> Найдите значение выражения:</div>
+<div><img decoding="async" loading="lazy" src="assets/d996b359f55f730d63a51f52.png"/></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><img decoding="async" loading="lazy" src="assets/1f24284104f22bc8c3f1e3cb.png"/></div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 5.</span> Найдите значение выражения:</div>
+<div><img decoding="async" loading="lazy" src="assets/9969c8e9291e15e2df2939f4.png"/></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><img decoding="async" loading="lazy" src="assets/3c3b709422199a772deb20b7.png"/></div>
+</div></details>
+</div>
+<hr/>
+<p><span><strong>Понравился урок? <br/>Вступай в нашу новую группу Вконтакте и начни получать уведомления о новых уроках</strong></span></p>
+
+
+<!-- VK Widget -->
+<div>
+<div id="vk_groups"></div>
+
+<div>
+</div></div>
+<div>
+<p>
+<span><strong>Возникло желание поддержать проект?</strong></span><br/>
+<span><strong>Используй кнопку ниже</strong></span></p>
+
+</div>
+<div>
+<!-- Yandex.RTB R-A-16725112-3 -->
+
+
+</div>
+</article><section id="quiz" aria-label="Тест к уроку"></section><div class="next"><a href="lesson-13.html">← Предыдущий шаг</a><a href="lesson-15.html">Следующий шаг →</a></div></main></div><dialog id="settings"><h2>Настройки</h2><h3>Приложение</h3><button id="install" hidden>Установить приложение</button><p id="install-help"></p><button id="download">Скачать весь курс</button><progress id="download-progress" value="0" max="1" hidden></progress><p id="offline-status" role="status"></p><p><a href="spacemath-offline.zip" download>Скачать ZIP-копию для другого компьютера</a></p><h3>Прогресс</h3><button id="export">Сохранить прогресс</button><label>Восстановить прогресс <input id="import" type="file" accept="application/json"></label><details><summary>Начать заново</summary><p>Очистятся ответы и отметки. Уроки и картинки останутся для следующего ученика.</p><button id="reset">Очистить мой прогресс</button></details><p id="settings-status" role="status"></p><form method="dialog"><button>Закрыть</button></form></dialog><footer>Материалы: <a href="https://spacemath.xyz/">Spacemath</a>. Локальная учебная копия с тестами.</footer></body></html>

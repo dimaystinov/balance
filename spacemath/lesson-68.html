@@ -1,0 +1,369 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#326c9c"><title>Шаг 68. Теорема Виета — Математика с нуля</title><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="icon.svg"><link rel="stylesheet" href="style.css"><link rel="stylesheet" href="vendor/katex/katex.min.css"><script defer src="vendor/katex/katex.min.js"></script><script defer src="vendor/katex/contrib/auto-render.min.js"></script><script defer src="engine.js"></script><script defer src="quiz-bank.js"></script><script defer src="app.js"></script></head><body data-lesson="68"><header><a href="index.html">Математика с нуля</a><button id="menu" aria-controls="sidebar" aria-expanded="false">Шаги</button><button id="settings-open">Настройки</button></header><div class="layout"><aside id="sidebar"><p id="overall"></p><nav aria-label="Шаги курса"><ol><li><a href="lesson-01.html">Шаг 1. Числа</a></li><li><a href="lesson-02.html">Шаг 2. Основные операции</a></li><li><a href="lesson-03.html">Шаг 3. Выражения</a></li><li><a href="lesson-04.html">Шаг 4. Замены в выражениях</a></li><li><a href="lesson-05.html">Шаг 5. Разряды для начинающих</a></li><li><a href="lesson-06.html">Шаг 6. Умножение</a></li><li><a href="lesson-07.html">Шаг 7. Деление</a></li><li><a href="lesson-08.html">Шаг 8. Порядок действий</a></li><li><a href="lesson-09.html">Шаг 9. Законы математики</a></li><li><a href="lesson-10.html">Шаг 10. Делители и кратные</a></li><li><a href="lesson-11.html">Шаг 11. НОД и НОК</a></li><li><a href="lesson-12.html">Шаг 12. Дроби</a></li><li><a href="lesson-13.html">Шаг 13. Действия с дробями</a></li><li><a href="lesson-14.html">Шаг 14. Смешанные числа</a></li><li><a href="lesson-15.html">Шаг 15. Сравнение дробей</a></li><li><a href="lesson-16.html">Шаг 16. Единицы измерения</a></li><li><a href="lesson-17.html">Шаг 17. Практика по дробям</a></li><li><a href="lesson-18.html">Шаг 18. Десятичные дроби</a></li><li><a href="lesson-19.html">Шаг 19. Действия с десятичными дробями</a></li><li><a href="lesson-20.html">Шаг 20. Практика по десятичным дробям</a></li><li><a href="lesson-21.html">Шаг 21. Округление чисел</a></li><li><a href="lesson-22.html">Шаг 22. Периодические дроби</a></li><li><a href="lesson-23.html">Шаг 23. Перевод единиц</a></li><li><a href="lesson-24.html">Шаг 24. Соотношения</a></li><li><a href="lesson-25.html">Шаг 25. Пропорция</a></li><li><a href="lesson-26.html">Шаг 26. Расстояние, скорость, время</a></li><li><a href="lesson-27.html">Шаг 27. Прямая и обратная пропорциональность</a></li><li><a href="lesson-28.html">Шаг 28. Проценты</a></li><li><a href="lesson-29.html">Шаг 29. Отрицательные числа</a></li><li><a href="lesson-30.html">Шаг 30. Модуль числа</a></li><li><a href="lesson-31.html">Шаг 31. Что такое множество?</a></li><li><a href="lesson-32.html">Шаг 32. Сложение и вычитание целых чисел</a></li><li><a href="lesson-33.html">Шаг 33. Умножение и деление целых чисел</a></li><li><a href="lesson-34.html">Шаг 34. Рациональные числа</a></li><li><a href="lesson-35.html">Шаг 35. Сравнение рациональных чисел</a></li><li><a href="lesson-36.html">Шаг 36. Сложение и вычитание рациональных чисел</a></li><li><a href="lesson-37.html">Шаг 37. Умножение и деление рациональных чисел</a></li><li><a href="lesson-38.html">Шаг 38. Дополнительные сведения о дробях</a></li><li><a href="lesson-39.html">Шаг 39. Буквенные выражения</a></li><li><a href="lesson-40.html">Шаг 40. Вынесение общего множителя за скобки</a></li><li><a href="lesson-41.html">Шаг 41. Раскрытие скобок</a></li><li><a href="lesson-42.html">Шаг 42. Простейшие задачи по математике</a></li><li><a href="lesson-43.html">Шаг 43. Задачи на дроби</a></li><li><a href="lesson-44.html">Шаг 44. Задачи на проценты</a></li><li><a href="lesson-45.html">Шаг 45. Задачи на движение</a></li><li><a href="lesson-46.html">Шаг 46. Производительность</a></li><li><a href="lesson-47.html">Шаг 47. Элементы статистики</a></li><li><a href="lesson-48.html">Шаг 48. Общие сведения об уравнениях</a></li><li><a href="lesson-49.html">Шаг 49. Решение задач с помощью уравнений</a></li><li><a href="lesson-50.html">Шаг 50. Решение задач с помощью пропорции</a></li><li><a href="lesson-51.html">Шаг 51. Системы линейных уравнений</a></li><li><a href="lesson-52.html">Шаг 52. Общие сведения о неравенствах</a></li><li><a href="lesson-53.html">Шаг 53. Системы линейных неравенств с одной переменной</a></li><li><a href="lesson-54.html">Шаг 54. Операции над множествами</a></li><li><a href="lesson-55.html">Шаг 55. Степень с натуральным показателем</a></li><li><a href="lesson-56.html">Шаг 56. Степень с целым показателем</a></li><li><a href="lesson-57.html">Шаг 57. Периметр, площадь и объём</a></li><li><a href="lesson-58.html">Шаг 58. Одночлены</a></li><li><a href="lesson-59.html">Шаг 59. Многочлены</a></li><li><a href="lesson-60.html">Шаг 60. Формулы сокращённого умножения</a></li><li><a href="lesson-61.html">Шаг 61. Разложение многочлена на множители</a></li><li><a href="lesson-62.html">Шаг 62. Деление многочленов</a></li><li><a href="lesson-63.html">Шаг 63. Тождественные преобразования многочленов</a></li><li><a href="lesson-64.html">Шаг 64. Квадратный корень</a></li><li><a href="lesson-65.html">Шаг 65. Алгоритм извлечения квадратного корня</a></li><li><a href="lesson-66.html">Шаг 66. Квадратное уравнение</a></li><li><a href="lesson-67.html">Шаг 67. Квадратное уравнение с чётным вторым коэффициентом</a></li><li><a href="lesson-68.html">Шаг 68. Теорема Виета</a></li><li><a href="lesson-69.html">Шаг 69. Разложение квадратного трёхчлена на множители</a></li><li><a href="lesson-70.html">Шаг 70. Обобщённое понятие модуля числа</a></li><li><a href="lesson-71.html">Шаг 71. Уравнение с модулем</a></li><li><a href="lesson-72.html">Шаг 72. Решение уравнений с модулем методом интервалов</a></li><li><a href="lesson-73.html">Шаг 73. Неравенства с модулем</a></li><li><a href="lesson-74.html">Шаг 74. Решение неравенств с модулем методом интервалов</a></li><li><a href="lesson-75.html">Шаг 75. Извлечение квадратного корня из обеих частей уравнения</a></li></ol></nav></aside><main id="main"><h1>Шаг 68. Теорема Виета</h1><p class="origin"><a href="https://spacemath.xyz/teorema-vieta/">Оригинал урока</a> · <a href="#quiz">К тесту</a></p><article class="lesson-text">
+<b>Предварительные навыки</b><p></p>
+<ul>
+<li><a href="lesson-48.html">Общие сведения об уравнениях</a></li>
+<li><a href="lesson-49.html"><span>﻿</span>Решение задач с помощью уравнений</a></li>
+<li><a href="lesson-64.html"><span>﻿</span>Квадратный корень<br/>
+</a></li>
+</ul>
+
+<b>Содержание урока</b><p></p>
+<ul>
+<li>
+<ul>
+<li><a href="lesson-68.html#yak1">Что называют теоремой?</a></li>
+<li><a href="lesson-68.html#yak2">Теорема Виета</a></li>
+<li><a href="lesson-68.html#yak3">Доказательство теоремы Виета</a></li>
+<li><a href="lesson-68.html#yak4">Теорема, обратная теореме Виета</a></li>
+<li><a href="lesson-68.html#yak5">Примеры решения уравнений по теореме, обратной теореме Виета</a></li>
+<li><a href="lesson-68.html#yak6">Когда квадратное уравнение неприведённое</a></li>
+<li><a href="lesson-68.html#yak7">Задания для самостоятельного решения</a></li>
+</ul>
+</li>
+</ul>
+
+<h2 id="yak1">Что называют теоремой?</h2>
+<p>Если человек обнаружил в математике какую-нибудь закономерность, позволяющую быстро решить ту или иную задачу, то ему не следует говорить о том, что он сделал открытие. Потому что может случиться так, что эта закономерность работает только для определённых случаев, а для других не работает или вовсе решает задачу неправильно.</p>
+<p>Чтобы поделиться своим открытием с другими людьми, найденную закономерность следует сформулировать в виде утверждения, а затем доказать это утверждение, приводя неоспоримые факты.</p>
+<p>Сформулированное утверждение называют <strong>теоремой</strong>. А доказательство теоремы состоит из фактов, логических рассуждений и вычислений, которые не оспариваются.</p>
+<p>Например, теоремой можно назвать следующее утверждение:</p>
+<p><strong>«Если числитель и знаменатель обыкновенной дроби умнóжить на какое-нибудь число, то значение данной дроби не измéнится».</strong></p>
+<p>А затем привести такое доказательство:</p>
+<p>Пусть, имеется дробь <img alt="a na b" decoding="async" height="43" loading="lazy" src="assets/2dafdc82bd1635c92cc110d0.png" width="12"/>. Умнóжим числитель и знаменатель этой дроби на число <span><em>с</em></span>. Тогда полýчится дробь <img alt="ac na bc" decoding="async" height="41" loading="lazy" src="assets/65d55dfea2e33e480a582769.png" width="21"/>. Докáжем, что дроби <img alt="a na b" decoding="async" height="43" loading="lazy" src="assets/2dafdc82bd1635c92cc110d0.png" width="12"/> и <img alt="ac na bc" decoding="async" height="41" loading="lazy" src="assets/65d55dfea2e33e480a582769.png" width="21"/> равны. То есть докажем, что равенство <img alt="a na b ravno ac na bc" decoding="async" height="43" loading="lazy" src="assets/56ccc64c8255b2e6df9a844e.png" width="58"/> является верным.</p>
+<p>Для доказательства этого равенства воспользуемся основным свойством пропорции:</p>
+<p><img alt="Основное свойство дроби рисунок 1" decoding="async" height="68" loading="lazy" src="assets/f2ee23d3d2685fef11b2e70d.png" width="86"/></p>
+<p>От перестановки мест сомножителей произведение не меняется. Поэтому в получившемся равенстве можно упорядочить правую часть по алфавиту:</p>
+<p><img alt="Основное свойство дроби рисунок 2" decoding="async" height="68" loading="lazy" src="assets/1fec13271d5a62faf4df370c.png" width="88"/></p>
+<p>Поскольку равенство <img alt="a na b ravno ac na bc" decoding="async" height="43" loading="lazy" src="assets/56ccc64c8255b2e6df9a844e.png" width="58"/> является <a href="lesson-25.html" title="Перейти к уроку, где рассказывается об этом">пропорцией</a>, а пропорция это равенство двух отношений, то дроби <img alt="a na b" decoding="async" height="43" loading="lazy" src="assets/2dafdc82bd1635c92cc110d0.png" width="12"/> и <img alt="ac na bc" decoding="async" height="43" loading="lazy" src="assets/27edfceabd2d6c09d5615fe4.png" width="20"/> равны. Теорема доказана.</p>
+<hr/>
+<h2 id="yak2">Теорема Виета</h2>
+<p>Французский математик Франсуа Виет выявил интересную взаимосвязь между коэффициентами приведённого квадратного уравнения и корнями этого же уравнения. Эта взаимосвязь представлена в виде теоремы и формулируется так:</p>
+<p><strong>Сумма корней приведённого квадратного уравнения <em>x</em><sup>2 </sup>+ <em>bx </em>+ <em>c </em>= 0 равна второму коэффициенту, взятому с противоположным знáком, а произведение корней равно свободному члену.</strong></p>
+<p>То есть, если имеется приведённое квадратное уравнение <span><em>x</em><sup>2 </sup>+ <em>bx </em>+ <em>c </em>= 0</span>, а его корнями являются числа <span><em>x</em><sub>1</sub></span> и <span><em>x</em><sub>2</sub></span>, то справедливы следующие два равенства:</p>
+<p><img alt="Теорема Виета рисунок 23" decoding="async" height="59" loading="lazy" src="assets/f3b7dcb9b2edcbbdd6e09068.png" width="121"/></p>
+<p>Знак системы (фигурная скобка) говорит о том, что значения <span><em>x</em><sub>1</sub></span> и <span><em>x</em><sub>2 </sub></span>удовлетворяют обоим равенствам.</p>
+<p>Покажем теорему Виета на примере приведённого квадратного уравнения <span><em>x</em><sup>2 </sup>+ 4<em>x </em>+ 3 = 0</span>.</p>
+<p>Мы пока не знаем какие корни имеет уравнение <span><em>x</em><sup>2 </sup>+ 4<em>x </em>+ 3 = 0</span>. Но по теореме Виета можно записать, что сумма этих корней равна второму коэффициенту <span>4</span>, взятому с противоположным знáком. Если коэффициент 4 взять с противоположным знáком, то получим <span>−4</span>. Тогда:</p>
+<p><img alt="Теорема Виета рисунок 55" decoding="async" height="59" loading="lazy" src="assets/5bee32f3d8ca230af711302a.png" width="117"/></p>
+<p>А произведение корней по теореме Виета будет равно свободному члену. В уравнении <span><em>x</em><sup>2 </sup>+ 4<em>x </em>+ 3 = 0</span> свободным членом является <span>3</span>. Тогда:</p>
+<p><img alt="Теорема Виета рисунок 54" decoding="async" height="59" loading="lazy" src="assets/032ee72c84d656b31ccb490f.png" width="117"/></p>
+<p>Теперь проверим действительно ли сумма корней равна <span>−4</span>, и равно ли произведение <span>3</span>. Для этого найдём корни уравнения <span><em>x</em><sup>2 </sup>+ 4<em>x </em>+ 3 = 0</span>. А для удобства воспользуемся <a href="lesson-67.html" title="Перейти к уроку, где рассказывается об этом">формулами для чётного второго коэффициента</a>:</p>
+<p><img alt="Теорема Виета рисунок 58" decoding="async" height="214" loading="lazy" src="assets/44b1e0b02e21e4bd53e62eba.png" width="393"/></p>
+<p>Корнями уравнения являются числа <span>−1</span> и <span>−3</span>. По теореме Виета их сумма должна была равняться второму коэффициенту уравнения <span><em>x</em><sup>2 </sup>+ 4<em>x </em>+ 3 = 0</span>, взятому с противоположным знаком. Действительно, так оно и есть. Вторым коэффициентов в уравнении <span><em>x</em><sup>2 </sup>+ 4<em>x </em>+ 3 = 0</span> является <span>4</span>. Если взять его с противоположным знаком и приравнять сумму корней <span><em>x</em><sub>1 </sub>+ <em>x</em><sub>2</sub></span> к этому коэффициенту, то получается верное равенство:</p>
+<p><img alt="Теорема Виета рисунок 59" decoding="async" height="52" loading="lazy" src="assets/36083b14ba95156227b47eb9.png" width="125"/></p>
+<p>А произведение корней <span>−1</span> и <span>−3</span> по теореме Виета должно было равняться свободному члену уравнения <span><em>x</em><sup>2 </sup>+ 4<em>x </em>+ 3 = 0</span>, то есть числу <span>3</span>. Видим, что это условие тоже выполняется:</p>
+<p><img alt="Теорема Виета рисунок 60" decoding="async" height="52" loading="lazy" src="assets/ec55526baa172bffada33ed6.png" width="112"/></p>
+<p>Значит выражение <img alt="Теорема Виета рисунок 54" decoding="async" height="59" loading="lazy" src="assets/032ee72c84d656b31ccb490f.png" width="117"/> является справедливым.</p>
+<hr/>
+<p>Рассмотрим квадратное уравнение <span><em>x</em><sup>2 </sup>− 8<em>x </em>+ 15 = 0</span>. По теореме Виета сумма корней этого уравнения равна второму коэффициенту, взятому с противоположным знаком. Второй коэффициент равен <span>−8</span>. Если взять его с противоположным знаком, то получим <span>8</span>. Тогда:</p>
+<p><img alt="Теорема Виета рисунок 57" decoding="async" height="59" loading="lazy" src="assets/1a8d3b96991b8d0a30371442.png" width="106"/></p>
+<p>А произведение корней равно свободному члену. В уравнении <span><em>x</em><sup>2 </sup>− 8<em>x </em>+ 15 = 0</span> свободным членом является <span>15</span>. Тогда:</p>
+<p><img alt="Теорема Виета рисунок 56" decoding="async" height="59" loading="lazy" src="assets/db3b1f5fa3a4ec7ab0266928.png" width="106"/></p>
+<p>Теперь проверим действительно ли сумма корней равна <span>8</span>, и равно ли произведение <span>15</span>. Для этого найдём корни данного уравнения. А для удобства воспользуемся формулами для чётного второго коэффициента. В этот раз пропустим нéкоторые подробные записи:</p>
+<p><img alt="Теорема Виета рисунок 61" decoding="async" height="199" loading="lazy" src="assets/6cb218354f0ee12ef479bf71.png" width="235"/></p>
+<p>Видим, что корнями уравнения <span><em>x</em><sup>2 </sup>− 8<em>x </em>+ 15 = 0</span> являются числа <span>5</span> и <span>3</span>. Их сумма равна <span>8</span>. То есть сумма корней равна второму коэффициенту уравнения <span><em>x</em><sup>2 </sup>− 8<em>x </em>+ 15 = 0</span>, взятому с противоположным знаком.</p>
+<p>А произведение чисел <span>5</span> и <span>3</span> равно <span>15</span>. То есть равно свободному члену уравнения <span><em>x</em><sup>2 </sup>− 8<em>x </em>+ 15 = 0</span>.</p>
+<p>Значит выражение <img alt="Теорема Виета рисунок 56" decoding="async" height="59" loading="lazy" src="assets/db3b1f5fa3a4ec7ab0266928.png" width="106"/> является справедливым.</p>
+<p><strong>Замечание</strong>. Чтобы теорема Виета выполнялась, квадратное уравнение обязательно должно быть приведённым и иметь корни.</p>
+<p>Например, рассмотрим квадратное уравнение <span><em>x</em><sup>2 </sup>− 2<em>x </em>+ 4 = 0</span>. Напишем сумму и произведение корней этого уравнения:</p>
+<p><img alt="Теорема Виета рисунок 61" decoding="async" height="59" loading="lazy" src="assets/49b2e3acda3601d0865be62f.png" width="98"/></p>
+<p>Но уравнение <span><em>x</em><sup>2 </sup>− 2<em>x </em>+ 4 = 0</span> не имеет корней, сумма которых равна 2, а произведение которых равно <span>4</span>. Убедиться в этом можно, вычислив дискриминант:</p>
+<p><span><em>D</em><sub>1</sub> = <em>k</em><sup>2 </sup>− <em>ac </em>= (−1)<sup>2 </sup>− 1 × 4 = −3</span></p>
+<p>А значит записывать выражение <img alt="Теорема Виета рисунок 61" decoding="async" height="59" loading="lazy" src="assets/49b2e3acda3601d0865be62f.png" width="98"/> не имеет смысла.</p>
+<p>Теорема Виета полезна тем, что позволяет до начала решения узнать знаки корней уравнения.</p>
+<p>Например, запишем для уравнения <span><em>x</em><sup>2 </sup>− 5<em>x </em>+ 6 = 0</span> сумму и произведение его корней. Сумма корней равна второму коэффициенту, взятому с противоположным знаком, а произведение корней равно свободному члену:</p>
+<p><img alt="Теорема Виета рисунок 50" decoding="async" height="59" loading="lazy" src="assets/eea34e919d3a6bc24c2a11da.png" width="97"/></p>
+<p>Посмотрев на эти два равенства можно сразу понять, что оба корня должны быть положительными. Потому что произведение <span><em>x</em><sub>1 </sub>× <em>x</em><sub>2 </sub>= 6</span> будет выполняться только в двух случаях: если значения <span><em>x</em><sub>1</sub></span> и <span><em>x</em><sub>2</sub></span> положительны либо они оба отрицательны. Если эти значения будут отрицательными, то не будет выполняться равенство <span><em>x</em><sub>1 </sub>+ <em>x</em><sub>2 </sub>= 5</span>, поскольку его правая часть равна положительному числу. А значения <span><em>x</em><sub>1</sub></span> и <span><em>x</em><sub>2</sub></span> должны удовлетворять как равенству <span><em>x</em><sub>1 </sub>+ <em>x</em><sub>2 </sub>= 5</span>, так и равенству <span><em>x</em><sub>1 </sub>× <em>x</em><sub>2 </sub>= 6.</span></p>
+<p>Ещё одна польза от теоремы Виета в том, что корни можно найти методом подбора. В данном примере корни должны быть такими, чтобы они удовлетворяли как равенству <span><em>x</em><sub>1 </sub>+ <em>x</em><sub>2 </sub>= 5</span> так и равенству <span><em>x</em><sub>1 </sub>× <em>x</em><sub>2 </sub>= 6</span>. Очевидно, что таковыми являются корни <span>3</span> и <span>2</span></p>
+<p><img alt="Теорема Виета рисунок 51" decoding="async" height="142" loading="lazy" src="assets/b26c04a752604696c7bd24a0.png" width="95"/></p>
+<p>Значит, <span><em>x</em><sub>1 </sub>= 3</span>, <span><em>x</em><sub>2 </sub>= 2</span></p>
+<p><img alt="Теорема Виета рисунок 63" decoding="async" height="59" loading="lazy" src="assets/264ec31ee58fcfa99ac2a0d8.png" width="61"/></p>
+<hr/>
+<h3 id="yak3">Доказательство теоремы Виета</h3>
+<p>Пусть дано приведённое квадратное уравнение <span><em>x</em><sup>2 </sup>+ <em>bx </em>+ <em>c </em>= 0</span>. Если его дискриминант больше нуля, то оно имеет два корня, сумма которых равна второму коэффициенту, взятому с противоположным знаком, а произведение корней равно свободному члену:</p>
+<p><img alt="Теорема Виета рисунок 23" decoding="async" height="59" loading="lazy" src="assets/f3b7dcb9b2edcbbdd6e09068.png" width="121"/></p>
+<p>Докажем, что равенства <span><em>x</em><sub>1 </sub>+ <em>x</em><sub>2 </sub>= −<em>b</em></span> и <span><em>x</em><sub>1 </sub>× <em>x</em><sub>2 </sub>= <em>c</em></span> имеют место быть.</p>
+<p>Вспомним формулы корней квадратного уравнения:</p>
+<p><img alt="квадратное уравнение рисунок 90" decoding="async" height="51" loading="lazy" src="assets/4f25498adb7d519d8a4f641a.png" width="315"/></p>
+<p>Найдём сумму корней <span><em>x</em><sub>1</sub></span> и <span><em>x</em><sub>2</sub></span>. Для этого подставим в выражение <span><em>x</em><sub>1 </sub>+ <em>x</em><sub>2</sub></span> вместо <span><em>x</em><sub>1</sub></span> и <span><em>x</em><sub>2</sub></span> соответствующие выражения из правой части формул корней квадратного уравнения. Не забываем, что в приведённом квадратном уравнении <span><em>x</em><sup>2 </sup>+ <em>bx </em>+ <em>c </em>= 0</span> старший коэффициент <span><em>a</em></span> равен единице. Тогда в процессе подстановки знаменатель станет равен просто <span>2</span></p>
+<p><img alt="Теорема Виета рисунок 3" decoding="async" height="51" loading="lazy" src="assets/3eada3f3116f92a0c0017b29.png" width="258"/></p>
+<p>Запишем правую часть в виде дроби с одним знаменателем:</p>
+<p><img alt="Теорема Виета рисунок 5" decoding="async" height="51" loading="lazy" src="assets/3a1060d4b58b7848397c9957.png" width="467"/></p>
+<p><a href="lesson-41.html">Раскроем скобки</a> в числителе и приведём подобные члены:</p>
+<p><img alt="Теорема Виета рисунок 6" decoding="async" height="111" loading="lazy" src="assets/140c97abca6a650e370a493f.png" width="501"/></p>
+<p>Сократим дробь <img alt="Теорема Виета рисунок 7" decoding="async" height="47" loading="lazy" src="assets/cd7fdc96d33dbe66ca3e074e.png" width="36"/> на <span>2</span>, тогда получим <span>−<em>b</em></span></p>
+<p><img alt="Теорема Виета рисунок 8" decoding="async" height="124" loading="lazy" src="assets/1643c42dd023251a32a33cef.png" width="545"/></p>
+<p>Значит <span><em>x</em><sub>1 </sub>+ <em>x</em><sub>2</sub></span> действительно равно <span>−<em>b</em></span></p>
+<p><span><em>x</em><sub>1 </sub>+ <em>x</em><sub>2 </sub>= −<em>b</em></span></p>
+<p>Теперь аналогично докажем, что произведение <span><em>x</em><sub>1 </sub>× <em>x</em><sub>2</sub></span> равно свободному члену <span><em>c</em></span>.</p>
+<p>Подставим вместо <span><em>x</em><sub>1</sub></span> и <span><em>x</em><sub>2</sub></span> соответствующие выражения из формул корней квадратного уравнения. Не забываем, что коэффициент <span><em>a</em></span> всё ещё равен единице:</p>
+<p><img alt="Теорема Виета рисунок 10" decoding="async" height="51" loading="lazy" src="assets/2255ab977c6b5bfeea324451.png" width="256"/></p>
+<p>Чтобы перемнóжить дроби, нужно перемнóжить их числители и знаменатели:</p>
+<p><img alt="Теорема Виета рисунок 13" decoding="async" height="51" loading="lazy" src="assets/c5fc7aac3021d54f7a4817dc.png" width="457"/></p>
+<p>В числителе теперь содержится <a href="lesson-60.html#umnozhenie_raznosti_dvuh_vyrazhenij_na_ih_summu" title="Перейти к уроку, где рассказывается об этом">произведение суммы двух выражений и разности этих же выражений</a>. Воспользуемся тождеством <span>(<em>a + b</em>)(<em>a − b</em>) = <em>a</em><sup>2 </sup>− <em>b</em><sup>2</sup></span>. Тогда в числителе полýчится <img alt="Теорема Виета рисунок 14" decoding="async" height="32" loading="lazy" src="assets/b5624af40490b351844e636d.png" width="119"/> А знаменатель будет равен <span>4</span></p>
+<p><img alt="Теорема Виета рисунок 16" decoding="async" height="51" loading="lazy" src="assets/766d300cd2bd638232535559.png" width="599"/></p>
+<p>Теперь в числителе выражение <span>(−<em>b</em>)<sup>2</sup></span> станет равно <span><em>b</em><sup>2</sup></span>, а выражение <img alt="Теорема Виета рисунок 17" decoding="async" height="32" loading="lazy" src="assets/a846aa63e19f12120532fe92.png" width="54"/> станет равно просто <span><em>D</em></span></p>
+<p><img alt="Теорема Виета рисунок 15" decoding="async" height="125" loading="lazy" src="assets/6c243bcb47d37dc5b9c1404f.png" width="620"/></p>
+<p>Но <span><em>D</em></span> равно <span><em>b</em><sup>2 </sup>− 4<em>ac</em></span>. Подстáвим это выражение вместо <span><em>D</em></span>, не забывая что <span><em>a </em>= 1</span>. То есть вместо <span><em>b</em><sup>2 </sup>− 4<em>ac</em></span> надо подставить <span><em>b</em><sup>2 </sup>− 4<em>c</em></span></p>
+<p><img alt="Теорема Виета рисунок 18" decoding="async" height="134" loading="lazy" src="assets/c852bc403a28ab3593a2006c.png" width="620"/></p>
+<p>В получившемся выражении раскроем скобки в числителе и приведём подобные члены:</p>
+<p><img alt="Теорема Виета рисунок 20" decoding="async" height="134" loading="lazy" src="assets/1297c16c6966738dcaa43e42.png" width="641"/></p>
+<p>Сократим получившуюся дробь на <span>4</span></p>
+<p><img alt="Теорема Виета рисунок 21" decoding="async" height="136" loading="lazy" src="assets/fe00c3f3794c638fc6d3592b.png" width="635"/></p>
+<p>Значит <span><em>x</em><sub>1 </sub>× <em>x</em><sub>2</sub></span> действительно равно <span><em>c</em></span>.</p>
+<p><span><em>x</em><sub>1 </sub>× <em>x</em><sub>2 </sub>= <em>c</em></span></p>
+<p>Таким образом, сумма корней приведённого квадратного уравнения <span><em>x</em><sup>2 </sup>+ <em>bx </em>+ <em>c </em>= 0</span> равна второму коэффициенту, взятому с противоположным знáком (<span><em>x</em><sub>1 </sub>+ <em>x</em><sub>2 </sub>= −<em>b</em></span>), а произведение корней равно свободному члену (<span><em>x</em><sub>1 </sub>× <em>x</em><sub>2 </sub>= <em>c</em></span>). Теорема доказана.</p>
+<hr/>
+<h2 id="yak4">Теорема, обратная теореме Виета</h2>
+<p>Когда записана сумма и произведение корней приведённого квадратного уравнения, обычно начинается подбор подходящих корней к этому уравнению. В этот момент в работу включается так называемая <strong>теорема, обратная теореме Виета</strong>. Она формулируется так:</p>
+<p><strong>Если числа <em>x</em><sub>1</sub> и <em>x</em><sub>2</sub> таковы, что их сумма равна второму коэффициенту уравнения <em>x</em><sup>2 </sup>+ <em>bx </em>+ <em>c </em>= 0, взятому с противоположным знáком, а произведение чисел <em>x</em><sub>1</sub> и <em>x</em><sub>2</sub> равно свободному члену уравнения <em>x</em><sup>2 </sup>+ <em>bx </em>+ <em>c </em>= 0, то числа <em>x</em><sub>1</sub> и <em>x</em><sub>2</sub> являются корнями уравнения <em>x</em><sup>2 </sup>+ <em>bx </em>+ <em>c </em>= 0.</strong></p>
+<p>Обратные теоремы бывают поставлены так, что их утверждением является заключение первой теоремы.</p>
+<p>Так, доказывая теорему Виета мы пришли к заключению, что сумма <span><em>x</em><sub>1</sub></span> и <span><em>x</em><sub>2</sub></span> равна <span>−<em>b</em></span>, а произведение <span><em>x</em><sub>1</sub></span> и <span><em>x</em><sub>2</sub></span> равно <span><em>c</em></span>. В обратной же теореме это заключение служит утверждением.</p>
+<p>Ранее мы решили уравнение <span><em>x</em><sup>2 </sup>− 5<em>x </em>+ 6 = 0</span> и написали для него такую сумму и произведение корней:</p>
+<p><img alt="Теорема Виета рисунок 50" decoding="async" height="59" loading="lazy" src="assets/eea34e919d3a6bc24c2a11da.png" width="97"/></p>
+<p>А затем подобрали корни <span>3</span> и <span>2</span>. По сути мы применили теорему, обратную теореме Виета. Числа <span>3</span> и <span>2</span> таковы, что их сумма равна второму коэффициенту уравнения <span><em>x</em><sup>2 </sup>− 5<em>x </em>+ 6 = 0</span>, взятому с противоположным знаком (числу <span>5</span>), а произведение чисел <span>3</span> и <span>2</span> равно свободному члену (числу <span>6</span>). Значит числа 3 и 2 являются корнями уравнения <span><em>x</em><sup>2 </sup>− 5<em>x </em>+ 6 = 0</span>.</p>
+<hr/>
+<p><strong>Пример 2</strong>. Решить квадратное уравнение <span><em>x</em><sup>2 </sup>− 6<em>x </em>+ 8 = 0</span> по теореме, обратной теореме Виета.</p>
+<p>В данном уравнении <span><em>a </em>= 1</span>. Значит квадратное уравнение является приведённым. Его можно решить по теореме, обратной теореме Виета.</p>
+<p>Сначала запишем сумму и произведение корней уравнения. Сумма корней будет равна <span>6</span>, поскольку второй коэффициент исходного уравнения равен <span>−6</span>. А произведение корней будет равно <span>8</span></p>
+<p><img alt="Теорема Виета рисунок 26" decoding="async" height="59" loading="lazy" src="assets/e473af62cb1ecac34adf3a6e.png" width="99"/></p>
+<p>Теперь имея эти два равенства можно подобрать подходящие корни. Они должны удовлетворять как равенству <span><em>x</em><sub>1 </sub>+ <em>x</em><sub>2 </sub>= 6</span>, так и равенству <span><em>x</em><sub>1 </sub>× <em>x</em><sub>2 </sub>= 8</span></p>
+<p>Подбор корней удобнее выполнять с помощью их произведения. Используя равенство <span><em>x</em><sub>1 </sub>× <em>x</em><sub>2 </sub>= 8</span> нужно найти такие <span><em>x</em><sub>1</sub></span> и <span><em>x</em><sub>2</sub></span>, произведение которых равно 8.</p>
+<p>Число 8 можно получить если перемножить числа 4 и 2 либо 1 и 8.</p>
+<p class="formula" data-tex="4 \times  2 = 8
+1 \times  8 = 8">\[4 \times  2 = 8
+1 \times  8 = 8\]</p>
+<p>Но значения <span><em>x</em><sub>1</sub></span> и <span><em>x</em><sub>2</sub></span> надо подбирать так, чтобы они удовлетворяли не только равенству <span><em>x</em><sub>1 </sub>× <em>x</em><sub>2 </sub>= 8</span>, но и равенству <span><em>x</em><sub>1 </sub>+ <em>x</em><sub>2 </sub>= 6</span>.</p>
+<p>Сразу делаем вывод, что значения <span>1</span> и <span>8</span> не годятся, поскольку они хоть и удовлетворяют равенству <span><em>x</em><sub>1 </sub>× <em>x</em><sub>2 </sub>= 8</span>, но не удовлетворяют равенству <span><em>x</em><sub>1 </sub>+ <em>x</em><sub>2 </sub>= 6</span>.</p>
+<p>Зато значения <span>4</span> и <span>2</span> подходят как равенству <span><em>x</em><sub>1 </sub>× <em>x</em><sub>2 </sub>= 8</span>, так и равенству <span><em>x</em><sub>1 </sub>+ <em>x</em><sub>2 </sub>= 6</span>, поскольку эти значения удовлетворяют обоим равенствам:</p>
+<p><img alt="Теорема Виета рисунок 28" decoding="async" height="59" loading="lazy" src="assets/a3e92da364811d084fbbb23d.png" width="241"/></p>
+<p>Значит корнями уравнения <span><em>x</em><sup>2 </sup>− 6<em>x </em>+ 8 = 0</span> являются числа <span>4</span> и <span>2</span>.</p>
+<p><img alt="Теорема Виета рисунок 30" decoding="async" height="57" loading="lazy" src="assets/6f95bae36e0b83f0cc04f280.png" width="64"/></p>
+<p>Обратная теорема, как и любая теорема нуждается в доказательстве. Докажем теорему, обратную теореме Виета. Для удобства корни <span><em>x</em><sub>1</sub></span> и <span><em>x</em><sub>2</sub></span> обозначим как <span><em>m</em></span> и <span><em>n</em></span>. Тогда утверждение теоремы, обратной теореме Виета примет следующий вид:</p>
+<p><strong>Если числа <em>m</em> и <em>n</em> таковы, что их сумма равна второму коэффициенту уравнения <em>x</em><sup>2 </sup>+ <em>bx </em>+ <em>c </em>= 0, взятому с противоположным знáком, а произведение чисел</strong> <strong><em>m</em> и <em>n </em></strong><strong>равно свободному члену уравнения <em>x</em><sup>2 </sup>+ <em>bx </em>+ <em>c </em>= 0, то числа <em>m</em> и <em>n</em> являются корнями уравнения <em>x</em><sup>2 </sup>+ <em>bx </em>+ <em>c </em>= 0</strong></p>
+<p>Для начала запишем, что сумма <span><em>m</em></span> и <span><em>n</em></span> равна <span><em>−b</em></span>, а произведение <span><em>mn</em> </span>равно <span><em>c</em></span></p>
+<p><img alt="Теорема Виета рисунок 46" decoding="async" height="58" loading="lazy" src="assets/c3c6473849ac6c2eb94fe1a9.png" width="107"/></p>
+<p>Чтобы доказать, что числа <span><em>m</em></span> и <span><em>n</em></span> являются корнями уравнения <span><em>x</em><sup>2 </sup>+ <em>bx </em>+ <em>c </em>= 0</span>, нужно поочередно подстáвить буквы <span><em>m</em></span> и <span><em>n</em></span> в это уравнение вместо <span><em>x</em></span>, затем выполнить возможные тождественные преобразования. Если в результате преобразований левая часть станет равна нулю, то это будет означать, что числа <span><em>m</em></span> и <span><em>n</em></span> являются корнями уравнения <span><em>x</em><sup>2 </sup>+ <em>bx </em>+ <em>c </em>= 0</span>.</p>
+<p>Помимо букв <span><em>m</em></span> и <span><em>n</em></span> нам нужно знать чему равен параметр <span><em>b</em></span>. Выразим его из равенства <span><em>m + n = −b</em></span>. Легче всего это сделать, умножив обе части этого равенства на <span>−1</span></p>
+<p><img alt="Теорема Виета рисунок 49" decoding="async" height="85" loading="lazy" src="assets/7b5d4029e34167678b135afe.png" width="187"/></p>
+<p>Теперь всё готово для подстановок. Подстáвим <span><em>m</em></span> в уравнение <span><em>x</em><sup>2 </sup>+ <em>bx </em>+ <em>c </em>= 0</span> вместо <span><em>x</em></span>, а выражение <span><em>−m − n</em></span> подставим вместо <span><em>b</em></span></p>
+<p><img alt="Теорема Виета рисунок 47" decoding="async" height="153" loading="lazy" src="assets/671ba258d18786b7d3ed9587.png" width="221"/></p>
+<p>Видим, что при <span><em>x = m</em></span> получается верное равенство. Значит число <span><em>m</em></span> является корнем уравнения <span><em>x</em><sup>2 </sup>+ <em>bx </em>+ <em>c </em>= 0</span>.</p>
+<p>Аналогично докажем, что число <span><em>n</em></span> является корнем уравнения <span><em>x</em><sup>2 </sup>+ <em>bx </em>+ <em>c </em>= 0</span>. Подставим вместо <span><em>x</em></span> букву <span><em>n</em></span>, а вместо <span><em>c</em></span> подставим <span><em>mn</em></span>, поскольку <span><em>c = mn</em></span>.</p>
+<p><img alt="Теорема Виета рисунок 48" decoding="async" height="120" loading="lazy" src="assets/caf3322030e16244a1d4ec9d.png" width="207"/></p>
+<p>Видим, что при <span><em>x = n</em></span> тоже получается верное равенство. Значит число <span><em>n</em></span> является корнем уравнения.</p>
+<p>Следовательно, числа <span><em>m</em></span> и <span><em>n</em></span> являются корнями уравнения <span><em>x</em><sup>2 </sup>+ <em>bx </em>+ <em>c </em>= 0</span>.</p>
+<hr/>
+<h2 id="yak5">Примеры решения уравнений по теореме, обратной теореме Виета</h2>
+<p><strong>Пример 1</strong>. Решить квадратное уравнение <span><em>x</em><sup>2 </sup>− 4<em>x </em>+ 4 = 0</span> по теореме, обратной теореме Виета.</p>
+<p>Запишем сумму корней <span><em>x</em><sub>1</sub></span> и <span><em>x</em><sub>2</sub></span> и приравняем её к второму коэффициенту, взятому с противоположным знаком. Также запишем произведение корней <span><em>x</em><sub>1</sub></span> и <span><em>x</em><sub>2</sub></span> и приравняем его к свободному члену<span><i>:</i></span></p>
+<p><img alt="Теорема Виета рисунок 31" decoding="async" height="59" loading="lazy" src="assets/383745815f7f118f1a005e1e.png" width="100"/></p>
+<p>В данном примере очевидно, что корнями являются числа <span>2</span> и <span>2</span>. Потому что их сумма равна <span>4</span> и произведение равно <span>4</span></p>
+<p><img alt="Теорема Виета рисунок 32" decoding="async" height="58" loading="lazy" src="assets/5a835ec1caf7a00b9b7f3f58.png" width="64"/></p>
+<p>Значение <span><em>x</em><sub>1</sub></span> совпадает с <span><em>x</em><sub>2</sub></span>. Это тот случай, когда квадратное уравнение имеет только один корень. Если мы попробуем решить данное уравнение с помощью формул корней квадратного уравнения, то обнаружим что дискриминант равен нулю, и корень вычисляется по формуле <img alt="квадратное уравнение рисунок 96" decoding="async" height="49" loading="lazy" src="assets/5e762a6f57d0da1c8b3d60ae.png" width="73"/></p>
+<p><img alt="Теорема Виета рисунок 33" decoding="async" height="115" loading="lazy" src="assets/2c2406be469366d46d414871.png" width="248"/></p>
+<p>Данный пример показывает, что теорема обратная теореме Виета, работает и для уравнений, имеющих только один корень. Признаком того, что квадратное уравнение имеет только один корень является то, что значения <span><em>x</em><sub>1</sub></span> и <span><em>x</em><sub>2</sub></span> совпадают.</p>
+<hr/>
+<p><strong>Пример 2</strong>. Решить уравнение <span><em>x</em><sup>2 </sup>+ 3<em>x </em>+ 2 = 0</span> по теореме, обратной теореме Виета.</p>
+<p>Запишем сумму и произведение корней данного уравнения:</p>
+<p><img alt="Теорема Виета рисунок 41" decoding="async" height="59" loading="lazy" src="assets/951be1fe2a2cda0566e0f250.png" width="111"/></p>
+<p>Теперь подберём значения <span><em>x</em><sub>1</sub></span> и <span><em>x</em><sub>2</sub></span>. Здесь начинается самое интересное. Произведение корней равно <span>2</span>. Число <span>2</span> можно получить перемножив <span>1</span> и <span>2</span>. Но сумма корней <span><em>x</em><sub>1 </sub></span>+ <span><em>x</em><sub>2</sub></span> равна отрицательному числу <span>−3</span>. Значит значения <span>1</span> и <span>2</span> не подходят.</p>
+<p>Сумма бывает отрицательной если оба слагаемых отрицательны либо отрицательным является одно слагаемое, модуль которого больше.</p>
+<p>Если подберём корни с разными знаками, то не будет выполняться равенство <span><em>x</em><sub>1 </sub>× <em>x</em><sub>2 </sub>= 2</span>.</p>
+<p>Если подберем положительные корни, то будет выполняться равенство <span><em>x</em><sub>1 </sub>× <em>x</em><sub>2 </sub>= 2</span>, но не будет выполняться равенство <span><em>x</em><sub>1 </sub>+ <em>x</em><sub>2 </sub>= −3</span>.</p>
+<p>Очевидно, что корнями являются два отрицательных числа. Произведение отрицательных чисел есть положительное число. А сумма отрицательных чисел есть отрицательное число.</p>
+<p>Тогда равенствам будут удовлетворять числа <span>−1</span> и <span>−2</span>.</p>
+<p><img alt="Теорема Виета рисунок 42" decoding="async" height="59" loading="lazy" src="assets/94894993aef3e0627c768dae.png" width="296"/></p>
+<p>Итак, корнями являются числа <span>−1</span> и <span>−2</span></p>
+<p><img alt="Теорема Виета рисунок 43" decoding="async" height="58" loading="lazy" src="assets/d2356c366e6245413f9b7f6a.png" width="75"/></p>
+<hr/>
+<p><strong>Пример 3</strong>. Решить уравнение <span><em>x</em><sup>2 </sup>+ 16<em>x </em>+ 15 = 0</span> по теореме, обратной теореме Виета.</p>
+<p>Запишем сумму и произведение корней данного уравнения:</p>
+<p><img alt="Теорема Виета рисунок 44" decoding="async" height="59" loading="lazy" src="assets/98670dc0c85a98869d1cfc8b.png" width="122"/></p>
+<p>Как и в прошлом примере сумма корней равна отрицательному числу, а произведение корней — положительному числу.</p>
+<p>Произведение бывает положительным если оба сомножителя положительны либо оба сомножителя отрицательны. Первый вариант отпадает сразу, поскольку сумма корней равна отрицательному числу. Тогда получается, что оба корня будут отрицательными. Попробуем подобрать их.</p>
+<p>Число <span>15</span> можно получить, если перемножить числа <span>−1</span> и <span>−15</span> или <span>(−3)</span> и <span>(−5)</span>. В данном случае подходит первый вариант, поскольку сумма чисел <span>−1</span> и <span>−15</span> равна <span>−16</span>, а их произведение равно <span>15</span>. Значит корнями уравнения <span><em>x</em><sup>2 </sup>+ 16<em>x </em>+ 15 = 0</span> являются числа <span>−1</span> и <span>−15</span></p>
+<p><img alt="Теорема Виета рисунок 45" decoding="async" height="58" loading="lazy" src="assets/d648dabf6f564c5ebb307165.png" width="81"/></p>
+<hr/>
+<p><strong>Пример 4</strong>. Решить уравнение <span><em>x</em><sup>2 </sup>− 10<em>x </em>− 39 = 0</span> по теореме, обратной теореме Виета.</p>
+<p>Запишем сумму и произведение корней данного уравнения:</p>
+<p><img alt="Теорема Виета рисунок 52" decoding="async" height="59" loading="lazy" src="assets/f2b2848d9b771b45e257dd54.png" width="119"/></p>
+<p>Произведение корней равно отрицательному числу. Значит один из корней является отрицательным. Число <span>−39</span> можно получить если перемножить числа <span>−3</span> и <span>13</span> либо <span>−13</span> и <span>3</span>. Из этих комбинаций больше годится комбинация <span>−3</span> и <span>13</span>, поскольку при перемножении этих чисел получается <span>−39</span>, а при сложении <span>10</span></p>
+<p><img alt="Теорема Виета рисунок 53" decoding="async" height="58" loading="lazy" src="assets/0a9f4b6bb63f095faff9e6b6.png" width="134"/></p>
+<p>Значит корнями уравнения <span><em>x</em><sup>2 </sup>− 10<em>x </em>− 39 = 0</span> являются числа <span>−3</span> и <span>13</span></p>
+<p><img alt="Теорема Виета рисунок 73" decoding="async" height="59" loading="lazy" src="assets/4f3e3c6e9c4b59286a7e4674.png" width="74"/></p>
+<hr/>
+<p><strong>Пример 5</strong>. Первый корень уравнения <span><em>x</em><sup>2 </sup>+ <em>bx </em>+ 45 = 0</span> равен <span>15</span>. Найти второй корень этого уравнения, а также значение коэффициента <span><em>b</em></span>.</p>
+<p>По теореме Виета произведение корней приведённого квадратного уравнения равно свободному члену. В данном случае это произведение равно <span>45</span></p>
+<p><span><em>x</em><sub>1</sub> × <em>x</em><sub>2</sub> = 45</span></p>
+<p>При этом один из корней уже известен — это корень <span>15</span>.</p>
+<p><span>15 × <em>x</em><sub>2</sub> = 45</span></p>
+<p>Тогда второй корень будет равен <span>3</span>, потому что число <span>45</span> получается, если <span>15</span> умножить на <span>3</span></p>
+<p class="formula" data-tex="15 \times  3 = 45">\[15 \times  3 = 45\]</p>
+<p>Значит <span><em>x</em><sub>2</sub> = 3</span></p>
+<p>Этот второй корень также можно было бы получить, выразив из равенства <span>15 × <em>x</em><sub>2</sub> = 45 </span>переменную <span><em>x</em><sub>2</sub></span></p>
+<p><img alt="Теорема Виета рисунок 74" decoding="async" height="108" loading="lazy" src="assets/91e86688d87a8dc41129f3a8.png" width="103"/></p>
+<p>Теперь определим значение коэффициента <span><em>b</em></span>. Для этого напишем сумму корней уравнения:</p>
+<p class="formula" data-tex="15 + 3 = 18">\[15 + 3 = 18\]</p>
+<p>По теореме Виета сумма корней приведенного квадратного уравнения равна второму коэффициенту, взятому с противоположным знаком. Если сумма корней равна 18, а 18 это положительное число, то в самóм уравнении этот коэффициент будет отрицательным:</p>
+<p><span><em>x</em><sup>2 </sup>− 18<em>x </em>+ 45 = 0</span></p>
+<p>Значит <span><em>b </em>= −18</span>.</p>
+<p>Обычно решение к такой задаче записывают так. Сначала записывают основную теорему Виета в виде суммы и произведения корней:</p>
+<p><img alt="Теорема Виета рисунок 23" decoding="async" height="59" loading="lazy" src="assets/f3b7dcb9b2edcbbdd6e09068.png" width="121"/></p>
+<p>Затем в это выражение подставляют имеющиеся известные значения. В нашем случае известно, что первый корень равен <span>15</span>, а свободный член уравнения <span><em>x</em><sup>2 </sup>+ <em>bx </em>+ 45 = 0 </span>равен <span>45</span></p>
+<p><img alt="Теорема Виета рисунок 77" decoding="async" height="59" loading="lazy" src="assets/9cdf0076fb8e54f1d70212a7.png" width="116"/></p>
+<p>Из этой системы следует найти <span><em>x</em><sub>2</sub></span> и <span><em>b</em></span>. Выразим эти параметры:</p>
+<p><img alt="Теорема Виета рисунок 78" decoding="async" height="83" loading="lazy" src="assets/0696f740da49a1ed73e78134.png" width="121"/></p>
+<p>Из этой системы мы видим, что <span><em>x</em><sub>2</sub></span> равно 3. Подставим его в первое равенство:</p>
+<p><img alt="Теорема Виета рисунок 79" decoding="async" height="58" loading="lazy" src="assets/2c6914a961cdc7f5490e8e17.png" width="113"/></p>
+<p>Теперь из первого равенства мы видим, что <em><span>−b</span></em> равно <span>18</span></p>
+<p><img alt="Теорема Виета рисунок 80" decoding="async" height="58" loading="lazy" src="assets/ad77310375bc06ce3adb0d77.png" width="81"/></p>
+<p>Но нас интересует <span><em>b</em></span>, а не <em><span>−b</span></em>. Следует помнить, что <span><em>−b</em></span> это <span>−1<em>b</em></span>. Чтобы найти <span><em>b</em></span> нужно <span>18</span> разделить на <span>−1</span>. Тогда <span><em>b</em></span> станет равно <span>−18</span></p>
+<p><img alt="Теорема Виета рисунок 81" decoding="async" height="167" loading="lazy" src="assets/b96f3da292e7c3b29ad14f8d.png" width="85"/></p>
+<p>Этот же результат можно получить если в выражении <img alt="Теорема Виета рисунок 80" decoding="async" height="58" loading="lazy" src="assets/ad77310375bc06ce3adb0d77.png" width="81"/> умножить первое равенство на <span>−1</span></p>
+<p><img alt="Теорема Виета рисунок 82" decoding="async" height="143" loading="lazy" src="assets/0f829657c989d9ebc426acde.png" width="149"/></p>
+<p>Теперь возвращаемся к исходному уравнению <span><em>x</em><sup>2 </sup>+ <em>bx </em>+ 45 = 0 </span>и подставляем найденное значение <span><em>b</em></span></p>
+<p><img alt="Теорема Виета рисунок 83" decoding="async" height="23" loading="lazy" src="assets/2a66590589a08b17da4ba7fb.png" width="176"/></p>
+<p>Выполним умножение <span>−18</span> на <span><em>x</em></span>. Получим <span>−18<em>x</em></span></p>
+<p><img alt="Теорема Виета рисунок 84" decoding="async" height="25" loading="lazy" src="assets/e5802ea7d40fc59c1d1b185f.png" width="175"/></p>
+<p>Раскроем скобки:</p>
+<p><img alt="Теорема Виета рисунок 85" decoding="async" height="21" loading="lazy" src="assets/b37eaa61f16ad2dc03b33812.png" width="144"/></p>
+<hr/>
+<p><strong>Пример 6</strong>. Используя теорему Виета, написать приведённое квадратное уравнение, корнями которых являются числа <span>2</span> и <span>8</span>.</p>
+<p>В этом задании корни уже известны. То есть <span><em>x</em><sub>1 </sub>= 2</span>, <span><em>x</em><sub>2 </sub>= 8</span>. По ним надо составить квадратное уравнение вида <span><em>x</em><sup>2 </sup>+ <em>bx </em>+ <em>c </em>= 0</span>.</p>
+<p>Запишем сумму и произведение корней:</p>
+<p><img alt="Теорема Виета рисунок 64" decoding="async" height="58" loading="lazy" src="assets/69119d93a8a2c3dc9f7abd0d.png" width="92"/></p>
+<p>По теореме Виета сумма корней приведённого квадратного уравнения равна второму коэффициенту, взятому с противоположным знаком. Если сумма корней <span>2</span> и <span>8</span> равна <span>10</span>, то в самóм уравнении число <span>10</span> должно быть с противоположным знаком. Значит <span><em>b </em>= −10</span>.</p>
+<p>Произведение корней по теореме Виета равно свободному члену. У нас это произведение равно <span>16</span>.</p>
+<p>Значит <span><em>b </em>= −10</span>, <span><em>c </em>= 16</span>. Отсюда:</p>
+<p><span><em>x</em><sup>2 </sup>− 10<em>x </em>+ 16<em> </em>= 0</span></p>
+<hr/>
+<p><strong>Пример 7</strong>. Используя теорему Виета, написать приведённое квадратное уравнение, корнями которых являются числа <img alt="Теорема Виета рисунок 75" decoding="async" height="31" loading="lazy" src="assets/9cd30b2678c93131f9bf0e1e.png" width="53"/> и <img alt="Теорема Виета рисунок 76" decoding="async" height="31" loading="lazy" src="assets/93d2ba4cb536205a79cc23d6.png" width="53"/><span>.</span></p>
+<p>Запишем сумму и произведение корней:</p>
+<p><img alt="Теорема Виета рисунок 65" decoding="async" height="74" loading="lazy" src="assets/3344e4a2fe0cf6a8aaab7ef9.png" width="339"/></p>
+<p>Сумма корней равна 2. Тогда в уравнении второй коэффициент будет равен −2. А произведение корней равно −1. Значит свободный член будет равен −1. Тогда:</p>
+<p><span><em>x</em><sup>2 </sup>− 2<em>x </em>− 1<em> </em>= 0</span></p>
+<hr/>
+<h2 id="yak6">Когда квадратное уравнение неприведённое</h2>
+<p>Теорема Виета выполняется только тогда, когда квадратное уравнение является приведённым.</p>
+<p>Если квадратное уравнение не является приведённым, но всё равно возникла необходимость применить теорему Виета, то обе части неприведённого квадратного уравнения следует разделить на коэффициент, который располагается перед <span><em>x</em><sup>2</sup></span>.</p>
+<p>Если к примеру в квадратном уравнении <span><em>a</em></span><span><em>x</em><sup>2 </sup>+ <em>bx </em>+ <em>c </em>= 0</span> коэффициент <span><em>a</em></span> не равен единице, то данное уравнение является неприведённым. Чтобы сделать его приведённым, надо разделить обе его части на коэффициент, который располагается перед <span><em>x</em><sup>2</sup></span>, то есть на <span><em>a</em></span></p>
+<p><img alt="Теорема Виета рисунок 67" decoding="async" height="140" loading="lazy" src="assets/c7d1504f268b8c0fb2608f63.png" width="145"/></p>
+<p>Получилось уравнение <img alt="приведенное квадратное уравнение" decoding="async" height="48" loading="lazy" src="assets/af3470b6cf0e239679395b12.png" width="133"/>, которое является приведённым. В нём второй коэффициент равен <img alt="b na a" decoding="async" height="49" loading="lazy" src="assets/1e9e84ba3a45b7c6cb2efc5a.png" width="13"/>, а свободный член равен <img alt="c na a" decoding="async" height="43" loading="lazy" src="assets/05e07024ee5558ca750974d3.png" width="13"/>. Тогда сумма и произведение корней будут выглядеть так:</p>
+<p><img alt="Теорема Виета рисунок 66" decoding="async" height="108" loading="lazy" src="assets/4a1d7d57f864beb3960fcc64.png" width="120"/></p>
+<p>Например, решим квадратное уравнение <span>4<em>x</em><sup>2 </sup>+ 5<em>x </em>+ 1 = 0</span>. Это уравнение не является приведённым. Приведённым оно станет, если разделить обе его части на коэффициент, который располагается перед <span><em>x</em><sup>2</sup></span>, то есть на 4</p>
+<p><img alt="теорема виета рисунок 68" decoding="async" height="215" loading="lazy" src="assets/03036ab3efd6788b860929ad.png" width="199"/></p>
+<p>Получили приведённое квадратное уравнение. В нём второй коэффициент равен <img alt="5 на 4" decoding="async" height="47" loading="lazy" src="assets/5c03117888207c29c9d8c72a.png" width="12"/>, а свободный член <span class="formula" data-tex="\frac{1}{4}">\(\frac{1}{4}\)</span>. Тогда по теореме Виета имеем:</p>
+<p><img alt="Теорема Виета рисунок 66" decoding="async" height="106" loading="lazy" src="assets/8a38baaa60457c979ac9790e.png" width="122"/></p>
+<p>Отсюда методом подбора находим корни −1 и <img alt="" decoding="async" height="43" loading="lazy" src="assets/717fe93953e6e099ec654ebc.png" width="27"/></p>
+<p><img alt="Теорема Виета рисунок 67" decoding="async" height="82" loading="lazy" src="assets/527373a47e4bb3d621c8b642.png" width="85"/></p>
+<p>Возможно этот метод вы редко будете использовать при решении квадратных уравнений. Но знать о нём не помешает.</p>
+<hr/>
+<p> </p>
+<p><strong>Пример 2</strong>. Решить квадратное уравнение <span>3<em>x</em><sup>2 </sup>− 7<em>x </em>+ 2 = 0</span></p>
+<p>Данное уравнение не является приведённым, а значит его пока нельзя решить по теореме, обратной теореме Виета.</p>
+<p>Сделаем данное уравнение приведенным. Разделим обе части на коэффициент, который располагается перед <span><em>x</em><sup>2</sup></span></p>
+<p><img alt="Теорема Виета рисунок 36" decoding="async" height="203" loading="lazy" src="assets/51571b63c1f6d308786cc659.png" width="157"/></p>
+<p>Получили уравнение <img alt="Теорема Виета рисунок 36" decoding="async" height="48" loading="lazy" src="assets/10111c89cb33c4e70ff25283.png" width="137"/>. Запишем сумму и произведение корней этого уравнения:</p>
+<p><img alt="Теорема Виета рисунок 37" decoding="async" height="107" loading="lazy" src="assets/5d67bc52b15353d2bda86fc4.png" width="105"/></p>
+<p>Отсюда методом подбора находим корни <span>2</span> и <span class="formula" data-tex="\frac{1}{3}">\(\frac{1}{3}\)</span></p>
+<p><img alt="Теорема Виета рисунок 40" decoding="async" height="83" loading="lazy" src="assets/21ecacdc77b3ce5b2a45d4f4.png" width="66"/></p>
+<hr/>
+<p><strong>Пример 3</strong>. Решить квадратное уравнение <span>2<em>x</em><sup>2 </sup>− 3<em>x </em>− 2 = 0</span></p>
+<p>Это неприведённое квадратное уравнение. Чтобы сделать его приведённым, нужно разделить обе его части на <span>2</span>. Сделать это можно в уме. Если <span>2<em>x</em><sup>2</sup></span> разделить на <span>2</span>, то полýчится <span><em>x</em><sup>2</sup></span></p>
+<p><img alt="икс в квадрате строчное выражение" decoding="async" height="28" loading="lazy" src="assets/b2192ac2438fa2a7e2d4e9ab.png" width="18"/></p>
+<p>Далее если <span>−3<em>x</em></span> разделить на <span>2</span>, то полýчится <img alt="минус 3x на 2" decoding="async" height="45" loading="lazy" src="assets/c2f72dbeb26c1ab2fa09e60c.png" width="38"/>. Чтобы видеть где коэффициент, а где переменная, такое выражение записывают в виде <img alt="минус 3x на 2 2" decoding="async" height="47" loading="lazy" src="assets/d981b2c2af78435217ad7386.png" width="42"/></p>
+<p><img alt="теорема виета рисунок 69" decoding="async" height="45" loading="lazy" src="assets/9a6f6a1ed9d286b6df1f2bcc.png" width="69"/></p>
+<p>Далее если<span> −2</span> разделить на <span>2</span>, то полýчится <span>−1</span></p>
+<p><img alt="теорема виета рисунок 71" decoding="async" height="45" loading="lazy" src="assets/21a8651d54d2db824767b25c.png" width="95"/></p>
+<p>Прирáвниваем получившееся выражение к нулю:</p>
+<p><img alt="теорема виета рисунок 70" decoding="async" height="45" loading="lazy" src="assets/283422d6fee7f8fd09261c2d.png" width="126"/></p>
+<p>Теперь применяем теорему Виета. Сумма корней будет равна второму коэффициенту, взятому с противоположным знáком, а произведение корней свободному члену:</p>
+<p><img alt="теорема виета рисунок 72" decoding="async" height="82" loading="lazy" src="assets/a3efaf52467e2c1fbb943411.png" width="111"/></p>
+<p>Отсюда методом подбора находим корни <span>2</span> и <span class="formula" data-tex="-\frac{1}{2}">\(-\frac{1}{2}\)</span></p>
+<hr/>
+<h2 id="yak7">Задания для самостоятельного решения</h2>
+<div>
+<div><span>Задание 1.</span> Написать сумму и произведение корней для квадратного уравнения:</div>
+<div><img decoding="async" loading="lazy" src="assets/31c1af384e57bbb64b17dc2c.png"/></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><img decoding="async" loading="lazy" src="assets/90990ff91b9c76278c292c3f.png"/></div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 2.</span> Написать сумму и произведение корней для квадратного уравнения:</div>
+<div><img decoding="async" loading="lazy" src="assets/2f2f7f2d5f352a2d0d207429.png"/></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><img decoding="async" loading="lazy" src="assets/ea886c0bf57919bb7b96b6e9.png"/></div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 3.</span> Написать сумму и произведение корней для квадратного уравнения:</div>
+<div><img decoding="async" loading="lazy" src="assets/34a4d495c4577bfb9bddd7d0.png"/></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><img decoding="async" loading="lazy" src="assets/48aeb15c1f38384ceeeb1abe.png"/></div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 4.</span> Решить квадратное уравнение по теореме, обратной теореме Виета:</div>
+<div><img decoding="async" loading="lazy" src="assets/9bc3301ca52dd2342b100423.png"/></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><img decoding="async" loading="lazy" src="assets/e7e63e4525ef0150f4504abf.png"/></div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 5.</span> Решить квадратное уравнение по теореме, обратной теореме Виета:</div>
+<div><img decoding="async" loading="lazy" src="assets/317c0903b2e14d69d7de17c6.png"/></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><img decoding="async" loading="lazy" src="assets/958ccb1c33f880def0b0e812.png"/></div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 6.</span> Решить квадратное уравнение по теореме, обратной теореме Виета:</div>
+<div><img decoding="async" loading="lazy" src="assets/784d30266cde65d508015690.png"/></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><img decoding="async" loading="lazy" src="assets/53e841ffe048cdba59d87d75.png"/></div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 7.</span> Решить квадратное уравнение по теореме, обратной теореме Виета:</div>
+<div><img decoding="async" loading="lazy" src="assets/09741effc599a0b257d5dc2a.png"/></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><img decoding="async" loading="lazy" src="assets/ea71921b47a7bb2911f0314d.png"/></div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 8.</span> Решить квадратное уравнение по теореме, обратной теореме Виета:</div>
+<div><img decoding="async" loading="lazy" src="assets/51e3369abbf7633504785955.png"/></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><img decoding="async" loading="lazy" src="assets/b121440c8c4be8d3706580a6.png"/></div>
+</div></details>
+</div>
+<div>
+<div><span>Задание 9.</span> Решить квадратное уравнение по теореме, обратной теореме Виета:</div>
+<div><img decoding="async" loading="lazy" src="assets/4127954f73c4291aa46ec96b.png"/></div>
+
+<details><summary>Показать решение</summary><div>
+<div>Решение:</div>
+<div><img decoding="async" loading="lazy" src="assets/c8c3dc5e0d95d4ed44b1a036.png"/></div>
+</div></details>
+</div>
+<hr/>
+<p><span><strong>Понравился урок? <br/>Вступай в нашу новую группу Вконтакте и начни получать уведомления о новых уроках</strong></span></p>
+</article><section id="quiz" aria-label="Тест к уроку"></section><div class="next"><a href="lesson-67.html">← Предыдущий шаг</a><a href="lesson-69.html">Следующий шаг →</a></div></main></div><dialog id="settings"><h2>Настройки</h2><h3>Приложение</h3><button id="install" hidden>Установить приложение</button><p id="install-help"></p><button id="download">Скачать весь курс</button><progress id="download-progress" value="0" max="1" hidden></progress><p id="offline-status" role="status"></p><p><a href="spacemath-offline.zip" download>Скачать ZIP-копию для другого компьютера</a></p><h3>Прогресс</h3><button id="export">Сохранить прогресс</button><label>Восстановить прогресс <input id="import" type="file" accept="application/json"></label><details><summary>Начать заново</summary><p>Очистятся ответы и отметки. Уроки и картинки останутся для следующего ученика.</p><button id="reset">Очистить мой прогресс</button></details><p id="settings-status" role="status"></p><form method="dialog"><button>Закрыть</button></form></dialog><footer>Материалы: <a href="https://spacemath.xyz/">Spacemath</a>. Локальная учебная копия с тестами.</footer></body></html>
