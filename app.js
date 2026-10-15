@@ -16,7 +16,7 @@ function studyText(text){
  for(const match of text.matchAll(pattern)){paragraph.append(document.createTextNode(text.slice(from,match.index)),el('strong',match[0]));from=match.index+match[0].length;}
  paragraph.append(document.createTextNode(text.slice(from)));return paragraph;
 }
-const nextCourseURL='https://docs.google.com/document/d/1XM2zEX4cQHUUt8s-T9LDfgm9zbw7poLKcOqLymBAIhE/edit?usp=sharing';
+const nextCourseURL='materials/python-physics-program.pdf';
 function nextCourse(main,full=false){
  const box=el('section',undefined,'course-continuation');box.append(el(full?'h2':'h3','Следующий курс — программирование физических процессов на Python'));
  box.append(el('p','Здесь вы изучаете числа, выражения, уравнения и формулы. Дальше будете записывать физические законы на Python, строить графики движения и проверять модели по экспериментальным данным.'));
@@ -26,7 +26,7 @@ function nextCourse(main,full=false){
  'Функции → таблицы и графики x(t), v(t), a(t).',
  'Единицы и проверка ответа → проверка результатов моделирования.'
  ].forEach(text=>list.append(el('li',text)));box.append(list,el('p','Следующая программа рассчитана на 102 часа. Для неё также понадобятся основы Python, векторы, тригонометрия и начальные представления о скорости изменения. Этот курс даёт арифметическую и алгебраическую основу; оставшиеся темы нужно разобрать перед соответствующими разделами.','help'));}
- const link=el('a','Программа следующего курса');link.href=nextCourseURL;link.target='_blank';link.rel='noopener noreferrer';box.append(link);main.append(box);
+ const link=el('a','Программа следующего курса (PDF)');link.href=nextCourseURL;link.target='_blank';link.rel='noopener noreferrer';box.append(link);main.append(box);
 }
 
 function sessionDone(s){return s.topics.every(done);}
@@ -59,6 +59,7 @@ function termDiagram(v,title){
   if(v.kind==='line'||v.kind==='ruler'){line(40,60,380,60);v.items.forEach((t,i)=>{const x=40+i*340/(v.items.length-1);line(x,50,x,70);text(x,96,t);});if(v.kind==='ruler'){line(40,25,380,25);text(210,124,'Длина отрезка: 3 см');}else shape('path',{d:'M370 53 L382 60 L370 67',fill:'none',stroke:'#326c9c','stroke-width':2});}
   if(v.kind==='balance'){line(60,55,360,55);shape('path',{d:'M210 57 L190 112 L230 112 Z',fill:'#77a8c4'});[110,310].forEach(x=>{line(x,55,x,85);line(x-50,85,x+50,85);});text(110,39,v.items[0]);text(310,39,v.items[1]);text(210,132,'Одинаковые значения');}
   if(v.kind==='graph'){line(75,110,340,110);line(75,110,75,10);text(350,115,'x');text(60,17,'y');for(let i=0;i<=2;i++)text(75+i*100,130,String(i));for(let i=1;i<=4;i++)text(55,114-i*22,String(i));line(75,66,275,22);[[75,66],[175,44]].forEach(([x,y])=>shape('circle',{cx:x,cy:y,r:5,fill:'#326c9c'}));text(290,65,'y = x + 2');}
+  if(v.kind==='split-grid'){for(let y=0;y<3;y++)for(let x=0;x<5;x++)shape('rect',{x:135+x*30,y:5+y*30,width:30,height:30,fill:x<2?'#9ecae4':'#f4ce71',stroke:'#fff','stroke-width':2});text(165,121,'3 · 2 = 6');text(245,121,'3 · 3 = 9');}
   if(v.kind==='grid'){const [w,h]=v.items.map(Number),size=25,x0=210-w*size/2;for(let y=0;y<h;y++)for(let x=0;x<w;x++)shape('rect',{x:x0+x*size,y:10+y*size,width:size,height:size,fill:'#dcebf5',stroke:'#326c9c'});text(210,122,`${w} × ${h} = ${w*h} клеток`);}
   figure.append(svg);
  }
@@ -88,6 +89,11 @@ function showSession(s){current=null;navigation();const main=$('lesson'),number=
   const l=lessons.find(topic=>topic.id===id),section=el('section',undefined,'textbook-section');
   section.append(el('h2','§ '+(route.indexOf(id)+1)+'. '+l.title));
   termCards(section,BalanceTerms.sections[id]);
+  if(id==='distribute'){
+   section.append(el('h3','Почему умножаем каждое слагаемое'),el('p','В каждом из трёх рядов — 2 синие и 3 жёлтые клетки. Посчитаем все клетки двумя способами.'),termDiagram({kind:'split-grid',items:['3 ряда','2 синие и 3 жёлтые клетки в каждом ряду']},'3 · (2 + 3) = 3 · 2 + 3 · 3'));
+   section.append(el('p','По рядам: 3 · (2 + 3) = 15. По цветам: 3 · 2 + 3 · 3 = 6 + 9 = 15. Клетки те же — меняется только способ подсчёта.'));
+   const proof=el('div',undefined,'formula-box');proof.append(el('span','Вывод для трёх одинаковых сумм','study-label'));['3(b + c) = (b + c) + (b + c) + (b + c)','= (b + b + b) + (c + c + c)','= 3b + 3c'].forEach(t=>proof.append(el('p',t,'formula-text')));section.append(proof,el('p','Перестановка и группировка слагаемых не меняют сумму. В каждой скобке есть и b, и c, поэтому каждое повторяется три раза. Так же рассуждаем при любом натуральном множителе: сколько скобок, столько раз берём каждое слагаемое.'),el('p','Например: 3(x + 2) = x + 2 + x + 2 + x + 2 = 3x + 6. Запись 3x + 2 неверна: в ней учтена только одна двойка вместо трёх.'));
+  }
   l.theory.forEach((text,index)=>{const paragraph=studyText(text);if(index===0){const definition=el('div',undefined,'definition');definition.append(el('span','Основное','study-label'),paragraph);section.append(definition);}else section.append(paragraph);});
   const formula=studyFormulas[id];if(formula){const box=el('div',undefined,'formula-box');box.append(el('span',formula[0],'study-label'),el('p',formula[1],'formula-text'));section.append(box);}
   if(l.referenceTheory){const reference=el('details');reference.append(el('summary','Дополнение: виды чисел'));l.referenceTheory.forEach(text=>reference.append(studyText(text)));section.append(reference);}
