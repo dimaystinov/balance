@@ -3,3 +3,19 @@
 #lesson textarea{display:block;width:100%;box-sizing:border-box;font:inherit;padding:.6rem;margin:.4rem 0 1rem;border:1px solid #9bb3c5;border-radius:6px;resize:vertical}#lesson label:has(input[type=checkbox]){display:block;margin:.7rem 0}#lesson input[type=checkbox]{width:auto}
 
 .textbook-section{margin:2rem 0;padding-bottom:1.5rem;border-bottom:1px solid #d7e1e8}.textbook-section .definition{padding-left:1rem;border-left:3px solid #83a8c5}.textbook-section h3{font-size:1.05rem}
+
+/* Readable textbook hierarchy */
+.textbook-section>p,.textbook-section>.definition,.textbook-section>.formula-box{max-width:72ch}
+.textbook-section>p{margin:1.1rem 0;line-height:1.8}
+.textbook-section strong{font-weight:750;color:#153e60}
+.textbook-section .definition{margin:1.4rem 0;padding:1rem 1.25rem;background:#edf5fb;border-left:4px solid #326c9c;border-radius:0 8px 8px 0}
+.study-label{display:block;font-size:.75rem;font-weight:750;letter-spacing:.07em;text-transform:uppercase;color:#365d7b;margin-bottom:.45rem}
+.definition p{margin:0;line-height:1.8}
+.formula-box{padding:1rem 1.25rem;margin:1.4rem 0;border:1px solid #c4d4e2;border-radius:8px;background:#fafcfe}
+.formula-text{font:500 clamp(17px,1.6vw,21px)/1.65 Georgia,serif;margin:0;overflow-wrap:anywhere}
+.examples li{border:1px solid #dce4ed;background:#fff;box-shadow:0 2px 0 #edf2f7;padding:1rem 1.2rem 1rem 3.2rem}
+.examples li p{margin:.25rem 0 .6rem;line-height:1.7}.examples li p:last-child{margin-bottom:0}
+.textbook-section h3{font-size:1.1rem;margin-top:1.5rem}
+.course-continuation{border-top:1px solid #c4d4e2;margin:2rem 0;padding-top:.25rem;max-width:72ch}.course-continuation h3{font-size:1.1rem}.course-continuation li{margin:.65rem 0}
+@media(max-width:600px){.textbook-section .definition,.formula-box{padding:.8rem 1rem}.examples li{padding-left:2.6rem}.formula-text{font-size:18px}}
+.course-lead{font-size:15px;color:#4e6577;max-width:70ch;margin:0 0 2rem}.course-lead a{font-weight:600}

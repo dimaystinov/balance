@@ -8,17 +8,40 @@ function save(){try{localStorage.setItem(KEY,JSON.stringify(state));}catch(e){st
 function record(id){return state[id]||(state[id]={concept:false,solved:[]});}
 function done(id){const r=state[id];return !!r?.concept&&r.solved.length>=3&&r.recall?.stage>0;}
 function el(tag,text,cls){const n=document.createElement(tag);if(text!==undefined)n.textContent=text;if(cls)n.className=cls;return n;}
+const studyTerms=["Счёт", "Единица", "Натуральное число", "Натуральный ряд", "Число и цифра", "Ноль", "Переменная", "значение", "Выражение", "Скобки", "слева направо", "Равенство", "Корень", "Решить уравнение", "Уравнение", "ненулевое число", "обратном порядке", "Внешнее действие", "Целые числа", "Натуральные числа", "Рациональное число", "Рациональные числа", "Иррациональные числа", "Действительные числа", "числитель", "знаменатель", "коэффициенты", "Подобные слагаемые", "допустимые значения", "аргумент", "Функция", "формула", "контрпример", "Доказательство", "Измерить", "Скорость", "Плотность", "масса", "объём", "единицы измерения", "проверка", "делить нельзя"];
+const studyFormulas={"numbers": ["Запись числа", "303 = 3 · 100 + 0 · 10 + 3"], "variable": ["Подстановка", "x = 4  ⇒  x + 3 = 4 + 3 = 7"], "expression": ["Буквенная запись", "3x означает 3 · x"], "order": ["Порядок действий", "Скобки → умножение и деление → сложение и вычитание"], "equality": ["Равные значения", "3 + 4 = 10 − 3 = 7"], "equation": ["Проверка корня", "x + 4 = 9;  x = 5:  5 + 4 = 9"], "balance": ["Правило", "Одинаковое обратимое действие — с обеими частями равенства."], "inverse": ["Обратные действия", "+ a ↔ − a;    × a ↔ ÷ a  при a ≠ 0"], "outer": ["Обратный порядок", "3(x + 2) = 21 → x + 2 = 7 → x = 5"], "integers": ["Целые числа", "…, −3, −2, −1, 0, 1, 2, 3, …"], "fractions": ["Рациональное число", "a/b;  a и b — целые, b ≠ 0"], "reals": ["Точная запись и приближение", "1/4 = 0,25;    √2 ≈ 1,414"], "distribute": ["Распределительное свойство", "a(b + c) = ab + ac"], "collect": ["Подобные слагаемые", "ax + bx = (a + b)x"], "both": ["Преобразование", "5x + 2 = 2x + 14 → 3x = 12 → x = 4"], "special": ["Число решений", "0x = 0 — любое допустимое x;  0x = 5 — корней нет."], "domain": ["Ограничение", "1/(x − 2) определено при x ≠ 2"], "function": ["Функциональная зависимость", "x → f(x): каждому допустимому x — ровно одно значение."], "formula": ["Выражение неизвестной величины", "s = vt → t = s/v  при v ≠ 0"], "story": ["Порядок решения", "Величины → уравнение → преобразования → проверка"], "logic": ["Контрпример", "(1/2)² = 1/4 < 1/2"], "measurement": ["Единицы", "1 мин = 60 с;    1 м = 100 см"], "speed": ["Равномерное движение", "v = s/t;    s = vt;    t > 0"], "density": ["Однородное вещество", "ρ = m/V;    m = ρV;    V > 0"], "final": ["Проверка", "Подстановка → единицы → соответствие условию"]};
+
+function studyText(text){
+ const paragraph=el('p'),pattern=new RegExp('(?<![\\p{L}])('+studyTerms.join('|')+')(?![\\p{L}])','giu');let from=0;
+ for(const match of text.matchAll(pattern)){paragraph.append(document.createTextNode(text.slice(from,match.index)),el('strong',match[0]));from=match.index+match[0].length;}
+ paragraph.append(document.createTextNode(text.slice(from)));return paragraph;
+}
+const nextCourseURL='https://docs.google.com/document/d/1XM2zEX4cQHUUt8s-T9LDfgm9zbw7poLKcOqLymBAIhE/edit?usp=sharing';
+function nextCourse(main,full=false){
+ const box=el('section',undefined,'course-continuation');box.append(el(full?'h2':'h3','Следующий курс — программирование физических процессов на Python'));
+ box.append(el('p','Здесь вы изучаете числа, выражения, уравнения и формулы. Дальше будете записывать физические законы на Python, строить графики движения и проверять модели по экспериментальным данным.'));
+ if(full){const list=el('ul');[
+ 'Переменные и выражения → расчёт физических величин в программе.',
+ 'Преобразование уравнений → выражение неизвестной величины из закона.',
+ 'Функции → таблицы и графики x(t), v(t), a(t).',
+ 'Единицы и проверка ответа → проверка результатов моделирования.'
+ ].forEach(text=>list.append(el('li',text)));box.append(list,el('p','Следующая программа рассчитана на 102 часа. Для неё также понадобятся основы Python, векторы, тригонометрия и начальные представления о скорости изменения. Этот курс даёт арифметическую и алгебраическую основу; оставшиеся темы нужно разобрать перед соответствующими разделами.','help'));}
+ const link=el('a','Программа следующего курса');link.href=nextCourseURL;link.target='_blank';link.rel='noopener noreferrer';box.append(link);main.append(box);
+}
+
 function sessionDone(s){return s.topics.every(done);}
 function navigation(){const nav=$('navigation');nav.replaceChildren();BalanceSessions.forEach((s,i)=>{const a=el('a',`${i+1}. ${s.title}`);a.href='#'+s.id;if(s.topics.includes(current?.id)||location.hash==='#'+s.id){a.classList.add('current');a.setAttribute('aria-current','page');}if(sessionDone(s))a.classList.add('complete');nav.append(a);});$('overall').textContent=`Пройдено ${BalanceSessions.filter(sessionDone).length} из 10 занятий`;}
 function showSession(s){current=null;navigation();const main=$('lesson'),number=BalanceSessions.indexOf(s)+1;
  main.replaceChildren(el('span',`Занятие ${number} из 10`,'badge'),el('h1',s.title));
+ if(number===1){const lead=el('p','Арифметическая и алгебраическая основа для курса ', 'course-lead'),link=el('a','«Программирование физических процессов на Python»');link.href=nextCourseURL;link.target='_blank';link.rel='noopener noreferrer';lead.append(link,document.createTextNode('.'));main.append(lead);}
  const route=BalanceSessions.flatMap(session=>session.topics);
  s.topics.forEach(id=>{
   const l=lessons.find(topic=>topic.id===id),section=el('section',undefined,'textbook-section');
   section.append(el('h2','§ '+(route.indexOf(id)+1)+'. '+l.title));
-  l.theory.forEach((text,index)=>{const paragraph=el('p',undefined,index===0?'definition':undefined);paragraph.append(document.createTextNode(text));section.append(paragraph);});
-  if(l.referenceTheory){const reference=el('details');reference.append(el('summary','Дополнение: виды чисел'));l.referenceTheory.forEach(text=>reference.append(el('p',text)));section.append(reference);}
-  section.append(el('h3','Примеры'));const examples=el('ol',undefined,'examples');l.examples.forEach(text=>examples.append(el('li',text)));section.append(examples);
+  l.theory.forEach((text,index)=>{const paragraph=studyText(text);if(index===0){const definition=el('div',undefined,'definition');definition.append(el('span','Основное','study-label'),paragraph);section.append(definition);}else section.append(paragraph);});
+  const formula=studyFormulas[id];if(formula){const box=el('div',undefined,'formula-box');box.append(el('span',formula[0],'study-label'),el('p',formula[1],'formula-text'));section.append(box);}
+  if(l.referenceTheory){const reference=el('details');reference.append(el('summary','Дополнение: виды чисел'));l.referenceTheory.forEach(text=>reference.append(studyText(text)));section.append(reference);}
+  section.append(el('h3','Примеры'));const examples=el('ol',undefined,'examples');l.examples.forEach(text=>{const item=el('li');text.split(/ → |(?<=[.!?])\s+(?=[А-ЯЁ])/u).forEach(step=>item.append(studyText(step)));examples.append(item);});section.append(examples);
   if(id==='balance')makeBalance(section);addPractice(section,l);main.append(section);
  });
  main.append(el('h2','Упражнение к занятию'),el('p',s.question));
@@ -27,6 +50,7 @@ function showSession(s){current=null;navigation();const main=$('lesson'),number=
  const solution=el('details');solution.append(el('summary','Решение'),el('p',s.solution));main.append(solution);
  form.onsubmit=e=>{e.preventDefault();if(E.parseNumber(input.value)===null){feedback.textContent='Введи число или дробь, например 20/3.';return;}const ok=E.check(input.value,s.answer);feedback.className='feedback '+(ok?'good':'bad');feedback.textContent=ok?'Верно. '+s.solution+'':'Ответ не сходится. Проверь вычисления или открой подсказку.';};
  main.append(el('h2','Вопросы для повторения'),el('p',s.wonder));
+ if(number===10)nextCourse(main,true);
  const next=el('a',number<10?'Следующее занятие →':'Повторить маршрут →');next.href='#'+BalanceSessions[number%10].id;main.append(next);$('sidebar').classList.remove('open');$('menu').setAttribute('aria-expanded','false');window.scrollTo(0,0);
 }
 function render(){
@@ -99,6 +123,7 @@ function showRecall(id,host=null,onchange=()=>{}){
 function showMethod(){
  current=null;navigation();const main=$('lesson');
  main.replaceChildren(el('span','Введение','badge'),el('h1','Как учиться'),el('p','Задача курса — научиться составлять формулы по условию, преобразовывать их и применять к расчёту физических процессов. Для занятий нужны бумага, карандаш и четыре арифметических действия.'));
+ nextCourse(main);
  BalanceReading.method.forEach(([title,text],i)=>main.append(el('h2',(i+1)+'. '+title),el('p',text)));
  main.append(el('h2','Письмо и запоминание'),el('p','Записывай по памяти короткое определение, собственный пример и объяснение шага. Рисуй схемы и подписывай величины. Затем сверяй и исправляй. Переписывание готового текста само по себе не показывает понимания; если писать рукой неудобно, используй клавиатуру или объясни вслух.'),el('p','Каждая тема требует верного объяснения, трёх разных самостоятельных решений и самопроверки терминов. Неясный термин разбери до перехода к задаче, где он нужен. Возвращайся к нему через время: отметка за сегодня не означает, что материал уже нельзя забыть.'));
  main.append(el('h2','Пример: от наблюдения к формуле'),el('p','Игрушечная машинка проходит 2 метра за каждую секунду. Нарисуй её положения через 1, 2 и 3 секунды: 2, 4 и 6 метров от старта. Здесь считаем, что скорость постоянна и машинка движется прямо в одном направлении.'),el('p','Путь s — пройденное расстояние; время t — длительность движения; скорость v — путь за единицу времени при равномерном движении. Поэтому s = v · t. При v = 2 м/с и t = 3 с получаем s = 6 м.'));
@@ -119,7 +144,7 @@ function showSources(){current=null;navigation();const main=$('lesson');main.rep
  addReading(main);
  main.append(el('h2','Материалы для любопытных'));const ul=el('ul',undefined,'sources');sources.forEach(s=>{const li=el('li'),a=el('a',s.title);a.href=s.url;a.target='_blank';a.rel='noopener noreferrer';li.append(a,el('p',s.text));ul.append(li);});main.append(ul,el('p','Уроки, примеры и упражнения Balance написаны отдельно. Видеоуроки не скопированы. Курс Савватеева — дополнительное углубление, а не последовательность обязательных заданий для начинающего.'));
  main.append(el('h2','Память и понимание'),el('p','В каждой теме есть определение, вопрос на применение и смысловая опора для запоминания. Сначала ответь по памяти, затем сравни и повтори через время.'));
- main.append(el('h2','Следующая ступень'),el('p','Неравенства, системы, степени и квадратные уравнения. «Любые уравнения» не решаются одним универсальным школьным алгоритмом. Главный результат первого курса — понимание смысла и ограничений каждого шага.'));window.scrollTo(0,0);
+ nextCourse(main,true);window.scrollTo(0,0);
 }
 document.querySelector('.skip').onclick=e=>{e.preventDefault();$('lesson').focus();};
 $('menu').onclick=()=>{const open=$('sidebar').classList.toggle('open');$('menu').setAttribute('aria-expanded',String(open));};
