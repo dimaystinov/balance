@@ -57,17 +57,26 @@ function showSession(s){current=null;navigation();const main=$('lesson'),number=
   const formula=studyFormulas[id];if(formula){const box=el('div',undefined,'formula-box');box.append(el('span',formula[0],'study-label'),el('p',formula[1],'formula-text'));section.append(box);}
   if(l.referenceTheory){const reference=el('details');reference.append(el('summary','Дополнение: виды чисел'));l.referenceTheory.forEach(text=>reference.append(studyText(text)));section.append(reference);}
   if(l.measurement){section.append(el('h3','Счёт и измерение'));l.measurement.forEach(text=>section.append(studyText(text)));const box=el('div',undefined,'formula-box');box.append(el('span','Одна длина — разные единицы','study-label'),el('p','2 м = 200 см','formula-text'),studyText(l.measurementExample));section.append(box);}
-  section.append(el('h3','Примеры'));const examples=el('ol',undefined,'examples');l.examples.forEach(text=>{const item=el('li');text.split(/ → |(?<=[.!?])\s+(?=[А-ЯЁ])/u).forEach(step=>item.append(studyText(step)));examples.append(item);});section.append(examples);
+  section.append(el('h3','Примеры'));const examples=el('ol',undefined,'examples');l.examples.forEach((text,index)=>{const item=el('li');text.split(/ → |(?<=[.!?])\s+(?=[А-ЯЁ])/u).forEach(step=>item.append(studyText(step)));item.append(el('span','Почему так','study-label'),studyText(BalanceReasoning.examples[id][index]));examples.append(item);});section.append(examples);
   if(id==='balance')makeBalance(section);addPractice(section,l);main.append(section);
  });
  main.append(el('h2','Упражнение к занятию'),el('p',s.question));
  const form=el('form',undefined,'answer-form'),label=el('label','Ответ'),input=el('input');input.autocomplete='off';label.append(input);const check=el('button','Проверить','primary');check.type='submit';form.append(label,check);const feedback=el('p',undefined,'feedback');feedback.setAttribute('role','status');main.append(form,feedback);
  let hintIndex=0;const hint=el('button','Подсказка');hint.type='button';hint.onclick=()=>{feedback.textContent=s.hints[Math.min(hintIndex++,s.hints.length-1)];feedback.className='feedback';};main.append(hint);
- const solution=el('details');solution.append(el('summary','Решение'),el('p',s.solution));main.append(solution);
- form.onsubmit=e=>{e.preventDefault();if(E.parseNumber(input.value)===null){feedback.textContent='Введи число или дробь, например 20/3.';return;}const ok=E.check(input.value,s.answer);feedback.className='feedback '+(ok?'good':'bad');feedback.textContent=ok?'Верно. '+s.solution+'':'Ответ не сходится. Проверь вычисления или открой подсказку.';};
+ const solution=el('details');solution.append(el('summary','Разбор по шагам'));const steps=el('ol',undefined,'examples');BalanceReasoning.sessions[s.id].steps.forEach(step=>{const item=el('li');item.append(el('p',step.statement,'formula-text'),studyText(step.reason));steps.append(item);});solution.append(steps);main.append(solution);addSessionReasoning(main,s);
+ form.onsubmit=e=>{e.preventDefault();if(E.parseNumber(input.value)===null){feedback.textContent='Введи число или дробь, например 20/3.';return;}const ok=E.check(input.value,s.answer);feedback.className='feedback '+(ok?'good':'bad');feedback.textContent=ok?'Числовой ответ верен. Теперь объясни ход решения и проверь обоснование ниже.':'Ответ не сходится. Проверь вычисления или открой подсказку.';};
  main.append(el('h2','Вопросы для повторения'),el('p',s.wonder));
  if(number===10)nextCourse(main,true);
  const next=el('a',number<10?'Следующее занятие →':'Повторить маршрут →');next.href='#'+BalanceSessions[number%10].id;main.append(next);$('sidebar').classList.remove('open');$('menu').setAttribute('aria-expanded','false');window.scrollTo(0,0);
+}
+function addSessionReasoning(main,s){
+ const data=BalanceReasoning.sessions[s.id],section=el('section',undefined,'practice');section.dataset.reasoning=s.id;
+ section.append(el('h3','Объясни решение'),el('p','Что означают величины и обозначения? Почему выбраны эти действия? Как проверить ответ? Запиши объяснение или произнеси его вслух перед разбором.'));
+ const label=el('label','Моё объяснение'),input=el('textarea');input.rows=3;input.setAttribute('aria-label','Объяснение: '+s.title);label.append(input);section.append(label);
+ section.append(el('h3','Проверь обоснование'),el('p',data.check.question));
+ const choices=el('div',undefined,'choices'),feedback=el('p',undefined,'feedback');feedback.setAttribute('role','status');
+ E.shuffle(data.check.options.map((text,index)=>({text,index}))).forEach(o=>{const button=el('button',o.text);button.onclick=()=>{const ok=o.index===data.check.correct;feedback.textContent=(ok?'Верно. ':'Нет. ')+data.check.why;feedback.className='feedback '+(ok?'good':'bad');};choices.append(button);});section.append(choices,feedback);
+ section.append(el('h3','Если изменить условие'),el('p',data.transfer.question));const compare=el('details');compare.append(el('summary','Сравнить с объяснением'),el('p',data.transfer.answer));section.append(compare,el('p','Выбор ответа проверяется автоматически. Свой ход рассуждений сравни с разбором или обсуди с преподавателем.','help'));main.append(section);
 }
 function render(){
  const id=location.hash.slice(1)||'method';
@@ -83,7 +92,7 @@ function render(){
 function addPractice(main,l){
  const practice=el('section',undefined,'practice');practice.dataset.topic=l.id;practice.append(el('h3','Упражнения'));
  const mastery=el('p',undefined,'help');practice.append(mastery);
- function progress(){const r=record(l.id);mastery.textContent=`Объяснение: ${r.concept?'верно':'не проверено'} · Задачи: ${Math.min(3,r.solved.length)} из 3 · Термины: ${r.recall?.stage>0?'проверены самостоятельно':'не проверены'}`;navigation();}
+ function progress(){const r=record(l.id);mastery.textContent=`Вопрос по теме: ${r.concept?'верно':'не проверено'} · Задачи: ${Math.min(3,r.solved.length)} из 3 · Термины: ${r.recall?.stage>0?'проверены самостоятельно':'не проверены'}`;navigation();}
  practice.append(el('p',l.question));const choices=el('div',undefined,'choices'),concept=el('p',undefined,'feedback');concept.setAttribute('role','status');
  E.shuffle(l.options.map((text,index)=>({text,index}))).forEach(o=>{const button=el('button',o.text);button.onclick=()=>{const ok=o.index===l.correct;concept.textContent=(ok?'Верно. ':'Неверно. ')+l.why;concept.className='feedback '+(ok?'good':'bad');record(l.id).concept=ok;save();progress();};choices.append(button);});practice.append(choices,concept);
  const question=el('p'),form=el('form',undefined,'answer-form'),label=el('label','Ответ'),input=el('input'),check=el('button','Проверить','primary');input.autocomplete='off';input.setAttribute('aria-label','Ответ: '+l.title);label.append(input);check.type='submit';form.append(label,check);
