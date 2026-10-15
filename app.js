@@ -31,14 +31,34 @@ function nextCourse(main,full=false){
 
 function sessionDone(s){return s.topics.every(done);}
 function navigation(){const nav=$('navigation');nav.replaceChildren();BalanceSessions.forEach((s,i)=>{const a=el('a',`${i+1}. ${s.title}`);a.href='#'+s.id;if(s.topics.includes(current?.id)||location.hash==='#'+s.id){a.classList.add('current');a.setAttribute('aria-current','page');}if(sessionDone(s))a.classList.add('complete');nav.append(a);});$('overall').textContent=`Пройдено ${BalanceSessions.filter(sessionDone).length} из 10 занятий`;}
+function termDiagram(v,title){
+ const figure=el('figure',undefined,'term-diagram');figure.setAttribute('aria-label','Схема: '+title);
+ if(v.kind==='flow'||v.kind==='tiles'){
+  const row=el('div',undefined,'term-flow');v.items.forEach((text,i)=>{if(i&&v.kind==='flow'){const arrow=el('span','→','term-arrow');arrow.setAttribute('aria-hidden','true');row.append(arrow);}row.append(el('span',text,'term-node'));});figure.append(row);
+ }else{
+  const NS='http://www.w3.org/2000/svg',svg=document.createElementNS(NS,'svg');svg.setAttribute('viewBox','0 0 420 135');svg.setAttribute('role','img');svg.setAttribute('aria-label',title+': '+v.items.join(', '));
+  function shape(tag,attrs,text){const n=document.createElementNS(NS,tag);Object.entries(attrs).forEach(([k,val])=>n.setAttribute(k,val));if(text)n.textContent=text;svg.append(n);return n;}
+  const line=(x1,y1,x2,y2)=>shape('line',{x1,y1,x2,y2,stroke:'#326c9c','stroke-width':2});
+  const text=(x,y,t)=>shape('text',{x,y,fill:'#19334b','font-size':17,'text-anchor':'middle'},t);
+  if(v.kind==='count'){for(let i=0;i<3;i++){shape('circle',{cx:100+i*70,cy:30,r:13,fill:'#326c9c'});shape('rect',{x:87+i*70,y:66,width:26,height:26,fill:'#77a8c4'});}text(210,126,'3 кружка и 3 квадрата');}
+  if(v.kind==='fraction'){const [a,b]=v.items.map(Number),w=320/b;for(let i=0;i<b;i++)shape('rect',{x:50+i*w,y:28,width:w,height:48,fill:i<a?'#77a8c4':'#fff',stroke:'#326c9c','stroke-width':2});text(210,112,`${a} из ${b} равных частей: ${a}/${b}`);}
+  if(v.kind==='line'||v.kind==='ruler'){line(40,60,380,60);v.items.forEach((t,i)=>{const x=40+i*340/(v.items.length-1);line(x,50,x,70);text(x,96,t);});if(v.kind==='ruler'){line(40,25,380,25);text(210,124,'Длина отрезка: 3 см');}else shape('path',{d:'M370 53 L382 60 L370 67',fill:'none',stroke:'#326c9c','stroke-width':2});}
+  if(v.kind==='balance'){line(60,55,360,55);shape('path',{d:'M210 57 L190 112 L230 112 Z',fill:'#77a8c4'});[110,310].forEach(x=>{line(x,55,x,85);line(x-50,85,x+50,85);});text(110,39,v.items[0]);text(310,39,v.items[1]);text(210,132,'Одинаковые значения');}
+  if(v.kind==='graph'){line(75,110,340,110);line(75,110,75,10);text(350,115,'x');text(60,17,'y');for(let i=0;i<=2;i++)text(75+i*100,130,String(i));for(let i=1;i<=4;i++)text(55,114-i*22,String(i));line(75,66,275,22);[[75,66],[175,44]].forEach(([x,y])=>shape('circle',{cx:x,cy:y,r:5,fill:'#326c9c'}));text(290,65,'y = x + 2');}
+  if(v.kind==='grid'){const [w,h]=v.items.map(Number),size=25,x0=210-w*size/2;for(let y=0;y<h;y++)for(let x=0;x<w;x++)shape('rect',{x:x0+x*size,y:10+y*size,width:size,height:size,fill:'#dcebf5',stroke:'#326c9c'});text(210,122,`${w} × ${h} = ${w*h} клеток`);}
+  figure.append(svg);
+ }
+ return figure;
+}
+const shownTerms=new Set();
+function termCards(host,ids){
+ ids=ids.filter(id=>!shownTerms.has(id));if(!ids.length)return;ids.forEach(id=>shownTerms.add(id));
+ const group=el('div',undefined,'term-cards');ids.forEach(id=>{const t=BalanceTerms.cards[id],card=el('section',undefined,'term-card');card.dataset.term=id;card.append(el('h3',t.title),el('p',t.definition,'term-definition'),termDiagram(t.visual,t.title));const list=el('ul',undefined,'term-examples');t.examples.forEach(text=>list.append(el('li',text)));card.append(list);group.append(card);});host.append(group);
+}
+
 function explainConcepts(main, practice=false){
  const section=el('section',undefined,'textbook-section');section.append(el('h2','Термины и понятия'));
- const box=el('div',undefined,'definition');[
- 'Термин — слово или сочетание слов, обозначающее определённое понятие в науке.',
- 'Понятие отражает существенные признаки предметов или явлений. Эти признаки позволяют понять, что относится к понятию, а что — нет.',
- 'Определение раскрывает смысл понятия через его существенные признаки.'
- ].forEach(text=>box.append(studyText(text)));section.append(box);
- section.append(studyText('Число — математическое понятие, используемое для выражения количества и результатов измерения. Три карандаша и три книги — разные предметы, но одно количество: 3. Цифра — знак для записи числа: число 12 записано цифрами 1 и 2.'),studyText('Значение числового выражения — число, полученное после выполнения указанных действий. Например, значение выражения 3 + 2 равно 5.'),studyText('Например, «равенство» — термин. Равенство утверждает, что два выражения имеют одинаковые значения. Запись 3 + 2 = 5 — верное равенство; 3 + 2 — выражение, но не равенство: утверждения о равных значениях здесь нет.'),studyText('Перед действием объясни, что обозначают величины и знаки и почему это действие допустимо. Если смысл термина неясен, уточни определение, разбери пример и только затем продолжай.'),studyText('Неизвестное значение не означает непонятную величину. Можно не знать длину ленты, но понимать, что такое длина, обозначить её x и найти по условию. Для физических величин укажи единицы измерения.'));
+ termCards(section,BalanceTerms.intro);
  const check=el('details');check.append(el('summary','Как проверить понимание'),el('p','Закрой определение. Объясни термин своими словами, приведи свой пример и случай, который под определение не подходит. Обоснуй одно действие с этим понятием. Если не получается, вернись к определению.'));section.append(check);
  if(practice){section.append(el('h3','Рассуждение по условию'),el('p','По условию все стержни в наборе имеют длину 5 см. Стержень A принадлежит этому набору. Какова его длина?'));
  const choices=el('div',undefined,'choices'),feedback=el('p',undefined,'feedback');feedback.setAttribute('role','status');
@@ -53,10 +73,11 @@ function showSession(s){current=null;navigation();const main=$('lesson'),number=
  s.topics.forEach(id=>{
   const l=lessons.find(topic=>topic.id===id),section=el('section',undefined,'textbook-section');
   section.append(el('h2','§ '+(route.indexOf(id)+1)+'. '+l.title));
+  termCards(section,BalanceTerms.sections[id]);
   l.theory.forEach((text,index)=>{const paragraph=studyText(text);if(index===0){const definition=el('div',undefined,'definition');definition.append(el('span','Основное','study-label'),paragraph);section.append(definition);}else section.append(paragraph);});
   const formula=studyFormulas[id];if(formula){const box=el('div',undefined,'formula-box');box.append(el('span',formula[0],'study-label'),el('p',formula[1],'formula-text'));section.append(box);}
   if(l.referenceTheory){const reference=el('details');reference.append(el('summary','Дополнение: виды чисел'));l.referenceTheory.forEach(text=>reference.append(studyText(text)));section.append(reference);}
-  if(l.measurement){section.append(el('h3','Счёт и измерение'));l.measurement.forEach(text=>section.append(studyText(text)));const box=el('div',undefined,'formula-box');box.append(el('span','Одна длина — разные единицы','study-label'),el('p','2 м = 200 см','formula-text'),studyText(l.measurementExample));section.append(box);}
+  if(l.measurement){section.append(el('h3','Счёт и измерение'));termCards(section,BalanceTerms.measurement);l.measurement.forEach(text=>section.append(studyText(text)));const box=el('div',undefined,'formula-box');box.append(el('span','Одна длина — разные единицы','study-label'),el('p','2 м = 200 см','formula-text'),studyText(l.measurementExample));section.append(box);}
   section.append(el('h3','Примеры'));const examples=el('ol',undefined,'examples');l.examples.forEach((text,index)=>{const item=el('li');text.split(/ → |(?<=[.!?])\s+(?=[А-ЯЁ])/u).forEach(step=>item.append(studyText(step)));item.append(el('span','Почему так','study-label'),studyText(BalanceReasoning.examples[id][index]));examples.append(item);});section.append(examples);
   if(id==='balance')makeBalance(section);addPractice(section,l);main.append(section);
  });
@@ -79,6 +100,7 @@ function addSessionReasoning(main,s){
  section.append(el('h3','Если изменить условие'),el('p',data.transfer.question));const compare=el('details');compare.append(el('summary','Сравнить с объяснением'),el('p',data.transfer.answer));section.append(compare,el('p','Выбор ответа проверяется автоматически. Свой ход рассуждений сравни с разбором или обсуди с преподавателем.','help'));main.append(section);
 }
 function render(){
+ shownTerms.clear();
  const id=location.hash.slice(1)||'method';
  const session=BalanceSessions.find(s=>s.id===id);if(session){showSession(session);return;}
  if(id==='review'){showReview();return;}
