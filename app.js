@@ -33,13 +33,27 @@ function sessionDone(s){return s.topics.every(done);}
 function navigation(){const nav=$('navigation');nav.replaceChildren();BalanceSessions.forEach((s,i)=>{const a=el('a',`${i+1}. ${s.title}`);a.href='#'+s.id;if(s.topics.includes(current?.id)||location.hash==='#'+s.id){a.classList.add('current');a.setAttribute('aria-current','page');}if(sessionDone(s))a.classList.add('complete');nav.append(a);});$('overall').textContent=`Пройдено ${BalanceSessions.filter(sessionDone).length} из 10 занятий`;}
 function termDiagram(v,title){
  const figure=el('figure',undefined,'term-diagram');figure.setAttribute('aria-label','Схема: '+title);
+ if(v.kind==='pizza-pair'){
+  figure.classList.add('pizza-pair');v.items.forEach(value=>figure.append(termDiagram({kind:'pizza',items:value.split('/')},value+' пиццы')));return figure;
+ }
  if(v.kind==='flow'||v.kind==='tiles'){
   const row=el('div',undefined,'term-flow');v.items.forEach((text,i)=>{if(i&&v.kind==='flow'){const arrow=el('span','→','term-arrow');arrow.setAttribute('aria-hidden','true');row.append(arrow);}row.append(el('span',text,'term-node'));});figure.append(row);
  }else{
-  const NS='http://www.w3.org/2000/svg',svg=document.createElementNS(NS,'svg');svg.setAttribute('viewBox','0 0 420 135');svg.setAttribute('role','img');svg.setAttribute('aria-label',title+': '+v.items.join(', '));
+  const NS='http://www.w3.org/2000/svg',svg=document.createElementNS(NS,'svg');svg.setAttribute('viewBox',v.kind==='pizza'?'0 0 420 240':'0 0 420 135');svg.setAttribute('role','img');svg.setAttribute('aria-label',title+': '+v.items.join(', '));
   function shape(tag,attrs,text){const n=document.createElementNS(NS,tag);Object.entries(attrs).forEach(([k,val])=>n.setAttribute(k,val));if(text)n.textContent=text;svg.append(n);return n;}
   const line=(x1,y1,x2,y2)=>shape('line',{x1,y1,x2,y2,stroke:'#326c9c','stroke-width':2});
   const text=(x,y,t)=>shape('text',{x,y,fill:'#19334b','font-size':17,'text-anchor':'middle'},t);
+  if(v.kind==='pizza'){
+   const [a,b]=v.items.map(Number),cx=210,cy=100,r=78;
+   shape('circle',{cx,cy,r:r+5,fill:'#d99c58'});
+   for(let i=0;i<b;i++){
+    const start=-Math.PI/2+i*2*Math.PI/b,end=start+2*Math.PI/b;
+    const x1=cx+r*Math.cos(start),y1=cy+r*Math.sin(start),x2=cx+r*Math.cos(end),y2=cy+r*Math.sin(end);
+    shape('path',{d:`M ${cx} ${cy} L ${x1} ${y1} A ${r} ${r} 0 ${end-start>Math.PI?1:0} 1 ${x2} ${y2} Z`,fill:i<a?'#f4ce71':'#f2eee7',stroke:'#a66a32','stroke-width':2});
+    if(i<a){const mid=(start+end)/2;shape('circle',{cx:cx+46*Math.cos(mid),cy:cy+46*Math.sin(mid),r:8,fill:'#c76b4f'});}
+   }
+   text(210,207,`${a}/${b} пиццы`);text(210,231,`Выделено ${a} из ${b} равных кусков`);
+  }
   if(v.kind==='count'){for(let i=0;i<3;i++){shape('circle',{cx:100+i*70,cy:30,r:13,fill:'#326c9c'});shape('rect',{x:87+i*70,y:66,width:26,height:26,fill:'#77a8c4'});}text(210,126,'3 кружка и 3 квадрата');}
   if(v.kind==='fraction'){const [a,b]=v.items.map(Number),w=320/b;for(let i=0;i<b;i++)shape('rect',{x:50+i*w,y:28,width:w,height:48,fill:i<a?'#77a8c4':'#fff',stroke:'#326c9c','stroke-width':2});text(210,112,`${a} из ${b} равных частей: ${a}/${b}`);}
   if(v.kind==='line'||v.kind==='ruler'){line(40,60,380,60);v.items.forEach((t,i)=>{const x=40+i*340/(v.items.length-1);line(x,50,x,70);text(x,96,t);});if(v.kind==='ruler'){line(40,25,380,25);text(210,124,'Длина отрезка: 3 см');}else shape('path',{d:'M370 53 L382 60 L370 67',fill:'none',stroke:'#326c9c','stroke-width':2});}
@@ -53,7 +67,7 @@ function termDiagram(v,title){
 const shownTerms=new Set();
 function termCards(host,ids){
  ids=ids.filter(id=>!shownTerms.has(id));if(!ids.length)return;ids.forEach(id=>shownTerms.add(id));
- const group=el('div',undefined,'term-cards');ids.forEach(id=>{const t=BalanceTerms.cards[id],card=el('section',undefined,'term-card');card.dataset.term=id;card.append(el('h3',t.title),el('p',t.definition,'term-definition'),termDiagram(t.visual,t.title));const list=el('ul',undefined,'term-examples');t.examples.forEach(text=>list.append(el('li',text)));card.append(list);group.append(card);});host.append(group);
+ const group=el('div',undefined,'term-cards');ids.forEach(id=>{const t=BalanceTerms.cards[id],card=el('section',undefined,'term-card');card.dataset.term=id;card.append(el('h3',t.title),el('p',t.definition,'term-definition'),termDiagram(t.visual,t.title));const list=el('ul',undefined,'term-examples');t.examples.forEach(text=>list.append(el('li',text)));card.append(list);if(id==='fraction'){card.append(el('p','Куски должны быть равными, а пиццы для сравнения — одинакового размера. Половина большой пиццы и половина маленькой — разное количество еды.'));}group.append(card);});host.append(group);
 }
 
 function explainConcepts(main, practice=false){
