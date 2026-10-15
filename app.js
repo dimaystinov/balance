@@ -136,6 +136,12 @@ function showStep(index){
  const visuals={angles:{kind:'triangle',items:['катеты 3 и 4','гипотенуза 5']},trig:{kind:'triangle',items:['катеты 3 и 4','гипотенуза 5']},vectors:{kind:'vector',items:['3 вправо','4 вверх']},coordinates:{kind:'vector',items:['точка (3, 4)','начало (0, 0)']},count:{kind:'count',items:['3 кружка','3 квадрата']},digits:{kind:'flow',items:['204','2 сотни + 0 десятков + 4 единицы','200 + 4']},sum:{kind:'flow',items:['4 + 3 = 7','7 − 3 = 4']},product:{kind:'grid',items:['4','3']},laws:{kind:'split-grid',items:['3 ряда','2 синие + 3 жёлтые']},measure:{kind:'ruler',items:['0','1','2','3']},pizza:{kind:'pizza-pair',items:['1/2','3/4']},'equal-fractions':{kind:'pizza-pair',items:['1/2','2/4']},'fraction-sum':{kind:'pizza-pair',items:['1/4','3/4']},negative:{kind:'line',items:['−3','−2','−1','0','1','2','3']},equations:{kind:'balance',items:['x + 3','8']},expand:{kind:'split-grid',items:['3 ряда','2 + 3']},geometry:{kind:'grid',items:['4','3']},functions:{kind:'graph',items:['x','y = x + 2']},graphs:{kind:'graph',items:['x','y = x + 2']},velocity:{kind:'flow',items:['1 с → 2 м','2 с → 4 м','3 с → 6 м']},euler:{kind:'flow',items:['Старые x, v, a','Прибавить изменения за Δt','Новые x, v']}};
  if(visuals[s.id]){if(s.id==='functions'||s.id==='graphs')main.append(el('p','Ещё один пример: график y = x + 2.'));main.append(termDiagram(visuals[s.id],s.title));}
  main.append(el('h2','Примеры'));const examples=el('ol',undefined,'examples');s.examples.forEach(t=>{const li=el('li');li.append(studyText(t));examples.append(li);});main.append(examples);
+ if(s.enrichment){
+  const e=s.enrichment,box=el('section',undefined,'savvateev-note');box.append(el('h2',e.title));
+  e.paragraphs.forEach(t=>box.append(el('p',t)));box.append(el('pre',e.visual));
+  box.append(el('h3','Разберись на примере'),el('p',e.question));const answer=el('details');answer.append(el('summary','Сравнить с объяснением'),el('p',e.answer));box.append(answer);
+  const credit=el('p',undefined,'help'),link=el('a','Алексей Савватеев · 100 уроков математики');link.href=e.source;credit.append('Самостоятельный разбор темы курса: ',link);box.append(credit);main.append(box);
+ }
  addPathPractice(main,s);
  if(s.id==='equations')makeBalance(main);
  if(s.id==='ready'){

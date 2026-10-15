@@ -10,6 +10,21 @@ links={urldefrag(x['url'])[0]:f'lesson-{i+1:02}.html' for i,x in enumerate(index
 nums={'одна':1,'две':2,'три':3,'четыре':4,'пять':5,'шесть':6,'семь':7,'восемь':8,'девять':9,'десять':10}
 dens={'вторая':2,'вторых':2,'третья':3,'третьих':3,'четвертая':4,'четвертых':4,'пятая':5,'пятых':5,'шестая':6,'шестых':6,'седьмая':7,'седьмых':7,'восьмая':8,'восьмых':8,'девятая':9,'девятых':9,'десятая':10,'десятых':10,'сотая':100,'сотых':100}
 conversions=[];audit=[]
+enrichment=json.loads((root/'content/savvateev.json').read_text())
+# Keep both routes on the same authored explanations.
+p=root/'pathway.js';text=p.read_text()
+start=text.index('// Original explanations linked to topics in Savvateev’s course.')
+end=text.index('function generate(id,n)',start)
+block='// Original explanations linked to topics in Savvateev’s course.\nconst enrichment='+json.dumps(enrichment,ensure_ascii=False)+';\nfor(const entry of enrichment){const step=steps.find(s=>s.id===entry.step);if(step)step.enrichment=entry;}\n'
+p.write_text(text[:start]+block+text[end:])
+def enrich(number):
+ blocks=[]
+ for e in enrichment:
+  if e['lesson']!=number:continue
+  esc=html.escape
+  paragraphs=''.join('<p>'+esc(t)+'</p>' for t in e['paragraphs'])
+  blocks.append('<section class="savvateev-note"><h2>'+esc(e['title'])+'</h2>'+paragraphs+'<pre>'+esc(e['visual'])+'</pre><h3>Разберись на примере</h3><p>'+esc(e['question'])+'</p><details><summary>Сравнить с объяснением</summary><p>'+esc(e['answer'])+'</p></details><p class="origin">Самостоятельный разбор темы курса: <a href="'+esc(e['source'])+'">Алексей Савватеев · 100 уроков математики</a>.</p></section>')
+ return ''.join(blocks)
 def formula(alt):
  words=alt.lower().replace('ё','е').strip().split();negative=words[:1]==['минус']
  if negative:words=words[1:]
@@ -70,7 +85,7 @@ for i,item in enumerate(index,1):
  article=str(soup)
  prev=f'<a href="lesson-{i-1:02}.html">← Предыдущий шаг</a>' if i>1 else '<a href="index.html">Все шаги</a>'
  nxt=f'<a href="lesson-{i+1:02}.html">Следующий шаг →</a>' if i<75 else '<a href="index.html">Все шаги</a>'
- body=f'<p class="origin"><a href="{html.escape(item["url"])}">Оригинал урока</a> · <a href="#quiz">К тесту</a></p><article class="lesson-text">{article}</article><section id="quiz" aria-label="Тест к уроку"></section><div class="next">{prev}{nxt}</div>'
+ body=f'<p class="origin"><a href="{html.escape(item["url"])}">Оригинал урока</a> · <a href="#quiz">К тесту</a></p><article class="lesson-text">{article}</article>{enrich(i)}<section id="quiz" aria-label="Тест к уроку"></section><div class="next">{prev}{nxt}</div>'
  (out/f'lesson-{i:02}.html').write_text(shell(item['title'],body,i))
  audit.append({'lesson':i,'source':item['url'],'source_text_chars':len(data['text']),'local_text_chars':len(soup.get_text()),'images':len(soup.find_all('img'))})
 body=f'<p>75 уроков в исходном порядке. Полный текст, иллюстрации и тест после каждого урока.</p><p><a class="start" href="lesson-01.html">Начать с первого шага →</a></p><p>Для занятий без интернета откройте настройки и выберите «Скачать весь курс».</p><ol class="contents">{nav}</ol>'

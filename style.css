@@ -26,3 +26,5 @@
 .pizza-pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.pizza-pair .term-diagram{margin:0;padding:0}.pizza-pair svg{min-width:0}@media(max-width:600px){.pizza-pair{grid-template-columns:1fr}}
 
 .step-theory{border-left:3px solid #77a8c4;padding:4px 18px;background:#f5f9fc;margin:20px 0}.step-theory h2{margin-top:12px}.step-links{display:flex;justify-content:space-between;gap:20px;margin-top:32px;flex-wrap:wrap}#navigation{max-height:65vh;overflow-y:auto;overscroll-behavior:contain}.practice details{margin:12px 0}@media(max-width:700px){#navigation{max-height:60vh}}
+
+.savvateev-note{margin:2rem 0;padding:1.2rem;border-left:3px solid #83b4d6;background:#f4f9fc}.savvateev-note pre{overflow-x:auto;line-height:1.6;font-family:monospace;white-space:pre}.savvateev-note details{margin:1rem 0}
